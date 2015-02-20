@@ -150,31 +150,31 @@ gulp.task("build", ["build-ios", "build-android", "build-cordova", "build-cpp"])
 
 gulp.task('doc-js', ["build-js"], function() {
 
-    var config = require('./doc/template/jsdoc.conf.json');
+    var config = require('./doc_template/js/jsdoc.conf.json');
 
     var infos = {
         plugins: config.plugins
     }
 
     var templates = config.templates;
-    templates.path = 'doc/template';
+    templates.path = 'doc_template/js';
 
     return gulp.src("src/cordova/js/*.js")
       .pipe(jsdoc.parser(infos))
-      .pipe(jsdoc.generator('doc/js', templates));
+      .pipe(jsdoc.generator('dist/doc/js', templates));
 
 });
 
 gulp.task('doc-android', shell.task([
-  'cd ./doc/android && doxygen config'
+  'cd ./doc_template/android && doxygen config'
 ]));
 
 gulp.task('doc-ios', shell.task([
-  'cd ./doc/ios && doxygen config'
+  'cd ./doc_template/ios && doxygen config'
 ]));
 
 gulp.task('doc-cpp', shell.task([
-  'cd ./doc/cpp && doxygen config'
+  'cd ./doc_template/cpp && doxygen config'
 ]));
 
 gulp.task('doc', ["doc-ios", "doc-android", "doc-js", "doc-cpp"]);
