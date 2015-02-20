@@ -1,0 +1,7 @@
+include ':testapp'
+include ':ads-common'
+project(':ads-common').projectDir = new File('../../../src/atomic/android/common')
+include ':ads-mopub'
+project(':ads-mopub').projectDir = new File('../../../src/atomic/android/mopub')
+include ':ads-admob'
+project(':ads-admob').projectDir = new File('../../../src/atomic/android/admob')
