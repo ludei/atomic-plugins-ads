@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.android.mopub.charboost" version="1.0.0">
+    <name>Ads Mopub</name>
+    <description>Android MoPub AdMob Adapter</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="android">
+        <source-file src="src/deps/mopub-admob-adapter.jar" target-dir="libs" framework="true" />
+    </platform>
+
+    <dependency id="com.google.admobsdk" />
+    <dependency id="com.ludei.ads.android.mopub" url="." subdir="src/cordova/android/mopub/base" />
+
+</plugin>

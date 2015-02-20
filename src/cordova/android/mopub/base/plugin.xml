@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.android.mopub" version="1.0.0">
+    <name>Ads Mopub</name>
+    <description>Android MoPubs Ads implementation</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="android">
+
+        <source-file src="src/deps/com/ludei/ads/mopub/AdBannerMoPub.java" target-dir="src/com/ludei/ads/mopub" />
+        <source-file src="src/deps/com/ludei/ads/mopub/AdInterstitialMoPub.java" target-dir="src/com/ludei/ads/mopub" />
+        <source-file src="src/deps/com/ludei/ads/mopub/AdServiceMoPub.java" target-dir="src/com/ludei/ads/mopub" />
+        <source-file src="src/MoPubPlugin.java" target-dir="src/com/ludei/ads/cordova" />
+        
+        <source-file src="src/deps/mopub-sdk.jar" target-dir="libs" framework="true" />
+
+        <!--<framework src="src/mopub" custom="true" />-->
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AdService">
+                <param name="android-package" value="com.ludei.ads.cordova.MoPubPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+                <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+                <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+                <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
+                <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+              <uses-permission android:name="android.permission.INTERNET" />
+              <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+              <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+              <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+    </platform>
+
+    <dependency id="com.ludei.ads.android.common" url="." subdir="src/cordova/android/common" />
+
+</plugin>

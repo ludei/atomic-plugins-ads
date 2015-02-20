@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.android.admob" version="1.0.0">
+    <name>Ads Mopub</name>
+    <description>Android AdMob Ads implementation</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="android">
+
+        <source-file src="src/deps/com/ludei/ads/admob/AdBannerAdMob.java" target-dir="src/com/ludei/ads/admob" />
+        <source-file src="src/deps/com/ludei/ads/admob/AdInterstitialAdMob.java" target-dir="src/com/ludei/ads/admob" />
+        <source-file src="src/deps/com/ludei/ads/admob/AdServiceAdMob.java" target-dir="src/com/ludei/ads/admob" />
+        <source-file src="src/AdMobPlugin.java" target-dir="src/com/ludei/ads/cordova" />
+
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AdService">
+                <param name="android-package" value="com.ludei.ads.cordova.AdMobPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+              <uses-permission android:name="android.permission.INTERNET" />
+              <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+              <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+              <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+    </platform>
+
+    <dependency id="com.google.admobsdk" />
+    <dependency id="com.ludei.ads.android.common" url="." subdir="src/cordova/android/common" />
+
+</plugin>

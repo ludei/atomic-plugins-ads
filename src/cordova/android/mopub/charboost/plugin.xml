@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.android.mopub.charboost" version="1.0.0">
+    <name>Ads Mopub</name>
+    <description>Android MoPub Charboost Adapter</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="android">
+        
+        <source-file src="src/deps/chartboost.jar" target-dir="libs" framework="true" />
+        <source-file src="src/deps/mopub-chartboost-adapter.jar" target-dir="libs" framework="true" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.chartboost.sdk.CBImpressionActivity"
+                android:configChanges="orientation|keyboard|keyboardHidden"
+                android:launchMode="singleTop"
+                android:theme="@android:style/Theme.Translucent"
+                android:windowSoftInputMode="adjustResize" />
+        </config-file>
+    </platform>
+
+    <dependency id="com.ludei.ads.android.mopub" url="." subdir="src/cordova/android/mopub/base" />
+
+</plugin>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.ios.common" version="1.0.0">
+    <name>AdsCommon</name>
+    <description>iOS Ads implementation</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="ios">
+        <header-file src="src/deps/LDAdBanner.h" />
+        <header-file src="src/deps/LDAdInterstitial.h" />
+        <header-file src="src/deps/LDAdService.h" />
+        <header-file src="src/LDAdServicePlugin.h" />
+        <source-file src="src/LDAdServicePlugin.m" />
+    </platform>
+</plugin>

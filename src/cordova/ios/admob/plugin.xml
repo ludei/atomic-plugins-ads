@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.ios.admob" version="1.0.0">
+    <name>AdsMopub</name>
+    <description>iOS Ads AdMob implementation</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="ios">
+        <header-file src="src/deps/LDAdServiceAdMob.h" />
+        <source-file src="src/deps/LDAdServiceAdMob.m" />
+        <header-file src="src/LDAdMobPlugin.h" />
+        <source-file src="src/LDAdMobPlugin.m" />
+
+        <source-file src="src/deps/external/libGoogleAdMobAds.a" framework="true" />
+        <header-file src="src/deps/external/include/GADAdNetworkExtras.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADAdSize.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADBannerView.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADBannerViewDelegate.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADInAppPurchase.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADInAppPurchaseDelegate.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADInterstitial.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADInterstitialDelegate.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADRequest.h" target-dir="GoogleMobileAds" />
+        <header-file src="src/deps/external/include/GADRequestError.h" target-dir="GoogleMobileAds" />
+
+        <framework src="AdSupport.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="StoreKit.framework" />
+
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="AdService">
+                <param name="ios-package" value="LDAdMobPlugin" />
+            </feature>
+        </config-file>
+
+    </platform>
+    <dependency id="com.ludei.ads.ios.common" url="." subdir="src/cordova/ios/common" />
+</plugin>

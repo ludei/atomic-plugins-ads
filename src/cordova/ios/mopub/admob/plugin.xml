@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.ios.mopub.admob" version="1.0.0">
+    <name>MoPubAdapterAdMob</name>
+    <description>iOS AdMob adapter for MoPub</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ads</keywords>
+    <platform name="ios">
+        <source-file src="src/deps/libAdMobAdapter.a" framework="true" />
+        <source-file src="src/deps/libGoogleAdMobAds.a" framework="true" />
+    </platform>
+    <dependency id="com.ludei.ads.ios.mopub" url="." subdir="src/cordova/ios/mopub" />
+</plugin>
