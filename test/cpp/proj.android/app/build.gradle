@@ -1,0 +1,86 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.ludei.adsgame"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jni.srcDirs=[]
+            jniLibs.srcDirs=['libs']
+            assets.srcDirs = ['../../resources']
+        }
+    }
+}
+
+// call regular ndk-build script from app directory
+task ndkBuild(type: Exec) {
+    def ndkDir = project.plugins.findPlugin('com.android.application').getNdkFolder()
+
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        commandLine "$ndkDir/ndk-build.cmd", '-C', file('jni').absolutePath
+    } else {
+        commandLine "$ndkDir/ndk-build", '-C', file('jni').absolutePath
+    }
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn ndkBuild
+}
+
+def mopub_adapters = '../../../../src/atomic/android/mopub/external/adapters/'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs  '../../external/cocos2dx/prebuilt_android',
+              '../../../../src/cpp/android/jni/safejni/libs',
+                mopub_adapters + 'adcolony/dist',
+                mopub_adapters + 'admob/dist',
+                mopub_adapters + 'millennialmedia/dist',
+                mopub_adapters + 'charboost/dist',
+                mopub_adapters + 'greystripe/dist',
+                mopub_adapters + 'inmobi/dist'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+
+
+    compile (name:'libcocos2dx', ext:'jar')
+    compile (name:'safejni', ext:'jar')
+
+    compile project(':ads-mopub') //mopub implementation
+    compile project(':ads-admob') //admob implementation
+    compile project(':ads-cppbridge')
+
+    compile 'com.google.android.gms:play-services-ads:6.5.87' //admob-sdk
+    //mopub adapters
+    compile (name:'adcolony-adapter', ext:'aar')
+    compile (name:'admob-adapter', ext:'aar')
+    compile (name:'millennialmedia-adapter', ext:'aar')
+    compile (name:'charboost-adapter', ext:'aar')
+    compile (name:'greystripe-adapter', ext:'aar')
+    compile (name:'inmobi-adapter', ext:'aar')
+
+
+
+}
