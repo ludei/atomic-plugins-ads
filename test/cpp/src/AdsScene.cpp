@@ -57,8 +57,8 @@ bool AdsScene::init(AdProvider provider)
     }
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     if (provider == AdProvider::MOPUB) {
-        settings.banner = "agltb3B1Yi1pbmNyDQsSBFNpdGUY5qXqEww";
-        settings.interstitial = "agltb3B1Yi1pbmNyDQsSBFNpdGUYjv30Eww";
+        settings.banner = "68949c5d9de74b79bb79aa29c203ca02";
+        settings.interstitial = "74a813ae7a404881bf17eb8d1b0aa943";
     }
     else if (provider == AdProvider::ADMOB) {
         //pure admob android
