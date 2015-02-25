@@ -3,7 +3,7 @@
         id="com.ludei.ads.ios.common" version="1.0.0">
     <name>AdsCommon</name>
     <description>iOS Ads implementation</description>
-    <license>Apache 2.0</license>
+    <license>MPL 2.0</license>
     <keywords>cordova,ads</keywords>
     <platform name="ios">
         <header-file src="src/deps/LDAdBanner.h" />

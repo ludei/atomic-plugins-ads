@@ -3,7 +3,7 @@
         id="com.ludei.ads.android.common" version="1.0.0">
     <name>AdsCommon</name>
     <description>Android Ads implementation</description>
-    <license>Apache 2.0</license>
+    <license>MPL 2.0</license>
     <keywords>cordova,ads</keywords>
     <platform name="android">
         <source-file src="src/AdServicePlugin.java" target-dir="src/com/ludei/ads/cordova" />
