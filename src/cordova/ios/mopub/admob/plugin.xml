@@ -3,7 +3,7 @@
         id="com.ludei.ads.ios.mopub.admob" version="1.0.0">
     <name>MoPubAdapterAdMob</name>
     <description>iOS AdMob adapter for MoPub</description>
-    <license>Apache 2.0</license>
+    <license>MPL 2.0</license>
     <keywords>cordova,ads</keywords>
     <platform name="ios">
         <source-file src="src/deps/libAdMobAdapter.a" framework="true" />

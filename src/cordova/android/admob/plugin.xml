@@ -3,7 +3,7 @@
         id="com.ludei.ads.android.admob" version="1.0.0">
     <name>Ads Mopub</name>
     <description>Android AdMob Ads implementation</description>
-    <license>Apache 2.0</license>
+    <license>MPL 2.0</license>
     <keywords>cordova,ads</keywords>
     <platform name="android">
 

@@ -3,7 +3,7 @@
         id="com.ludei.ads.ios.admob" version="1.0.0">
     <name>AdsMopub</name>
     <description>iOS Ads AdMob implementation</description>
-    <license>Apache 2.0</license>
+    <license>MPL 2.0</license>
     <keywords>cordova,ads</keywords>
     <platform name="ios">
         <header-file src="src/deps/LDAdServiceAdMob.h" />
