@@ -289,7 +289,7 @@ interstitial.show();
 
 See [API Documentation](http://ludei.github.io/atomic-plugins-ads/dist/doc/cpp/html/annotated.html)
 
-See [`AdService.h`](src/cpp/AdService.h) [`AdBanner.h`](src/cpp/AdBanner.h) [`AdInterstitial.h`](src/atomic/cpp/AdInterstitial.h) header files for a complete overview of the capabilities of the API
+See [`AdService.h`](src/cpp/AdService.h) [`AdBanner.h`](src/cpp/AdBanner.h) [`AdInterstitial.h`](src/cpp/AdInterstitial.h) header files for a complete overview of the capabilities of the API
 
 See [`AdTest`](test/cpp) for a complete project (cocos2dx game) that integrates the C++ Ad API.
 
