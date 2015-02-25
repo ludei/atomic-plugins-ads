@@ -10,7 +10,6 @@
     <li>MoPub with optional adapters</li>
     <li>AdMob</li>
     </ul>
-    <p>You can contribute and help to create more awesome plugins.</p>
     <h3>Setup your project</h3>
     <p>Releases are deployed to Cordova Plugin Registry. 
     You only have to install the desired plugins using Cordova CLI, Cocoon CLI or Cocoon Cloud Server.</p>
