@@ -8,14 +8,15 @@
     <p>Currently there are 2 Ad providers implemented but new ones can be easily added:</p>
     <ul>
     <li>MoPub with optional adapters</li>
-    <li>AdMob<li>
+    <li>AdMob</li>
     </ul>
     <p>You can contribute and help to create more awesome plugins.</p>
     <h3>Setup your project</h3>
     <p>Releases are deployed to Cordova Plugin Registry. 
     You only have to install the desired plugins using Cordova CLI, Cocoon CLI or Cocoon Cloud Server.</p>
     <ul>
-    <code>cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS<br/>
+    <code>
+    cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS<br/>
     cordova plugin add com.ludei.ads.ios.mopub; //MoPub plugin for iOS<br/>
     cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android<br/>
     cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android<br/><br/>
