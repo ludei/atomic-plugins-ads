@@ -174,21 +174,21 @@ Cocoon.Ad class provides an easy to use Ads API that can be used with different 
 
 Releases are deployed to Cordova Plugin Registry. You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Ludei's Cocoon Cloud Server.
 
-    cordova plugin add com.ludei.inapps.ios.admob; //AdMob plugin for iOS
-    cordova plugin add com.ludei.inapps.ios.mopub; //MoPub plugin for iOS
-    cordova plugin add com.ludei.inapps.android.admob; //AdMob plugin for Android
-    cordova plugin add com.ludei.inapps.android.mopub; //MoPub plugin for Android
+    cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS
+    cordova plugin add com.ludei.ads.ios.mopub; //MoPub plugin for iOS
+    cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android
+    cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android
 
     //Optional MoPub adapters for iOS and Android
-    cordova plugin add com.ludei.inapps.ios.mopub.charboost;
-    cordova plugin add com.ludei.inapps.ios.mopub.admob;
-    cordova plugin add com.ludei.inapps.ios.mopub.millennial;
-    cordova plugin add con.ludei.inapps.android.adcolony;
-    cordova plugin add con.ludei.inapps.android.admob;
-    cordova plugin add con.ludei.inapps.android.charboost;
-    cordova plugin add con.ludei.inapps.android.greystripe;
-    cordova plugin add con.ludei.inapps.android.inmobi;
-    cordova plugin add con.ludei.inapps.android.millennial;
+    cordova plugin add com.ludei.ads.ios.mopub.charboost;
+    cordova plugin add com.ludei.ads.ios.mopub.admob;
+    cordova plugin add com.ludei.ads.ios.mopub.millennial;
+    cordova plugin add con.ludei.ads.android.adcolony;
+    cordova plugin add con.ludei.ads.android.admob;
+    cordova plugin add con.ludei.ads.android.charboost;
+    cordova plugin add con.ludei.ads.android.greystripe;
+    cordova plugin add con.ludei.ads.android.inmobi;
+    cordova plugin add con.ludei.ads.android.millennial;
 
 Include the following JavaScript files in your html project:
 
