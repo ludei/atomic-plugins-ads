@@ -1,178 +1,69 @@
-(function() {
+"use strict";
 
-    var demo = {
-        isHidden: false,
-        position: Cocoon.Ad.BannerLayout.BOTTOM_CENTER,
-        x : 0,
-        y : 0,
-        width : 0,
-        height : 0,
-        ctx:null,
-        params: {
-            banner : {
-                status : ""
-            },
-            interstitial : {
-                status : "",
-                sub_status: ""
-            }
-        }
-    };
+(function(){
+
+    var AssetManager = cc.plugin.asset.AssetManager;
+    var director;
+    var scene;
+    var bannerStatus;
+    var interstitialStatus;
+
 
     var banner;
     var interstitial;
+    var demoPosition;
 
-    demo.createBanner = function(){
+
+    function createBanner() {
 
         banner = Cocoon.Ad.createBanner();
 
         banner.on("load", function(){
             console.log("Banner loaded " + banner.width, banner.height);
-            demo.params.banner.status = "Banner loaded";
+            bannerStatus.setText("Banner loaded");
         });
 
         banner.on("fail", function(){
             console.log("Banner failed to load");
-            demo.params.banner.status = "Banner failed";
+            bannerStatus.setText("Banner failed");
         });
 
         banner.on("show", function(){
             console.log("Banner shown a modal content");
-            demo.params.banner.status = "Banner show modal content";
+            bannerStatus.setText("Banner show modal content");
         });
 
         banner.on("dismiss", function(){
             console.log("Banner dismissed the modal content");
-            demo.params.banner.status = "Banner dismissed modal";
+            bannerStatus.setText("Banner dismissed modal");
         });
-    };
+    }
 
-    demo.createInterstitial = function(){
+    function createInterstitial() {
 
         interstitial = Cocoon.Ad.createInterstitial();
 
         interstitial.on("load", function(){
             console.log("Interstitial loaded");
-            demo.params.interstitial.status = "Interstitial loaded,";
-            demo.params.interstitial.sub_status = "press SHOW FULL SCREEN to watch the ad.";
+            interstitialStatus.setText("Interstitial loaded");
         });
         interstitial.on("fail", function(){
             console.log("Interstitial failed");
-            demo.params.interstitial.status = "Interstitial failed,";
-            demo.params.interstitial.sub_status = "";
+            interstitialStatus.setText("Interstitial failed");
         });
         interstitial.on("show", function(){
             console.log("Interstitial shown");
-            demo.params.interstitial.status = "Interstitial shown";
-            demo.params.interstitial.sub_status = "";
+            interstitialStatus.setText("Interstitial shown");
         });
         interstitial.on("dismiss", function(){
             console.log("Interstitial dismissed");
-            demo.params.interstitial.status = "Interstitial dismissed,";
-            demo.params.interstitial.sub_status = "press CACHE AD to download another ad.";
+            interstitialStatus.setText("Interstitial dismissed");
         });
     };
 
-    demo.init = function(){
-
-        var canvas= document.createElement("canvas");
-        var dpr = window.devicePixelRatio;
-        var w= 960;
-        var h = 640;
-        canvas.width= w;
-        canvas.height= h;
-
-        var scale = Math.min(window.innerHeight/h,window.innerWidth/w);
-
-        canvas.style.position = "absolute";
-        canvas.style.width = (w * scale) + "px";
-        canvas.style.height = (h * scale) + "px";
-        canvas.style.left = (window.innerWidth * 0.5 - w * scale * 0.5) + "px";
-        canvas.style.top = (window.innerHeight * 0.5 - h * scale * 0.5) + "px";
-
-        document.body.appendChild(canvas);
-
-        ctx= canvas.getContext("2d");
-        demo.ctx = ctx;
-        var image= new Image();
-        image.onload=function() {
-            ctx.drawImage( image,0,0 );
-
-            var touchOrClick = function(x, y)
-            {
-                var bound = canvas.getBoundingClientRect();
-                x = (x - bound.left) / scale;
-                y = (y - bound.top) / scale;
-
-                if(x >= 540 && x <= 885 && y >= 200 && y <= 255){
-                    banner.show();
-                }
-                else if (x >= 540 && x <= 885 && y >= 273 && y <= 327){
-                    banner.hide();
-                }
-                else if (x >= 540 && x <= 885 && y >= 350 && y <= 403){
-                    if (demo.position == Cocoon.Ad.BannerLayout.BOTTOM_CENTER) {
-                        demo.position = Cocoon.Ad.BannerLayout.TOP_CENTER;
-                    }
-                    else {
-                        demo.position = Cocoon.Ad.BannerLayout.BOTTOM_CENTER;
-                    }
-                    banner.setLayout(demo.position);
-                }
-                else if (x >= 540 && x <= 885 && y >= 430 && y <= 482){
-                    console.log("Downloading banner...");
-                    demo.params.banner.status = "Downloading banner...";
-                    banner.load();
-                }
-                else if (x >= 77 && x <= 418 && y >= 200 && y <= 254){
-                    interstitial.show();
-                }
-                else if (x >= 77 && x <= 418 && y >= 272 && y <= 325){
-                    demo.params.interstitial.status = "Downloading interstitial...";
-                    demo.params.interstitial.sub_status = "";
-                    interstitial.load();
-                }else{
-                    console.log("No button selected: ", x | 0 , y | 0);
-                }
-
-            }
-
-            canvas.addEventListener(
-                "touchstart",
-                function( touches ) {
-                    var that = touches.targetTouches[0];
-
-                    var x= that.pageX;
-                    var y= that.pageY;
-                    touchOrClick(x, y);
-
-                },
-                false
-            );
-            setInterval(function(){
-
-                ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-
-                ctx.drawImage(image,0,0);
-
-                ctx.fillStyle = '#888';
-                ctx.font = '22px Arial';
-                ctx.textBaseline = 'bottom';
-                ctx.fillText('Full screen status: '+demo.params.interstitial.status, 77, 510);
-                ctx.fillText('Banner status: '+demo.params.banner.status, 540, 510);
-                ctx.fillText(demo.params.interstitial.sub_status, 77, 530);
-
-            },1000 / 60);
-
-        };
-        image.src = "img/background.png";
-    };
-
-
-    function init() {
-
+    function initAds() {
         //Configuration If AdMob service plugins are installed
-        /*Cocoon.Ad.configure({
+        Cocoon.Ad.configure({
              ios: {
                   banner:"ca-app-pub-7686972479101507/8873903476",
                   interstitial:"ca-app-pub-7686972479101507/8873903476",
@@ -181,10 +72,10 @@
                   banner:"ca-app-pub-7686972479101507/4443703872",
                   interstitial:"ca-app-pub-7686972479101507/4443703872"
              }
-        });*/
+        });
 
         //Configuration If MoPub service plugins are installed
-        Cocoon.Ad.configure({
+        /*Cocoon.Ad.configure({
              ios: {
                   banner:"agltb3B1Yi1pbmNyDQsSBFNpdGUY5dDoEww",
                   bannerIpad:"agltb3B1Yi1pbmNyDQsSBFNpdGUYk8vlEww", //optional
@@ -195,21 +86,152 @@
                   banner:"68949c5d9de74b79bb79aa29c203ca02",
                   interstitial:"74a813ae7a404881bf17eb8d1b0aa943"
              }
+        });*/
+
+        createBanner();
+        createInterstitial();
+    }
+
+    function init(resources) {
+
+        initAds();
+
+        AssetManager.addImage( resources['background'], 'background' );
+        AssetManager.addImage( resources['button1'], 'button1' );
+        AssetManager.addImage( resources['button2'], 'button2' );
+
+
+        var renderer = new cc.render.CanvasRenderer(window.innerWidth, window.innerHeight, document.getElementById("c"));
+        director = new cc.node.Director().
+            setRenderer(renderer);
+
+        scene = director.createScene().setColor(0.0,0,0.0, 1.0);
+
+        var background= new cc.node.Sprite( { frameName: "background" } );
+        background.setPosition(scene.width * 0.5, scene.height * 0.5);
+        background.setAnchorPoint(0.5, 0.5);
+        var scale = Math.max(scene.height/background.height, scene.width/background.width);
+        background.setScale(scale, scale);
+        scene.addChild(background);
+
+
+        var btnShowBanner = createButton("Show banner", function(){
+            banner.show();
+        });
+        var btnHideBanner = createButton("Hide banner", function(){
+            banner.hide();
+        });
+        var btnChangePosition = createButton("Change position", function(){
+            if (demoPosition == Cocoon.Ad.BannerLayout.BOTTOM_CENTER) {
+                demoPosition = Cocoon.Ad.BannerLayout.TOP_CENTER;
+            }
+            else {
+                demoPosition = Cocoon.Ad.BannerLayout.BOTTOM_CENTER;
+            }
+            banner.setLayout(demoPosition);
+        });
+        var btnLoadBanner = createButton("Load banner", function(){
+            bannerStatus.setText("Loading...");
+            banner.load();
         });
 
-        // Create banner ads through the CocoonJS Ads extension
-        demo.createBanner();
-        // Create interstitial ads through the CocoonJS Ads extension
-        demo.createInterstitial();
-        demo.init();
+        var btnShowInterstitial = createButton("Show interstial", function(){
+            interstitial.show();
+        });
+
+        var btnLoadInterstitial = createButton("Load interstial", function(){
+            interstitialStatus.setText("Loading...");
+            interstitial.load();
+        });
+
+
+        var delta = btnLoadBanner.width * 0.8 * btnLoadBanner.scaleX;
+   
+        var bannerMenu = new cc.Menu(btnShowBanner, btnHideBanner, btnChangePosition, btnLoadBanner);
+        bannerMenu.alignItemsVerticallyWithPadding(10);
+        bannerMenu.setPosition(scene.width * 0.5 + delta, scene.height * 0.5);
+        scene.addChild(bannerMenu);
+
+        var interstialMenu = new cc.Menu(btnShowInterstitial, btnLoadInterstitial);
+        interstialMenu.alignItemsVerticallyWithPadding(10);
+        interstialMenu.setPosition(scene.width * 0.5 - delta, scene.height * 0.5);
+        scene.addChild(interstialMenu);
+
+        bannerStatus = createText("Created", 20, "#000");
+        interstitialStatus = createText("Created", 20, "#000");
+        bannerStatus.setPosition(scene.width * 0.5 + delta, scene.height * 0.1);
+        interstitialStatus.setPosition(scene.width * 0.5 - delta, scene.height * 0.1);
+        scene.addChild(bannerStatus);
+        scene.addChild(interstitialStatus);
+
+
+        director.runScene( scene );
+
+    }
+
+    function loadResources() {
+        AssetManager.load(
+            {
+                prefix: "images/",
+                resources: [
+                    "background.jpg@background",
+                    "button1.png@button1",
+                    "button2.png@button2"
+                ]},
+            function onEnd(resources) {
+                init(resources);
+            }
+        );
+    }
+
+    function createButton(text, callback) {
+
+        var normal = new cc.node.Sprite( { frameName: "button1" } );
+
+        var pressed = new cc.node.Sprite( { frameName: "button2" } );
+        var item = new cc.MenuItemSprite(normal, pressed, null, callback);
+        var text = createText(text, 20);
+        text.setPosition(item.width * 0.5, item.height * 0.5);
+        item.addChild(text);
+
+        var maxWidth = scene.width * 0.33;
+        var maxHeight = scene.height * 0.15;
+
+        if (item.width > maxWidth) {
+            var scale = maxWidth/item.width;
+            item.setScale(scale, scale);
+        }
+        if (item.height * item.scaleY > maxHeight) {
+            var scale = maxHeight/item.height;
+            item.setScale(scale, scale);
+        }
+
+        return item;
+    }
+
+    function createText(text, size, color) {
+        var node = new cc.widget.LabelTTF(text, "Arial");
+        if (color) {
+            node._fillColor = color;
+        }
+        node.setFontSize(size);
+        node.setAnchorPoint(0.5, 0.5);
+        return node;
     }
 
     if (window.cordova) {
-        document.addEventListener("deviceready", init);
+        document.addEventListener("deviceready", loadResources);
     }
     else {
-        window.onload = init;
+        window.onload = loadResources;
     }
 
 
 })();
+
+
+
+
+
+
+

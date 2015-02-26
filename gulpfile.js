@@ -9,7 +9,7 @@ var jsdoc = require('gulp-jsdoc');
 
 var mopubAndroidAdapters = ['adcolony', 'admob', 'charboost', 'greystripe', 'inmobi', 'millennialmedia'];
 var mopubIOSAdapters = ['admob', 'charboost', 'millennial'];
-var testMopub = true; //Disable this to install pure admob plugins instead of mopub
+var testMopub = false; //Disable this to install pure admob plugins instead of mopub
 
 
 gulp.task('clean', function(finish){ 
