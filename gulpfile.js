@@ -71,6 +71,8 @@ gulp.task('create-cordova', ['deps-cordova', 'build-js'], function(finish) {
 
     gulp.src('src/cordova/js/*.js')
         .pipe(gulp.dest('test/cordova/www/js'));
+    gulp.src('src/cordova/js/external/*.js')
+        .pipe(gulp.dest('test/cordova/www/js')); 
 
 	var name = "AdTest";
 	var buildDir = path.join('test','cordova', name);

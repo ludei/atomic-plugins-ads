@@ -1,7 +1,63 @@
+    /**
+    * @fileOverview
+    <h2>About Atomic Plugins</h2>
+    <p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
+    <br/><p>You can contribute and help to create more awesome plugins. </p>
+    <h2>Atomic Plugins for Ads</h2>
+    <p>This repo contains Ad APIs designed using the Atomic Plugins paradigm. Monetize your app and take advantage of all the features provided: elegant API, flexible monetization solution that works across multiple platforms, full support for banners and full screen ads (interstitials), single API for different Ad Providers, etc. The API is already available in many languagues and we have the plan to add more in the future.</p>
+    <p>Currently there are 2 Ad providers implemented but new ones can be easily added:</p>
+    <ul>
+    <li>MoPub with optional adapters</li>
+    <li>AdMob</li>
+    </ul>
+    <h3>Setup your project</h3>
+    <p>Releases are deployed to Cordova Plugin Registry. 
+    You only have to install the desired plugins using Cordova CLI, Cocoon CLI or Cocoon Cloud Server.</p>
+    <ul>
+    <code>
+    cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS<br/>
+    cordova plugin add com.ludei.ads.ios.mopub; //MoPub plugin for iOS<br/>
+    cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android<br/>
+    cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android<br/><br/>
+    //Optional MoPub adapters for iOS and Android<br/>
+    cordova plugin add com.ludei.ads.ios.mopub.charboost;<br/>
+    cordova plugin add com.ludei.ads.ios.mopub.admob;<br/>
+    cordova plugin add com.ludei.ads.ios.mopub.millennial;<br/>
+    cordova plugin add con.ludei.ads.android.adcolony;<br/>
+    cordova plugin add con.ludei.ads.android.admob;<br/>
+    cordova plugin add con.ludei.ads.android.charboost;<br/>
+    cordova plugin add con.ludei.ads.android.greystripe;<br/>
+    cordova plugin add con.ludei.ads.android.inmobi;<br/>
+    cordova plugin add con.ludei.ads.android.millennial;<br/></code>
+    </ul>
+    <p>Include the following JavaScript files in your html project:</p>
+    <ul>
+    <li><a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js</a></li>
+    <li><a href="https://github.com/ludei/atomic-plugins-ads/tree/master/src/cordova/js/external">cocoon.js</a></li>
+    </ul>
+    <h3>Documentation</h3>
+    <p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
+    Select the specific namespace below to open the relevant documentation section:</p>
+    <ul>
+    <li><a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon</a></li>
+    <li><a href="Cocoon.Ad.html">Ad</a></li>
+    </ul>
+    <h3>API Reference</h3>
+    <p>For a complete project that tests all the features provided in the API run the following command:</p>
+    <ul><code>gulp create-cordova</code></ul>
+    <br/><p>We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
+    just drop us a line at our forum and we will do our best to help you out.</p>
+    <h3>Tools</h3>
+    <a href="http://support.ludei.com/hc/communities/public/topics"><img src="img/cocoon-tools-1.png" /></a>
+    <a href="http://support.ludei.com/hc"><img src="img/cocoon-tools-2.png" /></a>
+    <a href="https://cloud.ludei.com/"><img src="img/cocoon-tools-3.png" /></a>
+    <a href="https://www.ludei.com/cocoonjs/how-to-use/"><img src="img/cocoon-tools-4.png" /></a>
+    * @version 1.0
+    */
+
   /**
-    * This namespace represents the Cocoon Advertisement Plugin.
+    * Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
     * @namespace Cocoon.Ad
-    *
     */
 
 Cocoon.define("Cocoon.Ad" , function(extension){
