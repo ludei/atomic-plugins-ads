@@ -93,10 +93,11 @@ gulp.task('create-cordova', ['deps-cordova', 'build-js'], function(finish) {
 
             console.log("Add cordova plugins");
 
-            var plugins;
+            var plugins = ["src/cordova/android/common",
+                           "src/cordova/ios/common"]
 
             if (testMopub) {
-                plugins = ["src/cordova/android/mopub/base"];
+                plugins.push("src/cordova/android/mopub/base");
                 for (var i = 0; i < mopubAndroidAdapters.length; ++i) {
                     plugins.push("src/cordova/android/mopub/" + mopubAndroidAdapters[i]);
                 }
@@ -106,8 +107,8 @@ gulp.task('create-cordova', ['deps-cordova', 'build-js'], function(finish) {
                 }
             } 
             else {
-                plugins = ["src/cordova/android/admob",
-                           "src/cordova/ios/admob"];
+                plugins.push("src/cordova/android/admob",
+                           "src/cordova/ios/admob");
             }
 
             console.log("Plugins: " + JSON.stringify(plugins));

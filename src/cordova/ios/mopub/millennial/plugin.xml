@@ -4,10 +4,10 @@
     <name>MoPubAdapterMillenial</name>
     <description>iOS Millenial adapter for MoPub</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,millennial</keywords>
     <platform name="ios">
         <source-file src="src/deps/libMillennialMediaAdapter.a" framework="true" />
         <source-file src="src/deps/libMillennialMedia.a" framework="true" />
     </platform>
-    <dependency id="com.ludei.ads.ios.mopub" url="." subdir="src/cordova/ios/mopub" />
+    <dependency id="com.ludei.ads.ios.mopub" />
 </plugin>

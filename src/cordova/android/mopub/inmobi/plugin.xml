@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.ludei.ads.android.mopub.inmobi" version="1.0.0">
-    <name>Ads Mopub</name>
+    <name>Ads Mopub InMobi</name>
     <description>Android MoPub InMobi Adapter</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,inmobi</keywords>
     <platform name="android">
         
         <source-file src="src/deps/InMobi-4.4.1.jar" target-dir="libs" framework="true" />
@@ -18,6 +18,6 @@
         </config-file>
     </platform>
 
-    <dependency id="com.ludei.ads.android.mopub" url="." subdir="src/cordova/android/mopub/base" />
+    <dependency id="com.ludei.ads.android.mopub" />
 
 </plugin>

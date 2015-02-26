@@ -2,9 +2,9 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.ludei.ads.ios.common" version="1.0.0">
     <name>AdsCommon</name>
-    <description>iOS Ads implementation</description>
+    <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitials</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad</keywords>
     <platform name="ios">
         <header-file src="src/deps/LDAdBanner.h" />
         <header-file src="src/deps/LDAdInterstitial.h" />

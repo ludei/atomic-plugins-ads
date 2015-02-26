@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.ludei.ads.android.mopub.greystripe" version="1.0.0">
-    <name>Ads Mopub</name>
+    <name>AdsMopubGreyStripe</name>
     <description>Android MoPub GreyStripe Adapter</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,greystripe</keywords>
     <platform name="android">
         
         <source-file src="src/deps/conversant-android-sdk-2.4.0.jar" target-dir="libs" framework="true" />
@@ -17,6 +17,6 @@
         </config-file>
     </platform>
 
-    <dependency id="com.ludei.ads.android.mopub" url="." subdir="src/cordova/android/mopub/base" />
+    <dependency id="com.ludei.ads.android.mopub" />
 
 </plugin>

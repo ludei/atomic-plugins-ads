@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub.charboost" version="1.0.0">
-    <name>Ads Mopub</name>
+        id="com.ludei.ads.android.mopub.charboost" version="1.0.1">
+    <name>AdsMopubCharboost</name>
     <description>Android MoPub Charboost Adapter</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,charboost</keywords>
     <platform name="android">
         
         <source-file src="src/deps/chartboost.jar" target-dir="libs" framework="true" />
@@ -20,6 +20,6 @@
         </config-file>
     </platform>
 
-    <dependency id="com.ludei.ads.android.mopub" url="." subdir="src/cordova/android/mopub/base" />
+    <dependency id="com.ludei.ads.android.mopub" />
 
 </plugin>

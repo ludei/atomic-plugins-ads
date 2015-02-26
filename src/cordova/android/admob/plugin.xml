@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.ludei.ads.android.admob" version="1.0.0">
-    <name>Ads Mopub</name>
+    <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob</keywords>
     <platform name="android">
 
         <source-file src="src/deps/com/ludei/ads/admob/AdBannerAdMob.java" target-dir="src/com/ludei/ads/admob" />
@@ -28,6 +28,6 @@
     </platform>
 
     <dependency id="com.google.admobsdk" />
-    <dependency id="com.ludei.ads.android.common" url="." subdir="src/cordova/android/common" />
+    <dependency id="com.ludei.ads.android.common" />
 
 </plugin>

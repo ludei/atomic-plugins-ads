@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.ludei.ads.ios.admob" version="1.0.0">
-    <name>AdsMopub</name>
+    <name>AdsAdMob</name>
     <description>iOS Ads AdMob implementation</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob</keywords>
     <platform name="ios">
         <header-file src="src/deps/LDAdServiceAdMob.h" />
         <source-file src="src/deps/LDAdServiceAdMob.m" />
@@ -40,5 +40,5 @@
         </config-file>
 
     </platform>
-    <dependency id="com.ludei.ads.ios.common" url="." subdir="src/cordova/ios/common" />
+    <dependency id="com.ludei.ads.ios.common" />
 </plugin>

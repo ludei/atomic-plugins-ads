@@ -1,6 +1,6 @@
 #Atomic Plugins for Ads
 
-This repo contains Ad APIs designed using the [Atomic Plugins](#about-atomic-plugins) paradigm. Monetize your app and take advantage of all the features provided: elegant API, flexible monetization solution that works across multiple platforms, full support for banners and full screen ads (interstitials), single API for different Ad Providers, etc. The API is already available in many languagues and we have the plan to add more in the future:
+This repo contains Ad APIs designed using the [Atomic Plugins](#about-atomic-plugins) paradigm. Monetize your app and take advantage of all the features provided: elegant API, flexible monetization solution that works across multiple platforms, full support for banners and full screen ads (interstitials), single API for different Ad Providers and more. The API is already available in many languagues and we plan to add more in the future:
 
   * [Objective-C API for pure iOS/Mac apps](#ios-api)
   * [Java API for pure Android apps](#android-api)
@@ -301,11 +301,11 @@ AdService class provides an easy to use Ads API that can be used with different 
 
 You can download prebuilt headers and static libraries from [Releases page](http://ludei.github.io/atomic-plugins-ads/dist/doc/cpp/html/annotated.html)
 
-These static libraries provide the bindings between C++ and the native platform (iOS, Android, WP, etc). You might need to add some platform dependant libraries in your project (some jar files or gradle dependecies for example). See [`AdTest`](test/cpp) for an already setup C++ multiplatform project.
+These static libraries provide the bindings between C++ and the native platform (iOS, Android, WP, etc). You might need to add some platform dependent libraries in your project (some jar files or gradle dependecies for example). See [`AdTest`](test/cpp) for an already setup C++ multiplatform project.
 
 ####Special setup required for Android
 
-There isn't a portable and realiable way to get the current Activity and life cycle events on Android and we don't want to depend on a specific game engine utility APIs. C++ and Java bridge is implemmented using the [SafeJNI](https://github.com/MortimerGoro/SafeJNI) utility. Atomic Plugins take advantage of this class and use it also as a generic Activity and Life Cycle Event notification provider. See the following code to set up the activity for atomic plugins and to notify Android life cycle events.
+There isn't a portable and realiable way to get the current Activity and life cycle events on Android and we don't want to depend on specific game engine utility APIs. C++ and Java bridge is implemmented using the [SafeJNI](https://github.com/MortimerGoro/SafeJNI) utility. Atomic Plugins take advantage of this class and use it also as a generic Activity and Life Cycle Event notification provider. See the following code to set up the activity for atomic plugins and to notify Android life cycle events.
 
 ```java
 @Override
@@ -336,7 +336,7 @@ public Cocos2dxGLSurfaceView onCreateView() {
 
 ```objc
 //Easy to use static method to instantiate a new service
-//You can pass a specific AdProvider if you have many providers linked in your app and you want to choose one of them in runtime
+//You can pass a specific AdProvider if you have many providers linked in your app and you want to choose one of them at runtime
 AdService * service = AdService::create();
 
 //Configure default banner and interstitial adunits

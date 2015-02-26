@@ -2,9 +2,9 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.ludei.ads.android.mopub" version="1.0.0">
     <name>Ads Mopub</name>
-    <description>Android MoPubs Ads implementation</description>
+    <description>Android MoPub Ads implementation</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub</keywords>
     <platform name="android">
 
         <source-file src="src/deps/com/ludei/ads/mopub/AdBannerMoPub.java" target-dir="src/com/ludei/ads/mopub" />
@@ -36,6 +36,7 @@
         </config-file>
     </platform>
 
-    <dependency id="com.ludei.ads.android.common" url="." subdir="src/cordova/android/common" />
+    <dependency id="android.support.v4"/>
+    <dependency id="com.ludei.ads.android.common" />
 
 </plugin>
