@@ -299,7 +299,7 @@ AdService class provides an easy to use Ads API that can be used with different 
 
 ###Setup your project
 
-You can download prebuilt headers and static libraries from [Releases page](http://ludei.github.io/atomic-plugins-ads/dist/doc/cpp/html/annotated.html)
+You can download prebuilt headers and static libraries from [Releases page](https://github.com/ludei/atomic-plugins-ads/releases)
 
 These static libraries provide the bindings between C++ and the native platform (iOS, Android, WP, etc). You might need to add some platform dependent libraries in your project (some jar files or gradle dependecies for example). See [`AdTest`](test/cpp) for an already setup C++ multiplatform project.
 
