@@ -64,7 +64,6 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     "use strict";
     
   
-    extension.nativeAvailable = !!Cocoon.nativeAvailable;
     extension.serviceName = "AdService";
     extension.activeAds = {};
 
