@@ -183,12 +183,12 @@ Releases are deployed to Cordova Plugin Registry. You only have to install the d
     cordova plugin add com.ludei.ads.ios.mopub.charboost;
     cordova plugin add com.ludei.ads.ios.mopub.admob;
     cordova plugin add com.ludei.ads.ios.mopub.millennial;
-    cordova plugin add con.ludei.ads.android.adcolony;
-    cordova plugin add con.ludei.ads.android.admob;
-    cordova plugin add con.ludei.ads.android.charboost;
-    cordova plugin add con.ludei.ads.android.greystripe;
-    cordova plugin add con.ludei.ads.android.inmobi;
-    cordova plugin add con.ludei.ads.android.millennial;
+    cordova plugin add com.ludei.ads.android.adcolony;
+    cordova plugin add com.ludei.ads.android.admob;
+    cordova plugin add com.ludei.ads.android.charboost;
+    cordova plugin add com.ludei.ads.android.greystripe;
+    cordova plugin add com.ludei.ads.android.inmobi;
+    cordova plugin add com.ludei.ads.android.millennial;
 
 Include the following JavaScript files in your html project:
 
