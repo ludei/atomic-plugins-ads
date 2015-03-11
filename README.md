@@ -256,7 +256,7 @@ banner.setLayout(Cocoon.Ad.BannerLayout.CUSTOM);
 banner.setPosition(x,y);
 
 //Create interstitial: optional AdUnit argument
-interstitial = service.createInterstitial();
+var interstitial = service.createInterstitial();
 
 //Configure interstitial listeners
 interstitial.on("load", function(){
