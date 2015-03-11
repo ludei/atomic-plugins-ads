@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub.millennialmedia" version="1.0.0">
+        id="com.ludei.ads.android.mopub.millennial" version="1.0.0">
     <name>AdsMoPubMillenial</name>
     <description>Android MoPub MillennialMedia Adapter</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,millennial</keywords>
     <platform name="android">
         
         <source-file src="src/deps/MMSDK.jar" target-dir="libs" framework="true" />

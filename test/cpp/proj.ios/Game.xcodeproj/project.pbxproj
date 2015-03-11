@@ -966,8 +966,8 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libGoogleAdMobAds.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/charboost/src/deps/libCharboostAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/charboost/src/deps/libChartboost.a",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboost.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMedia.a",
 				);
@@ -1016,8 +1016,8 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libGoogleAdMobAds.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/charboost/src/deps/libCharboostAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/charboost/src/deps/libChartboost.a",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboost.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMedia.a",
 				);

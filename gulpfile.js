@@ -7,9 +7,8 @@ var del = require('del');
 var cordova = require('cordova-lib').cordova.raw;
 var jsdoc = require('gulp-jsdoc');
 
-var mopubAndroidAdapters = ['adcolony', 'admob', 'charboost', 'greystripe', 'inmobi', 'millennialmedia'];
-var mopubIOSAdapters = ['admob', 'charboost', 'millennial'];
-var testMopub = false; //Disable this to install pure admob plugins instead of mopub
+var mopubAndroidAdapters = ['adcolony', 'admob', 'chartboost', 'greystripe', 'inmobi', 'millennialmedia'];
+var mopubIOSAdapters = ['admob', 'chartboost', 'millennial'];
 
 
 gulp.task('clean', function(finish){ 

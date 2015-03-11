@@ -64,7 +64,7 @@ You can use CocoaPods to include the desired Ad providers:
 
 If you are using MoPub you optionally can include the following adapters:
 
-  [`Charboost adapter`](/src/cordova/ios/mopub/charboost/src/deps)
+  [`Chartboost adapter`](/src/cordova/ios/mopub/chartboost/src/deps)
   [`AdMob adapter`](/src/cordova/ios/mopub/admob/src/deps)
   [`Millennial Media adapter`](/src/cordova/ios/mopub/millennial/src/deps)
 
@@ -122,7 +122,7 @@ Releases are deployed to Maven Central. You only have to add the desired depende
         compile 'com.ludei.ads.mopub:1.0.0' //MoPub Ad Provider
         compile 'com.ludei.ads.mopub.adcolony:1.0.0' //Optional MoPub AdColony adapter
         compile 'com.ludei.ads.mopub.admob:1.0.0' //Optional MoPub AdMob adapter
-        compile 'com.ludei.ads.mopub.charboost:1.0.0' //Optional MoPub Charboost adapter
+        compile 'com.ludei.ads.mopub.chartboost:1.0.0' //Optional MoPub Chartboost adapter
         compile 'com.ludei.ads.mopub.inmobi:1.0.0' //Optional MoPub InMobi adapter
         compile 'com.ludei.ads.mopub.greystripe:1.0.0' //Optional MoPub Greystriper adapter
         compile 'com.ludei.ads.mopub.millennialmedia:1.0.0' //Optional MoPub MillennialMedia adapter
@@ -180,12 +180,12 @@ Releases are deployed to Cordova Plugin Registry. You only have to install the d
     cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android
 
     //Optional MoPub adapters for iOS and Android
-    cordova plugin add com.ludei.ads.ios.mopub.charboost;
+    cordova plugin add com.ludei.ads.ios.mopub.chartboost;
     cordova plugin add com.ludei.ads.ios.mopub.admob;
     cordova plugin add com.ludei.ads.ios.mopub.millennial;
     cordova plugin add com.ludei.ads.android.mopub.adcolony;
     cordova plugin add com.ludei.ads.android.mopub.admob;
-    cordova plugin add com.ludei.ads.android.mopub.charboost;
+    cordova plugin add com.ludei.ads.android.mopub.chartboost;
     cordova plugin add com.ludei.ads.android.mopub.greystripe;
     cordova plugin add com.ludei.ads.android.mopub.inmobi;
     cordova plugin add com.ludei.ads.android.mopub.millennial;
@@ -214,7 +214,7 @@ service.configure({
          banner:"agltb3B1Yi1pbmNyDQsSBFNpdGUwwwwww",
          interstitial:"agltb3B1Yi1pbmNyDQsSBFNpdGUhhhhhh"
     }
-);
+});
 
 //Create banner: optional AdUnit and BannerSize arguments
 var banner = service.createBanner();
