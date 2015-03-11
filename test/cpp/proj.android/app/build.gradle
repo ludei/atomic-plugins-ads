@@ -54,7 +54,7 @@ repositories {
                 mopub_adapters + 'adcolony/dist',
                 mopub_adapters + 'admob/dist',
                 mopub_adapters + 'millennialmedia/dist',
-                mopub_adapters + 'charboost/dist',
+                mopub_adapters + 'chartboost/dist',
                 mopub_adapters + 'greystripe/dist',
                 mopub_adapters + 'inmobi/dist'
     }

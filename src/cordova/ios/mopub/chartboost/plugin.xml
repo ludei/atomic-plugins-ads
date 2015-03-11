@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.mopub.charboost" version="1.0.0">
-    <name>MoPubAdapterCharboost</name>
+        id="com.ludei.ads.ios.mopub.chartboost" version="1.0.0">
+    <name>MoPubAdapterChartboost</name>
     <description>iOS Charboost adapter for MoPub</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads,banner,interstitial,monetization,ad,charboost</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
     <platform name="ios">
-        <source-file src="src/deps/libCharboostAdapter.a" framework="true" />
+        <source-file src="src/deps/libChartboostAdapter.a" framework="true" />
         <source-file src="src/deps/libChartboost.a" framework="true" />
     </platform>
     <dependency id="com.ludei.ads.ios.mopub" />
