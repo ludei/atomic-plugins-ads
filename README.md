@@ -214,7 +214,7 @@ service.configure({
          banner:"agltb3B1Yi1pbmNyDQsSBFNpdGUwwwwww",
          interstitial:"agltb3B1Yi1pbmNyDQsSBFNpdGUhhhhhh"
     }
-);
+});
 
 //Create banner: optional AdUnit and BannerSize arguments
 var banner = service.createBanner();
