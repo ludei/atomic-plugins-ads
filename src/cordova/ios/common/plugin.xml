@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.common" version="1.0.0">
+        id="com.ludei.ads.ios.common" version="1.0.1">
     <name>AdsCommon</name>
     <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitials</description>
     <license>MPL 2.0</license>
@@ -12,4 +12,6 @@
         <header-file src="src/LDAdServicePlugin.h" />
         <source-file src="src/LDAdServicePlugin.m" />
     </platform>
+
+    <dependency id="com.ludei.ads.common" />
 </plugin>
