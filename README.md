@@ -191,10 +191,9 @@ Releases are deployed to Cordova Plugin Registry. You only have to install the d
     cordova plugin add com.ludei.ads.android.mopub.inmobi;
     cordova plugin add com.ludei.ads.android.mopub.millennial;
 
-Include the following JavaScript files in your html project:
+The following JavaScript file is included automatically:
 
-[`cocoon.js`](src/cordova/js/external/cocoon.js)
-[`cocoon_ads.js`](src/cordova/js/cocoon_ads.js)
+[`cocoon_ads.js`](src/js/cocoon_ads.js)
 
 ###Example
 
