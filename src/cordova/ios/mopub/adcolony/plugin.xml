@@ -8,6 +8,10 @@
     <platform name="ios">
         <source-file src="src/deps/libAdColonyAdapter.a" framework="true" />
         <source-file src="src/deps/libAdColony.a" framework="true" />
+
+        <framework src="libz.dylib" />
+        <framework src="social.framework" weak="true" />
+        <framework src="webkit.framework" weak="true" />
     </platform>
     <dependency id="com.ludei.ads.ios.mopub" />
 </plugin>
