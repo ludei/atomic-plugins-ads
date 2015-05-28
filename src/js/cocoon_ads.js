@@ -1,3 +1,10 @@
+(function(){
+
+    var Cocoon = window.Cocoon;
+    if (!Cocoon && window.cordova && typeof require !== 'undefined') {
+        Cocoon = cordova.require('com.ludei.cocoon.common.Cocoon');
+    }
+
     /**
     * @fileOverview
     <h2>About Atomic Plugins</h2>
@@ -151,7 +158,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * myBanner.show(); 
         */
         show: function() {
-            Cocoon.callNative(this.serviceName, "showBanner", [this.id]);
+            Cocoon.exec(this.serviceName, "showBanner", [this.id]);
         },
 
         /**
@@ -163,7 +170,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.hide(); 
         */
         hide: function() {
-            Cocoon.callNative(this.serviceName, "hideBanner", [this.id]);
+            Cocoon.exec(this.serviceName, "hideBanner", [this.id]);
         },
 
         /**
@@ -176,7 +183,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.setLayout(layout); // If CUSTOM layout
         */
         setLayout: function(layout) {
-            Cocoon.callNative(this.serviceName, "setBannerLayout", [this.id, layout]);
+            Cocoon.exec(this.serviceName, "setBannerLayout", [this.id, layout]);
         },
 
         /**
@@ -191,7 +198,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.setPosition(x, y); 
         */
         setPosition: function(x, y) {
-            Cocoon.callNative(this.serviceName, "setBannerPosition", [this.id, x, y]);
+            Cocoon.exec(this.serviceName, "setBannerPosition", [this.id, x, y]);
         },
 
         /**
@@ -203,7 +210,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.load();  
         */
         load: function() {
-            Cocoon.callNative(this.serviceName, "loadBanner", [this.id]);
+            Cocoon.exec(this.serviceName, "loadBanner", [this.id]);
         },
 
         /**
@@ -306,7 +313,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * interstitial.show(); 
         */
         show: function() {
-            Cocoon.callNative(this.serviceName, "showInterstitial", [this.id]);
+            Cocoon.exec(this.serviceName, "showInterstitial", [this.id]);
         },
 
         /**
@@ -318,7 +325,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * interstitial.load(); 
         */
         load: function() {
-            Cocoon.callNative(this.serviceName, "loadInterstitial", [this.id]);
+            Cocoon.exec(this.serviceName, "loadInterstitial", [this.id]);
         },
 
         /**
@@ -406,8 +413,8 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         if (this.initialized) {
             return;
         }
-        Cocoon.callNative(this.serviceName, "setBannerListener", [], listenerHandler);
-        Cocoon.callNative(this.serviceName, "setInterstitialListener", [], listenerHandler);
+        Cocoon.exec(this.serviceName, "setBannerListener", [], listenerHandler);
+        Cocoon.exec(this.serviceName, "setInterstitialListener", [], listenerHandler);
 
         this.initialized = true;
     };
@@ -448,7 +455,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
             settings = settings[platform];
         }
 
-        Cocoon.callNative(this.serviceName, "configure", [settings]);
+        Cocoon.exec(this.serviceName, "configure", [settings]);
     };
 
     /**
@@ -465,7 +472,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     extension.createBanner = function(adunit, size) {
         this.init();
         var bannerId = idCounter++;
-        Cocoon.callNative(this.serviceName, "createBanner", [bannerId, adunit, size]);
+        Cocoon.exec(this.serviceName, "createBanner", [bannerId, adunit, size]);
         var banner = new extension.Banner(bannerId, this.serviceName);
         this.activeAds[bannerId] = banner;
         return banner;
@@ -480,7 +487,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Cocoon.Ad.releaseBanner(banner);
     */
     extension.releaseBanner = function(banner) {
-        Cocoon.callNative(this.serviceName, "releaseBanner", [banner.id]);
+        Cocoon.exec(this.serviceName, "releaseBanner", [banner.id]);
         delete this.activeAds[id];
     };
 
@@ -497,7 +504,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     extension.createInterstitial = function(adunit) {
         this.init();
         var interstitialId = idCounter++;
-        Cocoon.callNative(this.serviceName, "createInterstitial", [interstitialId, adunit]);
+        Cocoon.exec(this.serviceName, "createInterstitial", [interstitialId, adunit]);
         var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
         this.activeAds[interstitialId] = interstitial;
         return interstitial;
@@ -512,9 +519,11 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Cocoon.Ad.releaseInterstitial(interstitial);
     */
     extension.releaseInterstitial = function(interstitial) {
-        Cocoon.callNative(this.serviceName, "releaseInterstitial", [interstitial.id]);
+        Cocoon.exec(this.serviceName, "releaseInterstitial", [interstitial.id]);
         delete this.activeAds[interstitial.id];
     };
 
     return extension;
 });
+
+})();
