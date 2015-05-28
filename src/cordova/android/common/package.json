@@ -1,0 +1,19 @@
+{
+    "version": "1.0.1",
+    "name": "com.ludei.ads.android.common",
+    "cordova_name": "AdsCommon",
+    "description": "Cross platform Ads API for different Ad Providers. Full support for banners and interstitial",
+    "license": "MPL 2.0",
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "engines": []
+}
