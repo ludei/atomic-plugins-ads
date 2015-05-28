@@ -137,7 +137,7 @@
     &lt;p>Include the following JavaScript files in your html project:&lt;/p>
     &lt;ul>
     &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-ads/tree/master/src/cordova/js/external">cocoon.js&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js&lt;/a>&lt;/li>
     &lt;/ul>
     &lt;h3>Documentation&lt;/h3>
     &lt;p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
@@ -153,13 +153,12 @@
     just drop us a line at our forum and we will do our best to help you out.&lt;/p>
     &lt;h3>Tools&lt;/h3>
     &lt;a href="http://support.ludei.com/hc/communities/public/topics">&lt;img src="img/cocoon-tools-1.png" />&lt;/a>
-    &lt;a href="http://support.ludei.com/hc">&lt;img src="img/cocoon-tools-2.png" />&lt;/a>
-    &lt;a href="https://cloud.ludei.com/">&lt;img src="img/cocoon-tools-3.png" />&lt;/a>
-    &lt;a href="https://www.ludei.com/cocoonjs/how-to-use/">&lt;img src="img/cocoon-tools-4.png" />&lt;/a>
+    &lt;a href="https://cocoon.io/doc">&lt;img src="img/cocoon-tools-2.png" />&lt;/a>
+    &lt;a href="http://cocoon.io/">&lt;img src="img/cocoon-tools-3.png" />&lt;/a>
     * @version 1.0
     */
 
-  /**
+   /**
     * Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
     * @namespace Cocoon.Ad
     */
@@ -168,7 +167,6 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     "use strict";
     
   
-    extension.nativeAvailable = !!Cocoon.nativeAvailable;
     extension.serviceName = "AdService";
     extension.activeAds = {};
 
@@ -580,7 +578,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Releases the banner given. 
     * @memberOf Cocoon.Ad
     * @function releaseBanner
-    * @param {Cocoon.Ad.Banner} The banner ad to release. 
+    * @param {Cocoon.Ad.Banner} banner The banner ad to release. 
     * @example
     * Cocoon.Ad.releaseBanner(banner);
     */
@@ -612,7 +610,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Releases the interstitial given. 
     * @memberOf Cocoon.Ad
     * @function releaseInterstitial
-    * @param {Cocoon.Ad.Interstitial} The interstitial to release. 
+    * @param {Cocoon.Ad.Interstitial} interstitial The interstitial to release. 
     * @example
     * Cocoon.Ad.releaseInterstitial(interstitial);
     */

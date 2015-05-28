@@ -27,12 +27,12 @@
     cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android<br/>
     cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android<br/><br/>
     //Optional MoPub adapters for iOS and Android<br/>
-    cordova plugin add com.ludei.ads.ios.mopub.charboost;<br/>
+    cordova plugin add com.ludei.ads.ios.mopub.chartboost;<br/>
     cordova plugin add com.ludei.ads.ios.mopub.admob;<br/>
     cordova plugin add com.ludei.ads.ios.mopub.millennial;<br/>
     cordova plugin add con.ludei.ads.android.adcolony;<br/>
     cordova plugin add con.ludei.ads.android.admob;<br/>
-    cordova plugin add con.ludei.ads.android.charboost;<br/>
+    cordova plugin add con.ludei.ads.android.chartboost;<br/>
     cordova plugin add con.ludei.ads.android.greystripe;<br/>
     cordova plugin add con.ludei.ads.android.inmobi;<br/>
     cordova plugin add con.ludei.ads.android.millennial;<br/></code>
@@ -40,7 +40,7 @@
     <p>Include the following JavaScript files in your html project:</p>
     <ul>
     <li><a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js</a></li>
-    <li><a href="https://github.com/ludei/atomic-plugins-ads/tree/master/src/cordova/js/external">cocoon.js</a></li>
+    <li><a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js</a></li>
     </ul>
     <h3>Documentation</h3>
     <p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
@@ -56,13 +56,12 @@
     just drop us a line at our forum and we will do our best to help you out.</p>
     <h3>Tools</h3>
     <a href="http://support.ludei.com/hc/communities/public/topics"><img src="img/cocoon-tools-1.png" /></a>
-    <a href="http://support.ludei.com/hc"><img src="img/cocoon-tools-2.png" /></a>
-    <a href="https://cloud.ludei.com/"><img src="img/cocoon-tools-3.png" /></a>
-    <a href="https://www.ludei.com/cocoonjs/how-to-use/"><img src="img/cocoon-tools-4.png" /></a>
+    <a href="https://cocoon.io/doc"><img src="img/cocoon-tools-2.png" /></a>
+    <a href="http://cocoon.io/"><img src="img/cocoon-tools-3.png" /></a>
     * @version 1.0
     */
 
-  /**
+   /**
     * Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
     * @namespace Cocoon.Ad
     */
@@ -482,7 +481,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Releases the banner given. 
     * @memberOf Cocoon.Ad
     * @function releaseBanner
-    * @param {Cocoon.Ad.Banner} The banner ad to release. 
+    * @param {Cocoon.Ad.Banner} banner The banner ad to release. 
     * @example
     * Cocoon.Ad.releaseBanner(banner);
     */
@@ -514,7 +513,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Releases the interstitial given. 
     * @memberOf Cocoon.Ad
     * @function releaseInterstitial
-    * @param {Cocoon.Ad.Interstitial} The interstitial to release. 
+    * @param {Cocoon.Ad.Interstitial} interstitial The interstitial to release. 
     * @example
     * Cocoon.Ad.releaseInterstitial(interstitial);
     */
