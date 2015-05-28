@@ -44,6 +44,11 @@ public interface AdBanner {
     View getView();
 
     /**
+     * Destroys a banner.
+     */
+    void destroy();
+
+    /**
      * Defines the size of a banner ad.
      */
     public enum BannerSize {

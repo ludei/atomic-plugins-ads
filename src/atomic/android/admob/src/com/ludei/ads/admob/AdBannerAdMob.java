@@ -80,4 +80,9 @@ class AdBannerAdMob extends AbstractAdBanner {
         return banner;
     }
 
+    @Override
+    public void destroy() {
+        banner.destroy();
+    }
+
 }

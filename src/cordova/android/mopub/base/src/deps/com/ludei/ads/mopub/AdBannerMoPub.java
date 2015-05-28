@@ -41,6 +41,10 @@ class AdBannerMoPub extends AbstractAdBanner implements MoPubView.BannerAdListen
         return banner;
     }
 
+    @Override
+    public void destroy() {
+        banner.destroy();
+    }
 
     /** Mopub Listener **/
 

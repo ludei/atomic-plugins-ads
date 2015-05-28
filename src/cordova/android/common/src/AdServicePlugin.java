@@ -69,6 +69,11 @@ public class AdServicePlugin extends CordovaPlugin implements AdBanner.BannerLis
 			AdInterstitial interstitial = _interstitials.get(key);
 			interstitial.destroy();
 		}
+
+		for (String key: _banners.keySet()) {
+			BannerData banner = _banners.get(key);
+			banner.banner.destroy();
+		}
 	}
 	
 	public void configure(CordovaArgs args, CallbackContext ctx) {
