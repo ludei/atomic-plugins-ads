@@ -37,7 +37,7 @@
     cordova plugin add con.ludei.ads.android.inmobi;<br/>
     cordova plugin add con.ludei.ads.android.millennial;<br/></code>
     </ul>
-    <p>Include the following JavaScript files in your html project:</p>
+    <p>The following JavaScript files will be included in your html project by default during installation:</p>
     <ul>
     <li><a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js</a></li>
     <li><a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js</a></li>

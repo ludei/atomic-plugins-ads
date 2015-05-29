@@ -98,11 +98,18 @@
 					
 
 
-		<h1 class="page-title">Source: /Users/LibelulaV/Documents/ludei/atomic-plugins-ads/src/cordova/js/cocoon_ads.js</h1>
+		<h1 class="page-title">Source: /Users/LibelulaV/Documents/ludei/atomic-plugins-ads/src/js/cocoon_ads.js</h1>
     
     <section>
         <article>
-            <pre class="sunlight-highlight-javascript linenums">    /**
+            <pre class="sunlight-highlight-javascript linenums">(function(){
+
+    var Cocoon = window.Cocoon;
+    if (!Cocoon &amp;&amp; window.cordova &amp;&amp; typeof require !== 'undefined') {
+        Cocoon = cordova.require('com.ludei.cocoon.common.Cocoon');
+    }
+
+    /**
     * @fileOverview
     &lt;h2>About Atomic Plugins&lt;/h2>
     &lt;p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
@@ -134,7 +141,7 @@
     cordova plugin add con.ludei.ads.android.inmobi;&lt;br/>
     cordova plugin add con.ludei.ads.android.millennial;&lt;br/>&lt;/code>
     &lt;/ul>
-    &lt;p>Include the following JavaScript files in your html project:&lt;/p>
+    &lt;p>The following JavaScript files will be included in your html project by default during installation:&lt;/p>
     &lt;ul>
     &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js&lt;/a>&lt;/li>
     &lt;li>&lt;a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js&lt;/a>&lt;/li>
@@ -254,7 +261,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * myBanner.show(); 
         */
         show: function() {
-            Cocoon.callNative(this.serviceName, "showBanner", [this.id]);
+            Cocoon.exec(this.serviceName, "showBanner", [this.id]);
         },
 
         /**
@@ -266,7 +273,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.hide(); 
         */
         hide: function() {
-            Cocoon.callNative(this.serviceName, "hideBanner", [this.id]);
+            Cocoon.exec(this.serviceName, "hideBanner", [this.id]);
         },
 
         /**
@@ -279,7 +286,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.setLayout(layout); // If CUSTOM layout
         */
         setLayout: function(layout) {
-            Cocoon.callNative(this.serviceName, "setBannerLayout", [this.id, layout]);
+            Cocoon.exec(this.serviceName, "setBannerLayout", [this.id, layout]);
         },
 
         /**
@@ -294,7 +301,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.setPosition(x, y); 
         */
         setPosition: function(x, y) {
-            Cocoon.callNative(this.serviceName, "setBannerPosition", [this.id, x, y]);
+            Cocoon.exec(this.serviceName, "setBannerPosition", [this.id, x, y]);
         },
 
         /**
@@ -306,7 +313,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * banner.load();  
         */
         load: function() {
-            Cocoon.callNative(this.serviceName, "loadBanner", [this.id]);
+            Cocoon.exec(this.serviceName, "loadBanner", [this.id]);
         },
 
         /**
@@ -409,7 +416,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * interstitial.show(); 
         */
         show: function() {
-            Cocoon.callNative(this.serviceName, "showInterstitial", [this.id]);
+            Cocoon.exec(this.serviceName, "showInterstitial", [this.id]);
         },
 
         /**
@@ -421,7 +428,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * interstitial.load(); 
         */
         load: function() {
-            Cocoon.callNative(this.serviceName, "loadInterstitial", [this.id]);
+            Cocoon.exec(this.serviceName, "loadInterstitial", [this.id]);
         },
 
         /**
@@ -509,8 +516,8 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         if (this.initialized) {
             return;
         }
-        Cocoon.callNative(this.serviceName, "setBannerListener", [], listenerHandler);
-        Cocoon.callNative(this.serviceName, "setInterstitialListener", [], listenerHandler);
+        Cocoon.exec(this.serviceName, "setBannerListener", [], listenerHandler);
+        Cocoon.exec(this.serviceName, "setInterstitialListener", [], listenerHandler);
 
         this.initialized = true;
     };
@@ -551,7 +558,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
             settings = settings[platform];
         }
 
-        Cocoon.callNative(this.serviceName, "configure", [settings]);
+        Cocoon.exec(this.serviceName, "configure", [settings]);
     };
 
     /**
@@ -568,7 +575,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     extension.createBanner = function(adunit, size) {
         this.init();
         var bannerId = idCounter++;
-        Cocoon.callNative(this.serviceName, "createBanner", [bannerId, adunit, size]);
+        Cocoon.exec(this.serviceName, "createBanner", [bannerId, adunit, size]);
         var banner = new extension.Banner(bannerId, this.serviceName);
         this.activeAds[bannerId] = banner;
         return banner;
@@ -583,7 +590,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Cocoon.Ad.releaseBanner(banner);
     */
     extension.releaseBanner = function(banner) {
-        Cocoon.callNative(this.serviceName, "releaseBanner", [banner.id]);
+        Cocoon.exec(this.serviceName, "releaseBanner", [banner.id]);
         delete this.activeAds[id];
     };
 
@@ -600,7 +607,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     extension.createInterstitial = function(adunit) {
         this.init();
         var interstitialId = idCounter++;
-        Cocoon.callNative(this.serviceName, "createInterstitial", [interstitialId, adunit]);
+        Cocoon.exec(this.serviceName, "createInterstitial", [interstitialId, adunit]);
         var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
         this.activeAds[interstitialId] = interstitial;
         return interstitial;
@@ -615,12 +622,14 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * Cocoon.Ad.releaseInterstitial(interstitial);
     */
     extension.releaseInterstitial = function(interstitial) {
-        Cocoon.callNative(this.serviceName, "releaseInterstitial", [interstitial.id]);
+        Cocoon.exec(this.serviceName, "releaseInterstitial", [interstitial.id]);
         delete this.activeAds[interstitial.id];
     };
 
     return extension;
-});</pre>
+});
+
+})();</pre>
         </article>
     </section>
 
