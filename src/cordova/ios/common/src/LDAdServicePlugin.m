@@ -33,6 +33,11 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
     _interstitials = [NSMutableDictionary dictionary];
 }
 
+- (BOOL)shouldAllowRequestForURL:(NSURL *)url
+{
+    return YES;
+}
+
 -(void) configure:(CDVInvokedUrlCommand*) command
 {
     NSDictionary * data = [command argumentAtIndex:0 withDefault:@{} andClass:[NSDictionary class]];
