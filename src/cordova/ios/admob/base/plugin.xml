@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.ios.admob" version="1.0.2">
+    <name>AdsAdMob</name>
+    <description>iOS Ads AdMob implementation</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob</keywords>
+    <platform name="ios">
+        <header-file src="src/deps/LDAdServiceAdMob.h" />
+        <source-file src="src/deps/LDAdServiceAdMob.m" />
+        <header-file src="src/LDAdMobPlugin.h" />
+        <source-file src="src/LDAdMobPlugin.m" />
+
+        <framework src="src/deps/external/GoogleMobileAds.framework" custom="true" />
+
+        <framework src="AdSupport.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="StoreKit.framework" />
+
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="LDAdservice">
+                <param name="ios-package" value="LDAdMobPlugin" />
+            </feature>
+            <feature name="LDAdMobPlugin">
+                <param name="ios-package" value="LDAdMobPlugin" />
+            </feature>
+        </config-file>
+
+    </platform>
+    <dependency id="com.ludei.ads.ios.common" />
+</plugin>

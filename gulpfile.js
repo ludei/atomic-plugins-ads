@@ -32,7 +32,7 @@ gulp.task('deps-cordova', function() {
   
     //ios admob
     gulp.src(['src/atomic/ios/admob/*.h', 'src/atomic/ios/admob/*.m'])
-        .pipe(gulp.dest('src/cordova/ios/admob/src/deps'));
+        .pipe(gulp.dest('src/cordova/ios/admob/base/src/deps'));
 
     //ios chartboost
     gulp.src(['src/atomic/ios/chartboost/*.h', 'src/atomic/ios/chartboost/*.m'])
@@ -114,7 +114,7 @@ gulp.task('create-cordova', ['deps-cordova', 'build-js'], function(finish) {
             } 
             else {
                 plugins.push("src/cordova/android/admob",
-                           "src/cordova/ios/admob");
+                           "src/cordova/ios/admob/base");
             }
 
             console.log("Plugins: " + JSON.stringify(plugins));

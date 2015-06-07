@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.mopub.adcolony" version="1.0.1">
+        id="com.ludei.ads.ios.mopub.adcolony" version="1.0.2">
     <name>MoPubAdapterAdColony</name>
     <description>iOS AdMob adapter for MoPub</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
     <platform name="ios">
         <source-file src="src/deps/libAdColonyAdapter.a" framework="true" />
-        <source-file src="src/deps/libAdColony.a" framework="true" />
 
         <framework src="libz.dylib" />
         <framework src="social.framework" weak="true" />
         <framework src="webkit.framework" weak="true" />
     </platform>
     <dependency id="com.ludei.ads.ios.mopub" />
+    <dependency id="com.ludei.ads.ios.adcolony" />
 </plugin>

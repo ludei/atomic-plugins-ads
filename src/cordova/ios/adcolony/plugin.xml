@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.ios.adcolony" version="1.0.1">
+    <name>AdsAdColony</name>
+    <description>iOS Ads AdColony implementation</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
+    <platform name="ios">
+        <framework src="src/deps/external/AdColony.framework" custom="true" />
+
+        <framework src="StoreKit.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="Social.framework" weak="true" />
+        <framework src="MediaPlayer.framework" weak="true" />
+
+    </platform>
+    <dependency id="com.ludei.ads.ios.common" />
+</plugin>
