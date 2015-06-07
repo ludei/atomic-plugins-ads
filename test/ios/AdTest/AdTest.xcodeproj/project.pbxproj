@@ -11,11 +11,11 @@
 		110DEB2E1A94B31E0034ED6C /* MPCloseButtonX@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 110DEB2A1A94B31E0034ED6C /* MPCloseButtonX@2x.png */; };
 		110DEB2F1A94B31E0034ED6C /* MPCloseButtonX@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */; };
 		110DEB301A94B31E0034ED6C /* MRAID.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 110DEB2C1A94B31E0034ED6C /* MRAID.bundle */; };
-		11498EFD1B2490A000B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */; };
 		11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
 		11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
-		11498F041B24958A00B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */; };
 		11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
+		11498F211B24BAE500B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
+		11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
 		11729E981B23446A00633115 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E971B23446A00633115 /* libz.dylib */; };
 		11729E9A1B2344A700633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729E9C1B2344B500633115 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -79,7 +79,7 @@
 		110DEB2A1A94B31E0034ED6C /* MPCloseButtonX@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@2x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@2x.png"; sourceTree = "<group>"; };
 		110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@3x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@3x.png"; sourceTree = "<group>"; };
 		110DEB2C1A94B31E0034ED6C /* MRAID.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MRAID.bundle; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MRAID.bundle; sourceTree = "<group>"; };
-		11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/base/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		11729E971B23446A00633115 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		11729E991B2344A700633115 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		11729E9B1B2344B500633115 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -133,8 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */,
-				11498F041B24958A00B6DA8E /* GoogleMobileAds.framework in Frameworks */,
 				11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */,
+				11498F211B24BAE500B6DA8E /* GoogleMobileAds.framework in Frameworks */,
 				11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11498EFD1B2490A000B6DA8E /* GoogleMobileAds.framework in Frameworks */,
+				11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */,
 				11729EA11B23453000633115 /* QuartzCore.framework in Frameworks */,
 				11729E9E1B2344E400633115 /* CoreMedia.framework in Frameworks */,
 				11729EA01B2344F700633115 /* MediaPlayer.framework in Frameworks */,
@@ -231,7 +231,7 @@
 				11D3335A1A768C03001983FB /* frameworks */,
 				11D333351A766FCA001983FB /* LDAdServiceAdMob.h */,
 				11D333361A766FCA001983FB /* LDAdServiceAdMob.m */,
-				11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */,
+				11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */,
 			);
 			name = admob;
 			sourceTree = "<group>";
@@ -566,6 +566,7 @@
 					"$(inherited)",
 					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
 					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -596,6 +597,7 @@
 					"$(inherited)",
 					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
 					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -703,6 +705,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -736,6 +739,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
