@@ -11,6 +11,42 @@
 		110DEB2E1A94B31E0034ED6C /* MPCloseButtonX@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 110DEB2A1A94B31E0034ED6C /* MPCloseButtonX@2x.png */; };
 		110DEB2F1A94B31E0034ED6C /* MPCloseButtonX@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */; };
 		110DEB301A94B31E0034ED6C /* MRAID.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 110DEB2C1A94B31E0034ED6C /* MRAID.bundle */; };
+		11498EFD1B2490A000B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */; };
+		11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
+		11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
+		11498F041B24958A00B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */; };
+		11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
+		11729E981B23446A00633115 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E971B23446A00633115 /* libz.dylib */; };
+		11729E9A1B2344A700633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11729E9C1B2344B500633115 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11729E9E1B2344E400633115 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
+		11729EA01B2344F700633115 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9F1B2344F700633115 /* MediaPlayer.framework */; };
+		11729EA11B23453000633115 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333D1A7688FE001983FB /* QuartzCore.framework */; };
+		11729EA41B234E1F00633115 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA009A1A48359400F0CB30 /* ViewController.m */; };
+		11729EA61B234E1F00633115 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA00971A48359400F0CB30 /* AppDelegate.m */; };
+		11729EA71B234E1F00633115 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA00941A48359400F0CB30 /* main.m */; };
+		11729EAA1B234E1F00633115 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EA00A11A48359400F0CB30 /* LaunchScreen.xib */; };
+		11729EAB1B234E1F00633115 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EA009F1A48359400F0CB30 /* Images.xcassets */; };
+		11729EAD1B234E1F00633115 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333D1A7688FE001983FB /* QuartzCore.framework */; };
+		11729EAE1B234E1F00633115 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
+		11729EAF1B234E1F00633115 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9F1B2344F700633115 /* MediaPlayer.framework */; };
+		11729EB01B234E1F00633115 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11729EB11B234E1F00633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11729EB21B234E1F00633115 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333541A768AB3001983FB /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11729EB31B234E1F00633115 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E971B23446A00633115 /* libz.dylib */; };
+		11729EB41B234E1F00633115 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333521A768A87001983FB /* CoreTelephony.framework */; };
+		11729EB51B234E1F00633115 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333501A768A42001983FB /* MessageUI.framework */; };
+		11729EB61B234E1F00633115 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334E1A768A1F001983FB /* EventKit.framework */; };
+		11729EB71B234E1F00633115 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333561A768AE8001983FB /* EventKitUI.framework */; };
+		11729EB81B234E1F00633115 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334C1A768A11001983FB /* SystemConfiguration.framework */; };
+		11729EB91B234E1F00633115 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334A1A768A06001983FB /* StoreKit.framework */; };
+		11729EBB1B234E1F00633115 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
+		11729EBD1B234E1F00633115 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333451A7689DA001983FB /* CoreGraphics.framework */; };
+		11729EBE1B234E1F00633115 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
+		11729EBF1B234E1F00633115 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333F1A76890C001983FB /* UIKit.framework */; };
+		11729EC81B234EB200633115 /* LDAdServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729EC61B234EB200633115 /* LDAdServiceChartboost.m */; };
+		11729ECA1B234ED600633115 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729EC91B234ED600633115 /* Chartboost.framework */; };
+		11729ECC1B234FDA00633115 /* TestServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729ECB1B234F6800633115 /* TestServiceChartboost.m */; };
 		118CECF71A744D7500AB79B9 /* LDAdServiceMoPub.m in Sources */ = {isa = PBXBuildFile; fileRef = 118CECF21A744D7500AB79B9 /* LDAdServiceMoPub.m */; };
 		11B9A73E1A56ECC4000194A3 /* TestServiceMoPub.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B9A73D1A56ECC4000194A3 /* TestServiceMoPub.m */; };
 		11D333251A766F93001983FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA009A1A48359400F0CB30 /* ViewController.m */; };
@@ -28,7 +64,7 @@
 		11D3334F1A768A1F001983FB /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334E1A768A1F001983FB /* EventKit.framework */; };
 		11D333511A768A42001983FB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333501A768A42001983FB /* MessageUI.framework */; };
 		11D333531A768A87001983FB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333521A768A87001983FB /* CoreTelephony.framework */; };
-		11D333551A768AB3001983FB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333541A768AB3001983FB /* AdSupport.framework */; };
+		11D333551A768AB3001983FB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333541A768AB3001983FB /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11D333571A768AE8001983FB /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333561A768AE8001983FB /* EventKitUI.framework */; };
 		11D333591A768B66001983FB /* TestServiceAdMob.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D333581A768B33001983FB /* TestServiceAdMob.m */; };
 		11EA00951A48359400F0CB30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA00941A48359400F0CB30 /* main.m */; };
@@ -43,6 +79,18 @@
 		110DEB2A1A94B31E0034ED6C /* MPCloseButtonX@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@2x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@2x.png"; sourceTree = "<group>"; };
 		110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@3x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@3x.png"; sourceTree = "<group>"; };
 		110DEB2C1A94B31E0034ED6C /* MRAID.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MRAID.bundle; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MRAID.bundle; sourceTree = "<group>"; };
+		11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		11729E971B23446A00633115 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		11729E991B2344A700633115 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		11729E9B1B2344B500633115 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		11729E9D1B2344E400633115 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		11729E9F1B2344F700633115 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		11729EC31B234E1F00633115 /* AdTest_chartboost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdTest_chartboost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11729EC41B234E2000633115 /* AdTest_admob copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AdTest_admob copy-Info.plist"; path = "/Users/mortimer/Projects/atomic-plugins-ads/test/ios/AdTest/AdTest_admob copy-Info.plist"; sourceTree = "<absolute>"; };
+		11729EC61B234EB200633115 /* LDAdServiceChartboost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDAdServiceChartboost.m; path = ../../../src/atomic/ios/chartboost/LDAdServiceChartboost.m; sourceTree = "<group>"; };
+		11729EC71B234EB200633115 /* LDAdServiceChartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdServiceChartboost.h; path = ../../../src/atomic/ios/chartboost/LDAdServiceChartboost.h; sourceTree = "<group>"; };
+		11729EC91B234ED600633115 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../../src/cordova/ios/chartboost/src/deps/external/Chartboost.framework; sourceTree = "<group>"; };
+		11729ECB1B234F6800633115 /* TestServiceChartboost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestServiceChartboost.m; sourceTree = "<group>"; };
 		118CECEA1A744D5100AB79B9 /* LDAdBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdBanner.h; path = ../../../src/atomic/ios/common/LDAdBanner.h; sourceTree = "<group>"; };
 		118CECEB1A744D5100AB79B9 /* LDAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdInterstitial.h; path = ../../../src/atomic/ios/common/LDAdInterstitial.h; sourceTree = "<group>"; };
 		118CECEC1A744D5100AB79B9 /* LDAdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdService.h; path = ../../../src/atomic/ios/common/LDAdService.h; sourceTree = "<group>"; };
@@ -80,11 +128,54 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		11498F001B24950B00B6DA8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */,
+				11498F041B24958A00B6DA8E /* GoogleMobileAds.framework in Frameworks */,
+				11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */,
+				11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11729EAC1B234E1F00633115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11729EAD1B234E1F00633115 /* QuartzCore.framework in Frameworks */,
+				11729EAE1B234E1F00633115 /* CoreMedia.framework in Frameworks */,
+				11729EAF1B234E1F00633115 /* MediaPlayer.framework in Frameworks */,
+				11729EB01B234E1F00633115 /* WebKit.framework in Frameworks */,
+				11729EB11B234E1F00633115 /* Social.framework in Frameworks */,
+				11729ECA1B234ED600633115 /* Chartboost.framework in Frameworks */,
+				11729EB21B234E1F00633115 /* AdSupport.framework in Frameworks */,
+				11729EB31B234E1F00633115 /* libz.dylib in Frameworks */,
+				11729EB41B234E1F00633115 /* CoreTelephony.framework in Frameworks */,
+				11729EB51B234E1F00633115 /* MessageUI.framework in Frameworks */,
+				11729EB61B234E1F00633115 /* EventKit.framework in Frameworks */,
+				11729EB71B234E1F00633115 /* EventKitUI.framework in Frameworks */,
+				11729EB81B234E1F00633115 /* SystemConfiguration.framework in Frameworks */,
+				11729EB91B234E1F00633115 /* StoreKit.framework in Frameworks */,
+				11729EBB1B234E1F00633115 /* AVFoundation.framework in Frameworks */,
+				11729EBD1B234E1F00633115 /* CoreGraphics.framework in Frameworks */,
+				11729EBE1B234E1F00633115 /* AudioToolbox.framework in Frameworks */,
+				11729EBF1B234E1F00633115 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11D3333A1A7688E0001983FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11498EFD1B2490A000B6DA8E /* GoogleMobileAds.framework in Frameworks */,
+				11729EA11B23453000633115 /* QuartzCore.framework in Frameworks */,
+				11729E9E1B2344E400633115 /* CoreMedia.framework in Frameworks */,
+				11729EA01B2344F700633115 /* MediaPlayer.framework in Frameworks */,
+				11729E9C1B2344B500633115 /* WebKit.framework in Frameworks */,
+				11729E9A1B2344A700633115 /* Social.framework in Frameworks */,
 				11D333551A768AB3001983FB /* AdSupport.framework in Frameworks */,
+				11729E981B23446A00633115 /* libz.dylib in Frameworks */,
 				11D333531A768A87001983FB /* CoreTelephony.framework in Frameworks */,
 				11D333511A768A42001983FB /* MessageUI.framework in Frameworks */,
 				11D3334F1A768A1F001983FB /* EventKit.framework in Frameworks */,
@@ -124,12 +215,23 @@
 			name = common;
 			sourceTree = "<group>";
 		};
+		11729EC51B234E5000633115 /* chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				11729EC91B234ED600633115 /* Chartboost.framework */,
+				11729EC61B234EB200633115 /* LDAdServiceChartboost.m */,
+				11729EC71B234EB200633115 /* LDAdServiceChartboost.h */,
+			);
+			name = chartboost;
+			sourceTree = "<group>";
+		};
 		11D333211A766F86001983FB /* admob */ = {
 			isa = PBXGroup;
 			children = (
 				11D3335A1A768C03001983FB /* frameworks */,
 				11D333351A766FCA001983FB /* LDAdServiceAdMob.h */,
 				11D333361A766FCA001983FB /* LDAdServiceAdMob.m */,
+				11498EFA1B248F2F00B6DA8E /* GoogleMobileAds.framework */,
 			);
 			name = admob;
 			sourceTree = "<group>";
@@ -157,10 +259,16 @@
 		11EA00861A48359400F0CB30 = {
 			isa = PBXGroup;
 			children = (
+				11729E9F1B2344F700633115 /* MediaPlayer.framework */,
+				11729E9D1B2344E400633115 /* CoreMedia.framework */,
+				11729E9B1B2344B500633115 /* WebKit.framework */,
+				11729E991B2344A700633115 /* Social.framework */,
+				11729E971B23446A00633115 /* libz.dylib */,
 				11EA00B81A4836E000F0CB30 /* src */,
 				11EA00911A48359400F0CB30 /* AdTest */,
 				11EA00901A48359400F0CB30 /* Products */,
 				11D333341A766F93001983FB /* AdTest_mopub copy-Info.plist */,
+				11729EC41B234E2000633115 /* AdTest_admob copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +277,7 @@
 			children = (
 				11EA008F1A48359400F0CB30 /* AdTest_mopub.app */,
 				11D333331A766F93001983FB /* AdTest_admob.app */,
+				11729EC31B234E1F00633115 /* AdTest_chartboost.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +292,7 @@
 				11B9A73C1A56ECC4000194A3 /* TestService.h */,
 				11B9A73D1A56ECC4000194A3 /* TestServiceMoPub.m */,
 				11D333581A768B33001983FB /* TestServiceAdMob.m */,
+				11729ECB1B234F6800633115 /* TestServiceChartboost.m */,
 				11EA009F1A48359400F0CB30 /* Images.xcassets */,
 				11EA00A11A48359400F0CB30 /* LaunchScreen.xib */,
 				11EA00921A48359400F0CB30 /* Supporting Files */,
@@ -202,6 +312,7 @@
 		11EA00B81A4836E000F0CB30 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				11729EC51B234E5000633115 /* chartboost */,
 				11D333211A766F86001983FB /* admob */,
 				114117C31A519DAB00A844DA /* common */,
 				114117C21A519D9A00A844DA /* mopub */,
@@ -212,6 +323,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		11729EA21B234E1F00633115 /* AdTest_chartboost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11729EC01B234E1F00633115 /* Build configuration list for PBXNativeTarget "AdTest_chartboost" */;
+			buildPhases = (
+				11729EA31B234E1F00633115 /* Sources */,
+				11729EA91B234E1F00633115 /* Resources */,
+				11729EAC1B234E1F00633115 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdTest_chartboost;
+			productName = AdTest;
+			productReference = 11729EC31B234E1F00633115 /* AdTest_chartboost.app */;
+			productType = "com.apple.product-type.application";
+		};
 		11D333221A766F93001983FB /* AdTest_admob */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11D333301A766F93001983FB /* Build configuration list for PBXNativeTarget "AdTest_admob" */;
@@ -233,6 +361,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11EA00B21A48359400F0CB30 /* Build configuration list for PBXNativeTarget "AdTest_mopub" */;
 			buildPhases = (
+				11498F001B24950B00B6DA8E /* Frameworks */,
 				11EA008B1A48359400F0CB30 /* Sources */,
 				11EA008D1A48359400F0CB30 /* Resources */,
 			);
@@ -274,11 +403,21 @@
 			targets = (
 				11EA008E1A48359400F0CB30 /* AdTest_mopub */,
 				11D333221A766F93001983FB /* AdTest_admob */,
+				11729EA21B234E1F00633115 /* AdTest_chartboost */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		11729EA91B234E1F00633115 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11729EAA1B234E1F00633115 /* LaunchScreen.xib in Resources */,
+				11729EAB1B234E1F00633115 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11D333291A766F93001983FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +443,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		11729EA31B234E1F00633115 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11729EA41B234E1F00633115 /* ViewController.m in Sources */,
+				11729ECC1B234FDA00633115 /* TestServiceChartboost.m in Sources */,
+				11729EC81B234EB200633115 /* LDAdServiceChartboost.m in Sources */,
+				11729EA61B234E1F00633115 /* AppDelegate.m in Sources */,
+				11729EA71B234E1F00633115 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11D333231A766F93001983FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,6 +493,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		11729EC11B234E1F00633115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/include",
+				);
+				INFOPLIST_FILE = "AdTest_admob copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = AdTest_chartboost;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+			};
+			name = Debug;
+		};
+		11729EC21B234E1F00633115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/include",
+				);
+				INFOPLIST_FILE = "AdTest_admob copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = AdTest_chartboost;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+			};
+			name = Release;
+		};
 		11D333311A766F93001983FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,6 +562,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -357,10 +575,11 @@
 				INFOPLIST_FILE = "AdTest_mopub copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/libGoogleAdMobAds.a",
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = AdTest_admob;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -373,6 +592,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -381,10 +605,11 @@
 				INFOPLIST_FILE = "AdTest_mopub copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/libGoogleAdMobAds.a",
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = AdTest_admob;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -474,7 +699,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
-				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_MODULES_AUTOLINK = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -487,7 +716,6 @@
 					"-ObjC",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libGoogleAdMobAds.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboost.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
@@ -504,7 +732,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
-				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_MODULES_AUTOLINK = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -517,7 +749,6 @@
 					"-ObjC",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libGoogleAdMobAds.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboost.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
@@ -531,6 +762,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		11729EC01B234E1F00633115 /* Build configuration list for PBXNativeTarget "AdTest_chartboost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11729EC11B234E1F00633115 /* Debug */,
+				11729EC21B234E1F00633115 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		11D333301A766F93001983FB /* Build configuration list for PBXNativeTarget "AdTest_admob" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -16,8 +16,8 @@
     LDAdServiceAdMob * admob = [[LDAdServiceAdMob alloc] init];
     
     LDAdMobSettings * settings = admob.settings;
-    settings.banner = @"ca-app-pub-7686972479101507/8873903476";
-    settings.interstitial = @"ca-app-pub-7686972479101507/8873903476";
+    settings.banner = @"ca-app-pub-2059040695281139/6478020007";
+    settings.interstitial = @"ca-app-pub-2059040695281139/4442883605";
     return admob;
 }
 

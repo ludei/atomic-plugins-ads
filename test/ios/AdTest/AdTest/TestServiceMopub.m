@@ -18,8 +18,8 @@
     LDMoPubSettings * settings = mopub.settings;
     settings.banner = @"agltb3B1Yi1pbmNyDQsSBFNpdGUY5dDoEww";
     settings.bannerIpad = @"agltb3B1Yi1pbmNyDQsSBFNpdGUYk8vlEww";
-    settings.interstitial = @"agltb3B1Yi1pbmNyDQsSBFNpdGUYjf30Eww";
-    settings.interstitialIpad = @"0ddb0da860b64afca710c881fb91fde0";
+    settings.interstitial = @"7af6c48ceeee47bf97c31b3514651b04";
+    settings.interstitialIpad = @"7af6c48ceeee47bf97c31b3514651b04";
     return mopub;
 }
 
