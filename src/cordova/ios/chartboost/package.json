@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "name": "com.ludei.ads.ios.chartboost",
+    "cordova_name": "AdsChartboost",
+    "description": "iOS Ads Chartboost implementation",
+    "license": "MPL 2.0",
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "chartboost"
+    ],
+    "platforms": [
+        "ios"
+    ],
+    "engines": []
+}

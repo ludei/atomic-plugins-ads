@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.ludei.ads.ios.chartboost" version="1.0.0">
+    <name>AdsChartboost</name>
+    <description>iOS Ads Chartboost implementation</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
+    <platform name="ios">
+        <header-file src="src/deps/LDAdServiceChartboost.h" />
+        <source-file src="src/deps/LDAdServiceChartboost.m" />
+        <header-file src="src/LDChartboostPlugin.h" />
+        <source-file src="src/LDChartboostPlugin.m" />
+
+        <framework src="src/deps/external/Chartboost.framework" custom="true" />
+
+        <framework src="StoreKit.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="UIKit.framework" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="LDAdService">
+                <param name="ios-package" value="LDChartboostPlugin" />
+            </feature>
+            <feature name="LDChartboostPlugin">
+                <param name="ios-package" value="LDChartboostPlugin" />
+            </feature>
+        </config-file>
+
+    </platform>
+    <dependency id="com.ludei.ads.ios.common" />
+</plugin>
