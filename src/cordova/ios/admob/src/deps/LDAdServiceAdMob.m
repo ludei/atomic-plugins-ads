@@ -1,7 +1,7 @@
 #import "LDAdServiceAdMob.h"
-#import "GADBannerView.h"
-#import "GADAdSize.h"
-#import "GADInterstitial.h"
+#import <GoogleMobileAds/GADBannerView.h>
+#import <GoogleMobileAds/GADAdSize.h>
+#import <GoogleMobileAds/GADInterstitial.h>
 
 static inline bool isIpad()
 {
@@ -148,8 +148,7 @@ static inline bool isIpad()
 {
     if (self = [super init]) {
         self.cachedAdUnit = adUnit;
-        self.interstitial = [[GADInterstitial alloc] init];
-        _interstitial.adUnitID = adUnit;
+        self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:adUnit];
         _interstitial.delegate = self;
     }
     return self;
@@ -164,8 +163,7 @@ static inline bool isIpad()
 {
     if (_interstitial.hasBeenUsed) {
         //AdMob interstitials can only be used when, recreate if it has already been used
-        self.interstitial = [[GADInterstitial alloc] init];
-        _interstitial.adUnitID = _cachedAdUnit;
+        self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:_cachedAdUnit];
         _interstitial.delegate = self;
     }
     [_interstitial loadRequest:[GADRequest request]];
@@ -265,12 +263,16 @@ static inline bool isIpad()
 
 -(LDAdInterstitial *) createInterstitial:(NSString *) interstitial
 {
-    NSString * adunit;
+    NSString * adunit = interstitial;
     if (!adunit) {
         adunit = isIpad() ? (_settings.interstitialIpad ?: _settings.interstitial) : _settings.interstitial;
     }
     
     return [[LDAdMobInterstitial alloc] initWithAdUnit:adunit];
+}
+
+-(LDAdInterstitial *) createRewardedVideo:(NSString *)adunit {
+    return [self createInterstitial:adunit];
 }
 
 

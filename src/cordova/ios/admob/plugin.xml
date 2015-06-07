@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.admob" version="1.0.0">
+        id="com.ludei.ads.ios.admob" version="1.0.1">
     <name>AdsAdMob</name>
     <description>iOS Ads AdMob implementation</description>
     <license>MPL 2.0</license>
@@ -11,17 +11,7 @@
         <header-file src="src/LDAdMobPlugin.h" />
         <source-file src="src/LDAdMobPlugin.m" />
 
-        <source-file src="src/deps/external/libGoogleAdMobAds.a" framework="true" />
-        <header-file src="src/deps/external/include/GADAdNetworkExtras.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADAdSize.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADBannerView.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADBannerViewDelegate.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADInAppPurchase.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADInAppPurchaseDelegate.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADInterstitial.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADInterstitialDelegate.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADRequest.h" target-dir="GoogleMobileAds" />
-        <header-file src="src/deps/external/include/GADRequestError.h" target-dir="GoogleMobileAds" />
+        <framework src="src/deps/external/GoogleMobileAds.framework" custom="true" />
 
         <framework src="AdSupport.framework" />
         <framework src="CoreTelephony.framework" />
@@ -34,7 +24,10 @@
 
 
         <config-file target="config.xml" parent="/*">
-            <feature name="AdService">
+            <feature name="LDAdservice">
+                <param name="ios-package" value="LDAdMobPlugin" />
+            </feature>
+            <feature name="LDAdMobPlugin">
                 <param name="ios-package" value="LDAdMobPlugin" />
             </feature>
         </config-file>
