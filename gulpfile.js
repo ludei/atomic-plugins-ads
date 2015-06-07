@@ -7,6 +7,7 @@ var del = require('del');
 var cordova = require('cordova-lib').cordova.raw;
 var jsdoc = require('gulp-jsdoc');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 
 var mopubAndroidAdapters = ['adcolony', 'admob', 'chartboost', 'greystripe', 'inmobi', 'millennialmedia'];
 var mopubIOSAdapters = ['admob', 'chartboost', 'millennial'];
@@ -32,6 +33,10 @@ gulp.task('deps-cordova', function() {
     //ios admob
     gulp.src(['src/atomic/ios/admob/*.h', 'src/atomic/ios/admob/*.m'])
         .pipe(gulp.dest('src/cordova/ios/admob/src/deps'));
+
+    //ios chartboost
+    gulp.src(['src/atomic/ios/chartboost/*.h', 'src/atomic/ios/chartboost/*.m'])
+        .pipe(gulp.dest('src/cordova/ios/chartboost/src/deps'));
 
     //Android mopub
     gulp.src('src/atomic/android/common/src/**/')
@@ -62,9 +67,10 @@ gulp.task('build-ios', shell.task([
 ]));
 
 gulp.task('build-js', function () {
-    return gulp.src('src/js/cocoon_ads.js')
+    return gulp.src(['src/js/cocoon_ads.js','src/js/cocoon_ads_admob.js','src/js/cocoon_ads_mopub.js', 'src/js/cocoon_ads_chartboost.js'])
             .pipe(jshint())
             .pipe(jshint.reporter())
+            .pipe(concat('cocoon_ads.js')) 
             .pipe(uglify())
             .pipe(gulp.dest('src/cordova/common/www'));
 });

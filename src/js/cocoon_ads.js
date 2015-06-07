@@ -68,10 +68,6 @@
 
 Cocoon.define("Cocoon.Ad" , function(extension){
     "use strict";
-    
-  
-    extension.serviceName = "AdService";
-    extension.activeAds = {};
 
     /**
      * The predefined possible layouts for a banner ad.
@@ -114,6 +110,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         this.signal = new Cocoon.Signal();
         this.width = 0;
         this.height = 0;
+        this.ready = false;
     };
 
     /**
@@ -213,6 +210,17 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         },
 
         /**
+         * Checks if the banner is loaded and ready
+         * @memberOf Cocoon.Ad.Banner
+         * @function isReady
+         * @example
+         * var ready = banner.isReady();
+         */
+        isReady: function() {
+            return this.ready;
+        },
+
+        /**
         * Triggered when a new banner is loaded. 
         * @memberOf Cocoon.Ad.Banner
         * @event On load
@@ -274,6 +282,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         this.id = interstitialId;
         this.serviceName = serviceName;
         this.signal = new Cocoon.Signal();
+        this.ready = false;
     };
 
    /**
@@ -312,6 +321,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * interstitial.show(); 
         */
         show: function() {
+            this.ready = false; //true on next load event
             Cocoon.exec(this.serviceName, "showInterstitial", [this.id]);
         },
 
@@ -325,6 +335,17 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         */
         load: function() {
             Cocoon.exec(this.serviceName, "loadInterstitial", [this.id]);
+        },
+
+        /**
+         * Checks if the interstitial is loaded and ready
+         * @memberOf Cocoon.Ad.Interstitial
+         * @function isReady
+         * @example
+         * var ready = interstitial.isReady();
+         */
+        isReady: function() {
+            return this.ready;
         },
 
         /**
@@ -377,6 +398,16 @@ Cocoon.define("Cocoon.Ad" , function(extension){
         * });
         */
 
+        /**
+         * Triggered when an video reward is completed.
+         * @memberOf Cocoon.Ad.Interstitial
+         * @event On reward
+         * @example
+         * interstitial.on("reward", function(quantity){
+        *    console.log("Reward completed. Earned " + quantity + " items");
+        * });
+         */
+
         on: function(eventName, handler) {
             this.signal.on(eventName, handler);
         }
@@ -384,14 +415,35 @@ Cocoon.define("Cocoon.Ad" , function(extension){
 
     var idCounter = 0;
 
-    function listenerHandler(args) {
+
+    extension.AdService = function(serviceName) {
+        this.serviceName = serviceName;
+        this.activeAds = {};
+    };
+
+    var proto = {};
+    extension.AdService.prototype = proto;
+
+
+    /**
+     * @memberOf Cocoon.Ad
+     * @function listenerHandler
+     * @private
+     */
+    proto.listenerHandler = function(args) {
         var eventName = args[0];
         var adId = args[1];
         var params = args.slice(2);
 
-        var ad = extension.activeAds[adId];
+        var ad = this.activeAds[adId];
         if (ad) {
 
+            if (eventName === "load") {
+                ad.ready = true;
+            }
+            else if (eventName === "fail") {
+                ad.ready = false;
+            }
             if (eventName === "load" && params.length > 0) {
                 //cache banner size
                 ad.width = params[0];
@@ -401,19 +453,19 @@ Cocoon.define("Cocoon.Ad" , function(extension){
 
             ad.signal.emit(eventName, null, params);
         }
-    }
+    };
 
     /** 
     * @memberOf Cocoon.Ad
     * @function init
     * @private
     */
-    extension.init = function() {
+    proto.init = function() {
         if (this.initialized) {
             return;
         }
-        Cocoon.exec(this.serviceName, "setBannerListener", [], listenerHandler);
-        Cocoon.exec(this.serviceName, "setInterstitialListener", [], listenerHandler);
+        Cocoon.exec(this.serviceName, "setBannerListener", [], this.listenerHandler.bind(this));
+        Cocoon.exec(this.serviceName, "setInterstitialListener", [], this.listenerHandler.bind(this));
 
         this.initialized = true;
     };
@@ -443,7 +495,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     *     }
     *);*
     */
-    extension.configure = function(settings) {
+    proto.configure = function(settings) {
 
         var platform = Cocoon.getPlatform();
         if (platform === Cocoon.PlatformType.AMAZON && settings[Cocoon.PlatformType.ANDROID]) {
@@ -468,7 +520,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * var banner = Cocoon.Ad.createBanner();
     * banner.load(); 
     */
-    extension.createBanner = function(adunit, size) {
+    proto.createBanner = function(adunit, size) {
         this.init();
         var bannerId = idCounter++;
         Cocoon.exec(this.serviceName, "createBanner", [bannerId, adunit, size]);
@@ -485,7 +537,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * @example
     * Cocoon.Ad.releaseBanner(banner);
     */
-    extension.releaseBanner = function(banner) {
+    proto.releaseBanner = function(banner) {
         Cocoon.exec(this.serviceName, "releaseBanner", [banner.id]);
         delete this.activeAds[id];
     };
@@ -498,12 +550,31 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * @return {Cocoon.Ad.Interstitial} A new interstitial. 
     * @example
     * var interstitial = Cocoon.Ad.createInterstitial();
-    * iterstitial.load(); 
+    * interstitial.load();
     */
-    extension.createInterstitial = function(adunit) {
+    proto.createInterstitial = function(adunit) {
         this.init();
         var interstitialId = idCounter++;
         Cocoon.exec(this.serviceName, "createInterstitial", [interstitialId, adunit]);
+        var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
+        this.activeAds[interstitialId] = interstitial;
+        return interstitial;
+    };
+
+    /**
+     * Creates an rewarded video interstitial (only supported id some networks)
+     * @memberOf Cocoon.Ad
+     * @function createInterstitial
+     * @param {string} [adunit] Interstitial adunit. Taken from cordova settings or configure method if not specified.
+     * @return {Cocoon.Ad.Interstitial} A new interstitial.
+     * @example
+     * var interstitial = Cocoon.Ad.createRewardedVideo();
+     * interstitial.load();
+     */
+    proto.createRewardedVideo = function(adunit) {
+        this.init();
+        var interstitialId = idCounter++;
+        Cocoon.exec(this.serviceName, "createRewardedVideo", [interstitialId, adunit]);
         var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
         this.activeAds[interstitialId] = interstitial;
         return interstitial;
@@ -517,10 +588,20 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     * @example
     * Cocoon.Ad.releaseInterstitial(interstitial);
     */
-    extension.releaseInterstitial = function(interstitial) {
+    proto.releaseInterstitial = function(interstitial) {
         Cocoon.exec(this.serviceName, "releaseInterstitial", [interstitial.id]);
         delete this.activeAds[interstitial.id];
     };
+
+
+    //compatibility for Cocoon.Ad methods
+    extension.serviceName = "AdService";
+    extension.activeAds = {};
+    for (var key in proto) {
+        if (proto.hasOwnProperty(key)) {
+            extension[key] = proto[key];
+        }
+    }
 
     return extension;
 });
