@@ -73,6 +73,16 @@
  */
 -(LDAdInterstitial *) createInterstitial:(NSString *) adunit;
 
+/**
+ *  Create a Rewarded video interstitial with specific adunit.
+ *
+ *  @param adunit The adunit.
+ *
+ *  @return The interstitial.
+ */
+-(LDAdInterstitial *) createRewardedVideo:(NSString *) adunit;
+
+
 @end
 
 typedef NSObject<LDAdServiceProtocol> LDAdService;

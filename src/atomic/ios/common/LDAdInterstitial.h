@@ -71,4 +71,11 @@ typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
  */
 - (void)adInterstitialWillDisappear:(LDAdInterstitial *)interstitial;
 
+/**
+ *  Sent when a rewarded video interstitial is completed
+ *
+ *  @param interstitial The interstitial.
+ */
+- (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(int)reward;
+
 @end
