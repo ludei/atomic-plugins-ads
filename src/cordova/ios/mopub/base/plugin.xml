@@ -20,7 +20,10 @@
         <source-file src="src/LDMoPubPlugin.m" />
 
         <config-file target="config.xml" parent="/*">
-            <feature name="AdService">
+            <feature name="LDAdService">
+                <param name="ios-package" value="LDMoPubPlugin" />
+            </feature>
+            <feature name="LDMoPubPlugin">
                 <param name="ios-package" value="LDMoPubPlugin" />
             </feature>
         </config-file>

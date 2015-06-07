@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.admob" version="1.0.1">
+        id="com.ludei.ads.android.admob" version="1.0.2">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
@@ -14,7 +14,10 @@
 
 
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AdService">
+            <feature name="LDAdService">
+                <param name="android-package" value="com.ludei.ads.cordova.AdMobPlugin"/>
+            </feature>
+            <feature name="LDAdMobPlugin">
                 <param name="android-package" value="com.ludei.ads.cordova.AdMobPlugin"/>
             </feature>
         </config-file>

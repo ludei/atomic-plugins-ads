@@ -235,12 +235,17 @@ static inline bool isIpad()
 
 -(LDAdInterstitial *) createInterstitial:(NSString *) interstitial
 {
-    NSString * adunit;
+    NSString * adunit = interstitial;
     if (!adunit) {
         adunit = isIpad() ? (_settings.interstitialIpad ?: _settings.interstitial) : _settings.interstitial;
     }
     
     return [[LDMopubInterstitial alloc] initWithAdUnit:adunit];
+}
+
+-(LDAdInterstitial *) createRewardedVideo:(NSString *)adunit
+{
+    return [self createInterstitial:adunit];
 }
 
 
