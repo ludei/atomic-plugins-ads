@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub" version="1.0.2">
+        id="com.ludei.ads.android.mopub" version="1.0.3">
     <name>Ads Mopub</name>
     <description>Android MoPub Ads implementation</description>
     <license>MPL 2.0</license>
@@ -39,7 +39,7 @@
         </config-file>
     </platform>
 
-    <dependency id="android.support.v4"/>
+    <framework src="extras/android/support/v4" custom="false" />
     <dependency id="com.ludei.ads.android.common" />
 
 </plugin>

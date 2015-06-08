@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.adcolony" version="1.0.1">
+        id="com.ludei.ads.ios.adcolony" version="1.0.2">
     <name>AdsAdColony</name>
     <description>iOS Ads AdColony implementation</description>
     <license>MPL 2.0</license>
@@ -13,6 +13,7 @@
         <framework src="CoreGraphics.framework" />
         <framework src="UIKit.framework" />
         <framework src="Social.framework" weak="true" />
+        <framework src="libz.dylib" />
         <framework src="MediaPlayer.framework" weak="true" />
 
     </platform>
