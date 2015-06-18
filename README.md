@@ -160,7 +160,7 @@ interstitial.show();
 
 ###API Reference
 
-See [API Documentation](http://ludei.github.io/atomic-plugins-ads/dist/doc/js/Cocoon.Ad.html)
+See [API Documentation](http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.Ad.html)
 
 For a complete project that tests all the features provided in the API run the following command:
 
