@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.common" version="1.0.1">
+        id="com.ludei.ads.common" version="1.0.3">
     <name>CocoonAdsCommon</name>
     <description>Cocoon Ads API</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,cocoon,atomic,plugins</keywords>
 
     <js-module src="www/cocoon_ads.js" name="Ads">
-        <merges target="window.Cocoon.Ads" />
+        <runs/>
     </js-module>
 
     <dependency id="com.ludei.cocoon.common" />

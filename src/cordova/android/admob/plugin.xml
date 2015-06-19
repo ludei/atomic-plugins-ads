@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.admob" version="1.0.3">
+        id="com.ludei.ads.android.admob" version="1.0.4">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
@@ -28,9 +28,8 @@
               <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
               <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
+        <framework src="com.google.android.gms:play-services-ads:7.5.0" />
+        <dependency id="com.ludei.ads.android.common" />
     </platform>
-
-    <framework src="com.google.android.gms:play-services-ads:7.5.0" />
-    <dependency id="com.ludei.ads.android.common" />
 
 </plugin>
