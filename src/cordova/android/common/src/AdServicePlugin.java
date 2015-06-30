@@ -295,7 +295,7 @@ public class AdServicePlugin extends CordovaPlugin implements AdBanner.BannerLis
 
 	@Override
 	public void onRewardCompleted(AdInterstitial interstitial, int quantity) {
-		callListeners(_interstitialListener, "dismiss", findInterstitialId(interstitial), quantity);
+		callListeners(_interstitialListener, "reward", findInterstitialId(interstitial), quantity);
 	}
 
 	//Utility methods

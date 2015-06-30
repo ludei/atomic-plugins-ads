@@ -19,11 +19,14 @@ public class AdServiceChartboost implements AdService {
     protected HashMap<String, AdInterstitialChartboost> _interstitials = new HashMap<String, AdInterstitialChartboost>();
     protected HashMap<String, AdInterstitialChartboost> _rewards = new HashMap<String, AdInterstitialChartboost>();
 
+    public AdServiceChartboost()
+    {
+    }
+
     public void init(Activity activity, String appID, String appSignature)
     {
         Chartboost.startWithAppId(activity, appID, appSignature);
         Chartboost.onCreate(activity);
-        Chartboost.onStart(activity);
         Chartboost.setAutoCacheAds(true);
         Chartboost.setDelegate(new ChartboostDelegate() {
             @Override
@@ -131,6 +134,11 @@ public class AdServiceChartboost implements AdService {
     public void onStop(Activity activity)
     {
         Chartboost.onResume(activity);
+    }
+
+    public void onStart(Activity activity)
+    {
+        Chartboost.onStart(activity);
     }
 
     public void onDestroy(Activity activity) {
