@@ -52,5 +52,10 @@ public class AdServiceAdMob implements AdService {
         return new AdInterstitialAdMob(ctx, adunit);
     }
 
+    @Override
+    public AdInterstitial createRewardedVideo(Context ctx, String adunit) {
+        return this.createInterstitial(ctx, adunit);
+    }
+
 
 }
