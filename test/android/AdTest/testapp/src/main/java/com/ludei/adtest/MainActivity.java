@@ -29,11 +29,13 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
         setContentView(R.layout.activity_main);
 
         //create the adservice according to selected gradle build variant (MoPub or AdMob)
-        adService = AdServiceCreator.create();
+        adService = AdServiceCreator.create(this);
 
         adBanner = adService.createBanner(this);
-        adBanner.setListener(this);
-        adInterstitial = adService.createInterstitial(this);
+        if (adBanner != null) {
+            adBanner.setListener(this);
+        }
+        adInterstitial = adService.createRewardedVideo(this, null);
         adInterstitial.setListener(this);
         this.initButtons();
         txtBannerStatus = (TextView)findViewById(R.id.txtBannerStatus);
@@ -183,5 +185,10 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
     @Override
     public void onDismissed(AdInterstitial interstitial) {
         txtInterstitialStatus.setText("Dismissed");
+    }
+
+    @Override
+    public void onRewardCompleted(AdInterstitial interstitial, int quantity) {
+        txtInterstitialStatus.setText("Reward " + quantity);
     }
 }

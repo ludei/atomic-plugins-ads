@@ -18,6 +18,9 @@ android {
         admob {
 
         }
+        chartboost {
+
+        }
     }
 
     buildTypes {
@@ -59,5 +62,7 @@ dependencies {
     mopubCompile (name:'inmobi-adapter', ext:'aar')
 
     admobCompile project(':ads-admob')
+
+    chartboostCompile project(':ads-chartboost')
 
 }

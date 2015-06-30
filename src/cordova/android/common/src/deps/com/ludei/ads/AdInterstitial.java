@@ -69,5 +69,11 @@ public interface AdInterstitial {
      	 * @param interstitial An interstitial ad
          */    
         public void onDismissed(AdInterstitial interstitial);
+        /**
+         * Sent when the interstitial is closed.
+         *
+         * @param interstitial An interstitial ad
+         */
+        public void onRewardCompleted(AdInterstitial interstitial, int quantity);
     }
 }

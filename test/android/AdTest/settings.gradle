@@ -5,3 +5,5 @@ include ':ads-mopub'
 project(':ads-mopub').projectDir = new File('../../../src/atomic/android/mopub')
 include ':ads-admob'
 project(':ads-admob').projectDir = new File('../../../src/atomic/android/admob')
+include ':ads-chartboost'
+project(':ads-chartboost').projectDir = new File('../../../src/atomic/android/chartboost')

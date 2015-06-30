@@ -1,0 +1,3 @@
+rootProject.name = 'ads-chartboost'
+include ':ads-common'
+project(':ads-common').projectDir = new File('../common')

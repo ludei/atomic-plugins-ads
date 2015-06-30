@@ -39,4 +39,10 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
         }
     }
 
+    public void notifyOnRewardCompleted(int quantity) {
+        if (_listener != null) {
+            _listener.onRewardCompleted(this, quantity);
+        }
+    }
+
 }

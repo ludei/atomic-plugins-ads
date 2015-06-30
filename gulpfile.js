@@ -38,6 +38,10 @@ gulp.task('deps-cordova', function() {
     gulp.src(['src/atomic/ios/chartboost/*.h', 'src/atomic/ios/chartboost/*.m'])
         .pipe(gulp.dest('src/cordova/ios/chartboost/src/deps'));
 
+    //android chartboost
+    gulp.src(['src/atomic/android/chartboost/src/**/','src/atomic/android/chartboost/libs/**/'])
+        .pipe(gulp.dest('src/cordova/android/chartboost/src/deps'));
+
     //Android mopub
     gulp.src('src/atomic/android/common/src/**/')
         .pipe(gulp.dest('src/cordova/android/common/src/deps'));
@@ -54,7 +58,7 @@ gulp.task('deps-cordova', function() {
 
     //Android admob
     return gulp.src('src/atomic/android/admob/src/**/')
-        .pipe(gulp.dest('src/cordova/android/admob/src/deps'));
+        .pipe(gulp.dest('src/cordova/android/admob/base/src/deps'));
 
 });
 

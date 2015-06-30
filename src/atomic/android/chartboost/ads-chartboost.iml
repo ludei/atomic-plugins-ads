@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":ads-mopub" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../../test/android/AdTest" external.system.id="GRADLE" external.system.module.group="AdTest" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":ads-chartboost" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../../test/android/AdTest" external.system.id="GRADLE" external.system.module.group="AdTest" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":ads-mopub" />
+        <option name="GRADLE_PROJECT_PATH" value=":ads-chartboost" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -86,7 +86,33 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="mopub-sdk" level="project" />
+    <orderEntry type="library" exported="" name="play-services-base-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-appinvite-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-panorama-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-drive-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-gcm-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="chartboost" level="project" />
+    <orderEntry type="library" exported="" name="play-services-appindexing-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-wearable-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-safetynet-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-games-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-maps-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-plus-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-fitness-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="mopub-charboost-adapter" level="project" />
+    <orderEntry type="library" exported="" name="mediarouter-v7-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-analytics-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-wallet-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-identity-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-appstate-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-nearby-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-cast-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-ads-7.5.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-location-7.5.0" level="project" />
     <orderEntry type="module" module-name="ads-common" exported="" />
   </component>
 </module>

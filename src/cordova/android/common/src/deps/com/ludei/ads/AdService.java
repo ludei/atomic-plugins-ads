@@ -52,4 +52,14 @@ public interface AdService
      * @return An interstitial ad.
      */
     AdInterstitial createInterstitial(Context ctx, String adunit);
+
+    /**
+     * Creates Rewarded Video with specific adunit.
+     * If the networks doesn't support rewarded video it fallbacks to a interstitial
+     *
+     * @param adunit Optional interstitial adunit, taken from settings if not specified.
+     * @param ctx The activity context.
+     * @return An interstitial ad.
+     */
+    AdInterstitial createRewardedVideo(Context ctx, String adunit);
 }

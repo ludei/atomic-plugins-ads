@@ -52,5 +52,10 @@ public class AdServiceMoPub implements AdService {
         return new AdInterstitialMoPub(ctx, adunit);
     }
 
+    @Override
+    public AdInterstitial createRewardedVideo(Context ctx, String adunit) {
+        return this.createInterstitial(ctx, adunit);
+    }
+
 
 }
