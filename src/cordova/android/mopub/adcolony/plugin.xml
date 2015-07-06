@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub.adcolony" version="1.0.2">
+        id="com.ludei.ads.android.mopub.adcolony" version="1.0.3">
     <name>AdsMopubAdcolony</name>
     <description>Android MoPub AdColony Adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
         <source-file src="src/deps/mopub-adcolony-adapter.jar" target-dir="libs" framework="true" />
         <dependency id="com.ludei.ads.android.mopub" />

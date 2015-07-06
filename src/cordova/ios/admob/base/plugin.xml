@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.admob" version="1.0.2">
+        id="com.ludei.ads.ios.admob" version="1.0.3">
     <name>AdsAdMob</name>
     <description>iOS Ads AdMob implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,admob</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
         <header-file src="src/deps/LDAdServiceAdMob.h" />
         <source-file src="src/deps/LDAdServiceAdMob.m" />

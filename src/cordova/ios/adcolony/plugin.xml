@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.adcolony" version="1.0.2">
+        id="com.ludei.ads.ios.adcolony" version="1.0.3">
     <name>AdsAdColony</name>
     <description>iOS Ads AdColony implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
         <framework src="src/deps/external/AdColony.framework" custom="true" />
 

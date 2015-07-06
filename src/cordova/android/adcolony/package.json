@@ -1,0 +1,21 @@
+{
+    "version": "1.0.1",
+    "name": "com.ludei.ads.android.adcolony",
+    "cordova_name": "AdsAdcolony",
+    "description": "Android AdColony",
+    "license": "MPL 2.0",
+    "repo": "https://github.com/ludei/atomic-plugins-ads",
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "adcolony"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "engines": []
+}

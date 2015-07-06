@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub" version="1.0.4">
+        id="com.ludei.ads.android.mopub" version="1.0.5">
     <name>Ads Mopub</name>
     <description>Android MoPub Ads implementation</description>
     <license>MPL 2.0</license>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub</keywords>
     <platform name="android">
 

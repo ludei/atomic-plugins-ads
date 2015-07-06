@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.admob.adcolony" version="1.0.0">
+        id="com.ludei.ads.android.admob.adcolony" version="1.0.1">
     <name>AdsAdMobAdColony</name>
     <description>Android AdMob AdColony Adapter</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob, adcolony</keywords>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,adcolony</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
     	<preference name="APP_ID" />
     	<preference name="ZONE_ID" />

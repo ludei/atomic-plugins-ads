@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.chartboost" version="1.0.1">
+        id="com.ludei.ads.ios.chartboost" version="1.0.2">
     <name>AdsChartboost</name>
     <description>iOS Ads Chartboost implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
         <header-file src="src/deps/LDAdServiceChartboost.h" />
         <source-file src="src/deps/LDAdServiceChartboost.m" />
