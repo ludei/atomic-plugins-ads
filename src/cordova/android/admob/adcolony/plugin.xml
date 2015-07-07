@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.admob.adcolony" version="1.0.1">
+        id="cocoon-plugin-ads-android-admob-adcolony" version="1.0.0">
     <name>AdsAdMobAdColony</name>
     <description>Android AdMob AdColony Adapter</description>
     <license>MPL 2.0</license>
@@ -20,8 +20,8 @@
         </config-file>
 
         <source-file src="src/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova" />
-        <dependency id="com.ludei.ads.android.admob" />
-        <dependency id="com.ludei.ads.android.adcolony" />
+        <dependency id="cocoon-plugin-ads-android-admob" />
+        <dependency id="cocoon-plugin-ads-android-adcolony" />
     </platform>
 
 </plugin>

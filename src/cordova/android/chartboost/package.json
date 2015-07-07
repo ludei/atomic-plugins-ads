@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-android-chartboost",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Android Chartboost",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-android-chartboost",
     "platforms": [
       "android"
     ]
@@ -19,7 +19,7 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "chartboost",
     "ecosystem:cordova",
     "cordova-android"
   ],

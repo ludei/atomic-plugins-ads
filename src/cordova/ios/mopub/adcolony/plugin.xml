@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.mopub.adcolony" version="1.0.3">
+        id="cocoon-plugin-ads-ios-mopub-adcolony" version="1.0.0">
     <name>MoPubAdapterAdColony</name>
     <description>iOS AdColony adapter for MoPub</description>
     <license>MPL 2.0</license>
@@ -13,6 +13,6 @@
         <framework src="social.framework" weak="true" />
         <framework src="webkit.framework" weak="true" />
     </platform>
-    <dependency id="com.ludei.ads.ios.mopub" />
-    <dependency id="com.ludei.ads.ios.adcolony" />
+    <dependency id="cocoon-plugin-ads-ios-mopub" />
+    <dependency id="cocoon-plugin-ads-ios-adcolony" />
 </plugin>

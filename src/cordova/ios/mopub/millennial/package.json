@@ -1,11 +1,11 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-ios-mopub-millennial",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "iOS Millenial adapter for MoPub",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-ios-mopub-millennial",
     "platforms": [
-      "android"
+      "ios"
     ]
   },
   "repository": {
@@ -19,9 +19,9 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "millennial",
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-ios"
   ],
   "author": "ludei",
   "license": "MPL 2.0",

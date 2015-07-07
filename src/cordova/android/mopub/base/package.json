@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-android-mopub",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Android MoPub Ads implementation",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-android-mopub",
     "platforms": [
       "android"
     ]
@@ -19,7 +19,7 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "mopub",
     "ecosystem:cordova",
     "cordova-android"
   ],

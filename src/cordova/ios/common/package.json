@@ -1,11 +1,11 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-ios-common",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Cross platform Ads API for different Ad Providers. Full support for banners and interstitials",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-ios-common",
     "platforms": [
-      "android"
+      "ios"
     ]
   },
   "repository": {
@@ -19,9 +19,8 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-ios"
   ],
   "author": "ludei",
   "license": "MPL 2.0",

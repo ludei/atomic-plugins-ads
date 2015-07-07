@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.mopub" version="1.0.3">
+        id="cocoon-plugin-ads-ios-mopub" version="1.0.0">
     <name>AdsMopub</name>
     <description>iOS MoPub Ads implementation</description>
     <license>MPL 2.0</license>
@@ -30,5 +30,5 @@
         </config-file>
 
     </platform>
-    <dependency id="com.ludei.ads.ios.common" />
+    <dependency id="cocoon-plugin-ads-ios-common" />
 </plugin>

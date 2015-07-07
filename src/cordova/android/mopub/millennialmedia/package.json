@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-android-mopub-millennialmedia",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Android MoPub MillennialMedia Adapter",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-android-mopub-millennial",
     "platforms": [
       "android"
     ]
@@ -19,7 +19,8 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "mopub",
+    "millennial",
     "ecosystem:cordova",
     "cordova-android"
   ],

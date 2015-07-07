@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub.admob" version="1.0.2">
+        id="cocoon-plugin-ads-android-mopub-admob" version="1.0.0">
     <name>AdsMopubAdMob</name>
     <description>Android MoPub AdMob Adapter</description>
     <license>MPL 2.0</license>
@@ -10,7 +10,7 @@
         <source-file src="src/deps/mopub-admob-adapter.jar" target-dir="libs" framework="true" />
     </platform>
 
-    <dependency id="com.ludei.ads.android.admob" />
-    <dependency id="com.ludei.ads.android.mopub" />
+    <dependency id="cocoon-plugin-ads-android-admob" />
+    <dependency id="cocoon-plugin-ads-android-mopub" />
 
 </plugin>

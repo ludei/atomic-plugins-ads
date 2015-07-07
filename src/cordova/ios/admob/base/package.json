@@ -1,11 +1,11 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-ios-admob",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "iOS Ads AdMob implementation",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-ios-admob",
     "platforms": [
-      "android"
+      "ios"
     ]
   },
   "repository": {
@@ -19,9 +19,9 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "admob",
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-ios"
   ],
   "author": "ludei",
   "license": "MPL 2.0",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.android.mopub.adcolony" version="1.0.3">
+        id="cocoon-plugin-ads-android-mopub-adcolony" version="1.0.0">
     <name>AdsMopubAdcolony</name>
     <description>Android MoPub AdColony Adapter</description>
     <license>MPL 2.0</license>
@@ -8,7 +8,7 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
         <source-file src="src/deps/mopub-adcolony-adapter.jar" target-dir="libs" framework="true" />
-        <dependency id="com.ludei.ads.android.mopub" />
-        <dependency id="com.ludei.ads.android.adcolony" />
+        <dependency id="cocoon-plugin-ads-android-mopub" />
+        <dependency id="cocoon-plugin-ads-android-adcolony" />
     </platform>
 </plugin>

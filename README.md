@@ -174,22 +174,22 @@ Cocoon.Ad class provides an easy to use Ads API that can be used with different 
 
 Releases are deployed to Cordova Plugin Registry. You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Ludei's Cocoon Cloud Server.
 
-    cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS
-    cordova plugin add com.ludei.ads.ios.mopub; //MoPub plugin for iOS
-    cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android
-    cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android
+    cordova plugin add cocoon-plugin-ads-ios-admob; //AdMob plugin for iOS
+    cordova plugin add cocoon-plugin-ads-ios-mopub; //MoPub plugin for iOS
+    cordova plugin add cocoon-plugin-ads-android-admob; //AdMob plugin for Android
+    cordova plugin add cocoon-plugin-ads-android-mopub; //MoPub plugin for Android
 
     //Optional MoPub adapters for iOS and Android
-    cordova plugin add com.ludei.ads.ios.mopub.chartboost;
-    cordova plugin add com.ludei.ads.ios.mopub.admob;
-    cordova plugin add com.ludei.ads.ios.mopub.millennial;
-    cordova plugin add com.ludei.ads.ios.mopub.adcolony; // new 
-    cordova plugin add com.ludei.ads.android.mopub.adcolony;
-    cordova plugin add com.ludei.ads.android.mopub.admob;
-    cordova plugin add com.ludei.ads.android.mopub.chartboost;
-    cordova plugin add com.ludei.ads.android.mopub.greystripe;
-    cordova plugin add com.ludei.ads.android.mopub.inmobi;
-    cordova plugin add com.ludei.ads.android.mopub.millennial;
+    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony;
+    cordova plugin add cocoon-plugin-ads-ios-mopub-admob;
+    cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost;
+    cordova plugin add cocoon-plugin-ads-ios-mopub-millennial;
+    cordova plugin add cocoon-plugin-ads-android-mopub-adcolony;
+    cordova plugin add cocoon-plugin-ads-android-mopub-admob;
+    cordova plugin add cocoon-plugin-ads-android-mopub-chartboost;
+    cordova plugin add cocoon-plugin-ads-android-mopub-greystripe;
+    cordova plugin add cocoon-plugin-ads-android-mopub-inmobi;
+    cordova plugin add cocoon-plugin-ads-android-mopub-millennial;
 
 The following JavaScript file is included automatically:
 

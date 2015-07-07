@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.ads.ios.mopub.millennial" version="1.0.1">
+        id="cocoon-plugin-ads-ios-mopub-millennial" version="1.0.0">
     <name>MoPubAdapterMillenial</name>
     <description>iOS Millenial adapter for MoPub</description>
     <license>MPL 2.0</license>
@@ -10,5 +10,5 @@
         <source-file src="src/deps/libMillennialMediaAdapter.a" framework="true" />
         <source-file src="src/deps/libMillennialMedia.a" framework="true" />
     </platform>
-    <dependency id="com.ludei.ads.ios.mopub" />
+    <dependency id="cocoon-plugin-ads-ios-mopub" />
 </plugin>

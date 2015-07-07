@@ -1,12 +1,10 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-common",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Cocoon Ads API",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
-    "platforms": [
-      "android"
-    ]
+    "id": "cocoon-plugin-ads-common",
+    "platforms": []
   },
   "repository": {
     "type": "git",
@@ -19,9 +17,11 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
-    "ecosystem:cordova",
-    "cordova-android"
+    "mopub",
+    "cocoon",
+    "atomic",
+    "plugins",
+    "ecosystem:cordova"
   ],
   "author": "ludei",
   "license": "MPL 2.0",

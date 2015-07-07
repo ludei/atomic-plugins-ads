@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-android-mopub-greystripe",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Android MoPub GreyStripe Adapter",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-android-mopub-greystripe",
     "platforms": [
       "android"
     ]
@@ -19,7 +19,8 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "mopub",
+    "greystripe",
     "ecosystem:cordova",
     "cordova-android"
   ],

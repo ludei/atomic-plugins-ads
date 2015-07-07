@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-android-adcolony",
+  "name": "cocoon-plugin-ads-android-admob-adcolony",
   "version": "1.0.0",
-  "description": "Android AdColony",
+  "description": "Android AdMob AdColony Adapter",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-adcolony",
+    "id": "cocoon-plugin-ads-android-admob-adcolony",
     "platforms": [
       "android"
     ]
@@ -19,6 +19,7 @@
     "interstitial",
     "monetization",
     "ad",
+    "admob",
     "adcolony",
     "ecosystem:cordova",
     "cordova-android"
