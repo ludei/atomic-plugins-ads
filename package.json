@@ -1,5 +1,5 @@
 {
-  "name": "plugins-ads",
+  "name": "atomic-plugins-ads",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@bitbucket.org/ludei/plugins-ads.git"
+    "url": "https://github.com/ludei/atomic-plugins-ads"
   },
-  "author": "",
+  "author": "ludei",
   "license": "ISC",
   "devDependencies": {
     "cordova-lib": "^4.2.0",
