@@ -407,8 +407,9 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
 
         ViewGroup vg = getViewGroup();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams)data.banner.getView().getLayoutParams();
-        layoutParams.width = data.banner.getWidth();
-        layoutParams.height = data.banner.getHeight();
+        float density = _activity.getResources().getDisplayMetrics().density;
+        layoutParams.width = (int) (data.banner.getWidth() * density);
+        layoutParams.height = (int) (data.banner.getHeight() * density);
 
         if (data.layout == BannerLayout.CUSTOM) {
             layoutParams.leftMargin = (int)data.x;
