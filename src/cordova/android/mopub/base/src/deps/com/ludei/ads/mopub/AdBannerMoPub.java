@@ -12,10 +12,11 @@ import com.mopub.mobileads.MoPubView;
  */
 class AdBannerMoPub extends AbstractAdBanner implements MoPubView.BannerAdListener {
 
+    private Context ctx;
     private MoPubView banner;
 
     AdBannerMoPub(Context ctx, String adunit, BannerSize size) {
-
+        this.ctx = ctx;
         banner = new MoPubView(ctx);
         banner.setAdUnitId(adunit);
         banner.setBannerAdListener(this);
@@ -28,12 +29,14 @@ class AdBannerMoPub extends AbstractAdBanner implements MoPubView.BannerAdListen
 
     @Override
     public int getWidth() {
-        return banner.getAdWidth();
+        float density = this.ctx.getResources().getDisplayMetrics().density;
+        return (int) (banner.getAdWidth() * density);
     }
 
     @Override
     public int getHeight() {
-        return banner.getAdHeight();
+        float density = this.ctx.getResources().getDisplayMetrics().density;
+        return (int) (banner.getAdHeight() * density);
     }
 
     @Override
