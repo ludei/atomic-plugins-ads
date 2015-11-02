@@ -14,7 +14,6 @@
 		11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
 		11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
 		11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
-		11498F211B24BAE500B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
 		11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
 		11729E981B23446A00633115 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E971B23446A00633115 /* libz.dylib */; };
 		11729E9A1B2344A700633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -45,8 +44,10 @@
 		11729EBE1B234E1F00633115 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
 		11729EBF1B234E1F00633115 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333F1A76890C001983FB /* UIKit.framework */; };
 		11729EC81B234EB200633115 /* LDAdServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729EC61B234EB200633115 /* LDAdServiceChartboost.m */; };
-		11729ECA1B234ED600633115 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729EC91B234ED600633115 /* Chartboost.framework */; };
 		11729ECC1B234FDA00633115 /* TestServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729ECB1B234F6800633115 /* TestServiceChartboost.m */; };
+		1181A4451BE76E4F0061824B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1181A4431BE76E4F0061824B /* Chartboost.framework */; };
+		1181A44A1BE771670061824B /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
+		1181A44B1BE771980061824B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1181A4431BE76E4F0061824B /* Chartboost.framework */; };
 		118CECF71A744D7500AB79B9 /* LDAdServiceMoPub.m in Sources */ = {isa = PBXBuildFile; fileRef = 118CECF21A744D7500AB79B9 /* LDAdServiceMoPub.m */; };
 		11B9A73E1A56ECC4000194A3 /* TestServiceMoPub.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B9A73D1A56ECC4000194A3 /* TestServiceMoPub.m */; };
 		11D333251A766F93001983FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA009A1A48359400F0CB30 /* ViewController.m */; };
@@ -89,8 +90,8 @@
 		11729EC41B234E2000633115 /* AdTest_admob copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AdTest_admob copy-Info.plist"; path = "/Users/mortimer/Projects/atomic-plugins-ads/test/ios/AdTest/AdTest_admob copy-Info.plist"; sourceTree = "<absolute>"; };
 		11729EC61B234EB200633115 /* LDAdServiceChartboost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDAdServiceChartboost.m; path = ../../../src/atomic/ios/chartboost/LDAdServiceChartboost.m; sourceTree = "<group>"; };
 		11729EC71B234EB200633115 /* LDAdServiceChartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdServiceChartboost.h; path = ../../../src/atomic/ios/chartboost/LDAdServiceChartboost.h; sourceTree = "<group>"; };
-		11729EC91B234ED600633115 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../../src/cordova/ios/chartboost/src/deps/external/Chartboost.framework; sourceTree = "<group>"; };
 		11729ECB1B234F6800633115 /* TestServiceChartboost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestServiceChartboost.m; sourceTree = "<group>"; };
+		1181A4431BE76E4F0061824B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../../src/cordova/ios/chartboost/src/deps/external/Chartboost.framework; sourceTree = "<group>"; };
 		118CECEA1A744D5100AB79B9 /* LDAdBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdBanner.h; path = ../../../src/atomic/ios/common/LDAdBanner.h; sourceTree = "<group>"; };
 		118CECEB1A744D5100AB79B9 /* LDAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdInterstitial.h; path = ../../../src/atomic/ios/common/LDAdInterstitial.h; sourceTree = "<group>"; };
 		118CECEC1A744D5100AB79B9 /* LDAdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDAdService.h; path = ../../../src/atomic/ios/common/LDAdService.h; sourceTree = "<group>"; };
@@ -132,9 +133,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1181A44A1BE771670061824B /* GoogleMobileAds.framework in Frameworks */,
+				1181A44B1BE771980061824B /* Chartboost.framework in Frameworks */,
 				11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */,
 				11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */,
-				11498F211B24BAE500B6DA8E /* GoogleMobileAds.framework in Frameworks */,
 				11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,9 +148,9 @@
 				11729EAD1B234E1F00633115 /* QuartzCore.framework in Frameworks */,
 				11729EAE1B234E1F00633115 /* CoreMedia.framework in Frameworks */,
 				11729EAF1B234E1F00633115 /* MediaPlayer.framework in Frameworks */,
+				1181A4451BE76E4F0061824B /* Chartboost.framework in Frameworks */,
 				11729EB01B234E1F00633115 /* WebKit.framework in Frameworks */,
 				11729EB11B234E1F00633115 /* Social.framework in Frameworks */,
-				11729ECA1B234ED600633115 /* Chartboost.framework in Frameworks */,
 				11729EB21B234E1F00633115 /* AdSupport.framework in Frameworks */,
 				11729EB31B234E1F00633115 /* libz.dylib in Frameworks */,
 				11729EB41B234E1F00633115 /* CoreTelephony.framework in Frameworks */,
@@ -218,7 +220,7 @@
 		11729EC51B234E5000633115 /* chartboost */ = {
 			isa = PBXGroup;
 			children = (
-				11729EC91B234ED600633115 /* Chartboost.framework */,
+				1181A4431BE76E4F0061824B /* Chartboost.framework */,
 				11729EC61B234EB200633115 /* LDAdServiceChartboost.m */,
 				11729EC71B234EB200633115 /* LDAdServiceChartboost.h */,
 			);
@@ -500,6 +502,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
@@ -531,6 +534,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
@@ -562,6 +566,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
@@ -593,6 +598,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
@@ -702,10 +708,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
 					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -719,10 +726,9 @@
 					"-ObjC",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboost.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMedia.a",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -736,10 +742,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
 					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
+					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -753,10 +760,9 @@
 					"-ObjC",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboost.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMedia.a",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
