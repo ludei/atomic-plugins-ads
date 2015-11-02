@@ -505,9 +505,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,9 +536,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mortimer/Desktop/AdColony-iOS-SDK",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,8 +709,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -745,8 +743,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob/base/src/deps/external",
-					"/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/chartboost/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

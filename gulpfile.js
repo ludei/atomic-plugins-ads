@@ -9,6 +9,7 @@ var jsdoc = require('gulp-jsdoc');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
+var testMopub = true; //Disable to test admob
 var mopubAndroidAdapters = ['adcolony', 'admob', 'chartboost', 'greystripe', 'inmobi', 'millennialmedia'];
 var mopubIOSAdapters = ['admob', 'chartboost', 'millennial'];
 
