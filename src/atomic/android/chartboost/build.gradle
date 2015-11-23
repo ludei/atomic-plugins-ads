@@ -30,6 +30,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     compile project(':ads-common')
-    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.google.android.gms:play-services:8.3.0'
 }
 

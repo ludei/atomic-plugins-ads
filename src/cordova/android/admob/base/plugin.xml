@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob" version="1.0.0">
+        id="cocoon-plugin-ads-android-admob" version="1.0.1">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
@@ -29,7 +29,7 @@
               <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
               <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
-        <framework src="com.google.android.gms:play-services-ads:7.5.0" />
+        <framework src="com.google.android.gms:play-services-ads:8.3.0" />
         <dependency id="cocoon-plugin-ads-android-common" />
     </platform>
 
