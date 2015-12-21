@@ -562,11 +562,11 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     };
 
     /**
-     * Creates an rewarded video interstitial (only supported id some networks)
+     * Creates an rewarded video interstitial (only supported in some networks)
      * @memberOf Cocoon.Ad
-     * @function createInterstitial
+     * @function createRewardedVideo
      * @param {string} [adunit] Interstitial adunit. Taken from cordova settings or configure method if not specified.
-     * @return {Cocoon.Ad.Interstitial} A new interstitial.
+     * @return {Cocoon.Ad.Interstitial} A new rewarded video.
      * @example
      * var interstitial = Cocoon.Ad.createRewardedVideo();
      * interstitial.load();

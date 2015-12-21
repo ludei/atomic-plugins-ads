@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Atomic Plugins</title>
+
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+	<script type="text/javascript">
+		if(window.location.pathname.indexOf("index.html") !== -1){
+			document.write('<style>  #toc { display:none; } </style>');
+		}
+	</script>
+	
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+	
+	<style type="text/css">
+		.alert-warning {
+			background-color: #fcf8e3;
+			border-color: #faebcc;
+			color: #8a6d3b;
+		}
+		.alert {
+			padding: 15px;
+			margin-bottom: 20px;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+		.alert a{
+			color: #8a6d3b;
+			font-weight: bold;
+		}
+		.alert-success a {
+			color: #519251;
+			font-weight: bold;
+		}
+		.alert-success a:hover{
+			color: #519251;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		.alert-warning a:hover{
+			color: #8a6d3b;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		.page-title{
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html"><img src='img/logomini.png' style='width: 100px;height: 35px;'/> <span class='brand-adjust'>JavaScript Documentation</span></a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							
+								<a href="Cocoon.Ad.html">Ad</a>
+							
+						</li>
+						
+						<li>
+							
+								<a href="Cocoon.Ad.Banner.html">Banner</a>
+							
+						</li>
+						
+						<li>
+							
+								<a href="Cocoon.Ad.Interstitial.html">Interstitial</a>
+							
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+			<div class="span12">
+				
+				<div id="main">
+					
+
+
+		<h1 class="page-title">Source: /Users/BlueSialia/Version_Control/atomic-plugins-ads/src/js/cocoon_ads.js</h1>
+    
+    <section>
+        <article>
+            <pre class="sunlight-highlight-javascript linenums">(function(){
+
+    if (!window.Cocoon &amp;&amp; window.cordova &amp;&amp; typeof require !== 'undefined') {
+        cordova.require('cocoon-plugin-common.Cocoon');
+    }
+    var Cocoon = window.Cocoon;
+
+    /**
+    * @fileOverview
+    &lt;h2>About Atomic Plugins&lt;/h2>
+    &lt;p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
+    &lt;br/>&lt;p>You can contribute and help to create more awesome plugins. &lt;/p>
+    &lt;h2>Atomic Plugins for Ads&lt;/h2>
+    &lt;p>This repo contains Ad APIs designed using the Atomic Plugins paradigm. Monetize your app and take advantage of all the features provided: elegant API, flexible monetization solution that works across multiple platforms, full support for banners and full screen ads (interstitials), single API for different Ad Providers, etc. The API is already available in many languagues and we have the plan to add more in the future.&lt;/p>
+    &lt;p>Currently there are 2 Ad providers implemented but new ones can be easily added:&lt;/p>
+    &lt;ul>
+    &lt;li>MoPub with optional adapters&lt;/li>
+    &lt;li>AdMob&lt;/li>
+    &lt;/ul>
+    &lt;h3>Setup your project&lt;/h3>
+    &lt;p>Releases are deployed to Cordova Plugin Registry. 
+    You only have to install the desired plugins using Cordova CLI, Cocoon CLI or Cocoon Cloud Server.&lt;/p>
+    &lt;ul>
+    &lt;code>
+    cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS&lt;br/>
+    cordova plugin add com.ludei.ads.ios.mopub; //MoPub plugin for iOS&lt;br/>
+    cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android&lt;br/>
+    cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android&lt;br/>&lt;br/>
+    //Optional MoPub adapters for iOS and Android&lt;br/>
+    cordova plugin add com.ludei.ads.ios.mopub.chartboost;&lt;br/>
+    cordova plugin add com.ludei.ads.ios.mopub.admob;&lt;br/>
+    cordova plugin add com.ludei.ads.ios.mopub.millennial;&lt;br/>
+    cordova plugin add con.ludei.ads.android.adcolony;&lt;br/>
+    cordova plugin add con.ludei.ads.android.admob;&lt;br/>
+    cordova plugin add con.ludei.ads.android.chartboost;&lt;br/>
+    cordova plugin add con.ludei.ads.android.greystripe;&lt;br/>
+    cordova plugin add con.ludei.ads.android.inmobi;&lt;br/>
+    cordova plugin add con.ludei.ads.android.millennial;&lt;br/>&lt;/code>
+    &lt;/ul>
+    &lt;p>The following JavaScript files will be included in your html project by default during installation:&lt;/p>
+    &lt;ul>
+    &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;h3>Documentation&lt;/h3>
+    &lt;p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
+    Select the specific namespace below to open the relevant documentation section:&lt;/p>
+    &lt;ul>
+    &lt;li>&lt;a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="Cocoon.Ad.html">Ad&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;h3>API Reference&lt;/h3>
+    &lt;p>For a complete project that tests all the features provided in the API run the following command:&lt;/p>
+    &lt;ul>&lt;code>gulp create-cordova&lt;/code>&lt;/ul>
+    &lt;br/>&lt;p>We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
+    just drop us a line at our forum and we will do our best to help you out.&lt;/p>
+    &lt;h3>Tools&lt;/h3>
+    &lt;a href="http://support.ludei.com/hc/communities/public/topics">&lt;img src="img/cocoon-tools-1.png" />&lt;/a>
+    &lt;a href="https://cocoon.io/doc">&lt;img src="img/cocoon-tools-2.png" />&lt;/a>
+    &lt;a href="http://cocoon.io/">&lt;img src="img/cocoon-tools-3.png" />&lt;/a>
+    * @version 1.0
+    */
+
+   /**
+    * Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
+    * @namespace Cocoon.Ad
+    */
+
+Cocoon.define("Cocoon.Ad" , function(extension){
+    "use strict";
+
+    /**
+     * The predefined possible layouts for a banner ad.
+     * @name Cocoon.Ad.BannerLayout
+     * @memberOf Cocoon.Ad
+     * @property {string} TOP_CENTER Specifies that the banner must be shown in the top of the screen and vertically centered.
+     * @property {string} BOTTOM_CENTER Specifies that the banner must be shown in the bottom of the screen and vertically centered.
+     * @property {string} CUSTOM Specifies that the uses sets a custom banner position
+     */
+    extension.BannerLayout =
+    {
+        TOP_CENTER      : "TOP_CENTER",
+        BOTTOM_CENTER   : "BOTTOM_CENTER",
+        CUSTOM          : "CUSTOM"
+    };
+
+    /**
+     * The predefined possible sizes for a banner ad.
+     * @name Cocoon.Ad.BannerSize
+     * @memberOf Cocoon.Ad
+     * @property {string} SMART Smart banner size according to screen size (Phones and Tablets)
+     * @property {string} BANNER Standard banner size (Phones and Tablets)
+     * @property {string} MEDIUM_RECT Medium rectangle size (Phones and Tablets)
+     * @property {string} LEADERBOARD Leaderboard size (Tablets)
+     */
+    extension.BannerSize =
+    {
+        SMART           : "SMART",
+        BANNER          : "BANNER",
+        MEDIUM_RECT     : "MEDIUM_RECT",
+        LEADERBOARD     :"LEADERBOARD"
+    };
+
+    /**
+    * @private
+    */
+    extension.Banner = function(bannerId, serviceName) {
+        this.id = bannerId;
+        this.serviceName = serviceName;
+        this.signal = new Cocoon.Signal();
+        this.width = 0;
+        this.height = 0;
+        this.ready = false;
+    };
+
+    /**
+    * 
+    * @namespace Cocoon.Ad.Banner
+    * @example
+    * 
+    * banner = Cocoon.Ad.createBanner();
+    *
+    * banner.on("load", function(){
+    *    console.log("Banner loaded " + banner.width, banner.height);
+    *    banner.show();
+    * });
+    *
+    * banner.on("fail", function(){
+    *    console.log("Banner failed to load");
+    * });
+    *
+    * banner.on("show", function(){
+    *    console.log("Banner shown a modal content");
+    * });
+    *
+    * banner.on("dismiss", function(){
+    *    console.log("Banner dismissed the modal content");
+    * });
+    *
+    * banner.on("click", function(){
+    *    console.log("Banner clicked");
+    * });
+    *
+    * banner.load();
+    */
+    extension.Banner.prototype = {
+
+        /**
+        * Shows the banner ad. 
+        * @memberOf Cocoon.Ad.Banner
+        * @function show 
+        * @example
+        * myBanner = Cocoon.Ad.createBanner(settings);
+        * myBanner.show(); 
+        */
+        show: function() {
+            Cocoon.exec(this.serviceName, "showBanner", [this.id]);
+        },
+
+        /**
+        * Hides the banner ad. 
+        * @memberOf Cocoon.Ad.Banner
+        * @function hide
+        * @example
+        * banner = Cocoon.Ad.createBanner(settings);
+        * banner.hide(); 
+        */
+        hide: function() {
+            Cocoon.exec(this.serviceName, "hideBanner", [this.id]);
+        },
+
+        /**
+        * Sets a specific layout for a banner ad. 
+        * @memberOf Cocoon.Ad.Banner
+        * @function setLayout 
+        * @param {Cocoon.Ad.BannerLayout} layout The predefined layout for a banner ad.
+        * @example
+        * banner = Cocoon.Ad.createBanner(settings);
+        * banner.setLayout(layout); // If CUSTOM layout
+        */
+        setLayout: function(layout) {
+            Cocoon.exec(this.serviceName, "setBannerLayout", [this.id, layout]);
+        },
+
+        /**
+        * Sets a specific position for a banner ad in CUSTOM layout. 
+        * @memberOf Cocoon.Ad.Banner
+        * @function setPosition 
+        * @param {number} x The top lef x coordinate of the banner.
+        * @param {number} y The top lef y coordinate of the banner.
+        * @example
+        * banner = Cocoon.Ad.createBanner(settings);
+        * banner.setLayout(layout); // If CUSTOM layout
+        * banner.setPosition(x, y); 
+        */
+        setPosition: function(x, y) {
+            Cocoon.exec(this.serviceName, "setBannerPosition", [this.id, x, y]);
+        },
+
+        /**
+        * Loads a banner ad. 
+        * @memberOf Cocoon.Ad.Banner
+        * @function load 
+        * @example
+        * banner = Cocoon.Ad.createBanner(settings);
+        * banner.load();  
+        */
+        load: function() {
+            Cocoon.exec(this.serviceName, "loadBanner", [this.id]);
+        },
+
+        /**
+         * Checks if the banner is loaded and ready
+         * @memberOf Cocoon.Ad.Banner
+         * @function isReady
+         * @example
+         * var ready = banner.isReady();
+         */
+        isReady: function() {
+            return this.ready;
+        },
+
+        /**
+        * Triggered when a new banner is loaded. 
+        * @memberOf Cocoon.Ad.Banner
+        * @event On load
+        * @example
+        * banner.on("load", function(){
+        *    console.log("Banner loaded " + banner.width, banner.height);
+        * });
+        */
+
+        /**
+        * Triggered when the loading process of a banner has failed. 
+        * @memberOf Cocoon.Ad.Banner
+        * @event On fail
+        * @example
+        * banner.on("fail", function(error){
+        *    console.log("Banner failed to load: " + JSON.stringify(error));
+        * });
+        */
+
+        /**
+        * Triggered when a new banner is expanded to full screen. 
+        * @memberOf Cocoon.Ad.Banner
+        * @event On show
+        * @example
+        * banner.on("show", function(){
+        *    console.log("Banner shown a modal content");
+        * });
+        */
+
+        /**
+        * Triggered when a banner is collapsed.
+        * @memberOf Cocoon.Ad.Banner
+        * @event On dismiss
+        * @example
+        * banner.on("dismiss", function(){
+        *    console.log("Banner dismissed the modal content");
+        * });
+        */
+
+        /**
+        * Triggered when a banner is clicked.
+        * @memberOf Cocoon.Ad.Banner
+        * @event On click
+        * @example
+        * banner.on("click", function(){
+        *    console.log("Banner clicked");
+        * });
+        */
+
+        on: function(eventName, handler) {
+            this.signal.on(eventName, handler);
+        }
+    };
+
+   /**
+    * @private
+    */
+    extension.Interstitial = function(interstitialId, serviceName) {
+        this.id = interstitialId;
+        this.serviceName = serviceName;
+        this.signal = new Cocoon.Signal();
+        this.ready = false;
+    };
+
+   /**
+    * 
+    * @namespace Cocoon.Ad.Interstitial
+    * @example
+    * interstitial = Cocoon.Ad.createInterstitial();
+    *
+    * interstitial.on("load", function(){
+    *     console.log("Interstitial loaded");
+    * });
+    * interstitial.on("fail", function(){
+    *     console.log("Interstitial failed");
+    * });
+    * interstitial.on("show", function(){
+    *     console.log("Interstitial shown");
+    * });
+    * interstitial.on("dismiss", function(){
+    *     console.log("Interstitial dismissed");
+    * });
+    *
+    * interstitial.on("click", function(){
+    *     console.log("Interstitial clicked");
+    * });
+    * 
+    * interstitial.load();
+    */
+    extension.Interstitial.prototype = {
+
+        /**
+        * Shows the interstitial ad. 
+        * @memberOf Cocoon.Ad.Interstitial
+        * @function show
+        * @example
+        * interstitial = Cocoon.Ad.createInterstitial(settings);
+        * interstitial.show(); 
+        */
+        show: function() {
+            this.ready = false; //true on next load event
+            Cocoon.exec(this.serviceName, "showInterstitial", [this.id]);
+        },
+
+        /**
+        * Loads an interstitial ad. 
+        * @memberOf Cocoon.Ad.Interstitial
+        * @function load 
+        * @example
+        * interstitial = Cocoon.Ad.createInterstitial(settings);
+        * interstitial.load(); 
+        */
+        load: function() {
+            Cocoon.exec(this.serviceName, "loadInterstitial", [this.id]);
+        },
+
+        /**
+         * Checks if the interstitial is loaded and ready
+         * @memberOf Cocoon.Ad.Interstitial
+         * @function isReady
+         * @example
+         * var ready = interstitial.isReady();
+         */
+        isReady: function() {
+            return this.ready;
+        },
+
+        /**
+        * Triggered when a new interstitial is loaded. 
+        * @memberOf Cocoon.Ad.Interstitial
+        * @event On load
+        * @example
+        * banner.on("load", function(){
+        *    console.log("Interstitial loaded");
+        * });
+        */
+
+        /**
+        * Triggered when the loading process of an interstitial has failed. 
+        * @memberOf Cocoon.Ad.Interstitial
+        * @event On fail
+        * @example
+        * interstitial.on("fail", function(error){
+        *    console.log("Interstitial failed to load: " + JSON.stringify(error));
+        * });
+        */
+
+        /**
+        * Triggered when a new interstitial is shown. 
+        * @memberOf Cocoon.Ad.Interstitial
+        * @event On show
+        * @example
+        * interstitial.on("show", function(){
+        *    console.log("Interstitial shown");
+        * });
+        */
+
+        /**
+        * Triggered when an interstitial is closed.
+        * @memberOf Cocoon.Ad.Interstitial
+        * @event On dismiss
+        * @example
+        * interstitial.on("dimissed", function(){
+        *    console.log("Interstitial dimissed");
+        * });
+        */
+
+        /**
+        * Triggered when an interstitial is clicked.
+        * @memberOf Cocoon.Ad.Interstitial
+        * @event On click
+        * @example
+        * interstitial.on("click", function(){
+        *    console.log("Interstitial clicked");
+        * });
+        */
+
+        /**
+         * Triggered when an video reward is completed.
+         * @memberOf Cocoon.Ad.Interstitial
+         * @event On reward
+         * @example
+         * interstitial.on("reward", function(quantity){
+        *    console.log("Reward completed. Earned " + quantity + " items");
+        * });
+         */
+
+        on: function(eventName, handler) {
+            this.signal.on(eventName, handler);
+        }
+    };
+
+    var idCounter = 0;
+
+
+    extension.AdService = function(serviceName) {
+        this.serviceName = serviceName;
+        this.activeAds = {};
+    };
+
+    var proto = {};
+    extension.AdService.prototype = proto;
+
+
+    /**
+     * @memberOf Cocoon.Ad
+     * @function listenerHandler
+     * @private
+     */
+    proto.listenerHandler = function(args) {
+        var eventName = args[0];
+        var adId = args[1];
+        var params = args.slice(2);
+
+        var ad = this.activeAds[adId];
+        if (ad) {
+
+            if (eventName === "load") {
+                ad.ready = true;
+            }
+            else if (eventName === "fail") {
+                ad.ready = false;
+            }
+            if (eventName === "load" &amp;&amp; params.length > 0) {
+                //cache banner size
+                ad.width = params[0];
+                ad.height = params[1];
+                params = params.slice(2);
+            }
+
+            ad.signal.emit(eventName, null, params);
+        }
+    };
+
+    /** 
+    * @memberOf Cocoon.Ad
+    * @function init
+    * @private
+    */
+    proto.init = function() {
+        if (this.initialized) {
+            return;
+        }
+        Cocoon.exec(this.serviceName, "setBannerListener", [], this.listenerHandler.bind(this));
+        Cocoon.exec(this.serviceName, "setInterstitialListener", [], this.listenerHandler.bind(this));
+
+        this.initialized = true;
+    };
+
+    /**
+    * Configure default banner and interstitial adunits.
+    * @memberOf Cocoon.Ad
+    * @function configure
+    * @param {object} [settings] The banner optional settings.
+    * @example
+    * //Global configuration
+    *Cocoon.Ads.configure({
+    *     banner:"agltb3B1Yi1pbmNyDQsSBFNpdGUxxxxxxx",
+    *     interstitial:"agltb3B1Yi1pbmNyDQsSBFNpdGUyyyyyyy"
+    *})
+    * //Or platform specific configuration
+    *Cocoon.Ads.configure({
+    *     ios: {
+    *          banner:"agltb3B1Yi1pbmNyDQsSBFNpdGUxxxxxxx",
+    *          bannerIpad:"agltb3B1Yi1pbmNyDQsSBFNpdGUzzzzz", //optional
+    *          interstitial:"agltb3B1Yi1pbmNyDQsSBFNpdGUyyyyyyy",
+    *          interstitialIpad:"agltb3B1Yi1pbmNyDQsSBFNpdGUtttttt", //optional
+    *     },
+    *     android: {
+    *          banner:"agltb3B1Yi1pbmNyDQsSBFNpdGUwwwwww",
+    *          interstitial:"agltb3B1Yi1pbmNyDQsSBFNpdGUhhhhhh"
+    *     }
+    *);*
+    */
+    proto.configure = function(settings) {
+
+        var platform = Cocoon.getPlatform();
+        if (platform === Cocoon.PlatformType.AMAZON &amp;&amp; settings[Cocoon.PlatformType.ANDROID]) {
+            //fallback from amazon to android if only android specified
+            platform = Cocoon.PlatformType.ANDROID;
+        }
+        if (settings[platform]) {
+            settings = settings[platform];
+        }
+
+        Cocoon.exec(this.serviceName, "configure", [settings]);
+    };
+
+    /**
+    * Creates a banner. 
+    * @memberOf Cocoon.Ad
+    * @function createBanner
+    * @param {string} [adunit] banner adunit. Taken from cordova settings or configure method if not specified.
+    * @param {Cocoon.Ad.BannerSize} [size] The banner size. Default value: Smart Size
+    * @return {Cocoon.Ad.Banner} banner A new banner ad.
+    * @example
+    * var banner = Cocoon.Ad.createBanner();
+    * banner.load(); 
+    */
+    proto.createBanner = function(adunit, size) {
+        this.init();
+        var bannerId = idCounter++;
+        Cocoon.exec(this.serviceName, "createBanner", [bannerId, adunit, size]);
+        var banner = new extension.Banner(bannerId, this.serviceName);
+        this.activeAds[bannerId] = banner;
+        return banner;
+    };
+
+    /**
+    * Releases the banner given. 
+    * @memberOf Cocoon.Ad
+    * @function releaseBanner
+    * @param {Cocoon.Ad.Banner} banner The banner ad to release. 
+    * @example
+    * Cocoon.Ad.releaseBanner(banner);
+    */
+    proto.releaseBanner = function(banner) {
+        Cocoon.exec(this.serviceName, "releaseBanner", [banner.id]);
+        delete this.activeAds[id];
+    };
+
+    /**
+    * Creates an interstitial. 
+    * @memberOf Cocoon.Ad
+    * @function createInterstitial
+    * @param {string} [adunit] Interstitial adunit. Taken from cordova settings or configure method if not specified.
+    * @return {Cocoon.Ad.Interstitial} A new interstitial. 
+    * @example
+    * var interstitial = Cocoon.Ad.createInterstitial();
+    * interstitial.load();
+    */
+    proto.createInterstitial = function(adunit) {
+        this.init();
+        var interstitialId = idCounter++;
+        Cocoon.exec(this.serviceName, "createInterstitial", [interstitialId, adunit]);
+        var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
+        this.activeAds[interstitialId] = interstitial;
+        return interstitial;
+    };
+
+    /**
+     * Creates an rewarded video interstitial (only supported in some networks)
+     * @memberOf Cocoon.Ad
+     * @function createRewardedVideo
+     * @param {string} [adunit] Interstitial adunit. Taken from cordova settings or configure method if not specified.
+     * @return {Cocoon.Ad.Interstitial} A new rewarded video.
+     * @example
+     * var interstitial = Cocoon.Ad.createRewardedVideo();
+     * interstitial.load();
+     */
+    proto.createRewardedVideo = function(adunit) {
+        this.init();
+        var interstitialId = idCounter++;
+        Cocoon.exec(this.serviceName, "createRewardedVideo", [interstitialId, adunit]);
+        var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
+        this.activeAds[interstitialId] = interstitial;
+        return interstitial;
+    };
+
+    /**
+    * Releases the interstitial given. 
+    * @memberOf Cocoon.Ad
+    * @function releaseInterstitial
+    * @param {Cocoon.Ad.Interstitial} interstitial The interstitial to release. 
+    * @example
+    * Cocoon.Ad.releaseInterstitial(interstitial);
+    */
+    proto.releaseInterstitial = function(interstitial) {
+        Cocoon.exec(this.serviceName, "releaseInterstitial", [interstitial.id]);
+        delete this.activeAds[interstitial.id];
+    };
+
+
+    //compatibility for Cocoon.Ad methods
+    extension.serviceName = "LDAdService";
+    extension.activeAds = {};
+    for (var key in proto) {
+        if (proto.hasOwnProperty(key)) {
+            extension[key] = proto[key];
+        }
+    }
+
+    return extension;
+});
+
+})();</pre>
+        </article>
+    </section>
+
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Atomic Plugins - JavaScript Documentation by Ludei, DocStrap Copyright © 2012-2013 <br/> The contributors to the JSDoc3 and DocStrap projects.
+		</span>
+					<br />
+					
+				</footer>
+			</div>
+
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<script src="scripts/sunlight.js"></script>
+	<script src="scripts/sunlight.javascript.js"></script>
+	<script src="scripts/sunlight-plugin.doclinks.js"></script>
+	<script src="scripts/sunlight-plugin.linenumbers.js"></script>
+	<script src="scripts/sunlight-plugin.menu.js"></script>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/jquery.scrollTo.js"></script>
+	<script src="scripts/jquery.localScroll.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+
+	<script>  Sunlight.highlightAll({lineNumbers:true,  showMenu: true, enableDoclinks :true}); </script>
+
+	<script>
+		$( function () {
+			$( "#toc" ).toc( {
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : 60
+			} );
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+
+			var prefix = $(".toc-h2").text();
+			$($(".toc-h3").nextAll()).each(function(){
+
+				if($(this).attr("class") === "toc-h3")
+					return false;
+				// Mega ugly hack, ask karliky
+				// Replace the "<static>" word
+				var str = prefix + "." + $(this).text().toString().replace("<static> ","");
+				// Replace the "function(args)" string
+
+				str = str.replace(/ /g, "").replace(/\n/g, "");
+				str = str.split("(");
+				str = (str.length == 1) ? str.join("") : str[0] + "(" + ")";
+				$($($(this)[0]).children()[0]).text(str);
+			});
+			$(".toc-h4 a").each(function(){
+				var el 	= $(this);
+				var str = el.text().toString().replace("<static> ","");
+				
+				str = str.split("(");
+				str = (str.length == 1) ? str.join("") : str[0] + "(" + ")";
+				el.text(str);
+			});
+			$(".description p").each(function(){
+				var el = $(this);
+				el.html(el.text());
+			});
+		} );
+	</script>
+
+	
+
+</body>
+</html>
