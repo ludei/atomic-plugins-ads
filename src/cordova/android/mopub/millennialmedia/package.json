@@ -1,9 +1,9 @@
 {
   "name": "cocoon-plugin-ads-android-mopub-millennialmedia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Android MoPub MillennialMedia Adapter",
   "cordova": {
-    "id": "cocoon-plugin-ads-android-mopub-millennial",
+    "id": "cocoon-plugin-ads-android-mopub-millennialmedia",
     "platforms": [
       "android"
     ]
