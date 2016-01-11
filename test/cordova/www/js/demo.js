@@ -63,16 +63,16 @@
 
     function initAds() {
         //Configuration If AdMob service plugins are installed
-        Cocoon.Ad.configure({
-             ios: {
-                  banner:"ca-app-pub-7686972479101507/8873903476",
-                  interstitial:"ca-app-pub-7686972479101507/8873903476",
-             },
-             android: {
-                  banner:"ca-app-pub-7686972479101507/4443703872",
-                  interstitial:"ca-app-pub-7686972479101507/4443703872"
-             }
-        });
+Cocoon.Ad.configure({
+     ios: {
+          banner:"ca-app-pub-7686972479101507/8873903476",
+          interstitial:"ca-app-pub-7686972479101507/8873903476",
+     },
+     android: {
+          banner:"ca-app-pub-7686972479101507/4443703872",
+          interstitial:"ca-app-pub-7686972479101507/4443703872"
+     }
+});
 
         //Configuration If MoPub service plugins are installed
         /*Cocoon.Ad.configure({
