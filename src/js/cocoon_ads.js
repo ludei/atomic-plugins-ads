@@ -18,24 +18,30 @@
     <li>AdMob</li>
     </ul>
     <h3>Setup your project</h3>
-    <p>Releases are deployed to Cordova Plugin Registry. 
-    You only have to install the desired plugins using Cordova CLI, Cocoon CLI or Cocoon Cloud Server.</p>
+    <p>Releases are deployed to NPM. 
+    You only have to install the desired plugins using Cordova CLI and <a href="https://cocoon.io"/>Cocoon Cloud service</a>.</p>
     <ul>
     <code>
-    cordova plugin add com.ludei.ads.ios.admob; //AdMob plugin for iOS<br/>
-    cordova plugin add com.ludei.ads.ios.mopub; //MoPub plugin for iOS<br/>
-    cordova plugin add com.ludei.ads.android.admob; //AdMob plugin for Android<br/>
-    cordova plugin add com.ludei.ads.android.mopub; //MoPub plugin for Android<br/><br/>
+    // MoPub
+    cordova plugin add cocoon-plugin-ads-ios-admob;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub;<br/>
     //Optional MoPub adapters for iOS and Android<br/>
-    cordova plugin add com.ludei.ads.ios.mopub.chartboost;<br/>
-    cordova plugin add com.ludei.ads.ios.mopub.admob;<br/>
-    cordova plugin add com.ludei.ads.ios.mopub.millennial;<br/>
-    cordova plugin add con.ludei.ads.android.adcolony;<br/>
-    cordova plugin add con.ludei.ads.android.admob;<br/>
-    cordova plugin add con.ludei.ads.android.chartboost;<br/>
-    cordova plugin add con.ludei.ads.android.greystripe;<br/>
-    cordova plugin add con.ludei.ads.android.inmobi;<br/>
-    cordova plugin add con.ludei.ads.android.millennial;<br/></code>
+    cordova plugin add cocoon-plugin-ads-android-mopub-adcolony;<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-admob;<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-chartboost;<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-greystripe;<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-inmobi;<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-millennialmedia;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-admob;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-millennial;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony;<br/>
+    //AdMob
+    cordova plugin add cocoon-plugin-ads-android-admob;<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub;<br/><br/>
+    // Optionad AdMob adapters for iOS and Android
+    cordova plugin add cocoon-plugin-ads-android-admob-adcolony;<br/><br/>
+    cordova plugin add cocoon-plugin-ads-ios-admob-adcolony;<br/><br/>
     </ul>
     <p>The following JavaScript files will be included in your html project by default during installation:</p>
     <ul>
@@ -49,15 +55,6 @@
     <li><a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon</a></li>
     <li><a href="Cocoon.Ad.html">Ad</a></li>
     </ul>
-    <h3>API Reference</h3>
-    <p>For a complete project that tests all the features provided in the API run the following command:</p>
-    <ul><code>gulp create-cordova</code></ul>
-    <br/><p>We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
-    just drop us a line at our forum and we will do our best to help you out.</p>
-    <h3>Tools</h3>
-    <a href="http://support.ludei.com/hc/communities/public/topics"><img src="img/cocoon-tools-1.png" /></a>
-    <a href="https://cocoon.io/doc"><img src="img/cocoon-tools-2.png" /></a>
-    <a href="http://cocoon.io/"><img src="img/cocoon-tools-3.png" /></a>
     * @version 1.0
     */
 
