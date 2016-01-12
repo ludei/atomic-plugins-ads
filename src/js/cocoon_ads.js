@@ -7,6 +7,7 @@
 
     /**
     * @fileOverview
+
     <h2>About Atomic Plugins</h2>
     <p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
     <br/><p>You can contribute and help to create more awesome plugins. </p>
@@ -21,31 +22,26 @@
     <p>Releases are deployed to NPM. 
     You only have to install the desired plugins using Cordova CLI and <a href="https://cocoon.io"/>Cocoon Cloud service</a>.</p>
     <ul>
-    <code>
-    // MoPub
-    cordova plugin add cocoon-plugin-ads-ios-admob<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub<br/><br/>
-
-    //Optional MoPub adapters for iOS and Android<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-adcolony<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-admob<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-chartboost<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-greystripe<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-inmobi<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-millennialmedia<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-admob<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-millennial<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony<br/><br/>
-
-    // AdMob
-    cordova plugin add cocoon-plugin-ads-android-admob<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub<br/><br/>
-
-    // Optionad AdMob adapters for iOS and Android
-    cordova plugin add cocoon-plugin-ads-android-admob-adcolony<br/>
-    cordova plugin add cocoon-plugin-ads-ios-admob-adcolony<br/>
-    </code>
+    // MoPub<br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-admob</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-mopub</code><br/><br/>
+    // Optional MoPub adapters for iOS and Android<br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub-adcolony</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub-admob</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub-chartboost</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub-greystripe</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub-inmobi</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub-millennialmedia</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-mopub-admob</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-mopub-millennial</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony</code><br/><br/>
+    // AdMob<br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-admob</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-mopub</code><br/><br/>
+    // Optional AdMob adapters for iOS and Android<br/>
+    <code>cordova plugin add cocoon-plugin-ads-android-admob-adcolony</code><br/>
+    <code>cordova plugin add cocoon-plugin-ads-ios-admob-adcolony</code><br/>
     </ul>
     <h3>Documentation</h3>
     <p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
