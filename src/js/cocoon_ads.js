@@ -24,7 +24,8 @@
     <code>
     // MoPub
     cordova plugin add cocoon-plugin-ads-ios-admob;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub;<br/><br/>
+
     //Optional MoPub adapters for iOS and Android<br/>
     cordova plugin add cocoon-plugin-ads-android-mopub-adcolony;<br/>
     cordova plugin add cocoon-plugin-ads-android-mopub-admob;<br/>
@@ -35,13 +36,15 @@
     cordova plugin add cocoon-plugin-ads-ios-mopub-admob;<br/>
     cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost;<br/>
     cordova plugin add cocoon-plugin-ads-ios-mopub-millennial;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony;<br/>
-    //AdMob
+    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony;<br/><br/>
+
+    // AdMob
     cordova plugin add cocoon-plugin-ads-android-admob;<br/>
     cordova plugin add cocoon-plugin-ads-android-mopub;<br/><br/>
+
     // Optionad AdMob adapters for iOS and Android
-    cordova plugin add cocoon-plugin-ads-android-admob-adcolony;<br/><br/>
-    cordova plugin add cocoon-plugin-ads-ios-admob-adcolony;<br/><br/>
+    cordova plugin add cocoon-plugin-ads-android-admob-adcolony;<br/>
+    cordova plugin add cocoon-plugin-ads-ios-admob-adcolony;<br/>
     </code>
     </ul>
     <p>The following JavaScript files will be included in your html project by default during installation:</p>
