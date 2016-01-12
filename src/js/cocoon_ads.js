@@ -23,41 +23,35 @@
     <ul>
     <code>
     // MoPub
-    cordova plugin add cocoon-plugin-ads-ios-admob;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub;<br/><br/>
+    cordova plugin add cocoon-plugin-ads-ios-admob<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub<br/><br/>
 
     //Optional MoPub adapters for iOS and Android<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-adcolony;<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-admob;<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-chartboost;<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-greystripe;<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-inmobi;<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub-millennialmedia;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-admob;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-millennial;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony;<br/><br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-adcolony<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-admob<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-chartboost<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-greystripe<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-inmobi<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub-millennialmedia<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-admob<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-chartboost<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-millennial<br/>
+    cordova plugin add cocoon-plugin-ads-ios-mopub-adcolony<br/><br/>
 
     // AdMob
-    cordova plugin add cocoon-plugin-ads-android-admob;<br/>
-    cordova plugin add cocoon-plugin-ads-android-mopub;<br/><br/>
+    cordova plugin add cocoon-plugin-ads-android-admob<br/>
+    cordova plugin add cocoon-plugin-ads-android-mopub<br/><br/>
 
     // Optionad AdMob adapters for iOS and Android
-    cordova plugin add cocoon-plugin-ads-android-admob-adcolony;<br/>
-    cordova plugin add cocoon-plugin-ads-ios-admob-adcolony;<br/>
+    cordova plugin add cocoon-plugin-ads-android-admob-adcolony<br/>
+    cordova plugin add cocoon-plugin-ads-ios-admob-adcolony<br/>
     </code>
-    </ul>
-    <p>The following JavaScript files will be included in your html project by default during installation:</p>
-    <ul>
-    <li><a href="https://github.com/ludei/atomic-plugins-ads/blob/master/src/cordova/js/cocoon_ads.js">cocoon_ads.js</a></li>
-    <li><a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js</a></li>
     </ul>
     <h3>Documentation</h3>
     <p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
     Select the specific namespace below to open the relevant documentation section:</p>
     <ul>
-    <li><a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon</a></li>
-    <li><a href="Cocoon.Ad.html">Ad</a></li>
+    <li><a href="http://ludei.github.io/atomic-plugins-docs/dist/doc/js/Cocoon.Ad.html">Cocoon Ads</a></li>
     </ul>
     * @version 1.0
     */
