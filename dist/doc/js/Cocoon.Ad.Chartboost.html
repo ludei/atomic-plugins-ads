@@ -169,6 +169,27 @@
 
 
         
+            <h3>Example</h3>
+            
+    <pre class="sunlight-highlight-javascript">//Global configuration
+Cocoon.Ads.Chartboost.configure({
+    banner:"xxx",
+    interstitial:"yyy"
+})
+//Or platform specific configuration
+Cocoon.Ads.Chartboost.configure({
+    ios: {
+         interstitial:"aaa",
+         interstitialIpad:"bbb", //optional
+    },
+    android: {
+         banner:"ccc",
+         interstitial:"ddd"
+    }
+);*</pre>
+
+
+        
     
     </div>
 

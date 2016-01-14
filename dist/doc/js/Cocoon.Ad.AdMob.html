@@ -169,6 +169,29 @@
 
 
         
+            <h3>Example</h3>
+            
+    <pre class="sunlight-highlight-javascript">//Global configuration
+Cocoon.Ads.AdMob.configure({
+    banner:"xxx",
+    interstitial:"yyy"
+})
+//Or platform specific configuration
+Cocoon.Ads.AdMob.configure({
+    ios: {
+         banner:"aaa",
+         bannerIpad:"bbb", //optional
+         interstitial:"ccc",
+         interstitialIpad:"ddd", //optional
+    },
+    android: {
+         banner:"eee",
+         interstitial:"fff"
+    }
+);*</pre>
+
+
+        
     
     </div>
 

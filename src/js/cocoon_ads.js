@@ -49,6 +49,8 @@
     <ul>
     <li><a href="http://ludei.github.io/atomic-plugins-docs/dist/doc/js/Cocoon.Ad.html">Cocoon Ads</a></li>
     </ul>
+    <h3>Full example</h3>
+    See a full example here: <a href="https://github.com/CocoonIO/cocoon-template-ads"/>Ads demo</a>
     * @version 1.0
     */
 
