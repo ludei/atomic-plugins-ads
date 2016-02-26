@@ -147,8 +147,8 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
 -(void) setBannerPosition: (CDVInvokedUrlCommand*)command
 {
     LDAdBannerData * data = [_banners objectForKey:GET_ID(command)];
-    NSNumber * x = [command argumentAtIndex:0 withDefault:[NSNumber numberWithFloat:0] andClass:NSNumber.class];
-    NSNumber * y = [command argumentAtIndex:1 withDefault:[NSNumber numberWithFloat:0] andClass:NSNumber.class];
+    NSNumber * x = [command argumentAtIndex:1 withDefault:[NSNumber numberWithFloat:0] andClass:NSNumber.class];
+    NSNumber * y = [command argumentAtIndex:2 withDefault:[NSNumber numberWithFloat:0] andClass:NSNumber.class];
     data.customPosition = CGPointMake(x.floatValue, y.floatValue);
     [self layoutBanner:data];
 }
