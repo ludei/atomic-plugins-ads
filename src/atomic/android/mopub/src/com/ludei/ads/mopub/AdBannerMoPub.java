@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 
 import com.ludei.ads.AbstractAdBanner;
+import com.ludei.ads.AdBanner;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
@@ -58,7 +59,10 @@ class AdBannerMoPub extends AbstractAdBanner implements MoPubView.BannerAdListen
 
     @Override
     public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-        this.notifyOnFailed(errorCode.ordinal(), errorCode.toString());
+        AdBanner.Error error = new AdBanner.Error();
+        error.code = errorCode.ordinal();
+        error.message = errorCode.toString();
+        notifyOnFailed(error);
     }
 
     @Override
