@@ -74,6 +74,16 @@
 -(LDAdInterstitial *) createInterstitial:(NSString *) adunit;
 
 /**
+ *  Create a video only interstitital with specific adunit.
+ *  This method fallbacks to the default createInterstitial when the network doesn't support video only interstitial from client API
+ *
+ *  @param adunit The adunit.
+ *
+ *  @return The interstitial.
+ */
+-(LDAdInterstitial *) createVideoInterstitial:(NSString *) adunit;
+
+/**
  *  Create a Rewarded video interstitial with specific adunit.
  *
  *  @param adunit The adunit.

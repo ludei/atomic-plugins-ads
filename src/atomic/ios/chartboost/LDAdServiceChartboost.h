@@ -18,3 +18,9 @@
 -(void) configureAppId:(NSString*)appId appSignature:(NSString*)appSignature;
 
 @end
+
+@interface LDChartboostReward: NSObject<LDRewardedVideoRewardProtocol>
+@property (nonatomic, strong) NSString *currencyType;
+@property (nonatomic, strong) NSNumber *amount;
+@property (nonatomic, strong) NSString *itemKey;
+@end

@@ -16,3 +16,9 @@
 -(instancetype) init;
 
 @end
+
+@interface LDMoPubRewardedVideoReward: NSObject<LDRewardedVideoRewardProtocol>
+@property (nonatomic, strong) NSString *currencyType;
+@property (nonatomic, strong) NSNumber *amount;
+@property (nonatomic, strong) NSString *itemKey;
+@end
