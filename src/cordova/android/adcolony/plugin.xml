@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-adcolony" version="1.0.0">
+        id="cocoon-plugin-ads-android-adcolony" version="1.0.1">
     <name>AdsAdcolony</name>
     <description>Android AdColony</description>
     <license>MPL 2.0</license>
@@ -9,6 +9,11 @@
     <platform name="android">
         
         <source-file src="src/deps/adcolony.jar" target-dir="libs" framework="true" />
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity

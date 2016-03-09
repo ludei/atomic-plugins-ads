@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-adcolony",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Android AdColony",
   "cordova": {
     "id": "cocoon-plugin-ads-android-adcolony",

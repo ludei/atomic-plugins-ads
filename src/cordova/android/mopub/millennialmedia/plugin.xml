@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-millennialmedia" version="1.0.3">
+        id="cocoon-plugin-ads-android-mopub-millennialmedia" version="1.0.4">
+
     <name>AdsMoPubMillenial</name>
     <description>Android MoPub MillennialMedia Adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,millennial</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+
     <platform name="android">
-        
-        <source-file src="src/deps/MMSDK.jar" target-dir="libs" framework="true" />
-        <source-file src="src/deps/mopub-millenialmedia-adapter.jar" target-dir="libs" framework="true" />
+        <source-file src="src/MillennialBanner.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/MillennialInterstitial.java" target-dir="src/com/mopub/mobileads" />
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity
-                android:name="com.millennialmedia.android.MMActivity"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar"
-                android:configChanges="keyboardHidden|orientation|keyboard" />
-
-            <activity android:name="com.millennialmedia.android.VideoPlayer" 
-                android:configChanges="keyboardHidden|orientation|keyboard" />
-        </config-file>
+        <resource-file src="src/deps/mm-ad-sdk.aar" target="libs/mm-ad-sdk.aar" />
+        <framework src="src/deps/mmedia.gradle" custom="true" type="gradleReference" />
     </platform>
 
-    <framework src="com.google.android.gms:play-services-ads:8.3.0" />
     <dependency id="cocoon-plugin-ads-android-mopub" />
 
 </plugin>

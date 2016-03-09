@@ -1,0 +1,35 @@
+repositories {
+  mavenCentral()
+  flatDir {
+    dirs 'libs'
+  }
+}
+
+def getConfigPreference(name) {
+    name = name.toLowerCase()
+    def xml = file("res/xml/config.xml").getText()
+    // Disable namespace awareness since Cordova doesn't use them properly
+    def root = new XmlParser(false, false).parseText(xml)
+
+    def ret, defaultValue
+    root.preference.each { it ->
+        def attrName = it.attribute("name")
+        if (attrName && attrName.toLowerCase() == name) {
+            if (it.attribute('default') != null) {
+                defaultValue = it.attribute('default');
+            } else {
+                ret = it.attribute("value")
+            }
+        }
+    }
+    return ret ? ret : defaultValue
+}
+
+if (cdvMinSdkVersion == null) {
+    def minSdk = getConfigPreference("android-minSdkVersion");
+    ext.cdvMinSdkVersion =  minSdk && minSdk.toInteger() > 16 ? minSdk : 16;
+}
+
+dependencies {
+    compile (name:'mm-ad-sdk', ext:'aar')
+}

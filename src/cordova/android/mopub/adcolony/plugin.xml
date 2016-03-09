@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-adcolony" version="1.0.0">
+        id="cocoon-plugin-ads-android-mopub-adcolony" version="1.0.1">
     <name>AdsMopubAdcolony</name>
     <description>Android MoPub AdColony Adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <source-file src="src/deps/mopub-adcolony-adapter.jar" target-dir="libs" framework="true" />
+        <source-file src="src/AdColonyInterstitial.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/AdColonyRewardedVideo.java" target-dir="src/com/mopub/mobileads" />
+
         <dependency id="cocoon-plugin-ads-android-mopub" />
         <dependency id="cocoon-plugin-ads-android-adcolony" />
     </platform>

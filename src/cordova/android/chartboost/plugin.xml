@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-chartboost" version="1.0.0">
+        id="cocoon-plugin-ads-android-chartboost" version="1.0.1">
     <name>AdsCharboost</name>
     <description>Android Chartboost</description>
     <license>MPL 2.0</license>
@@ -8,10 +8,16 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
         
-        <source-file src="src/deps/chartboost.jar" target-dir="libs" framework="true" />
+        <source-file src="src/deps/chartboost_5.3.0.jar" target-dir="libs" framework="true" />
+        
         <source-file src="src/deps/com/ludei/ads/chartboost/AdServiceChartboost.java" target-dir="src/com/ludei/ads/chartboost" />
         <source-file src="src/deps/com/ludei/ads/chartboost/AdInterstitialChartboost.java" target-dir="src/com/ludei/ads/chartboost" />
         <source-file src="src/ChartboostPlugin.java" target-dir="src/com/ludei/ads/cordova" />
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
