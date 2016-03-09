@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-mopub" version="1.0.0">
+        id="cocoon-plugin-ads-ios-mopub" version="1.0.1">
     <name>AdsMopub</name>
     <description>iOS MoPub Ads implementation</description>
     <license>MPL 2.0</license>

@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cross platform Ads API for different Ad Providers. Full support for banners and interstitials",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-common",

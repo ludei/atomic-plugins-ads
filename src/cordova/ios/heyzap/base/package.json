@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-ios-admob",
-  "version": "1.0.0",
-  "description": "iOS Ads AdMob implementation",
+  "name": "cocoon-plugin-ads-ios-heyzap",
+  "version": "1.0.1",
+  "description": "iOS Ads Heyzap implementation",
   "cordova": {
-    "id": "cocoon-plugin-ads-ios-admob",
+    "id": "cocoon-plugin-ads-ios-heyzap",
     "platforms": [
       "ios"
     ]
@@ -19,7 +19,7 @@
     "interstitial",
     "monetization",
     "ad",
-    "admob",
+    "heyzao",
     "ecosystem:cordova",
     "cordova-ios"
   ],
