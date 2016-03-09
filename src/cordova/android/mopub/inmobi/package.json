@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-mopub-inmobi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Android MoPub InMobi Adapter",
   "cordova": {
     "id": "cocoon-plugin-ads-android-mopub-inmobi",
