@@ -24,7 +24,9 @@ class AdInterstitialAdMob extends AbstractAdInterstitial
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                notifyOnFailed(errorCode, "Error with code: " + errorCode);
+                Error error = new Error();
+                error.code = errorCode; error.message = "Error with code: " + errorCode;
+                notifyOnFailed(error);
             }
 
             @Override

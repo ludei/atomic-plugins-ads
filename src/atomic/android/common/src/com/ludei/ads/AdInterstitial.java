@@ -8,6 +8,18 @@ package com.ludei.ads;
  */
 public interface AdInterstitial {
 
+
+    class Reward {
+        public long amount;
+        public String currency;
+        public String itemKey;
+    }
+
+    class Error {
+        public long code;
+        public String message;
+    }
+
 	/**
 	 * Sets a listener for an interstitial.
      *
@@ -46,10 +58,9 @@ public interface AdInterstitial {
          * Sent when the interstitial has failed to retrieve an ad.
          *
     	 * @param interstitial An interstitial ad.
-         * @param errorCode An int with the error code.
-         * @param errorMessage A string that describes the error.
+         * @param error Error code and message
          */
-        public void onFailed(AdInterstitial interstitial, int errorCode, String errorMessage);
+        public void onFailed(AdInterstitial interstitial, Error error);
         
         /**
          * Sent when the user has tapped on the interstitial.
@@ -74,6 +85,6 @@ public interface AdInterstitial {
          *
          * @param interstitial An interstitial ad
          */
-        public void onRewardCompleted(AdInterstitial interstitial, int quantity);
+        public void onRewardCompleted(AdInterstitial interstitial, Reward reward, Error error);
     }
 }

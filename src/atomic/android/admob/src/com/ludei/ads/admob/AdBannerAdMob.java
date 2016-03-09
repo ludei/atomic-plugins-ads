@@ -8,6 +8,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdView;
 import com.ludei.ads.AbstractAdBanner;
+import com.ludei.ads.AdBanner;
 
 
 class AdBannerAdMob extends AbstractAdBanner {
@@ -39,7 +40,9 @@ class AdBannerAdMob extends AbstractAdBanner {
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                notifyOnFailed(errorCode, "Error with code: " + errorCode);
+                AdBanner.Error error = new Error();
+                error.code = errorCode; error.message = "Error with code: " + errorCode;
+                notifyOnFailed(error);
             }
 
             @Override

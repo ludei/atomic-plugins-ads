@@ -10,6 +10,11 @@ import android.view.View;
  */
 public interface AdBanner {
 
+    class Error {
+        public long code;
+        public String message;
+    }
+
 	/**
 	 * Sets a listener for a banner ad.
      *
@@ -69,10 +74,9 @@ public interface AdBanner {
          * Sent when the banner has failed to retrieve an ad.
          *
          * @param banner A banner ad.
-         * @param errorCode An int with the error code.
-         * @param errorMessage A string that describes the error.
+         * @param error Error code and message
          */
-        public void onFailed(AdBanner banner, int errorCode, String errorMessage);
+        public void onFailed(AdBanner banner, Error error);
         
         /** 
          * Sent when the user has tapped on the banner.

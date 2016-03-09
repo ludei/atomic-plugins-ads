@@ -5,8 +5,10 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.ludei.ads.AbstractAdInterstitial;
+import com.ludei.ads.AdInterstitial;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubInterstitial;
+import com.mopub.mobileads.MoPubRewardedVideoManager;
 
 class AdInterstitialMoPub extends AbstractAdInterstitial implements MoPubInterstitial.InterstitialAdListener
 {
@@ -46,7 +48,10 @@ class AdInterstitialMoPub extends AbstractAdInterstitial implements MoPubInterst
 
     @Override
     public void onInterstitialFailed(MoPubInterstitial interstitial, MoPubErrorCode errorCode) {
-        notifyOnFailed(errorCode.ordinal(), errorCode.toString());
+        AdInterstitial.Error error = new AdInterstitial.Error();
+        error.code = errorCode.ordinal();
+        error.message = errorCode.toString();
+        notifyOnFailed(error);
     }
 
     @Override
