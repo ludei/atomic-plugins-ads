@@ -7,6 +7,8 @@
  *  The `LDAdInterstitial` class provides a full-screen advertisement UIViewController
  */
 typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
+
+
 @protocol LDAdInterstitialProtocol
 
 /**
@@ -20,6 +22,12 @@ typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
  *  `LDAdInterstitialDelegate` if you would like to be notified as loading succeeds or fails.
  */
 - (void)loadAd;
+
+/**
+ * Returns YES is the ad is ready to be displayed
+ **/
+-(bool) isReady;
+
 
 /**
  *  Shows the interstitial, if it is ready.
@@ -36,6 +44,15 @@ typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
  */
 - (void)dismissAnimated:(BOOL) animated;
 @end
+
+
+@protocol LDRewardedVideoRewardProtocol <NSObject>
+@property (nonatomic, strong) NSString *currencyType;
+@property (nonatomic, strong) NSNumber *amount;
+@property (nonatomic, strong) NSString *itemKey;
+@end
+
+typedef NSObject<LDRewardedVideoRewardProtocol> LDRewardedVideoReward;
 
 @protocol LDAdInterstitialDelegate<NSObject>
 @optional
@@ -71,11 +88,12 @@ typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
  */
 - (void)adInterstitialWillDisappear:(LDAdInterstitial *)interstitial;
 
+
 /**
- *  Sent when a rewarded video interstitial is completed
+ *  Sent when a rewarded video interstitial is completed (either succeeded or skipped)
  *
  *  @param interstitial The interstitial.
  */
-- (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(int)reward;
+- (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(LDRewardedVideoReward*) reward andError:(NSError *) error;
 
 @end

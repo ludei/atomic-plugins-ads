@@ -35,6 +35,10 @@ gulp.task('deps-cordova', function() {
     gulp.src(['src/atomic/ios/admob/*.h', 'src/atomic/ios/admob/*.m'])
         .pipe(gulp.dest('src/cordova/ios/admob/base/src/deps'));
 
+    //ios heyzapp
+    gulp.src(['src/atomic/ios/heyzap/*.h', 'src/atomic/ios/heyzap/*.m'])
+        .pipe(gulp.dest('src/cordova/ios/heyzap/base/src/deps'));
+
     //ios chartboost
     gulp.src(['src/atomic/ios/chartboost/*.h', 'src/atomic/ios/chartboost/*.m'])
         .pipe(gulp.dest('src/cordova/ios/chartboost/src/deps'));
@@ -72,7 +76,7 @@ gulp.task('build-ios', shell.task([
 ]));
 
 gulp.task('build-js', function () {
-    return gulp.src(['src/js/cocoon_ads.js','src/js/cocoon_ads_admob.js','src/js/cocoon_ads_mopub.js', 'src/js/cocoon_ads_chartboost.js'])
+    return gulp.src(['src/js/cocoon_ads.js','src/js/cocoon_ads_admob.js','src/js/cocoon_ads_mopub.js', 'src/js/cocoon_ads_chartboost.js', 'src/js/cocoon_ads_heyzap.js'])
             .pipe(jshint())
             .pipe(jshint.reporter())
             .pipe(concat('cocoon_ads.js')) 

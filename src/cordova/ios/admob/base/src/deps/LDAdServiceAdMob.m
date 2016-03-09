@@ -23,6 +23,9 @@ static inline bool isIpad()
 @end
 
 @implementation LDAdMobBanner
+{
+    BOOL _ready;
+}
 
 -(instancetype) initWithAdUnit:(NSString *) adUnit size:(LDAdBannerSize) size;
 {
@@ -68,6 +71,12 @@ static inline bool isIpad()
 {
     _autoRefresh = autoRefresh;
 }
+
+-(BOOL) isReady
+{
+    return _ready;
+}
+
 - (void)loadAd
 {
     if (!_adView.rootViewController) {
@@ -167,6 +176,11 @@ static inline bool isIpad()
         _interstitial.delegate = self;
     }
     [_interstitial loadRequest:[GADRequest request]];
+}
+
+-(BOOL) isReady
+{
+    return !_interstitial.hasBeenUsed && _interstitial.isReady;
 }
 
 - (void)showFromViewController:(UIViewController *)controller animated:(BOOL) animated
@@ -269,6 +283,11 @@ static inline bool isIpad()
     }
     
     return [[LDAdMobInterstitial alloc] initWithAdUnit:adunit];
+}
+
+-(LDAdInterstitial *) createVideoInterstitial:(NSString *) adunit
+{
+    return [self createInterstitial:adunit];
 }
 
 -(LDAdInterstitial *) createRewardedVideo:(NSString *)adunit {

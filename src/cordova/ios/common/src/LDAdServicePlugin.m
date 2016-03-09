@@ -45,7 +45,7 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
     _service.settings.banner = [data objectForKey:@"banner"] ?: _service.settings.banner;
     _service.settings.bannerIpad = [data objectForKey:@"bannerIpad"] ?: _service.settings.bannerIpad;
     _service.settings.interstitial = [data objectForKey:@"interstitial"] ?: _service.settings.interstitial;
-    _service.settings.InterstitialIpad = [data objectForKey:@"interstitialIpad"] ?: _service.settings.interstitialIpad;
+    _service.settings.interstitialIpad = [data objectForKey:@"interstitialIpad"] ?: _service.settings.interstitialIpad;
     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
 }
 
@@ -243,9 +243,15 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
     [self callListener:@[@"dismiss", [self findInterstitialId:interstitial]] callbackId:_bannerListenerId];
 }
 
-- (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(int)reward
+- (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(LDRewardedVideoReward*) reward andError:(NSError *) error
 {
-    [self callListener:@[@"reward", [self findInterstitialId:interstitial], [NSNumber numberWithInt:reward]] callbackId:_bannerListenerId];
+    if (error) {
+        [self callListener:@[@"reward", [self findInterstitialId:interstitial], [NSNumber numberWithInteger:0]] callbackId:_bannerListenerId];
+    }
+    else {
+        [self callListener:@[@"reward", [self findInterstitialId:interstitial],  reward.amount] callbackId:_bannerListenerId];
+    }
+
 }
 
 #pragma mark Utils

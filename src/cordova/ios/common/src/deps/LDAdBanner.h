@@ -49,6 +49,11 @@ typedef NSObject<LDAdBannerProtocol> LDAdBanner;
 - (void)loadAd;
 
 /**
+ * Returns YES is the Ad is ready to be displayed
+ **/
+-(bool) isReady;
+
+/**
  *  Returns the size of the current ad being displayed in the ad view.
  *  Ad sizes may vary between different ad networks. This method returns the actual size of the banner.
  *
