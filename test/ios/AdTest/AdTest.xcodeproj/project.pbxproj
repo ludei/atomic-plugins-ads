@@ -15,7 +15,6 @@
 		11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
 		11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
 		11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
-		11729E981B23446A00633115 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E971B23446A00633115 /* libz.dylib */; };
 		11729E9A1B2344A700633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729E9C1B2344B500633115 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729E9E1B2344E400633115 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
@@ -32,7 +31,6 @@
 		11729EB01B234E1F00633115 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729EB11B234E1F00633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729EB21B234E1F00633115 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333541A768AB3001983FB /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		11729EB31B234E1F00633115 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E971B23446A00633115 /* libz.dylib */; };
 		11729EB41B234E1F00633115 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333521A768A87001983FB /* CoreTelephony.framework */; };
 		11729EB51B234E1F00633115 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333501A768A42001983FB /* MessageUI.framework */; };
 		11729EB61B234E1F00633115 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334E1A768A1F001983FB /* EventKit.framework */; };
@@ -43,7 +41,6 @@
 		11729EBD1B234E1F00633115 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333451A7689DA001983FB /* CoreGraphics.framework */; };
 		11729EBE1B234E1F00633115 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
 		11729EBF1B234E1F00633115 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333F1A76890C001983FB /* UIKit.framework */; };
-		11729EC81B234EB200633115 /* LDAdServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729EC61B234EB200633115 /* LDAdServiceChartboost.m */; };
 		11729ECC1B234FDA00633115 /* TestServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729ECB1B234F6800633115 /* TestServiceChartboost.m */; };
 		1181A4451BE76E4F0061824B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1181A4431BE76E4F0061824B /* Chartboost.framework */; };
 		1181A44A1BE771670061824B /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
@@ -73,6 +70,39 @@
 		11EA009B1A48359400F0CB30 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA009A1A48359400F0CB30 /* ViewController.m */; };
 		11EA00A01A48359400F0CB30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EA009F1A48359400F0CB30 /* Images.xcassets */; };
 		11EA00A31A48359400F0CB30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EA00A11A48359400F0CB30 /* LaunchScreen.xib */; };
+		11EA02181C8F5EBF004B59C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA009A1A48359400F0CB30 /* ViewController.m */; };
+		11EA021B1C8F5EBF004B59C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA00971A48359400F0CB30 /* AppDelegate.m */; };
+		11EA021C1C8F5EBF004B59C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA00941A48359400F0CB30 /* main.m */; };
+		11EA021E1C8F5EBF004B59C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EA00A11A48359400F0CB30 /* LaunchScreen.xib */; };
+		11EA021F1C8F5EBF004B59C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EA009F1A48359400F0CB30 /* Images.xcassets */; };
+		11EA02211C8F5EBF004B59C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333D1A7688FE001983FB /* QuartzCore.framework */; };
+		11EA02221C8F5EBF004B59C5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
+		11EA02231C8F5EBF004B59C5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9F1B2344F700633115 /* MediaPlayer.framework */; };
+		11EA02251C8F5EBF004B59C5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11EA02261C8F5EBF004B59C5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11EA02271C8F5EBF004B59C5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333541A768AB3001983FB /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		11EA02291C8F5EBF004B59C5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333521A768A87001983FB /* CoreTelephony.framework */; };
+		11EA022A1C8F5EBF004B59C5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333501A768A42001983FB /* MessageUI.framework */; };
+		11EA022B1C8F5EBF004B59C5 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334E1A768A1F001983FB /* EventKit.framework */; };
+		11EA022C1C8F5EBF004B59C5 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333561A768AE8001983FB /* EventKitUI.framework */; };
+		11EA022D1C8F5EBF004B59C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334C1A768A11001983FB /* SystemConfiguration.framework */; };
+		11EA022E1C8F5EBF004B59C5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3334A1A768A06001983FB /* StoreKit.framework */; };
+		11EA022F1C8F5EBF004B59C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
+		11EA02301C8F5EBF004B59C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333451A7689DA001983FB /* CoreGraphics.framework */; };
+		11EA02311C8F5EBF004B59C5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333411A768939001983FB /* AudioToolbox.framework */; };
+		11EA02321C8F5EBF004B59C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D3333F1A76890C001983FB /* UIKit.framework */; };
+		11EA023A1C8F6625004B59C5 /* LDAdServiceHeyzap.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA02151C8F5EBA004B59C5 /* LDAdServiceHeyzap.m */; };
+		11EA023B1C8F662D004B59C5 /* LDAdServiceChartboost.m in Sources */ = {isa = PBXBuildFile; fileRef = 11729EC61B234EB200633115 /* LDAdServiceChartboost.m */; };
+		11EA023D1C8F6BA4004B59C5 /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA023C1C8F6BA4004B59C5 /* HeyzapAds.framework */; };
+		11EA023F1C902E3F004B59C5 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA023E1C902E3F004B59C5 /* libxml2.tbd */; };
+		11EA02411C902E53004B59C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA02401C902E53004B59C5 /* libsqlite3.tbd */; };
+		11EA02431C902E5D004B59C5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA02421C902E5D004B59C5 /* libz.tbd */; };
+		11EA02451C902E7A004B59C5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA02441C902E7A004B59C5 /* Security.framework */; };
+		11EA02481C902F6D004B59C5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA02471C902F6D004B59C5 /* MobileCoreServices.framework */; };
+		11EA024A1C9030BF004B59C5 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA02491C9030BF004B59C5 /* iAd.framework */; };
+		11EA024D1C9031E1004B59C5 /* TestServiceHeyzap.m in Sources */ = {isa = PBXBuildFile; fileRef = 11EA024C1C9031E1004B59C5 /* TestServiceHeyzap.m */; };
+		11EA024E1C9054A2004B59C5 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
+		11EA024F1C9054AA004B59C5 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1181A4431BE76E4F0061824B /* Chartboost.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +111,6 @@
 		110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@3x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@3x.png"; sourceTree = "<group>"; };
 		110DEB2C1A94B31E0034ED6C /* MRAID.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MRAID.bundle; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MRAID.bundle; sourceTree = "<group>"; };
 		11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/base/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		11729E971B23446A00633115 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		11729E991B2344A700633115 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		11729E9B1B2344B500633115 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		11729E9D1B2344E400633115 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -126,6 +155,18 @@
 		11EA009A1A48359400F0CB30 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		11EA009F1A48359400F0CB30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		11EA00A21A48359400F0CB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		11EA02141C8F5EBA004B59C5 /* LDAdServiceHeyzap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LDAdServiceHeyzap.h; path = ../../../src/atomic/ios/heyzap/LDAdServiceHeyzap.h; sourceTree = "<group>"; };
+		11EA02151C8F5EBA004B59C5 /* LDAdServiceHeyzap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LDAdServiceHeyzap.m; path = ../../../src/atomic/ios/heyzap/LDAdServiceHeyzap.m; sourceTree = "<group>"; };
+		11EA02361C8F5EBF004B59C5 /* AdTest_heyzap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdTest_heyzap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11EA02371C8F5EBF004B59C5 /* AdTest_heyzap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AdTest_heyzap-Info.plist"; path = "/Users/mortimer/Projects/atomic-plugins-ads/test/ios/AdTest/AdTest_heyzap-Info.plist"; sourceTree = "<absolute>"; };
+		11EA023C1C8F6BA4004B59C5 /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HeyzapAds.framework; path = ../../../src/cordova/ios/heyzap/base/src/deps/external/HeyzapAds.framework; sourceTree = "<group>"; };
+		11EA023E1C902E3F004B59C5 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		11EA02401C902E53004B59C5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		11EA02421C902E5D004B59C5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		11EA02441C902E7A004B59C5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		11EA02471C902F6D004B59C5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		11EA02491C9030BF004B59C5 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		11EA024C1C9031E1004B59C5 /* TestServiceHeyzap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestServiceHeyzap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +193,6 @@
 				11729EB01B234E1F00633115 /* WebKit.framework in Frameworks */,
 				11729EB11B234E1F00633115 /* Social.framework in Frameworks */,
 				11729EB21B234E1F00633115 /* AdSupport.framework in Frameworks */,
-				11729EB31B234E1F00633115 /* libz.dylib in Frameworks */,
 				11729EB41B234E1F00633115 /* CoreTelephony.framework in Frameworks */,
 				11729EB51B234E1F00633115 /* MessageUI.framework in Frameworks */,
 				11729EB61B234E1F00633115 /* EventKit.framework in Frameworks */,
@@ -177,7 +217,6 @@
 				11729E9C1B2344B500633115 /* WebKit.framework in Frameworks */,
 				11729E9A1B2344A700633115 /* Social.framework in Frameworks */,
 				11D333551A768AB3001983FB /* AdSupport.framework in Frameworks */,
-				11729E981B23446A00633115 /* libz.dylib in Frameworks */,
 				11D333531A768A87001983FB /* CoreTelephony.framework in Frameworks */,
 				11D333511A768A42001983FB /* MessageUI.framework in Frameworks */,
 				11D3334F1A768A1F001983FB /* EventKit.framework in Frameworks */,
@@ -188,6 +227,38 @@
 				11D333461A7689DA001983FB /* CoreGraphics.framework in Frameworks */,
 				11D333431A768946001983FB /* AudioToolbox.framework in Frameworks */,
 				11D333401A76890C001983FB /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11EA02201C8F5EBF004B59C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EA024A1C9030BF004B59C5 /* iAd.framework in Frameworks */,
+				11EA024E1C9054A2004B59C5 /* GoogleMobileAds.framework in Frameworks */,
+				11EA02481C902F6D004B59C5 /* MobileCoreServices.framework in Frameworks */,
+				11EA024F1C9054AA004B59C5 /* Chartboost.framework in Frameworks */,
+				11EA02451C902E7A004B59C5 /* Security.framework in Frameworks */,
+				11EA02431C902E5D004B59C5 /* libz.tbd in Frameworks */,
+				11EA02411C902E53004B59C5 /* libsqlite3.tbd in Frameworks */,
+				11EA023F1C902E3F004B59C5 /* libxml2.tbd in Frameworks */,
+				11EA023D1C8F6BA4004B59C5 /* HeyzapAds.framework in Frameworks */,
+				11EA02211C8F5EBF004B59C5 /* QuartzCore.framework in Frameworks */,
+				11EA02221C8F5EBF004B59C5 /* CoreMedia.framework in Frameworks */,
+				11EA02231C8F5EBF004B59C5 /* MediaPlayer.framework in Frameworks */,
+				11EA02251C8F5EBF004B59C5 /* WebKit.framework in Frameworks */,
+				11EA02261C8F5EBF004B59C5 /* Social.framework in Frameworks */,
+				11EA02271C8F5EBF004B59C5 /* AdSupport.framework in Frameworks */,
+				11EA02291C8F5EBF004B59C5 /* CoreTelephony.framework in Frameworks */,
+				11EA022A1C8F5EBF004B59C5 /* MessageUI.framework in Frameworks */,
+				11EA022B1C8F5EBF004B59C5 /* EventKit.framework in Frameworks */,
+				11EA022C1C8F5EBF004B59C5 /* EventKitUI.framework in Frameworks */,
+				11EA022D1C8F5EBF004B59C5 /* SystemConfiguration.framework in Frameworks */,
+				11EA022E1C8F5EBF004B59C5 /* StoreKit.framework in Frameworks */,
+				11EA022F1C8F5EBF004B59C5 /* AVFoundation.framework in Frameworks */,
+				11EA02301C8F5EBF004B59C5 /* CoreGraphics.framework in Frameworks */,
+				11EA02311C8F5EBF004B59C5 /* AudioToolbox.framework in Frameworks */,
+				11EA02321C8F5EBF004B59C5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,16 +332,13 @@
 		11EA00861A48359400F0CB30 = {
 			isa = PBXGroup;
 			children = (
-				11729E9F1B2344F700633115 /* MediaPlayer.framework */,
-				11729E9D1B2344E400633115 /* CoreMedia.framework */,
-				11729E9B1B2344B500633115 /* WebKit.framework */,
-				11729E991B2344A700633115 /* Social.framework */,
-				11729E971B23446A00633115 /* libz.dylib */,
 				11EA00B81A4836E000F0CB30 /* src */,
+				11EA02461C902F2E004B59C5 /* frameworks */,
 				11EA00911A48359400F0CB30 /* AdTest */,
 				11EA00901A48359400F0CB30 /* Products */,
 				11D333341A766F93001983FB /* AdTest_mopub copy-Info.plist */,
 				11729EC41B234E2000633115 /* AdTest_admob copy-Info.plist */,
+				11EA02371C8F5EBF004B59C5 /* AdTest_heyzap-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,6 +348,7 @@
 				11EA008F1A48359400F0CB30 /* AdTest_mopub.app */,
 				11D333331A766F93001983FB /* AdTest_admob.app */,
 				11729EC31B234E1F00633115 /* AdTest_chartboost.app */,
+				11EA02361C8F5EBF004B59C5 /* AdTest_heyzap.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,6 +364,7 @@
 				11B9A73D1A56ECC4000194A3 /* TestServiceMoPub.m */,
 				11D333581A768B33001983FB /* TestServiceAdMob.m */,
 				11729ECB1B234F6800633115 /* TestServiceChartboost.m */,
+				11EA024C1C9031E1004B59C5 /* TestServiceHeyzap.m */,
 				11EA009F1A48359400F0CB30 /* Images.xcassets */,
 				11EA00A11A48359400F0CB30 /* LaunchScreen.xib */,
 				11EA00921A48359400F0CB30 /* Supporting Files */,
@@ -314,12 +384,40 @@
 		11EA00B81A4836E000F0CB30 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				11EA02131C8F5EA8004B59C5 /* heyzap */,
 				11729EC51B234E5000633115 /* chartboost */,
 				11D333211A766F86001983FB /* admob */,
 				114117C31A519DAB00A844DA /* common */,
 				114117C21A519D9A00A844DA /* mopub */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		11EA02131C8F5EA8004B59C5 /* heyzap */ = {
+			isa = PBXGroup;
+			children = (
+				11EA02141C8F5EBA004B59C5 /* LDAdServiceHeyzap.h */,
+				11EA02151C8F5EBA004B59C5 /* LDAdServiceHeyzap.m */,
+			);
+			name = heyzap;
+			sourceTree = "<group>";
+		};
+		11EA02461C902F2E004B59C5 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11EA02491C9030BF004B59C5 /* iAd.framework */,
+				11EA02471C902F6D004B59C5 /* MobileCoreServices.framework */,
+				11EA02441C902E7A004B59C5 /* Security.framework */,
+				11EA02421C902E5D004B59C5 /* libz.tbd */,
+				11EA02401C902E53004B59C5 /* libsqlite3.tbd */,
+				11EA023E1C902E3F004B59C5 /* libxml2.tbd */,
+				11EA023C1C8F6BA4004B59C5 /* HeyzapAds.framework */,
+				11729E9F1B2344F700633115 /* MediaPlayer.framework */,
+				11729E9D1B2344E400633115 /* CoreMedia.framework */,
+				11729E9B1B2344B500633115 /* WebKit.framework */,
+				11729E991B2344A700633115 /* Social.framework */,
+			);
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +474,23 @@
 			productReference = 11EA008F1A48359400F0CB30 /* AdTest_mopub.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11EA02161C8F5EBF004B59C5 /* AdTest_heyzap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11EA02331C8F5EBF004B59C5 /* Build configuration list for PBXNativeTarget "AdTest_heyzap" */;
+			buildPhases = (
+				11EA02171C8F5EBF004B59C5 /* Sources */,
+				11EA021D1C8F5EBF004B59C5 /* Resources */,
+				11EA02201C8F5EBF004B59C5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdTest_heyzap;
+			productName = AdTest;
+			productReference = 11EA02361C8F5EBF004B59C5 /* AdTest_heyzap.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -406,6 +521,7 @@
 				11EA008E1A48359400F0CB30 /* AdTest_mopub */,
 				11D333221A766F93001983FB /* AdTest_admob */,
 				11729EA21B234E1F00633115 /* AdTest_chartboost */,
+				11EA02161C8F5EBF004B59C5 /* AdTest_heyzap */,
 			);
 		};
 /* End PBXProject section */
@@ -442,6 +558,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11EA021D1C8F5EBF004B59C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EA021E1C8F5EBF004B59C5 /* LaunchScreen.xib in Resources */,
+				11EA021F1C8F5EBF004B59C5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -449,9 +574,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EA023B1C8F662D004B59C5 /* LDAdServiceChartboost.m in Sources */,
 				11729EA41B234E1F00633115 /* ViewController.m in Sources */,
 				11729ECC1B234FDA00633115 /* TestServiceChartboost.m in Sources */,
-				11729EC81B234EB200633115 /* LDAdServiceChartboost.m in Sources */,
 				11729EA61B234E1F00633115 /* AppDelegate.m in Sources */,
 				11729EA71B234E1F00633115 /* main.m in Sources */,
 			);
@@ -481,6 +606,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11EA02171C8F5EBF004B59C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EA02181C8F5EBF004B59C5 /* ViewController.m in Sources */,
+				11EA021B1C8F5EBF004B59C5 /* AppDelegate.m in Sources */,
+				11EA021C1C8F5EBF004B59C5 /* main.m in Sources */,
+				11EA024D1C9031E1004B59C5 /* TestServiceHeyzap.m in Sources */,
+				11EA023A1C8F6625004B59C5 /* LDAdServiceHeyzap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -506,7 +643,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
-					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,7 +673,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
-					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -767,6 +902,64 @@
 			};
 			name = Release;
 		};
+		11EA02341C8F5EBF004B59C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PROJECT_DIR}/../../../src/cordova/ios/heyzap/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "AdTest_heyzap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+			};
+			name = Debug;
+		};
+		11EA02351C8F5EBF004B59C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PROJECT_DIR}/../../../src/cordova/ios/heyzap/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/admob/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "AdTest_heyzap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -802,6 +995,15 @@
 			buildConfigurations = (
 				11EA00B31A48359400F0CB30 /* Debug */,
 				11EA00B41A48359400F0CB30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11EA02331C8F5EBF004B59C5 /* Build configuration list for PBXNativeTarget "AdTest_heyzap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11EA02341C8F5EBF004B59C5 /* Debug */,
+				11EA02351C8F5EBF004B59C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
