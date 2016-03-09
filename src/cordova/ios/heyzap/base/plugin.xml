@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-ios-heyzap" version="1.0.0">
+    <name>AdsHeyzap</name>
+    <description>iOS Ads Heyzap implementation</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,rewarded,video</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    <platform name="ios">
+        <header-file src="src/deps/LDAdServiceHeyzap.h" />
+        <source-file src="src/deps/LDAdServiceHeyzap.m" />
+        <header-file src="src/LDHeyzapPlugin.h" />
+        <source-file src="src/LDHeyzapPlugin.m" />
+
+        <framework src="src/deps/external/HeyzapAds.framework" custom="true" />
+
+     <!-- External Frameworks -->
+        <framework src="AdSupport.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="EventKit.framework"/>
+        <framework src="EventKitUI.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="MobileCoreServices.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="Social.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="iAd.framework"/>
+
+        <framework src="libxml2.dylib"/>
+        <framework src="libsqlite3.dylib" /> 
+
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="LDAdservice">
+                <param name="ios-package" value="LDHeyzapPlugin" />
+            </feature>
+            <feature name="LDHeyzapPlugin">
+                <param name="ios-package" value="LDHeyzapPlugin" />
+            </feature>
+        </config-file>
+
+    </platform>
+    <dependency id="cocoon-plugin-ads-ios-common" />
+</plugin>

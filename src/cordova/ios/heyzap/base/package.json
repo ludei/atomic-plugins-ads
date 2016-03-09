@@ -1,0 +1,32 @@
+{
+  "name": "cocoon-plugin-ads-ios-admob",
+  "version": "1.0.0",
+  "description": "iOS Ads AdMob implementation",
+  "cordova": {
+    "id": "cocoon-plugin-ads-ios-admob",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludei/atomic-plugins-ads"
+  },
+  "keywords": [
+    "cordova",
+    "ads",
+    "banner",
+    "interstitial",
+    "monetization",
+    "ad",
+    "admob",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "ludei",
+  "license": "MPL 2.0",
+  "bugs": {
+    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+  },
+  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+}
