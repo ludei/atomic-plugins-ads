@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-heyzap-chartboost" version="1.0.0">
+    <name>HeyzapAdapterAdChartboost</name>
+    <description>Android Ads Heyzap chartboost adapter</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,chartboost</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    <platform name="android">
+         <dependency id="cocoon-plugin-ads-android-chartboost" />
+         <dependency id="cocoon-plugin-ads-android-heyzap" />
+    </platform>
+</plugin>
