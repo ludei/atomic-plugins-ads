@@ -396,9 +396,11 @@ Cocoon.define("Cocoon.Ad" , function(extension){
          * @memberOf Cocoon.Ad.Interstitial
          * @event On reward
          * @example
-         * interstitial.on("reward", function(quantity){
-        *    console.log("Reward completed. Earned " + quantity + " items");
-        * });
+         * interstitial.on("reward", function(reward, error){
+         *   if (reward && reward.amount > 0) {
+         *     console.log("Reward completed. Earned " + reward.amount + " items");
+         *   }
+         * });
          */
 
         on: function(eventName, handler) {

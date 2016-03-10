@@ -54,3 +54,4 @@ build/
 test/cordova/AdTest
 node_modules
 
+npm-debug.log

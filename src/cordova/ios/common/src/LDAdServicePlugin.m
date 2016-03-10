@@ -225,12 +225,12 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
 
 -(void) adInterstitialDidLoad:(LDAdInterstitial *) interstitial
 {
-    [self callListener:@[@"load", [self findInterstitialId:interstitial]] callbackId:_bannerListenerId];
+    [self callListener:@[@"load", [self findInterstitialId:interstitial]] callbackId:_interstitialListenerId];
 }
 
 -(void) adInterstitialDidFailLoad:(LDAdInterstitial *) interstitial withError:(NSError *) error
 {
-    [self callListener:@[@"fail", [self findInterstitialId:interstitial], [self errorToDic:error]] callbackId:_bannerListenerId];
+    [self callListener:@[@"fail", [self findInterstitialId:interstitial], [self errorToDic:error]] callbackId:_interstitialListenerId];
 }
 
 -(void)adInterstitialWillAppear:(LDAdInterstitial *)interstitial
@@ -245,11 +245,17 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
 
 - (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(LDRewardedVideoReward*) reward andError:(NSError *) error
 {
+    
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    [dic setObject:reward && reward.amount ? reward.amount : [NSNumber numberWithInteger:0] forKey:@"amount"];
+    [dic setObject:reward && reward.currencyType ? reward.currencyType : @"" forKey:@"currencyType"];
+    [dic setObject:reward && reward.itemKey ? reward.itemKey : @"" forKey:@"itemKey"];
+    
     if (error) {
-        [self callListener:@[@"reward", [self findInterstitialId:interstitial], [NSNumber numberWithInteger:0]] callbackId:_bannerListenerId];
+        [self callListener:@[@"reward", [self findInterstitialId:interstitial], dic, [self errorToDic:error]] callbackId:_interstitialListenerId];
     }
     else {
-        [self callListener:@[@"reward", [self findInterstitialId:interstitial],  reward.amount] callbackId:_bannerListenerId];
+        [self callListener:@[@"reward", [self findInterstitialId:interstitial], dic] callbackId:_interstitialListenerId];
     }
 
 }
