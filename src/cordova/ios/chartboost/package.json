@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-chartboost",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "iOS Ads Chartboost implementation",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-chartboost",

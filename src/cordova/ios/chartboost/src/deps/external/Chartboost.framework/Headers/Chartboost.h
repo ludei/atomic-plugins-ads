@@ -1,10 +1,13 @@
 /*
  * Chartboost.h
  * Chartboost
- * 5.4.0
+ * 6.3.0
  *
  * Copyright 2011 Chartboost. All rights reserved.
  */
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /*!
  @typedef NS_ENUM (NSUInteger, CBFramework)
@@ -28,15 +31,39 @@ typedef NS_ENUM(NSUInteger, CBFramework) {
     CBFrameworkCocoonJS,
     /*! Cocos2d-x. */
     CBFrameworkCocos2dx,
-    /*! MoPub. */
-    CBFrameworkMoPub,
-    /*! Fyber. */
-    CBFrameworkFyber,
     /*! Prime31Unreal. */
     CBFrameworkPrime31Unreal,
     /*! Weeby. */
-    CBFrameworkWeeby
+    CBFrameworkWeeby,
+    /*! Unknown. Other */
+    CBFrameworkOther
 };
+
+/*!
+ @typedef NS_ENUM (NSUInteger, CBMediation)
+ 
+ @abstract
+ Used with setMediation:(CBMediation)library calls to set mediation library name
+ partners. If you don't see your library here, contact support.
+ */
+typedef NS_ENUM(NSUInteger, CBMediation) {
+    /*! Unknown. Other */
+    CBMediationOther,
+    /*! AdMarvel */
+    CBMediationAdMarvel,
+    /*! Fuse */
+    CBMediationFuse,
+    /*! Fyber */
+    CBMediationFyber,
+    /*! HeyZap */
+    CBMediationHeyZap,
+    /*! MoPub */
+    CBMediationMoPub,
+    /*! Supersonic */
+    CBMediationSupersonic,
+};
+
+
 
 /*!
  @typedef NS_ENUM (NSUInteger, CBLoadError)
@@ -67,6 +94,8 @@ typedef NS_ENUM(NSUInteger, CBLoadError) {
     CBLoadErrorNoLocationFound,
     /*! Video Prefetching is not finished */
     CBLoadErrorPrefetchingIncomplete,
+    /*! There is an impression already visible.*/
+    CBLoadErrorImpressionAlreadyVisible
 };
 
 /*!
@@ -185,6 +214,18 @@ extern CBLocation const CBLocationDefault;
 + (void)startWithAppId:(NSString*)appId
           appSignature:(NSString*)appSignature
               delegate:(id<ChartboostDelegate>)delegate;
+
+/*!
+ @abstract 
+ Set the Chartboost Delegate
+ 
+ @param del The new Chartboost Delegate for the sharedChartboost instance
+ 
+ @discussion This doesn't need to be called when calling startWithAppID, only later
+ to switch the delegate object.
+ */
++ (void)setDelegate:(id<ChartboostDelegate>)del;
+
 
 /*!
  @abstract
@@ -412,6 +453,18 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
 
 /*!
  @abstract
+ Set a custom mediation library to append to the POST body of every request.
+ example setMediation:CBMediationMoPub withVersion:@"3.8.0"
+ 
+ @param library The constant for the name of the mediation library.
+ @param libraryVersion The version sent as a string.
+ 
+ @discussion This is an internal method used by mediation partners to track their usage.
+ */
++ (void)setMediation:(CBMediation)library withVersion:(NSString*)libraryVersion;
+
+/*!
+ @abstract
  Decide if Chartboost SDK should show interstitials in the first session.
  
  @param shouldRequest YES if allowed to show interstitials in first session, NO otherwise.
@@ -461,6 +514,14 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  Default is YES.
  */
 + (void)setShouldPrefetchVideoContent:(BOOL)shouldPrefetch;
+
+
+/*!
+ @abstract
+ Returns the version of the Chartboost SDK.
+ */
++ (NSString*)getSDKVersion;
+
 
 #pragma mark - Advanced Caching
 
@@ -543,6 +604,17 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  */
 + (void)setStatusBarBehavior:(CBStatusBarBehavior)statusBarBehavior;
 
+
+/*!
+ @abstract 
+ returns YES if auto IAP tracking is enabled, NO if it isn't.
+
+ @discussion Call to check if automatic tracking of in-app purchases is enabled. 
+ The setting is controlled by the server.
+ */
++ (BOOL)getAutoIAPTracking;
+
+
 @end
 
 /*!
@@ -560,6 +632,17 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
 @protocol ChartboostDelegate <NSObject>
 
 @optional
+
+/*!
+ @abstract
+ Called after the SDK has been successfully initialized
+ 
+ @param status The result of the initialization. YES if successful. NO if failed.
+
+ @discussion Implement to be notified of when the initialization process has finished.
+ */
+
+- (void)didInitialize:(BOOL)status;
 
 #pragma mark - Interstitial Delegate
 
@@ -778,6 +861,9 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  Called after videos have been successfully prefetched.
  
  @discussion Implement to be notified of when the prefetching process has finished successfully.
+
+ @deprecated This method has been deprecated and will be removed in a future version. Use didInitialize instead
+ 
  */
 
 - (void)didPrefetchVideos;
