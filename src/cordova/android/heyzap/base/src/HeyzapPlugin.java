@@ -2,6 +2,9 @@ package com.ludei.ads.cordova;
 
 import com.ludei.ads.heyzap.*;
 
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaArgs;
+
 public class HeyzapPlugin extends AdServicePlugin {
 	
 	@Override
@@ -14,4 +17,9 @@ public class HeyzapPlugin extends AdServicePlugin {
 	
 		_service = hz;
     }
+
+	@SuppressWarnings("unused")
+	public void showDebug(CordovaArgs args, CallbackContext ctx) {
+		((AdServiceHeyzap)this._service).showDebug();
+	}
 };

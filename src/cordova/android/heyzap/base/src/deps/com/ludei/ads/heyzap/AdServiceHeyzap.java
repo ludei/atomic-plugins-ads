@@ -16,16 +16,20 @@ public class AdServiceHeyzap implements AdService {
     private String _rewardedTag = "default";
     private Activity _activity;
 
-    @Override
-    public void configure(String bannerAdUnit, String interstitialAdUnit) {
-        //Nothing to do
-    }
-
     public void init(Activity activity, String publisherId) {
         this._activity = activity;
         this._publisherId = publisherId;
 
         HeyzapAds.start(_publisherId, activity);
+    }
+
+    public void showDebug() {
+        HeyzapAds.startTestActivity(this._activity);
+    }
+
+    @Override
+    public void configure(String bannerAdUnit, String interstitialAdUnit) {
+        //Nothing to do
     }
 
     @Override
