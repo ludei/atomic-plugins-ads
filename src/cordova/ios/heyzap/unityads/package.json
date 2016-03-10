@@ -1,9 +1,9 @@
 {
-  "name": "cocoon-plugin-ads-ios-adcolony",
-  "version": "1.0.2",
-  "description": "iOS Ads AdColony implementation",
+  "name": "cocoon-plugin-ads-ios-heyzap-unityads",
+  "version": "1.0.0",
+  "description": "iOS Ads unityads adapter for Heyzap",
   "cordova": {
-    "id": "cocoon-plugin-ads-ios-adcolony",
+    "id": "cocoon-plugin-ads-ios-heyzap-unityads",
     "platforms": [
       "ios"
     ]
@@ -19,7 +19,8 @@
     "interstitial",
     "monetization",
     "ad",
-    "adcolony",
+    "unityads",
+    "unity",
     "ecosystem:cordova",
     "cordova-ios"
   ],
