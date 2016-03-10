@@ -8,6 +8,12 @@ package com.ludei.ads;
  */
 public interface AdInterstitial {
 
+    class RewardedVideoReward {
+        public String currencyType;
+        public int amount;
+        public String itemKey;
+    }
+
 	/**
 	 * Sets a listener for an interstitial.
      *
@@ -69,11 +75,14 @@ public interface AdInterstitial {
      	 * @param interstitial An interstitial ad
          */    
         public void onDismissed(AdInterstitial interstitial);
+
         /**
          * Sent when the interstitial is closed.
          *
-         * @param interstitial An interstitial ad
+         * @param interstitial An interstitial ad.
+         * @param reward A rewarded video result.
+         * @param errorMessage A string that describes the error.
          */
-        public void onRewardCompleted(AdInterstitial interstitial, int quantity);
+        public void onRewardCompleted(AdInterstitial interstitial, RewardedVideoReward reward, String errorMessage);
     }
 }
