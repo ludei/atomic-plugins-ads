@@ -1,0 +1,32 @@
+{
+  "name": "cocoon-plugin-ads-android-heyzap-adcolony",
+  "version": "1.0.0",
+  "description": "Android Ads Adcolony adapter for Heyzap",
+  "cordova": {
+    "id": "cocoon-plugin-ads-android-heyzap-chartboost",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludei/atomic-plugins-ads"
+  },
+  "keywords": [
+    "cordova",
+    "ads",
+    "banner",
+    "interstitial",
+    "monetization",
+    "ad",
+    "adcolony",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "ludei",
+  "license": "MPL 2.0",
+  "bugs": {
+    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+  },
+  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+}
