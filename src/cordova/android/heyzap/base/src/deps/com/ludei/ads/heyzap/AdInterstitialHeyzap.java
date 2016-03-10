@@ -13,6 +13,7 @@ class AdInterstitialHeyzap extends AbstractAdInterstitial implements HeyzapAds.O
     private String _tag;
 
     AdInterstitialHeyzap(Activity activity, String tag) {
+        this._tag = tag;
         this._activity = activity;
 
         VideoAd.setOnStatusListener(this);
