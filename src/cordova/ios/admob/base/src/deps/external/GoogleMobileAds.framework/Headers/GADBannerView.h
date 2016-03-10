@@ -12,6 +12,7 @@
 #import <GoogleMobileAds/GADInAppPurchaseDelegate.h>
 #import <GoogleMobileAds/GADRequest.h>
 #import <GoogleMobileAds/GADRequestError.h>
+#import <GoogleMobileAds/GoogleMobileAdsDefines.h>
 
 #ifndef IBInspectable
 #define IBInspectable
@@ -37,12 +38,12 @@
 
 #pragma mark Initialization
 
-/// Initializes a GADBannerView and sets it to the specified size, and specifies its placement
-/// within its superview bounds. Returns nil if |adSize| is an invalid ad size.
+/// Initializes and returns a banner view with the specified ad size and origin relative to the
+/// banner's superview.
 - (instancetype)initWithAdSize:(GADAdSize)adSize origin:(CGPoint)origin;
 
-/// Initializes a GADBannerView and sets it to the specified size, and specifies its placement at
-/// the top left of its superview. Returns nil if |adSize| is an invalid ad size.
+/// Initializes and returns a banner view with the specified ad size placed at its superview's
+/// origin.
 - (instancetype)initWithAdSize:(GADAdSize)adSize;
 
 #pragma mark Pre-Request
@@ -55,8 +56,7 @@
 @property(nonatomic, copy) IBInspectable NSString *adUnitID;
 
 /// Required reference to the current root view controller. For example the root view controller in
-/// tab-based application would be the UITabViewController. Remember to nil or update this property
-/// before deallocating the view controller.
+/// tab-based application would be the UITabViewController.
 @property(nonatomic, weak) IBOutlet UIViewController *rootViewController;
 
 /// Required to set this banner view to a proper size. Never create your own GADAdSize directly. Use
@@ -67,13 +67,11 @@
 @property(nonatomic, assign) GADAdSize adSize;
 
 /// Optional delegate object that receives state change notifications from this GADBannerView.
-/// Typically this is a UIViewController. Remember to nil this property before deallocating the
-/// delegate.
+/// Typically this is a UIViewController.
 @property(nonatomic, weak) IBOutlet id<GADBannerViewDelegate> delegate;
 
 /// Optional delegate object that receives in-app purchase notifications from this ad. Required for
 /// the custom in-app purchase flow, but ignored when using the default in-app purchase flow.
-/// Remember to nil this property before deallocating the delegate.
 @property(nonatomic, weak) IBOutlet id<GADInAppPurchaseDelegate> inAppPurchaseDelegate;
 
 #pragma mark Making an Ad Request
@@ -91,18 +89,18 @@
 /// is in progress or if the latest ad request failed. For both standard and mediated Google AdMob
 /// ads, this method returns @"GADMAdapterGoogleAdMobAds". For ads fetched via mediation custom
 /// events, this method returns @"GADMAdapterCustomEvents".
-@property(nonatomic, readonly, weak) NSString *adNetworkClassName;
+@property(nonatomic, readonly, copy) NSString *adNetworkClassName;
 
 #pragma mark Deprecated
 
 /// Indicates if the currently displayed ad (or most recent failure) was a result of auto refreshing
 /// as specified on server. This property is set to NO after each loadRequest: method.
-@property(nonatomic, readonly, assign) BOOL hasAutoRefreshed __attribute__((deprecated));
+@property(nonatomic, readonly, assign) BOOL hasAutoRefreshed GAD_DEPRECATED_ATTRIBUTE;
 
 /// The mediated ad network's underlying ad view. You may use this property to read the ad's actual
 /// size and adjust this banner view's frame origin. However, modifying the banner view's frame size
 /// triggers the Mobile Ads SDK to request a new ad. Only update the banner view's frame origin.
-@property(nonatomic, readonly, weak) UIView *mediatedAdView
-    __attribute__((deprecated("Use adNetworkClassName.")));
+@property(nonatomic, readonly, weak)
+    UIView *mediatedAdView GAD_DEPRECATED_MSG_ATTRIBUTE("Use adNetworkClassName.");
 
 @end
