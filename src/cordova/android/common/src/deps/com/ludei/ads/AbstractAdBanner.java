@@ -14,9 +14,9 @@ public abstract class AbstractAdBanner implements AdBanner {
         }
     }
 
-    public void notifyOnFailed(int errorCode, String errorMessage) {
+    public void notifyOnFailed(AdBanner.Error error) {
         if (_listener != null) {
-            _listener.onFailed(this, errorCode, errorMessage);
+            _listener.onFailed(this, error);
         }
     }
 

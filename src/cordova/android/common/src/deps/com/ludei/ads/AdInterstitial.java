@@ -8,10 +8,16 @@ package com.ludei.ads;
  */
 public interface AdInterstitial {
 
-    class RewardedVideoReward {
-        public String currencyType;
-        public int amount;
+
+    class Reward {
+        public long amount;
+        public String currency;
         public String itemKey;
+    }
+
+    class Error {
+        public long code;
+        public String message;
     }
 
 	/**
@@ -52,10 +58,9 @@ public interface AdInterstitial {
          * Sent when the interstitial has failed to retrieve an ad.
          *
     	 * @param interstitial An interstitial ad.
-         * @param errorCode An int with the error code.
-         * @param errorMessage A string that describes the error.
+         * @param error Error code and message
          */
-        public void onFailed(AdInterstitial interstitial, int errorCode, String errorMessage);
+        public void onFailed(AdInterstitial interstitial, Error error);
         
         /**
          * Sent when the user has tapped on the interstitial.
@@ -75,14 +80,11 @@ public interface AdInterstitial {
      	 * @param interstitial An interstitial ad
          */    
         public void onDismissed(AdInterstitial interstitial);
-
         /**
          * Sent when the interstitial is closed.
          *
-         * @param interstitial An interstitial ad.
-         * @param reward A rewarded video result.
-         * @param errorMessage A string that describes the error.
+         * @param interstitial An interstitial ad
          */
-        public void onRewardCompleted(AdInterstitial interstitial, RewardedVideoReward reward, String errorMessage);
+        public void onRewardCompleted(AdInterstitial interstitial, Reward reward, Error error);
     }
 }

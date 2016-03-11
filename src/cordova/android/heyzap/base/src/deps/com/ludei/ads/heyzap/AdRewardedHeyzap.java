@@ -56,7 +56,10 @@ class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnSta
 
     @Override
     public void onFailedToShow(String tag) {
-        notifyOnFailed(-1, tag);
+        Error error = new Error();
+        error.code = -1;
+        error.message = "Rewarded video failed to show";
+        notifyOnFailed(error);
     }
 
     @Override
@@ -83,7 +86,7 @@ class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnSta
 
     @Override
     public void onComplete(String tag) {
-        RewardedVideoReward reward = new RewardedVideoReward();
+        Reward reward = new Reward();
         reward.amount = 1;
         reward.itemKey = tag;
 
@@ -92,10 +95,13 @@ class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnSta
 
     @Override
     public void onIncomplete(String tag) {
-        RewardedVideoReward reward = new RewardedVideoReward();
+        Reward reward = new Reward();
         reward.amount = 0;
         reward.itemKey = tag;
 
-        notifyOnRewardCompleted(reward, "Rewarded video error");
+        Error error = new Error();
+        error.code = -1;
+        error.message = "Rewarded video incomplete";
+        notifyOnRewardCompleted(reward, error);
     }
 }

@@ -50,7 +50,10 @@ class AdBannerHeyzap extends AbstractAdBanner implements HeyzapAds.BannerListene
 
     @Override
     public void onAdError(BannerAdView bannerAdView, HeyzapAds.BannerError bannerError) {
-        notifyOnFailed(bannerError.getErrorCode().ordinal(), bannerError.getErrorMessage());
+        Error error = new Error();
+        error.code = bannerError.getErrorCode().ordinal();
+        error.message = bannerError.getErrorMessage();
+        notifyOnFailed(error);
     }
 
     @Override

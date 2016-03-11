@@ -29,7 +29,7 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
         setContentView(R.layout.activity_main);
 
         //create the adservice according to selected gradle build variant (MoPub or AdMob)
-        adService = AdServiceCreator.create(this);
+        adService = AdServiceCreator.create();
 
         adBanner = adService.createBanner(this);
         if (adBanner != null) {
@@ -143,8 +143,8 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
     }
 
     @Override
-    public void onFailed(AdBanner banner, int errorCode, String errorMessage) {
-        txtBannerStatus.setText("Failed: " + errorMessage);
+    public void onFailed(AdBanner banner, AdBanner.Error error) {
+        txtBannerStatus.setText("Failed: " + error.message);
     }
 
     @Override
@@ -168,8 +168,8 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
     }
 
     @Override
-    public void onFailed(AdInterstitial interstitial, int errorCode, String errorMessage) {
-        txtInterstitialStatus.setText("Failed: " + errorMessage);
+    public void onFailed(AdInterstitial interstitial, AdInterstitial.Error error) {
+        txtInterstitialStatus.setText("Failed: " + error.message);
     }
 
     @Override
@@ -188,7 +188,10 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
     }
 
     @Override
-    public void onRewardCompleted(AdInterstitial interstitial, int quantity) {
-        txtInterstitialStatus.setText("Reward " + quantity);
+    public void onRewardCompleted(AdInterstitial interstitial, AdInterstitial.Reward reward, AdInterstitial.Error error) {
+        if (error == null)
+            txtInterstitialStatus.setText("Reward " + reward.amount);
+        else
+            txtInterstitialStatus.setText("Failed: " + error.message);
     }
 }

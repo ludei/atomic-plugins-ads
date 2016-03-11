@@ -53,7 +53,10 @@ class AdInterstitialHeyzap extends AbstractAdInterstitial implements HeyzapAds.O
 
     @Override
     public void onFailedToShow(String tag) {
-        notifyOnFailed(-1, tag);
+        Error error = new Error();
+        error.code = -1;
+        error.message = "Rewarded video failed to show";
+        notifyOnFailed(error);
     }
 
     @Override

@@ -58,7 +58,10 @@ public class AdServiceChartboost implements AdService {
             public void didFailToLoadInterstitial(String location, CBError.CBImpressionError error) {
                 AdInterstitialChartboost interstitial = _interstitials.get(location);
                 if (interstitial != null) {
-                    interstitial.notifyOnFailed(error.ordinal(), "Error with code: " + error.ordinal());
+                    AdInterstitial.Error err = new AdInterstitial.Error();
+                    err.code = error.ordinal();
+                    err.message = "Error with code: " + error.ordinal();
+                    interstitial.notifyOnFailed(err);
                 }
             }
 
@@ -82,7 +85,9 @@ public class AdServiceChartboost implements AdService {
             public void didCompleteRewardedVideo(String location, int reward) {
                 AdInterstitialChartboost interstitial = _rewards.get(location);
                 if (interstitial != null) {
-                    interstitial.notifyOnRewardCompleted(reward);
+                    AdInterstitial.Reward rw = new AdInterstitial.Reward();
+                    rw.amount = reward;
+                    interstitial.notifyOnRewardCompleted(rw, null);
                 }
             }
 
@@ -106,7 +111,10 @@ public class AdServiceChartboost implements AdService {
             public void didFailToLoadRewardedVideo(String location, CBError.CBImpressionError error) {
                 AdInterstitialChartboost interstitial = _rewards.get(location);
                 if (interstitial != null) {
-                    interstitial.notifyOnFailed(error.ordinal(), "Error with code: " + error.ordinal());
+                    AdInterstitial.Error err = new AdInterstitial.Error();
+                    err.code = error.ordinal();
+                    err.message = "Error with code: " + error.ordinal();
+                    interstitial.notifyOnFailed(err);
                 }
             }
 

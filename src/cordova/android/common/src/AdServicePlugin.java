@@ -249,8 +249,8 @@ public class AdServicePlugin extends CordovaPlugin implements AdBanner.BannerLis
     }
 
     @Override
-    public void onFailed(AdBanner banner, int errorCode, String errorMessage) {
-        callListeners(_bannerListener, "fail", errorToJSON(errorCode, errorMessage));
+    public void onFailed(AdBanner banner, AdBanner.Error error) {
+        callListeners(_bannerListener, "fail", errorToJSON((int)error.code, error.message));
     }
 
     @Override
@@ -274,8 +274,8 @@ public class AdServicePlugin extends CordovaPlugin implements AdBanner.BannerLis
     }
 
     @Override
-    public void onFailed(AdInterstitial interstitial, int errorCode, String errorMessage) {
-    	callListeners(_interstitialListener, "fail", findInterstitialId(interstitial), errorToJSON(errorCode, errorMessage));
+    public void onFailed(AdInterstitial interstitial, AdInterstitial.Error error) {
+    	callListeners(_interstitialListener, "fail", findInterstitialId(interstitial), errorToJSON((int)error.code, error.message));
     }
 
     @Override
@@ -294,11 +294,11 @@ public class AdServicePlugin extends CordovaPlugin implements AdBanner.BannerLis
     }
 
 	@Override
-	public void onRewardCompleted(AdInterstitial interstitial, AdInterstitial.RewardedVideoReward reward, String errorMessage) {
-		if (errorMessage != null)
+	public void onRewardCompleted(AdInterstitial interstitial, AdInterstitial.Reward reward, AdInterstitial.Error error) {
+		if (error != null)
 			reward.amount = 0;
 
-		callListeners(_interstitialListener, "reward", findInterstitialId(interstitial), reward);
+		callListeners(_interstitialListener, "reward", findInterstitialId(interstitial), reward, error);
 	}
 
 	//Utility methods

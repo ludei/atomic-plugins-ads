@@ -28,8 +28,14 @@ android {
 }
 
 dependencies {
-    compile project(':ads-common')
-    compile fileTree(dir: 'external/mopub', include: ['*.jar', '*.aar'])
-
+    compile project(':ads-common')    
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:support-annotations:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.google.android.gms:play-services-ads:8.3.0'
+    compile 'com.mopub.volley:mopub-volley:1.1.0'
+    compile('com.mopub:mopub-sdk:4.4.1@aar') {
+        transitive = true
+    }
 }
 

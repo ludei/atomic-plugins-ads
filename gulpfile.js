@@ -55,10 +55,26 @@ gulp.task('deps-cordova', function() {
     gulp.src('src/atomic/android/mopub/external/mopub/**/')
         .pipe(gulp.dest('src/cordova/android/mopub/base/src/deps'));   
 
+    // Android adcolony
+    gulp.src('src/atomic/android/mopub/external/adapters/adcolony/libs/**/')
+        .pipe(gulp.dest('src/cordova/android/adcolony/src/deps'));
+
+    // Android InMobi
+    gulp.src('src/atomic/android/mopub/external/adapters/inmobi/libs/**/')
+        .pipe(gulp.dest('src/cordova/android/mopub/inmobi/src/deps'));
+
+    // Android MillenialMedia
+    gulp.src('src/atomic/android/mopub/external/adapters/millennialmedia/libs/**/')
+        .pipe(gulp.dest('src/cordova/android/mopub/millennialmedia/src/deps'));
+
+    // Android Greystripe
+    gulp.src('src/atomic/android/mopub/external/adapters/greystripe/libs/**/')
+        .pipe(gulp.dest('src/cordova/android/mopub/greystripe/src/deps'));
+
     //Android mopub adapters
     for (var i = 0; i < mopubAndroidAdapters.length; ++i) {
-        gulp.src('src/atomic/android/mopub/external/adapters/' + mopubAndroidAdapters[i] + '/libs/**/')
-            .pipe(gulp.dest('src/cordova/android/mopub/' + mopubAndroidAdapters[i] + '/src/deps'));
+        gulp.src('src/atomic/android/mopub/external/adapters/' + mopubAndroidAdapters[i] + '/src/*.java')
+            .pipe(gulp.dest('src/cordova/android/mopub/' + mopubAndroidAdapters[i] + '/src'));
     }  
 
     //Android admob

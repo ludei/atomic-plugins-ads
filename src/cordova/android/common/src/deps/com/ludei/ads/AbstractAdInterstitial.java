@@ -15,9 +15,9 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
         }
     }
 
-    public void notifyOnFailed(int errorCode, String errorMessage) {
+    public void notifyOnFailed(AdInterstitial.Error error) {
         if (_listener != null) {
-            _listener.onFailed(this, errorCode, errorMessage);
+            _listener.onFailed(this, error);
         }
     }
 
@@ -39,9 +39,9 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
         }
     }
 
-    public void notifyOnRewardCompleted(RewardedVideoReward reward, String errorMessage) {
+    public void notifyOnRewardCompleted(AdInterstitial.Reward reward, AdInterstitial.Error error) {
         if (_listener != null) {
-            _listener.onRewardCompleted(this, reward, errorMessage);
+            _listener.onRewardCompleted(this, reward, error);
         }
     }
 
