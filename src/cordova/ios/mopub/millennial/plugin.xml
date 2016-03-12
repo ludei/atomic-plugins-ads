@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-mopub-millennial" version="1.0.0">
+        id="cocoon-plugin-ads-ios-mopub-millennial" version="1.0.1">
     <name>MoPubAdapterMillenial</name>
     <description>iOS Millenial adapter for MoPub</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,millennial</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <source-file src="src/deps/libMillennialMediaAdapter.a" framework="true" />
-        <source-file src="src/deps/libMillennialMedia.a" framework="true" />
+         <header-file src="src/MPMillennialBannerCustomEvent.h" />
+         <source-file src="src/MPMillennialBannerCustomEvent.m" />
+         <header-file src="src/MPMillennialInterstitialCustomEvent.h" />
+         <source-file src="src/MPMillennialInterstitialCustomEvent.m" />
     </platform>
     <dependency id="cocoon-plugin-ads-ios-mopub" />
 </plugin>

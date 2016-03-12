@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-mopub-admob" version="1.0.0">
+        id="cocoon-plugin-ads-ios-mopub-admob" version="1.0.1">
     <name>MoPubAdapterAdMob</name>
     <description>iOS AdMob adapter for MoPub</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <source-file src="src/deps/libAdMobAdapter.a" framework="true" />
+        <header-file src="src/MPGoogleAdMobBannerCustomEvent.h" />
+        <source-file src="src/MPGoogleAdMobBannerCustomEvent.m" />
+        <header-file src="src/MPGoogleAdMobInterstitialCustomEvent.h" />
+        <source-file src="src/MPGoogleAdMobInterstitialCustomEvent.m" />
     </platform>
     <dependency id="cocoon-plugin-ads-ios-mopub" />
     <dependency id="cocoon-plugin-ads-ios-admob" />

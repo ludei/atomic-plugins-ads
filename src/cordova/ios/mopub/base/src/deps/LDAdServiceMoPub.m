@@ -1,5 +1,9 @@
 #import "LDAdServiceMoPub.h"
-#import "MoPub.h"
+#if __has_include(<MoPub/MoPub.h>)
+    #import <MoPub/MoPub.h>
+#else
+    #import "MoPub.h"
+#endif
 
 static inline bool isIpad()
 {

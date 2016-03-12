@@ -15,6 +15,9 @@
 		11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
 		11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
 		11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
+		11600CB51C948A4400BBEEB4 /* Mopub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11600CB41C948A4400BBEEB4 /* Mopub.framework */; };
+		11600CB71C948A6B00BBEEB4 /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11600CB61C948A6B00BBEEB4 /* MMAdSDK.framework */; };
+		11600CB81C948ABC00BBEEB4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA023E1C902E3F004B59C5 /* libxml2.tbd */; };
 		11729E9A1B2344A700633115 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E991B2344A700633115 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729E9C1B2344B500633115 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9B1B2344B500633115 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		11729E9E1B2344E400633115 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
@@ -111,6 +114,8 @@
 		110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@3x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@3x.png"; sourceTree = "<group>"; };
 		110DEB2C1A94B31E0034ED6C /* MRAID.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MRAID.bundle; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MRAID.bundle; sourceTree = "<group>"; };
 		11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/base/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		11600CB41C948A4400BBEEB4 /* Mopub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mopub.framework; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Mopub.framework; sourceTree = "<group>"; };
+		11600CB61C948A6B00BBEEB4 /* MMAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMAdSDK.framework; path = ../../../src/cordova/ios/millennial/src/deps/external/MMAdSDK.framework; sourceTree = "<group>"; };
 		11729E991B2344A700633115 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		11729E9B1B2344B500633115 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		11729E9D1B2344E400633115 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -174,8 +179,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11600CB81C948ABC00BBEEB4 /* libxml2.tbd in Frameworks */,
+				11600CB51C948A4400BBEEB4 /* Mopub.framework in Frameworks */,
 				1181A44A1BE771670061824B /* GoogleMobileAds.framework in Frameworks */,
 				1181A44B1BE771980061824B /* Chartboost.framework in Frameworks */,
+				11600CB71C948A6B00BBEEB4 /* MMAdSDK.framework in Frameworks */,
 				11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */,
 				11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */,
 				11498F021B24955200B6DA8E /* AudioToolbox.framework in Frameworks */,
@@ -332,6 +340,8 @@
 		11EA00861A48359400F0CB30 = {
 			isa = PBXGroup;
 			children = (
+				11600CB61C948A6B00BBEEB4 /* MMAdSDK.framework */,
+				11600CB41C948A4400BBEEB4 /* Mopub.framework */,
 				11EA00B81A4836E000F0CB30 /* src */,
 				11EA02461C902F2E004B59C5 /* frameworks */,
 				11EA00911A48359400F0CB30 /* AdTest */,
@@ -846,6 +856,9 @@
 					"$(inherited)",
 					"${PROJECT_DIR}/../../../src/cordova/ios/admob/base/src/deps/external",
 					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/millennial/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/adcolony/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -855,14 +868,7 @@
 				INFOPLIST_FILE = AdTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMedia.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -880,6 +886,9 @@
 					"$(inherited)",
 					"${PROJECT_DIR}/../../../src/cordova/ios/admob/base/src/deps/external",
 					"${PROJECT_DIR}/../../../src/cordova/ios/chartboost/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/millennial/src/deps/external",
+					"${PROJECT_DIR}/../../../src/cordova/ios/adcolony/src/deps/external",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -889,14 +898,7 @@
 				INFOPLIST_FILE = AdTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/libMoPub.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/admob/src/deps/libAdMobAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMediaAdapter.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/millennial/src/deps/libMillennialMedia.a",
-					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/chartboost/src/deps/libChartboostAdapter.a",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};

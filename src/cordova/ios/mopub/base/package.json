@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-mopub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "iOS MoPub Ads implementation",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-mopub",

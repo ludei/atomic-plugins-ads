@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-ios-mopub-unityads" version="1.0.0">
+    <name>MoPubAdapterUnityAds</name>
+    <description>iOS unityads adapter for MoPub</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,unityads,unity,ads</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    <platform name="ios">
+            <header-file src="src/MPInstanceProvider+Unity.h" />
+            <source-file src="src/MPInstanceProvider+Unity.m" />
+            <header-file src="src/MPUnityRouter.h" />
+            <source-file src="src/MPUnityRouter.m" />
+            <header-file src="src/UnityAdsInstanceMediationSettings.h" />
+            <source-file src="src/UnityAdsInstanceMediationSettings.m" />
+            <header-file src="src/UnityAdsRewardedVideoCustomEvent.h" />
+            <source-file src="src/UnityAdsRewardedVideoCustomEvent.m" />
+    </platform>
+    <dependency id="cocoon-plugin-ads-ios-unityads" />
+    <dependency id="cocoon-plugin-ads-ios-mopub" />
+</plugin>

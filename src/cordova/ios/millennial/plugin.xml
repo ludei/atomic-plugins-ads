@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-ios-millennial" version="1.0.0">
+    <name>AdsMillennial</name>
+    <description>iOS Ads millennial implementation</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,millennial</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    <platform name="ios">
+        <framework src="src/deps/external/MMAdSDK.framework" custom="true" />
+
+         <framework src="AdSupport.framework" />
+         <framework src="AudioToolbox.framework" />
+         <framework src="AVFoundation.framework" />
+         <framework src="CoreBluetooth.framework" />
+         <framework src="CoreGraphics.framework" />
+         <framework src="CoreLocation.framework" />
+         <framework src="CoreTelephony.framework" />
+         <framework src="EventKit.framework" />
+         <framework src="EventKitUI.framework" />
+         <framework src="Foundation.framework" />
+         <framework src="libxml2.dylib" />
+         <framework src="MediaPlayer.framework" />
+         <framework src="MessageUI.framework" />
+         <framework src="StoreKit.framework" />
+         <framework src="SystemConfiguration.framework" />
+         <framework src="UIKit.framework" />
+    </platform>
+    <dependency id="cocoon-plugin-ads-ios-common" />
+</plugin>
