@@ -116,51 +116,178 @@
 	<div class="row-fluid">
 
 		
-			<div class="span12">
-				
+		<div class="span8">
+			
 				<div id="main">
 					
 
 
-		<h1 class="page-title">Source: cocoon_ads_admob.js</h1>
+	<h1 class="page-title">Namespace: Heyzap</h1>
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="Cocoon.Ad.html">.Ad</a>.</span>
     
-    <section>
-        <article>
-            <pre class="sunlight-highlight-javascript linenums">(function() {
-   	/**
-    * Cocoon.Ad.AdMob class provides an easy to use AdMob API with built-in support for multiple banners and interstitials.
-    * @namespace Cocoon.Ad.AdMob
-    * @example
-    * //Global configuration
-    *Cocoon.Ads.AdMob.configure({
-    *     banner:"xxx",
-    *     interstitial:"yyy"
-    *})
-    * //Or platform specific configuration
-    *Cocoon.Ads.AdMob.configure({
-    *     ios: {
-    *          banner:"aaa",
-    *          bannerIpad:"bbb", //optional
-    *          interstitial:"ccc",
-    *          interstitialIpad:"ddd", //optional
-    *     },
-    *     android: {
-    *          banner:"eee",
-    *          interstitial:"fff"
-    *     }
-    *);*
-    */
-    Cocoon.define("Cocoon.Ad", function(extension) {
 
-        extension.AdMob = new Cocoon.Ad.AdService("LDAdMobPlugin");
-        return extension;
-    });
+    
+        Heyzap
+    
+    </h2>
+    
+</header>
 
-})();
-</pre>
-        </article>
-    </section>
+<article>
+    <div class="container-overview">
+    
 
+    
+        
+            <div class="description"><p>Cocoon.Ad.Heyzap class provides an easy to use Heyzap API with built-in support for multiple banners and interstitials.</p></div>
+        
+
+        
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+            <h3>Example</h3>
+            
+    <pre class="sunlight-highlight-javascript">//Global configuration
+Cocoon.Ads.Heyzap.configure({
+    publisherId:"xxxxxxxxxxxxxxxx"
+})
+//Or platform specific configuration
+Cocoon.Ads.Heyzap.configure({
+    ios: {
+         publisherId:"xxxxxxxxxxxxxxxx"
+    },
+    android: {
+         publisherId:"yyyyyyyyyyyyyyyy"
+    }
+);*</pre>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="showDebug"><span class="type-signature">&lt;static> </span>showDebug<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Shows a native view to help debug the Heyzap mediation settings</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">Cocoon.Ad.Heyzap.showDebug();</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
@@ -179,6 +306,10 @@
 				</footer>
 			</div>
 
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
 			
 			<br clear="both">
 		</div>

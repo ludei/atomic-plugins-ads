@@ -89,6 +89,12 @@
 						
 						<li>
 							
+								<a href="Cocoon.Ad.Heyzap.html">Heyzap</a>
+							
+						</li>
+						
+						<li>
+							
 								<a href="Cocoon.Ad.Interstitial.html">Interstitial</a>
 							
 						</li>
@@ -518,9 +524,11 @@ Cocoon.define("Cocoon.Ad" , function(extension){
          * @memberOf Cocoon.Ad.Interstitial
          * @event On reward
          * @example
-         * interstitial.on("reward", function(quantity){
-        *    console.log("Reward completed. Earned " + quantity + " items");
-        * });
+         * interstitial.on("reward", function(reward, error){
+         *   if (reward &amp;&amp; reward.amount > 0) {
+         *     console.log("Reward completed. Earned " + reward.amount + " items");
+         *   }
+         * });
          */
 
         on: function(eventName, handler) {

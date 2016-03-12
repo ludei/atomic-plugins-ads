@@ -122,37 +122,45 @@
 					
 
 
-		<h1 class="page-title">Source: cocoon_ads_admob.js</h1>
+		<h1 class="page-title">Source: cocoon_ads_heyzap.js</h1>
     
     <section>
         <article>
             <pre class="sunlight-highlight-javascript linenums">(function() {
    	/**
-    * Cocoon.Ad.AdMob class provides an easy to use AdMob API with built-in support for multiple banners and interstitials.
-    * @namespace Cocoon.Ad.AdMob
+    * Cocoon.Ad.Heyzap class provides an easy to use Heyzap API with built-in support for multiple banners and interstitials.
+    * @namespace Cocoon.Ad.Heyzap
     * @example
     * //Global configuration
-    *Cocoon.Ads.AdMob.configure({
-    *     banner:"xxx",
-    *     interstitial:"yyy"
+    *Cocoon.Ads.Heyzap.configure({
+    *     publisherId:"xxxxxxxxxxxxxxxx"
     *})
     * //Or platform specific configuration
-    *Cocoon.Ads.AdMob.configure({
+    *Cocoon.Ads.Heyzap.configure({
     *     ios: {
-    *          banner:"aaa",
-    *          bannerIpad:"bbb", //optional
-    *          interstitial:"ccc",
-    *          interstitialIpad:"ddd", //optional
+    *          publisherId:"xxxxxxxxxxxxxxxx"
     *     },
     *     android: {
-    *          banner:"eee",
-    *          interstitial:"fff"
+    *          publisherId:"yyyyyyyyyyyyyyyy"
     *     }
     *);*
     */
     Cocoon.define("Cocoon.Ad", function(extension) {
 
-        extension.AdMob = new Cocoon.Ad.AdService("LDAdMobPlugin");
+        extension.Heyzap = new Cocoon.Ad.AdService("LDHeyzapPlugin");
+
+        /**
+        * Shows a native view to help debug the Heyzap mediation settings
+        * @memberOf Cocoon.Ad.Heyzap
+        * @function showDebug
+        * @example
+        * Cocoon.Ad.Heyzap.showDebug();
+        */
+        extension.Heyzap.showDebug = function() {
+            Cocoon.exec(this.serviceName, "showDebug", []);
+        };
+
+
         return extension;
     });
 
