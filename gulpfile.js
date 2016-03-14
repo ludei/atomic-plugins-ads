@@ -47,6 +47,10 @@ gulp.task('deps-cordova', function() {
     gulp.src(['src/atomic/android/chartboost/src/**/','src/atomic/android/chartboost/libs/**/'])
         .pipe(gulp.dest('src/cordova/android/chartboost/src/deps'));
 
+    // Android Heyzap
+    gulp.src(['src/atomic/android/heyzap/src/**/','src/atomic/android/heyzap/libs/**/'])
+        .pipe(gulp.dest('src/cordova/android/heyzap/base/src/deps'));
+
     //Android mopub
     gulp.src('src/atomic/android/common/src/**/')
         .pipe(gulp.dest('src/cordova/android/common/src/deps'));

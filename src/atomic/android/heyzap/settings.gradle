@@ -1,0 +1,3 @@
+rootProject.name = 'ads-heyzap'
+include ':ads-common'
+project(':ads-common').projectDir = new File('../common')
