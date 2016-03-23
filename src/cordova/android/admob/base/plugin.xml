@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob" version="1.0.3">
+        id="cocoon-plugin-ads-android-admob" version="1.0.4">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
@@ -26,7 +26,6 @@
         <config-file target="AndroidManifest.xml" parent="/*">
               <uses-permission android:name="android.permission.INTERNET" />
               <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-              <uses-permission android:name="android.permission.GET_TASKS" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
