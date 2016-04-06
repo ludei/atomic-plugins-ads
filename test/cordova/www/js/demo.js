@@ -196,16 +196,16 @@
 
     function initDemo(){
 
-        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, null, true);
         document.body.appendChild(renderer.view);
 
         var W = 800;
         var H = 600;
 
         //load resources
-        backgroundTexture = PIXI.Texture.fromImage('./images/background.jpg');
-        button1Texture = PIXI.Texture.fromImage('./images/button1.png');
-        button2Texture = PIXI.Texture.fromImage('./images/button2.png');
+        backgroundTexture = PIXI.Texture.fromImage('images/background.jpg', true);
+        button1Texture = PIXI.Texture.fromImage('images/button1.png', true);
+        button2Texture = PIXI.Texture.fromImage('images/button2.png', true);
 
         var stage = new PIXI.Container();
         stage.interactive = true;
