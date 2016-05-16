@@ -7,6 +7,8 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,applovin,rewarded</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
+        <preference name="APP_ID" />
+        
         <framework src="src/deps/external/AppLovin.framework" custom="true" />
 
         <framework src="AdSupport.framework" />
@@ -17,6 +19,10 @@
         <framework src="StoreKit.framework" />
         <framework src="SystemConfiguration.framework" />
         <framework src="UIKit.framework" />
+
+        <config-file target="*-Info.plist" parent="AppLovinSdkKey">
+            <string>$APP_ID</string>
+        </config-file>
 
     <dependency id="cocoon-plugin-ads-ios-common" />
     </platform>
