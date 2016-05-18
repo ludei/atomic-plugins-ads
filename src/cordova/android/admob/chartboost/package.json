@@ -1,0 +1,33 @@
+{
+  "name": "cocoon-plugin-ads-android-admob-chartboost",
+  "version": "1.0.0",
+  "description": "Android AdMob Chartboost Adapter",
+  "cordova": {
+    "id": "cocoon-plugin-ads-android-admob-chartboost",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludei/atomic-plugins-ads"
+  },
+  "keywords": [
+    "cordova",
+    "ads",
+    "banner",
+    "interstitial",
+    "monetization",
+    "ad",
+    "admob",
+    "chartboost",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "ludei",
+  "license": "MPL 2.0",
+  "bugs": {
+    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+  },
+  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+}
