@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-chartboost" version="1.0.2">
+        id="cocoon-plugin-ads-android-mopub-chartboost" version="1.0.3">
 
     <name>AdsMopubCharboost</name>
     <description>Android MoPub Chartboost Adapter</description>
@@ -12,15 +12,6 @@
         <source-file src="src/ChartboostInterstitial.java" target-dir="src/com/mopub/mobileads" />
         <source-file src="src/ChartboostRewardedVideo.java" target-dir="src/com/mopub/mobileads" />
         <source-file src="src/ChartboostShared.java" target-dir="src/com/mopub/mobileads" />
-
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity
-                android:name="com.chartboost.sdk.CBImpressionActivity"
-                android:configChanges="orientation|keyboard|keyboardHidden"
-                android:launchMode="singleTop"
-                android:theme="@android:style/Theme.Translucent"
-                android:windowSoftInputMode="adjustResize" />
-        </config-file>
     </platform>
 
     <dependency id="cocoon-plugin-ads-android-chartboost" />
