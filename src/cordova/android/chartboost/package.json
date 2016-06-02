@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-chartboost",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Android Chartboost",
   "cordova": {
     "id": "cocoon-plugin-ads-android-chartboost",
