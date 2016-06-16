@@ -38,6 +38,6 @@
         </config-file>
 
     </platform>
-    <framework src="com.google.android.gms:play-services-ads:8.4.0" />
+    <framework src="com.google.android.gms:play-services-ads:9.0.0" />
     <dependency id="cocoon-plugin-ads-android-common" />
 </plugin>
