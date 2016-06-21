@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-mopub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Android MoPub Ads implementation",
   "cordova": {
     "id": "cocoon-plugin-ads-android-mopub",

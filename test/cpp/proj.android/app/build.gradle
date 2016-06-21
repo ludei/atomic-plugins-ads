@@ -72,7 +72,7 @@ dependencies {
     compile project(':ads-admob') //admob implementation
     compile project(':ads-cppbridge')
 
-    compile 'com.google.android.gms:play-services-ads:8.3.0' //admob-sdk
+    compile 'com.google.android.gms:play-services-ads:9.0.2' //admob-sdk
     //mopub adapters
     compile (name:'adcolony-adapter', ext:'aar')
     compile (name:'admob-adapter', ext:'aar')

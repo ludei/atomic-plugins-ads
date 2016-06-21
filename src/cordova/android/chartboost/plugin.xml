@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-chartboost" version="1.0.3">
+        id="cocoon-plugin-ads-android-chartboost" version="1.0.4">
     <name>AdsCharboost</name>
     <description>Android Chartboost</description>
     <license>MPL 2.0</license>
@@ -38,6 +38,6 @@
         </config-file>
 
     </platform>
-    <framework src="com.google.android.gms:play-services-ads:9.0.0" />
+    <framework src="com.google.android.gms:play-services-ads:9.0.2" />
     <dependency id="cocoon-plugin-ads-android-common" />
 </plugin>

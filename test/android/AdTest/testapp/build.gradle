@@ -53,7 +53,7 @@ dependencies {
     mopubCompile project(':ads-mopub')
 
     //Optional MoPub Adapters
-    mopubCompile 'com.google.android.gms:play-services-ads:8.3.0' //admob-sdk
+    mopubCompile 'com.google.android.gms:play-services-ads:9.0.2' //admob-sdk
     mopubCompile (name:'adcolony-adapter', ext:'aar')
     mopubCompile (name:'admob-adapter', ext:'aar')
     mopubCompile (name:'millennialmedia-adapter', ext:'aar')

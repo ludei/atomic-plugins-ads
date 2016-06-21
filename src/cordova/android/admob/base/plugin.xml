@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob" version="1.0.5">
+        id="cocoon-plugin-ads-android-admob" version="1.0.6">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
@@ -33,7 +33,7 @@
                 android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         </config-file>
 
-        <framework src="com.google.android.gms:play-services-ads:9.0.0" />
+        <framework src="com.google.android.gms:play-services-ads:9.0.2" />
         <dependency id="cocoon-plugin-ads-android-common" />
     </platform>
 
