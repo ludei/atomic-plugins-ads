@@ -11,6 +11,10 @@
 
         <source-file src="src/deps/applovin-sdk-6.2.4.jar" target-dir="libs" framework="true" />
 
+        <source-file src="src/deps/com/ludei/ads/applovin/AdServiceApplovin.java" target-dir="src/com/ludei/ads/applovin" />
+        <source-file src="src/deps/com/ludei/ads/chartboost/AdInterstitialChartboost.java" target-dir="src/com/ludei/ads/applovin" />
+        <source-file src="src/ApplovinPlugin.java" target-dir="src/com/ludei/ads/cordova" />
+
         <config-file target="res/values/strings.xml" parent="/resources">
             <string name="applovin_app_id">$APP_ID</string>
         </config-file>

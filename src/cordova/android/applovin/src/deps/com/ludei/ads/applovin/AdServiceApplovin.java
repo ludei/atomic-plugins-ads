@@ -17,5 +17,19 @@ public class AdServiceApplovin implements AdService {
         AppLovinSdk.initializeSdk(activity);
     }
 
+    @Override
+    public AdInterstitial createInterstitial(Context ctx) {
+        return createInterstitial(ctx, null);
+    }
+
+    @Override
+    public AdInterstitial createInterstitial(Context ctx, String adunit) {
+        if (adunit == null || adunit.length() == 0) {
+            adunit = "";
+        }
+        AdInterstitialApplovin cb = new AdInterstitialApplovin(ctx, false);
+        return cb;
+    }
+
 
 }
