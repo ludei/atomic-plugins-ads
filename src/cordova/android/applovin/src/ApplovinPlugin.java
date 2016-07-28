@@ -13,7 +13,6 @@ public class ApplovinPlugin extends AdServicePlugin {
     protected void pluginInitialize() {
         _cbService = new AdServiceApplovin();
         _cbService.init(cordova.getActivity());
-        _cbService.onStart(cordova.getActivity());
         _service = _cbService;
     }
 
@@ -30,6 +29,7 @@ public class ApplovinPlugin extends AdServicePlugin {
     @Override
     public void onStart() {
         super.onStart();
+        _cbService.onStart(cordova.getActivity());
     }
 
     @Override
