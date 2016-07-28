@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2013 AppLovin.
  */
-package com.ludei.ads.cordova;
+package com.ludei.ads.applovin;
 
 import android.app.Activity;
 
