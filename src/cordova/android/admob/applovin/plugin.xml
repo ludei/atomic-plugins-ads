@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-admob-applovin" version="1.0.0">
+    <name>AdsAdMobappLovin</name>
+    <description>Android AdMob AppLovin Adapter</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,applovin</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    <platform name="android">
+        
+        <source-file src="src/deps/applovin-admob-adapter.jar" target-dir="libs" framework="true" />
+        <source-file src="src/deps/AdMobMediationInterEvent.java" target-dir="src/com/ludei/ads/cordova" />
+        <source-file src="src/deps/ApplovinAdapter.java" target-dir="src/com/ludei/ads/cordova" />
+
+        <dependency id="cocoon-plugin-ads-android-admob" />
+        <dependency id="cocoon-plugin-ads-android-applovin" />
+    </platform>
+
+</plugin>
