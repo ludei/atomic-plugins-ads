@@ -4,7 +4,7 @@
     <name>AdsAdMobappLovin</name>
     <description>Android AdMob AppLovin Adapter</description>
     <license>MPL 2.0</license>
-    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,applovin</keywords>
+    <keywords>cordova,ads,interstitial,monetization,ad,admob,applovin</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
         
