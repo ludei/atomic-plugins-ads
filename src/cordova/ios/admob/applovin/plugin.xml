@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob-applovin" version="1.0.0">
+        id="cocoon-plugin-ads-ios-admob-applovin" version="1.0.1">
     <name>AdMobAdapterAppLovin</name>
     <description>iOS applovin adapter for AdMob</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,applovin</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
+            <preference name="APP_ID" />
+            
             <header-file src="src/AppLovinCustomEventBanner.h" />
             <source-file src="src/AppLovinCustomEventBanner.m" />
             <header-file src="src/AppLovinCustomEventInter.h" />
