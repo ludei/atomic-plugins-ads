@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-heyzap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "iOS Ads Heyzap implementation",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-heyzap",
