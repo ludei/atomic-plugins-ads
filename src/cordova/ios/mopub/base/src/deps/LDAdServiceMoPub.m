@@ -319,7 +319,7 @@ static inline bool isIpad()
         LDMoPubRewardedVideoReward * mopubReward = [[LDMoPubRewardedVideoReward alloc] init];
         mopubReward.amount = [NSNumber numberWithInteger:fmax(reward.amount.integerValue, 1)];
         mopubReward.currencyType = reward.currencyType;
-        mopubReward.itemKey = nil;
+        mopubReward.itmKey = nil;
         [_delegate adInterstitialDidCompleteRewardedVideo:self withReward:mopubReward andError:nil];
     }
 }

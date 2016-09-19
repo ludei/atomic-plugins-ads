@@ -473,7 +473,7 @@
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
         LDHeyzapRewardedVideoReward * reward = [[LDHeyzapRewardedVideoReward alloc] init];
         reward.amount = [NSNumber numberWithInteger:1];
-        reward.itemKey = tag;
+        reward.itmKey = tag;
         [ad.delegate adInterstitialDidCompleteRewardedVideo:ad withReward:reward andError:nil];
     }
 }

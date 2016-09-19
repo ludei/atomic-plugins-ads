@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-common" version="1.0.3">
+        id="cocoon-plugin-ads-android-common" version="1.0.4">
     <name>AdsCommon</name>
     <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitial</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad</keywords>
-    <repo>https://github.com/ludei/atomic-plugins-ads</repo>    
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
         <source-file src="src/AdServicePlugin.java" target-dir="src/com/ludei/ads/cordova" />
         <source-file src="src/deps/com/ludei/ads/AdService.java" target-dir="src/com/ludei/ads" />

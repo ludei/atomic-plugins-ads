@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-common" version="1.0.3">
+        id="cocoon-plugin-ads-ios-common" version="1.0.4">
     <name>AdsCommon</name>
     <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitials</description>
     <license>MPL 2.0</license>

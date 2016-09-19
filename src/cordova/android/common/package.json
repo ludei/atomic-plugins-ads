@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-common",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Cross platform Ads API for different Ad Providers. Full support for banners and interstitial",
   "cordova": {
     "id": "cocoon-plugin-ads-android-common",

@@ -20,5 +20,5 @@
 @interface LDMoPubRewardedVideoReward: NSObject<LDRewardedVideoRewardProtocol>
 @property (nonatomic, strong) NSString *currencyType;
 @property (nonatomic, strong) NSNumber *amount;
-@property (nonatomic, strong) NSString *itemKey;
+@property (nonatomic, strong) NSString *itmKey;
 @end

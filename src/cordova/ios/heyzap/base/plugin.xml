@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-heyzap" version="1.0.2">
+        id="cocoon-plugin-ads-ios-heyzap" version="1.0.3">
     <name>AdsHeyzap</name>
     <description>iOS Ads Heyzap implementation</description>
     <license>MPL 2.0</license>
@@ -30,7 +30,7 @@
         <framework src="iAd.framework"/>
 
         <framework src="libxml2.dylib"/>
-        <framework src="libsqlite3.dylib" /> 
+        <framework src="libsqlite3.dylib" />
 
 
         <config-file target="config.xml" parent="/*">

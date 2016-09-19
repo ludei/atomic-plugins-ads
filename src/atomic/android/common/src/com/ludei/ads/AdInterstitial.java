@@ -12,7 +12,7 @@ public interface AdInterstitial {
     class Reward {
         public long amount;
         public String currency;
-        public String itemKey;
+        public String itmKey;
     }
 
     class Error {

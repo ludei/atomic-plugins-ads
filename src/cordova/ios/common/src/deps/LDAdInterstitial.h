@@ -49,7 +49,7 @@ typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
 @protocol LDRewardedVideoRewardProtocol <NSObject>
 @property (nonatomic, strong) NSString *currencyType;
 @property (nonatomic, strong) NSNumber *amount;
-@property (nonatomic, strong) NSString *itemKey;
+@property (nonatomic, strong) NSString *itmKey;
 @end
 
 typedef NSObject<LDRewardedVideoRewardProtocol> LDRewardedVideoReward;

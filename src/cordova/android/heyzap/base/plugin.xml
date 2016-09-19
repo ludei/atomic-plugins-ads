@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-heyzap" version="1.0.2">
+        id="cocoon-plugin-ads-android-heyzap" version="1.0.3">
     <name>AdsHeyzap</name>
     <description>Android Heyzap Ads implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap</keywords>
-    <repo>https://github.com/ludei/atomic-plugins-ads</repo>    
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
         <source-file src="src/deps/heyzap-ads-sdk-9.4.4.jar" target-dir="libs" framework="true" />

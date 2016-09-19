@@ -88,7 +88,7 @@ class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnSta
     public void onComplete(String tag) {
         Reward reward = new Reward();
         reward.amount = 1;
-        reward.itemKey = tag;
+        reward.itmKey = tag;
 
         notifyOnRewardCompleted(reward, null);
     }
@@ -97,7 +97,7 @@ class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnSta
     public void onIncomplete(String tag) {
         Reward reward = new Reward();
         reward.amount = 0;
-        reward.itemKey = tag;
+        reward.itmKey = tag;
 
         Error error = new Error();
         error.code = -1;

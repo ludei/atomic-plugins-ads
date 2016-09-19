@@ -249,7 +249,7 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     [dic setObject:reward && reward.amount ? reward.amount : [NSNumber numberWithInteger:0] forKey:@"amount"];
     [dic setObject:reward && reward.currencyType ? reward.currencyType : @"" forKey:@"currencyType"];
-    [dic setObject:reward && reward.itemKey ? reward.itemKey : @"" forKey:@"itemKey"];
+    [dic setObject:reward && reward.itmKey ? reward.itmKey : @"" forKey:@"itmKey"];
     
     if (error) {
         [self callListener:@[@"reward", [self findInterstitialId:interstitial], dic, [self errorToDic:error]] callbackId:_interstitialListenerId];
