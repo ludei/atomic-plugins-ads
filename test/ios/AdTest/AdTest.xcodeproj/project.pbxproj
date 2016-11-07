@@ -114,6 +114,10 @@
 		110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@3x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@3x.png"; sourceTree = "<group>"; };
 		110DEB2C1A94B31E0034ED6C /* MRAID.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MRAID.bundle; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MRAID.bundle; sourceTree = "<group>"; };
 		11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/base/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		115E7B741DA9730100B9FCFF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		115E7B761DA9735700B9FCFF /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		115E7B781DA9739700B9FCFF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		115E7B7A1DA973B200B9FCFF /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		11600CB41C948A4400BBEEB4 /* Mopub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mopub.framework; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Mopub.framework; sourceTree = "<group>"; };
 		11600CB61C948A6B00BBEEB4 /* MMAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMAdSDK.framework; path = ../../../src/cordova/ios/millennial/src/deps/external/MMAdSDK.framework; sourceTree = "<group>"; };
 		11729E991B2344A700633115 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -296,6 +300,17 @@
 			name = common;
 			sourceTree = "<group>";
 		};
+		115E7B731DA9730100B9FCFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				115E7B7A1DA973B200B9FCFF /* CoreMotion.framework */,
+				115E7B781DA9739700B9FCFF /* CoreVideo.framework */,
+				115E7B761DA9735700B9FCFF /* SafariServices.framework */,
+				115E7B741DA9730100B9FCFF /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11729EC51B234E5000633115 /* chartboost */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +364,7 @@
 				11D333341A766F93001983FB /* AdTest_mopub copy-Info.plist */,
 				11729EC41B234E2000633115 /* AdTest_admob copy-Info.plist */,
 				11EA02371C8F5EBF004B59C5 /* AdTest_heyzap-Info.plist */,
+				115E7B731DA9730100B9FCFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -507,11 +523,21 @@
 		11EA00871A48359400F0CB30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Ludei;
 				TargetAttributes = {
+					11729EA21B234E1F00633115 = {
+						DevelopmentTeam = 4W4992Q3W8;
+					};
+					11D333221A766F93001983FB = {
+						DevelopmentTeam = 4W4992Q3W8;
+					};
 					11EA008E1A48359400F0CB30 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 4W4992Q3W8;
+					};
+					11EA02161C8F5EBF004B59C5 = {
+						DevelopmentTeam = 4W4992Q3W8;
 					};
 				};
 			};
@@ -648,7 +674,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
-				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_MODULES_AUTOLINK = YES;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -660,13 +687,14 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/include",
 				);
 				INFOPLIST_FILE = "AdTest_admob copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = AdTest_chartboost;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -678,7 +706,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
-				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_MODULES_AUTOLINK = YES;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -690,13 +719,14 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/include",
 				);
 				INFOPLIST_FILE = "AdTest_admob copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = AdTest_chartboost;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -708,7 +738,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
-				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_MODULES_AUTOLINK = YES;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -722,13 +753,14 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/include",
 				);
 				INFOPLIST_FILE = "AdTest_mopub copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = AdTest_admob;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -740,7 +772,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
-				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_MODULES_AUTOLINK = YES;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -754,13 +787,14 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/admob/src/deps/external/include",
 				);
 				INFOPLIST_FILE = "AdTest_mopub copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mortimer/Downloads/AdColonyAdMobAdapter,
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = AdTest_admob;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -779,15 +813,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -821,8 +859,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -830,6 +870,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -851,6 +892,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -866,9 +908,10 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/include",
 				);
 				INFOPLIST_FILE = AdTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -881,6 +924,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -896,9 +940,10 @@
 					"${PROJECT_DIR}/../../../src/cordova/ios/mopub/base/src/deps/external/include",
 				);
 				INFOPLIST_FILE = AdTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -912,6 +957,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -924,10 +970,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "AdTest_heyzap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -941,6 +988,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_LINK_OBJC_RUNTIME = YES;
 				CLANG_MODULES_AUTOLINK = NO;
+				DEVELOPMENT_TEAM = 4W4992Q3W8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -953,10 +1001,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "AdTest_heyzap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ideateca.jscocoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};

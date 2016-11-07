@@ -1,9 +1,6 @@
 package com.ludei.ads.admob;
 
-
-import android.app.Activity;
 import android.content.Context;
-
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;

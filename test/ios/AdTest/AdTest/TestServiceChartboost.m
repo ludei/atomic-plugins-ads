@@ -10,7 +10,7 @@
 +(LDAdService*) create
 {
     LDAdServiceChartboost * chartboost = [[LDAdServiceChartboost alloc] init];
-    [chartboost configureAppId:APP_ID appSignature:APP_SIGNATURE];
+    //[chartboost configureAppId:APP_ID appSignature:APP_SIGNATURE];
     return chartboost;
 }
 

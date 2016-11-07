@@ -10,9 +10,9 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7EE0A160-7C1A-4253-A249-AAC8DFF2D90C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "9D23DB1BAD55D8377767BEB78C365AD74D8E5CA1" : "atomic-plugins-ads",
+    "9D23DB1BAD55D8377767BEB78C365AD74D8E5CA1" : "atomic-plugins-ads\/",
     "78EFEB2F3C12FF38F83D106B99C306C91EF9CBC2" : "Desktop\/AdColony-iOS-SDK",
-    "175844C2DDE4C1612B114359B69FAFBB682170F7" : "plugins-ads"
+    "175844C2DDE4C1612B114359B69FAFBB682170F7" : "plugins-ads\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "AdTest",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

@@ -10,6 +10,12 @@
 
 @end
 
+@interface LDAdmobRewardedVideoReward: NSObject<LDRewardedVideoRewardProtocol>
+@property (nonatomic, strong) NSString *currencyType;
+@property (nonatomic, strong) NSNumber *amount;
+@property (nonatomic, strong) NSString *itmKey;
+@end
+
 @interface LDAdServiceAdMob : LDAdService
 @property (nonatomic, strong) LDAdMobSettings * settings;
 

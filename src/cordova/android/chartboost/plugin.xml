@@ -8,7 +8,7 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
         
-        <source-file src="src/deps/chartboost_6.4.1.jar" target-dir="libs" framework="true" />
+        <source-file src="src/deps/chartboost_6.5.1.jar" target-dir="libs" framework="true" />
         
         <source-file src="src/deps/com/ludei/ads/chartboost/AdServiceChartboost.java" target-dir="src/com/ludei/ads/chartboost" />
         <source-file src="src/deps/com/ludei/ads/chartboost/AdInterstitialChartboost.java" target-dir="src/com/ludei/ads/chartboost" />

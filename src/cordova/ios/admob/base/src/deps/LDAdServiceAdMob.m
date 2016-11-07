@@ -11,6 +11,9 @@ static inline bool isIpad()
 @implementation LDAdMobSettings
 @end
 
+@implementation LDAdmobRewardedVideoReward
+@end
+
 #pragma mark AdMob Banner implementation
 @interface LDAdMobBanner : LDAdBanner<GADBannerViewDelegate>
 
@@ -239,6 +242,135 @@ static inline bool isIpad()
 @end
 
 
+#pragma mark AdMob Rewarded Video implementation
+
+@interface LDAdmobRewardedVideo : LDAdInterstitial<GADRewardBasedVideoAdDelegate>
+
+@property (nonatomic, weak) id<LDAdInterstitialDelegate> delegate;
+@property (nonatomic, strong) GADRewardBasedVideoAd * interstitial;
+@property (nonatomic, strong) NSString * cachedAdUnit;
+
+-(instancetype) initWithAdUnit:(NSString *) adUnit;
+
+@end
+
+@implementation LDAdmobRewardedVideo
+{
+    BOOL _rewardCompleted;
+}
+
+-(instancetype) initWithAdUnit:(NSString *) adUnit
+{
+    if (self = [super init]) {
+        self.cachedAdUnit = adUnit;
+        _rewardCompleted = NO;
+        self.interstitial = [GADRewardBasedVideoAd sharedInstance];
+        _interstitial.delegate = self;
+    }
+    return self;
+}
+
+-(void) dealloc
+{
+    _interstitial.delegate = nil;
+}
+
+- (void)loadAd
+{
+    if (!_interstitial.isReady) {
+        [_interstitial loadRequest:[GADRequest request] withAdUnitID:_cachedAdUnit];
+    }
+}
+
+-(BOOL) isReady
+{
+    return _interstitial && _interstitial.isReady;
+}
+
+- (void)showFromViewController:(UIViewController *)controller animated:(BOOL) animated
+{
+    if (_interstitial.isReady) {
+        _rewardCompleted = NO;
+        [_interstitial presentFromRootViewController:controller];
+    }
+    else {
+        [self loadAd];
+    }
+}
+
+- (void)dismissAnimated:(BOOL) animated
+{
+    //TODO
+}
+
+#pragma mark GADInterstitialDelegate
+
+
+/// Tells the delegate that the reward based video ad has rewarded the user.
+- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward
+{
+    _rewardCompleted = YES;
+    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
+        LDAdmobRewardedVideoReward * value = [[LDAdmobRewardedVideoReward alloc] init];
+        value.amount = reward.amount ?: [NSNumber numberWithInteger:1];
+        value.itmKey = reward.type ?: @"";
+        [_delegate adInterstitialDidCompleteRewardedVideo:self withReward:value andError:nil];
+    }
+}
+
+/// Tells the delegate that the reward based video ad failed to load.
+- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(GAD_NULLABLE NSError *)error
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidFailLoad:withError:)]) {
+        [_delegate adInterstitialDidFailLoad:self withError:error];
+    }
+}
+
+/// Tells the delegate that a reward based video ad was received.
+- (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidLoad:)]) {
+        [_delegate adInterstitialDidLoad:self];
+    }
+}
+
+/// Tells the delegate that the reward based video ad opened.
+- (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialWillAppear:)]) {
+        [_delegate adInterstitialWillAppear:self];
+    }
+}
+
+/// Tells the delegate that the reward based video ad started playing.
+- (void)rewardBasedVideoAdDidStartPlaying:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+{
+
+}
+
+/// Tells the delegate that the reward based video ad closed.
+- (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialWillDisappear:)]) {
+        [_delegate adInterstitialWillDisappear:self];
+    }
+    
+    if (!_rewardCompleted && _delegate && [_delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
+        NSError * error = [NSError errorWithDomain:@"AdMob" code:400 userInfo:@{@"Error reason": @"The user did not complete the rewarded video"}];
+        [_delegate adInterstitialDidCompleteRewardedVideo:self withReward:nil andError:error];
+    }
+}
+
+/// Tells the delegate that the reward based video ad will leave the application.
+- (void)rewardBasedVideoAdWillLeaveApplication:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+{
+    
+}
+
+@end
+
+
+
 #pragma mark AdMob AdService implementation
 
 @implementation LDAdServiceAdMob
@@ -291,7 +423,7 @@ static inline bool isIpad()
 }
 
 -(LDAdInterstitial *) createRewardedVideo:(NSString *)adunit {
-    return [self createInterstitial:adunit];
+    return [[LDAdmobRewardedVideo alloc] initWithAdUnit:adunit];
 }
 
 

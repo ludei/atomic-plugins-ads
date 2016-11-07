@@ -483,7 +483,7 @@
 {
     LDAdInterstitial * ad = [interstitials objectForKey:tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
-        [ad.delegate adInterstitialDidCompleteRewardedVideo:ad withReward:nil andError:[NSError errorWithDomain:@"Heyzap" code:400 userInfo:@{@"Error reason": @"The user did not compelte the rewarded video"}]];
+        [ad.delegate adInterstitialDidCompleteRewardedVideo:ad withReward:nil andError:[NSError errorWithDomain:@"Heyzap" code:400 userInfo:@{@"Error reason": @"The user did not complete the rewarded video"}]];
     }
 }
 

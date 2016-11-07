@@ -8,7 +8,6 @@ import android.util.Log;
 import com.chartboost.sdk.Chartboost;
 import com.chartboost.sdk.ChartboostDelegate;
 import com.chartboost.sdk.Model.CBError;
-import com.mopub.common.MoPub;
 import com.mopub.common.MoPubReward;
 import com.mopub.common.Preconditions;
 import com.mopub.common.VisibleForTesting;
@@ -27,7 +26,7 @@ import static com.mopub.mobileads.MoPubErrorCode.VIDEO_DOWNLOAD_ERROR;
 /**
  * Shared infrastructure for initializing the Chartboost SDK when mediated by MoPub
  *
- * Certified with Chartboost 6.4.1
+ * Certified with Chartboost 5.3.0
  */
 public class ChartboostShared {
     private static volatile ChartboostSingletonDelegate sDelegate = new ChartboostSingletonDelegate();
@@ -76,7 +75,7 @@ public class ChartboostShared {
         // Perform all the common SDK initialization steps including startAppWithId
         Chartboost.startWithAppId(launcherActivity, mAppId, mAppSignature);
         Chartboost.setImpressionsUseActivities(false);
-        Chartboost.setMediation(Chartboost.CBMediation.CBMediationMoPub, MoPub.SDK_VERSION);
+        Chartboost.setFramework(Chartboost.CBFramework.CBFrameworkMoPub);
         Chartboost.setDelegate(sDelegate);
         Chartboost.setShouldRequestInterstitialsInFirstSession(true);
         Chartboost.setAutoCacheAds(false);
