@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak) id<LDAdBannerDelegate> delegate;
 @property (nonatomic, assign) BOOL autoRefresh;
-@property (nonatomic, strong) HZBannerAd * adView;
+@property (nonatomic, strong) UIView * adView;
 
 -(instancetype) initWithTag:(NSString *) adUnit size:(LDAdBannerSize) size;
 
@@ -29,7 +29,8 @@
 -(instancetype) initWithTag:(NSString *) tag size:(LDAdBannerSize) size;
 {
     if (self = [super init]) {
-        
+        [[HZBannerAdController sharedInstance] setDelegate:self];
+
         _options = [[HZBannerAdOptions alloc] init];
         _options.tag = tag;
         if (size == LD_BANNER_SIZE) {
@@ -49,12 +50,7 @@
 
 -(void) dealloc
 {
-    if (_adView) {
-        _adView.delegate = nil;
-        if (_adView.superview) {
-            [_adView removeFromSuperview];
-        }
-    }
+    [[HZBannerAdController sharedInstance] destroyBanner];
 }
 
 
@@ -66,11 +62,10 @@
 {
     if (!_adView && !loadingAd) {
         loadingAd = YES;
-        [HZBannerAd requestBannerWithOptions:_options success:^(HZBannerAd *banner) {
+        [[HZBannerAdController sharedInstance] requestBannerWithOptions:_options success:^(UIView *banner) {
             loadingAd = NO;
             self.adView = banner;
-            self.adView.delegate = self;
-            [self bannerDidReceiveAd:banner];
+
         } failure:^(NSError *error) {
             loadingAd = NO;
             [self bannerDidFailToReceiveAd:nil error:error];
@@ -99,7 +94,7 @@
 /**
  *  Called when the banner ad is loaded.
  */
-- (void)bannerDidReceiveAd:(HZBannerAd *)banner
+- (void)bannerDidReceiveAd:(HZBannerAdController *)controller
 {
     if (_delegate && [_delegate respondsToSelector:@selector(adBannerDidLoad:)]) {
         [_delegate adBannerDidLoad:self];
@@ -114,7 +109,7 @@
  *  If the underlying ad network provided an `NSError` object, it will be accessible in the `userInfo` dictionary
  *  with the `NSUnderlyingErrorKey`.
  */
-- (void)bannerDidFailToReceiveAd:(HZBannerAd *)banner error:(NSError *)error
+- (void)bannerDidFailToReceiveAd:(HZBannerAdController *)banner error:(NSError *)error
 {
     if (_delegate && [_delegate respondsToSelector:@selector(adBannerDidFailLoad:withError:)]) {
         [_delegate adBannerDidFailLoad:self withError:error];
@@ -127,34 +122,37 @@
 /**
  *  Called when the user clicks the banner ad.
  */
-- (void)bannerWasClicked:(HZBannerAd *)banner
+- (void)bannerWasClicked:(HZBannerAdController *)banner
 {
-    
+
 }
+
 /**
  *  Called when the banner ad will present a modal view controller, after the user clicks the ad.
  */
-- (void)bannerWillPresentModalView:(HZBannerAd *)banner
+- (void)bannerWillPresentModalView:(HZBannerAdController *)banner
 {
     if (_delegate && [_delegate respondsToSelector:@selector(adBannerWillPresentModal:)]) {
         [_delegate adBannerWillPresentModal:self];
     }
 }
+
 /**
  *  Called when a presented modal view controller is dismissed by the user.
  */
-- (void)bannerDidDismissModalView:(HZBannerAd *)banner
+- (void)bannerDidDismissModalView:(HZBannerAdController *)banner
 {
     if (_delegate && [_delegate respondsToSelector:@selector(adBannerDidDismissModal:)]) {
         [_delegate adBannerDidDismissModal:self];
     }
 }
+
 /**
  *  Called when a user clicks a banner ad that causes them to leave the application.
  */
-- (void)bannerWillLeaveApplication:(HZBannerAd *)banner
+- (void)bannerWillLeaveApplication:(HZBannerAdController *)banner
 {
-    
+
 }
 
 
@@ -203,58 +201,6 @@
     }
     else {
         [HZInterstitialAd fetchForTag:self.tag];
-    }
-}
-
-- (void)dismissAnimated:(BOOL) animated
-{
-    //TODO
-}
-
-@end
-
-#pragma mark Heyzap Video Only implementation
-@interface LDHeyzapVideo: LDAdInterstitial
-
--(instancetype) initWithTag:(NSString*) tag;
-
-@property (nonatomic, weak) id<LDAdInterstitialDelegate> delegate;
-@property (nonatomic, strong) NSString * tag;
-
-@end
-
-@implementation LDHeyzapVideo
-
-
--(instancetype) initWithTag:(NSString*) tag
-{
-    if (self = [super init]) {
-        self.tag = tag;
-    }
-    return self;
-}
-
-- (void)loadAd
-{
-    [HZVideoAd fetchForTag:self.tag];
-}
-
-
--(bool) isReady
-{
-    return [HZVideoAd isAvailableForTag:self.tag];
-}
-
-- (void)showFromViewController:(UIViewController *)controller animated:(BOOL) animated
-{
-    if ([HZVideoAd isAvailableForTag:self.tag]) {
-        HZShowOptions * options = [[HZShowOptions alloc] init];
-        options.viewController = controller;
-        options.tag = self.tag;
-        [HZVideoAd showWithOptions:options];
-    }
-    else {
-        [HZVideoAd fetchForTag:self.tag];
     }
 }
 
@@ -338,7 +284,7 @@
         [HZInterstitialAd setDelegate:self];
         [HZIncentivizedAd setDelegate:self];
     }
-    
+
     return self;
 }
 
@@ -361,7 +307,7 @@
 
 
 -(LDAdInterstitial *) createInterstitial {
-    
+
     return [self createInterstitial:nil];
 }
 
@@ -380,9 +326,8 @@
     if (!adunit || adunit.length == 0) {
         adunit = @"default";
     }
-    LDHeyzapVideo * ad = [[LDHeyzapVideo alloc] initWithTag:adunit];
-    [interstitials setObject:ad forKey:adunit];
-    return ad;
+
+    return [self createInterstitial:adunit];
 }
 
 -(LDAdInterstitial *) createRewardedVideo:(NSString *)adunit {

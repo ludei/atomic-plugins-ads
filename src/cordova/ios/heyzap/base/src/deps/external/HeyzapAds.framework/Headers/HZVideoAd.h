@@ -39,6 +39,7 @@
 
 @protocol HZAdsDelegate;
 
+__attribute__((unavailable("HZVideoAd is not available in SDK 10; use SDK 9 if you need the ability to show video-only AND blended ads in the same app.")))
 /** HZVideoAd is responsible for fetching and showing video ads. All methods on this class must be called from the main queue. */
 @interface HZVideoAd : NSObject
 
@@ -132,7 +133,5 @@
  */
 + (BOOL) isAvailableForTag: (NSString *) tag;
 
-# pragma mark - Testing;
-+ (void) setCreativeID:(int)creativeID;
 
 @end

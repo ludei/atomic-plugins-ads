@@ -62,15 +62,6 @@ typedef NS_ENUM(NSUInteger, HZAdMobBannerSize){
     HZAdMobBannerSizeFullBanner,
 };
 
-/** The constant for a banner 320 points wide and 50 points high. */
-extern const CGSize HZInMobiBannerSize320x50;
-/** The constant for a banner 468 points wide and 60 points high. */
-extern const CGSize HZInMobiBannerSize468x60;
-/** The constant for a banner 480 points wide and 75 points high. */
-extern const CGSize HZInMobiBannerSize480x75;
-/** The constant for a banner 728 points wide and 90 points high. */
-extern const CGSize HZInMobiBannerSize728x90;
-
 @interface HZBannerAdOptions : NSObject <NSCopying>
 
 /**
@@ -84,30 +75,11 @@ extern const CGSize HZInMobiBannerSize728x90;
 @property (nonatomic) HZAdMobBannerSize admobBannerSize;
 
 /**
- *  InMobi allows setting an arbitrary size to use for banners, but only some intrinsic banner sizes are supported. 
- *  It's recommended that you choose one of the `HZInMobiBannerSize` constants above.
- *  If you choose an unsupported size, InMobi may scale a similar sized ad to the size you requested.
- *
- *  If you don't select a size, a default size is used based on the current orientation and interface idiom:
- *  Portrait iPhones: `HZInMobiBannerSize320x50`
- *  Landscape iPhones: `HZInMobiBannerSize468x60`
- *  iPads: `HZInMobiBannerSize728x90`
- */
-@property (nonatomic) CGSize inMobiBannerSize;
-
-#pragma mark - iAd
-
-// iAd does not offer sizing options. Please refer to the `ADBannerView` documentation for information on ad sizes.
-
-/// @name Other Banner Options
-#pragma mark - Other Banner Options
-
-/**
- *  The view controller to present the ad from. 
+ *  The view controller to present the ad from.
  *
  *  This property is optional. If not set, it defaults to the root view controller of the application.
  *
- *  @note Setting this property doesn't change where the actual banner (a `UIView`) is placed.
+ *  @note Setting this property doesn't change where the actual banner (a `UIView`) is placed. For Heyzap Exchange banners, the width of this property will determine the width of a flexible-width banner.
  */
 @property (nonatomic, weak) UIViewController *presentingViewController;
 
@@ -115,16 +87,5 @@ extern const CGSize HZInMobiBannerSize728x90;
  *  An identifier for the location of the ad, which you can use to disable the ad from your dashboard. If not specified the tag "default" is always used.
  */
 @property (nonatomic, strong) NSString *tag;
-
-/**
- *  Banner ads have some internal retry logic, to prevent show failures caused by bad network connectivity. Set this time interval to restrict how many seconds Heyzap spends trying to fetch banner ads. This value will only be considered after an initial failure; for instance, a fetchTimeout of 0 will not stop the initial fetch, but it will stop all retries.
- *
- *  @b Default: @c DBL_MAX (no timeout).
- *
- *  @b Minimum: 0
- *
- *  @note Setting this value too low will prevent Heyzap from retrying at all. Give time for slow network requests in this value if you wish to allow Heyzap to retry at least a couple of times before failing (i.e.: at least 60 seconds).
- */
-@property (nonatomic) NSTimeInterval fetchTimeout;
 
 @end

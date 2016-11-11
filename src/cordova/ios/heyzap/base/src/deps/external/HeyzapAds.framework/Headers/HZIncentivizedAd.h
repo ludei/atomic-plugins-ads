@@ -32,32 +32,12 @@
 
 
 @protocol HZIncentivizedAdDelegate;
+@class HZShowOptions;
 
 #import <Foundation/Foundation.h>
-#import "HeyzapAds.h"
-#import "HZShowOptions.h"
-
-@class HZShowOptions;
 
 /** HZIncentivizedAd is responsible for fetching and showing incentivized video ads. All methods on this class must be called from the main queue. */
 @interface HZIncentivizedAd : NSObject
-
-+ (void)setDelegate:(id<HZIncentivizedAdDelegate>)delegate;
-
-/** Shows an incentivized video ad if one is available. */
-+ (void) show;
-
-/** Shows an incentivized video ad if one with the particlar tag is available.
-  *
-  * @param tag Tag name describing the location or context for the ad to be shown.
-  */
-+ (void) showForTag: (NSString *) tag;
-
-/** Shows an incentivized video with the given options.
- *
- * @param options HZShowOptions object containing properties for configuring how the ad is shown.
- */
-+ (void) showWithOptions: (HZShowOptions *) options;
 
 /** Fetches an incentivized video ad from Heyzap. */
 + (void) fetch;
@@ -101,7 +81,6 @@
  */
 + (void) fetchForTags:(NSArray *)tags withCompletion:(void (^)(BOOL result, NSError *error))completion;
 
-
 /**
  *  Whether or not an incentivized video ad is ready to show.
  *
@@ -113,18 +92,30 @@
  *  Whether or not an incentivized video ad is ready to show for the given tag.
  *
  *  @param tag Tag name describing the location or context for the ad to be shown.
- *  
+ *
  *  @return If an incentivized video ad is ready to show.
  */
 + (BOOL) isAvailableForTag: (NSString *) tag;
 
-/**
- *  (Optional) As a layer of added security, you can specify an identifier for the user. You can opt to receive a server-to-server callback with the provided userIdentifier.
- *
- *  @param userIdentifier Any unique identifier, like a username, email, or ID that your server-side database uses.
- *  @deprecated This method has been deprecated and may be removed in a future version of the SDK.
- */
-+ (void) setUserIdentifier: (NSString *) userIdentifier __attribute__((deprecated("Please use the `incentivizedInfo` string that can be passed to calls to `showWithOptions:` instead if you want to pass information to your server regarding rewarded videos. More info about this feature can be found at https://developers.heyzap.com/docs/advanced-publishing ")));
 
-+ (void) setCreativeID: (int) creativeID;
+/** Shows an incentivized video ad if one is available. */
++ (void) show;
+
+/** Shows an incentivized video ad if one with the particlar tag is available.
+ *
+ * @param tag Tag name describing the location or context for the ad to be shown.
+ */
++ (void) showForTag: (NSString *) tag;
+
+/** Shows an incentivized video with the given options.
+ *
+ * @param options HZShowOptions object containing properties for configuring how the ad is shown.
+ */
++ (void) showWithOptions: (HZShowOptions *) options;
+
+
+#pragma mark - Callbacks
+
++ (void)setDelegate:(id<HZIncentivizedAdDelegate>)delegate;
+
 @end
