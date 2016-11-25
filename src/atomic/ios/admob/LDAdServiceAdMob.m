@@ -1,7 +1,5 @@
 #import "LDAdServiceAdMob.h"
-#import <GoogleMobileAds/GADBannerView.h>
-#import <GoogleMobileAds/GADAdSize.h>
-#import <GoogleMobileAds/GADInterstitial.h>
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
 static inline bool isIpad()
 {
@@ -319,7 +317,7 @@ static inline bool isIpad()
 }
 
 /// Tells the delegate that the reward based video ad failed to load.
-- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(GAD_NULLABLE NSError *)error
+- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(nonnull NSError *)error
 {
     if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidFailLoad:withError:)]) {
         [_delegate adInterstitialDidFailLoad:self withError:error];

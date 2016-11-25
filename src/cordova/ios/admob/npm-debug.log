@@ -1,37 +1,30 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
-2 info using npm@1.4.28
-3 info using node@v0.10.32
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.15.9
+3 info using node@v4.6.0
 4 verbose publish [ '.' ]
-5 verbose cache add [ '.', null ]
-6 verbose cache add name=undefined spec="." args=[".",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: '.',
-7 verbose parsed url   path: '.',
-7 verbose parsed url   href: '.' }
-8 silly lockFile 3a52ce78- .
-9 verbose lock . /Users/mortimer/.npm/3a52ce78-.lock
-10 silly lockFile 3a52ce78- .
-11 silly lockFile 3a52ce78- .
-12 error addLocal Could not install .
-13 error Error: ENOENT, open 'package.json'
-14 error If you need help, you may report this *entire* log,
-14 error including the npm and node versions, at:
-14 error     <http://github.com/npm/npm/issues>
-15 error System Darwin 15.3.0
-16 error command "node" "/usr/local/bin/npm" "publish"
-17 error cwd /Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob
-18 error node -v v0.10.32
-19 error npm -v 1.4.28
-20 error path package.json
-21 error code ENOENT
-22 error errno 34
-23 verbose exit [ 34, true ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob',
+7 silly cache add   type: 'local' }
+8 error addLocal Could not install /Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob
+9 verbose stack Error: EISDIR: illegal operation on a directory, read
+9 verbose stack     at Error (native)
+10 verbose cwd /Users/mortimer/Projects/atomic-plugins-ads/src/cordova/ios/admob
+11 error Darwin 16.1.0
+12 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+13 error node v4.6.0
+14 error npm  v2.15.9
+15 error code EISDIR
+16 error errno -21
+17 error syscall read
+18 error eisdir EISDIR: illegal operation on a directory, read
+18 error eisdir This is most likely not a problem with npm itself
+18 error eisdir and is related to npm not being able to find a package.json in
+18 error eisdir a package you are trying to install.
+19 verbose exit [ -21, true ]

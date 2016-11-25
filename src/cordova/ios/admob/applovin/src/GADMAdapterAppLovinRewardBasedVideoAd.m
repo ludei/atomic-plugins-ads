@@ -2,22 +2,23 @@
 
 #import <AppLovin/ALSdk.h>
 #import <AppLovin/ALIncentivizedInterstitialAd.h>
-#import <GoogleMobileAds/GADMRewardBasedVideoAdNetworkConnectorProtocol.h>
+#import <GoogleMobileAds/MEdiation/GADMRewardBasedVideoAdNetworkConnectorProtocol.h>
 
-static NSString *const kGADMAdapterAppLovinRewardBasedVideoAdKeyErrorDomain =
-@"com.google.GADMAdapterAppLovinRewardBasedVideoAd";
-static BOOL loggingEnabled = NO;
+@interface GADMAdapterAppLovinRewardBasedVideoAd () <ALAdLoadDelegate, ALAdRewardDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 
-@interface GADMAdapterAppLovinRewardBasedVideoAd () <ALAdLoadDelegate, ALAdRewardDelegate,
-ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
-@property(nonatomic, strong) GADAdReward *reward;
-@property(nonatomic, weak) id<GADMRewardBasedVideoAdNetworkConnector> connector;
+@property (nonatomic, assign, getter=isFullyWatched) BOOL fullyWatched;
+@property (nonatomic, strong) GADAdReward *reward;
+@property (nonatomic,   weak) id<GADMRewardBasedVideoAdNetworkConnector> connector;
+
 @end
 
 @implementation GADMExtrasAppLovin
 @end
 
 @implementation GADMAdapterAppLovinRewardBasedVideoAd
+
+static const BOOL loggingEnabled = NO;
+static NSString *const kGADMAdapterAppLovinRewardBasedVideoAdKeyErrorDomain = @"com.google.GADMAdapterAppLovinRewardBasedVideoAd";
 
 + (NSString *)adapterVersion {
     return @"1.0.0";
@@ -43,6 +44,7 @@ ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 
 - (void)requestRewardBasedVideoAd {
     self.reward = nil;
+    self.fullyWatched = NO;
     GADMExtrasAppLovin *extras = [self.connector networkExtras];
     [self ALLog:[NSString stringWithFormat:@"Rewarded video request number %ld", (long)extras.requestNumber]];
     [ALIncentivizedInterstitialAd preloadAndNotify:self];
@@ -85,6 +87,7 @@ ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 }
 
 #pragma mark - ALAdRewardDelegate
+
 - (void)rewardValidationRequestForAd:(ALAd *)ad didSucceedWithResponse:(NSDictionary *)response {
     [self ALLog:@"Reward validation successful."];
     self.reward = [[GADAdReward alloc]
@@ -108,6 +111,7 @@ ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 }
 
 #pragma mark - ALAdDisplayDelegate
+
 - (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view {
     [self ALLog:@"Rewarded video was clicked."];
     [self.connector adapterDidGetAdClick:self];
@@ -121,11 +125,18 @@ ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 
 - (void)ad:(ALAd *)ad wasHiddenIn:(UIView *)view {
     [self ALLog:@"Rewarded video was closed."];
+    
+    if (self.fullyWatched && self.reward) {
+        [self.connector adapter: self didRewardUserWithReward: self.reward];
+        [self ALLog:@"Granting reward for user."];
+    }
+    
     [self.connector adapterDidCloseRewardBasedVideoAd:self];
     [self unsetSharedDelegates];
 }
 
 #pragma mark - ALAdVideoPlaybackDelegate
+
 - (void)videoPlaybackBeganInAd:(ALAd *)ad {
     [self ALLog:@"Rewarded video playback began."];
     [self.connector adapterDidStartPlayingRewardBasedVideoAd:self];
@@ -136,10 +147,7 @@ ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
                   fullyWatched:(BOOL)wasFullyWatched {
     [self ALLog:@"Rewarded video playback ended."];
     
-    if (wasFullyWatched && self.reward) {
-        [self.connector adapter: self didRewardUserWithReward: self.reward];
-        [self ALLog:@"Granting reward for user."];
-    }
+    self.fullyWatched = wasFullyWatched;
 }
 
 - (void)ALLog:(NSString *)logMessage {

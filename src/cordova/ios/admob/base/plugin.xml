@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob" version="1.0.4">
+        id="cocoon-plugin-ads-ios-admob" version="1.0.7">
     <name>AdsAdMob</name>
     <description>iOS Ads AdMob implementation</description>
     <license>MPL 2.0</license>
@@ -23,6 +23,9 @@
         <framework src="AudioToolbox.framework" />
         <framework src="StoreKit.framework" />
         <framework src="MediaPlayer.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="GLKit.framework" />
+        <framework src="MobileCoreServices.framework" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="LDAdservice">

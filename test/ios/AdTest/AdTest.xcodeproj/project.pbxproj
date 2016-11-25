@@ -15,6 +15,9 @@
 		11498F031B24957900B6DA8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D333481A7689F8001983FB /* AVFoundation.framework */; };
 		11498F051B24978A00B6DA8E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11729E9D1B2344E400633115 /* CoreMedia.framework */; };
 		11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */; };
+		115AF3941DE83E1A006605DA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115E7B7A1DA973B200B9FCFF /* CoreMotion.framework */; };
+		115AF3981DE83E69006605DA /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115AF3971DE83E69006605DA /* GLKit.framework */; };
+		115AF3991DE83EB5006605DA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA02471C902F6D004B59C5 /* MobileCoreServices.framework */; };
 		11600CB51C948A4400BBEEB4 /* Mopub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11600CB41C948A4400BBEEB4 /* Mopub.framework */; };
 		11600CB71C948A6B00BBEEB4 /* MMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11600CB61C948A6B00BBEEB4 /* MMAdSDK.framework */; };
 		11600CB81C948ABC00BBEEB4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EA023E1C902E3F004B59C5 /* libxml2.tbd */; };
@@ -114,6 +117,8 @@
 		110DEB2B1A94B31E0034ED6C /* MPCloseButtonX@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseButtonX@3x.png"; path = "../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MPCloseButtonX@3x.png"; sourceTree = "<group>"; };
 		110DEB2C1A94B31E0034ED6C /* MRAID.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MRAID.bundle; path = ../../../src/cordova/ios/mopub/base/src/deps/external/Resources/MRAID.bundle; sourceTree = "<group>"; };
 		11498F201B24BAE500B6DA8E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../../../src/cordova/ios/admob/base/src/deps/external/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		115AF3951DE83E2C006605DA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		115AF3971DE83E69006605DA /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		115E7B741DA9730100B9FCFF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		115E7B761DA9735700B9FCFF /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		115E7B781DA9739700B9FCFF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -222,6 +227,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115AF3991DE83EB5006605DA /* MobileCoreServices.framework in Frameworks */,
+				115AF3981DE83E69006605DA /* GLKit.framework in Frameworks */,
+				115AF3941DE83E1A006605DA /* CoreMotion.framework in Frameworks */,
 				11498F221B24BAE600B6DA8E /* GoogleMobileAds.framework in Frameworks */,
 				11729EA11B23453000633115 /* QuartzCore.framework in Frameworks */,
 				11729E9E1B2344E400633115 /* CoreMedia.framework in Frameworks */,
@@ -303,6 +311,8 @@
 		115E7B731DA9730100B9FCFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				115AF3971DE83E69006605DA /* GLKit.framework */,
+				115AF3951DE83E2C006605DA /* CoreText.framework */,
 				115E7B7A1DA973B200B9FCFF /* CoreMotion.framework */,
 				115E7B781DA9739700B9FCFF /* CoreVideo.framework */,
 				115E7B761DA9735700B9FCFF /* SafariServices.framework */,

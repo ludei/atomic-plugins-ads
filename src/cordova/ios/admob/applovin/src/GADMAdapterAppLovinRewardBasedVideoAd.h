@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#import <GoogleMobileAds/GADMRewardBasedVideoAdNetworkAdapterProtocol.h>
+#import <GoogleMobileAds/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h>
 
 @interface GADMAdapterAppLovinRewardBasedVideoAd : NSObject<GADMRewardBasedVideoAdNetworkAdapter>
 
