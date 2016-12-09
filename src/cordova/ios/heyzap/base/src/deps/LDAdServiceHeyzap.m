@@ -351,7 +351,7 @@
  */
 - (void)didShowAdWithTag: (NSString *) tag
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialWillAppear:)]) {
         [ad.delegate adInterstitialWillAppear:ad];
     }
@@ -365,7 +365,7 @@
  */
 - (void)didFailToShowAdWithTag: (NSString *) tag andError: (NSError *)error
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidFailLoad:withError:)]) {
         [ad.delegate adInterstitialDidFailLoad:ad withError:nil];
     }
@@ -378,7 +378,7 @@
  */
 - (void)didReceiveAdWithTag: (NSString *) tag
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidLoad:)]) {
         [ad.delegate adInterstitialDidLoad:ad];
     }
@@ -391,7 +391,7 @@
  */
 - (void)didFailToReceiveAdWithTag: (NSString *) tag
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidFailLoad:withError:)]) {
         [ad.delegate adInterstitialDidFailLoad:ad withError:nil];
     }
@@ -404,7 +404,7 @@
  */
 - (void)didHideAdWithTag: (NSString *) tag
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialWillDisappear:)]) {
         [ad.delegate adInterstitialWillDisappear:ad];
     }
@@ -414,7 +414,7 @@
 /** Called when a user successfully completes viewing an ad */
 - (void)didCompleteAdWithTag: (NSString *) tag
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
         LDHeyzapRewardedVideoReward * reward = [[LDHeyzapRewardedVideoReward alloc] init];
         reward.amount = [NSNumber numberWithInteger:1];
@@ -426,7 +426,7 @@
 /** Called when a user does not complete the viewing of an ad */
 - (void)didFailToCompleteAdWithTag: (NSString *) tag
 {
-    LDAdInterstitial * ad = [interstitials objectForKey:tag];
+    LDAdInterstitial * ad = [interstitials objectForKey:tag == NULL ? @"default" : tag];
     if (ad && ad.delegate && [ad.delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
         [ad.delegate adInterstitialDidCompleteRewardedVideo:ad withReward:nil andError:[NSError errorWithDomain:@"Heyzap" code:400 userInfo:@{@"Error reason": @"The user did not complete the rewarded video"}]];
     }

@@ -4,7 +4,7 @@ repositories{
   }
 }
 dependencies {
-  compile(name:'heyzap-unified-platform-10.0.10', ext:'aar')
+  compile(name:'heyzap-unified-platform-10.2.0', ext:'aar')
 }
 android {
   packagingOptions {

@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-heyzap-unityads" version="1.0.0">
+        id="cocoon-plugin-ads-ios-heyzap-unityads" version="1.1.0">
     <name>HeyzapAdapterAdUnityAds</name>
     <description>iOS Ads Heyzap Unity Ads adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,unity,unityads</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+
     <platform name="ios">
-         <dependency id="cocoon-plugin-ads-ios-unityads" />
-         <dependency id="cocoon-plugin-ads-ios-heyzap" />
+        <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+
+        <framework src="src/ios/UnityAds.framework" custom="true" compiler-flags="-fmodules" />
+        <framework src="src/ios/Fyber_UnityAds_2.0.5-r2.framework" custom="true" compiler-flags="-fmodules" />
+
+        <framework src="AdSupport.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="CoreTelephony.framework" />
     </platform>
+
+    <dependency id="cocoon-plugin-ads-ios-heyzap" />
 </plugin>
