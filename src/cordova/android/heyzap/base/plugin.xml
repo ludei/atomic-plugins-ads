@@ -8,7 +8,8 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <source-file src="src/deps/heyzap-ads-sdk-9.4.4.jar" target-dir="libs" framework="true" />
+        <framework src="src/compileSDK.gradle" custom="true" type="gradleReference" />
+        <resource-file src="src/deps/heyzap-unified-platform-10.2.0.aar" target="aar/heyzap-unified-platform-10.2.0.aar" />
 
         <source-file src="src/deps/com/ludei/ads/heyzap/AdBannerHeyzap.java" target-dir="src/com/ludei/ads/heyzap" />
         <source-file src="src/deps/com/ludei/ads/heyzap/AdInterstitialHeyzap.java" target-dir="src/com/ludei/ads/heyzap" />

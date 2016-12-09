@@ -1,13 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-heyzap-adcolony" version="1.0.0">
+        id="cocoon-plugin-ads-ios-heyzap-adcolony" version="1.1.0">
     <name>HeyzapAdapterAdColony</name>
     <description>iOS Ads Heyzap implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
-    <platform name="ios">
-         <dependency id="cocoon-plugin-ads-ios-adcolony" />
-         <dependency id="cocoon-plugin-ads-ios-heyzap" />
+
+    <platform name="ios">         
+         <!-- iOS 9 requires apps to use HTTPS; some networks require you to disable App Transport Security to workaround this. -->
+        <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+        </dict>
+        </config-file>
+
+        <!-- URL scheme required by network -->
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+        <array>
+            <string>fb</string>
+            <string>instagram</string>
+            <string>tumblr</string>
+            <string>twitter</string>
+        </array>
+        </config-file>
+
+        <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+
+        <framework src="src/ios/Fyber_AdColony_2.6.2-r1.framework" custom="true" compiler-flags="-fmodules" />
+
+        <framework src="AudioToolbox.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="AdSupport.framework" weak="true" />
+        <framework src="Social.framework" weak="true" />
+        <framework src="StoreKit.framework" weak="true" />
+        <framework src="WebKit.framework" weak="true" />
+        <framework src="libz.dylib"/>
     </platform>
+
+    <dependency id="cocoon-plugin-ads-ios-heyzap" />
 </plugin>

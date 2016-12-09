@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-heyzap" version="1.0.4">
+        id="cocoon-plugin-ads-ios-heyzap" version="1.1.0">
     <name>AdsHeyzap</name>
     <description>iOS Ads Heyzap implementation</description>
     <license>MPL 2.0</license>
@@ -13,6 +13,10 @@
         <source-file src="src/LDHeyzapPlugin.m" />
 
         <framework src="src/deps/external/HeyzapAds.framework" custom="true" />
+        <framework src="src/deps/external/FYBHZMediationTestSuite.framework" custom="true" />
+        <resource-file src="src/deps/external/Resources/FYBHZMediationTestSuiteStoryboard.storyboardc" />
+        <resource-file src="src/deps/external/Resources/FYBHZMediationTestSuiteStoryboard~ipad.storyboardc" />
+        <resource-file src="src/deps/external/Resources/FYBHZMediationTestSuiteStoryboard~iphone.storyboardc" />
 
      <!-- External Frameworks -->
         <framework src="AdSupport.framework"/>

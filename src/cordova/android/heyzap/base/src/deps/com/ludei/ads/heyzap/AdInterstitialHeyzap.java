@@ -4,7 +4,7 @@ package com.ludei.ads.heyzap;
 import android.app.Activity;
 
 import com.heyzap.sdk.ads.HeyzapAds;
-import com.heyzap.sdk.ads.VideoAd;
+import com.heyzap.sdk.ads.InterstitialAd;
 import com.ludei.ads.AbstractAdInterstitial;
 
 class AdInterstitialHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnStatusListener
@@ -16,18 +16,18 @@ class AdInterstitialHeyzap extends AbstractAdInterstitial implements HeyzapAds.O
         this._tag = tag;
         this._activity = activity;
 
-        VideoAd.setOnStatusListener(this);
+        InterstitialAd.setOnStatusListener(this);
     }
 
     @Override
     public void loadAd() {
-        VideoAd.fetch(this._tag);
+        InterstitialAd.fetch(this._tag);
     }
 
     @Override
     public void show() {
-        if (VideoAd.isAvailable()) {
-            VideoAd.display(this._activity);
+        if (InterstitialAd.isAvailable()) {
+            InterstitialAd.display(this._activity);
         }
     }
 

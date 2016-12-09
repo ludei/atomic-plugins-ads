@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-heyzap-unityads" version="1.0.0">
+        id="cocoon-plugin-ads-android-heyzap-unityads" version="1.1.0">
     <name>HeyzapAdapterAdUnityAds</name>
     <description>Android Ads Heyzap Unity Ads adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,unity,unityads</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    
     <platform name="android">
-         <dependency id="cocoon-plugin-ads-android-unityads" />
-         <dependency id="cocoon-plugin-ads-android-heyzap" />
+        <framework src="src/android/unity-ads.gradle" custom="true" type="gradleReference" />
+        
+        <source-file src="src/android/fyber-unityads-2.0.5-r1.aar" target-dir="libs" />
     </platform>
+
+    <dependency id="cocoon-plugin-ads-ios-heyzap" />
+    
 </plugin>
