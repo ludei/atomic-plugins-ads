@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob-adcolony" version="1.0.2">
+        id="cocoon-plugin-ads-ios-admob-adcolony" version="1.0.3">
     <name>AdMobAdapterAdColony</name>
     <description>iOS AdColony adapter for AdMob</description>
     <license>MPL 2.0</license>
@@ -9,7 +9,7 @@
     <platform name="ios">
         <source-file src="src/deps/libAdapterSDKAdColony.a" framework="true" />
 
-        <preference name="CALENDAR_USAGE_DESCRIPTION" default=" " />
+        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission" />
         <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
             <string>$CALENDAR_USAGE_DESCRIPTION</string>
         </config-file>

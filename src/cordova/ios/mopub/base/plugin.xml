@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-mopub" version="1.0.4">
+        id="cocoon-plugin-ads-ios-mopub" version="1.0.5">
     <name>AdsMopub</name>
     <description>iOS MoPub Ads implementation</description>
     <license>MPL 2.0</license>
@@ -35,7 +35,7 @@
         <header-file src="src/LDMoPubPlugin.h" />
         <source-file src="src/LDMoPubPlugin.m" />
 
-        <preference name="CALENDAR_USAGE_DESCRIPTION" default=" " />
+        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission" />
         <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
             <string>$CALENDAR_USAGE_DESCRIPTION</string>
         </config-file>
