@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-admob-adcolony",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "iOS AdColony adapter for AdMob",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-admob-adcolony",
