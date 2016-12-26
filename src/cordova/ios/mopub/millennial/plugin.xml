@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-mopub-millennial" version="1.0.3">
+        id="cocoon-plugin-ads-ios-mopub-millennial" version="1.0.4">
     <name>MoPubAdapterMillenial</name>
     <description>iOS Millenial adapter for MoPub</description>
     <license>MPL 2.0</license>
@@ -16,7 +16,6 @@
          <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
              <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
          </config-file>
-</config-file>
 
     </platform>
     <dependency id="cocoon-plugin-ads-ios-millennial" />
