@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-adcolony" version="1.0.2">
+        id="cocoon-plugin-ads-ios-adcolony" version="1.0.3">
     <name>AdsAdColony</name>
     <description>iOS Ads AdColony implementation</description>
     <license>MPL 2.0</license>
@@ -17,6 +17,11 @@
         <framework src="libz.dylib" />
         <framework src="MediaPlayer.framework" weak="true" />
         <framework src="WebKit.framework" weak="true" />
+        <framework src="CoreTelephony.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="AdSupport.framework" weak="true" />
+        <framework src="MessageUI.framework" weak="true" />
+        <framework src="EventKit.framework" weak="true" />
 
     </platform>
     <dependency id="cocoon-plugin-ads-ios-common" />

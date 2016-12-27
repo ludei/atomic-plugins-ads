@@ -24,7 +24,7 @@ module.exports = function (ctx) {
     'Fyber_AdColony_2.6.2-r1.framework': {
       // dest: src
       'Headers': 'Versions/A/Headers',
-      'AdColony': 'Versions/A/Fyber_AdColony_2.6.2-r1',
+      'Fyber_AdColony_2.6.2-r1': 'Versions/A/Fyber_AdColony_2.6.2-r1',
       'Versions/Current': 'Versions/A'
     }
   };
