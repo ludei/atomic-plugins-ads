@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-mopub-millennial",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "iOS Millenial adapter for MoPub",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-mopub-millennial",
