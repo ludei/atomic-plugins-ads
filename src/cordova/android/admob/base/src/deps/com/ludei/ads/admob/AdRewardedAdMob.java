@@ -40,9 +40,10 @@ class AdRewardedAdMob extends AbstractAdInterstitial
             public void onRewardedVideoAdClosed() {
                 if (!rewardCompleted) {
                     rewardCompleted = true;
+                    AdInterstitial.Reward result = new AdInterstitial.Reward();
                     AdInterstitial.Error error = new AdInterstitial.Error();
                     error.message = "Rewarded video closed or skipped";
-                    notifyOnRewardCompleted(null, error);
+                    notifyOnRewardCompleted(result, error);
                 }
                 notifyOnDismissed();
             }
@@ -90,9 +91,10 @@ class AdRewardedAdMob extends AbstractAdInterstitial
             if (!loading) {
                 loadAd();
             }
+            AdInterstitial.Reward result = new AdInterstitial.Reward();
             AdInterstitial.Error error = new AdInterstitial.Error();
             error.message = "Rewarded Video not ready yet";
-            notifyOnRewardCompleted(null, error);
+            notifyOnRewardCompleted(result, error);
         }
 
     }
