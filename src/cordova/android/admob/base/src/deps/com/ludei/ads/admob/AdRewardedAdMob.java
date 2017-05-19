@@ -54,7 +54,7 @@ class AdRewardedAdMob extends AbstractAdInterstitial
                 AdInterstitial.Reward result = new AdInterstitial.Reward();
                 result.amount = Math.max(rewardItem.getAmount(),1);
                 result.currency = rewardItem.getType();
-                result.itemKey = rewardItem.getType();
+                result.itmKey = rewardItem.getType();
                 notifyOnRewardCompleted(result, null);
             }
 
