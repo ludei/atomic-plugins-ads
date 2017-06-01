@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub" version="1.0.4">
+        id="cocoon-plugin-ads-android-mopub" version="1.0.5">
     <name>Ads Mopub</name>
     <description>Android MoPub Ads implementation</description>
     <license>MPL 2.0</license>
@@ -35,15 +35,14 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </config-file>
+
+        <framework src="src/deps/mopub.gradle" custom="true" type="gradleReference" />
+
+        <framework src="com.android.support:recyclerview-v7:23.1.1" />
+        <framework src="com.android.support:support-annotations:23.1.1" />
+        <framework src="com.android.support:support-v4:23.1.1" />
+        <framework src="com.google.android.gms:play-services-ads:9.0.2" />
+
+        <dependency id="cocoon-plugin-ads-android-common" />
     </platform>
-
-    <framework src="src/deps/mopub.gradle" custom="true" type="gradleReference" />
-
-    <framework src="com.android.support:recyclerview-v7:23.1.1" />
-    <framework src="com.android.support:support-annotations:23.1.1" />
-    <framework src="com.android.support:support-v4:23.1.1" />
-    <framework src="com.google.android.gms:play-services-ads:9.0.2" />
-
-    <dependency id="cocoon-plugin-ads-android-common" />
-
 </plugin>
