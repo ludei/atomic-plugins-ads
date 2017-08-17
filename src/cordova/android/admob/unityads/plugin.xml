@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-admob-unityads" version="1.0.1">
+    <name>AdsAdMobUnityAds</name>
+    <description>Android AdMob Unity Ads Adapter</description>
+    <license>MPL 2.0</license>
+    <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,unityads</keywords>
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
+    <platform name="android">
+        <source-file src="src/deps/unity-2.1.0.0-sources.jar" target-dir="libs" framework="true" />
+        <dependency id="cocoon-plugin-ads-android-admob" />
+        <dependency id="cocoon-plugin-ads-android-unityads" />
+    </platform>
+
+</plugin>
