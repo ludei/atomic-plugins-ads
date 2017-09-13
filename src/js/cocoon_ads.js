@@ -534,7 +534,7 @@ Cocoon.define("Cocoon.Ad" , function(extension){
     */
     proto.releaseBanner = function(banner) {
         Cocoon.exec(this.serviceName, "releaseBanner", [banner.id]);
-        delete this.activeAds[id];
+        delete this.activeAds[banner.id];
     };
 
     /**
