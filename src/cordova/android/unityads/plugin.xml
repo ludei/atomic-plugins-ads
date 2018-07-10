@@ -7,8 +7,8 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,unityads,rewarded</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <resource-file src="src/deps/external/unity-ads.aar" target="libs/unity-ads.aar" />
-        <framework src="src/deps/external/unity-ads.gradle" custom="true" type="gradleReference" />
-        <dependency id="cocoon-plugin-ads-android-common" />
+        <resource-file src="src/deps/external/unity-ads.aar" target="libs/unity-ads.aar"/>
+        <framework src="src/deps/external/unity-ads.gradle" custom="true" type="gradleReference"/>
+        <dependency id="cocoon-plugin-ads-android-common"/>
     </platform>
 </plugin>

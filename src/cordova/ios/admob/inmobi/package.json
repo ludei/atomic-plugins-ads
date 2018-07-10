@@ -1,32 +1,32 @@
 {
-  "name": "cocoon-plugin-ads-ios-admob-inmobi",
-  "version": "1.0.0",
-  "description": "iOS inmobi adapter for AdMob",
-  "cordova": {
-    "id": "cocoon-plugin-ads-ios-admob-inmobi",
-    "platforms": [
-      "ios"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ludei/atomic-plugins-ads"
-  },
-  "keywords": [
-    "cordova",
-    "ads",
-    "banner",
-    "interstitial",
-    "monetization",
-    "ad",
-    "inmobi",
-    "ecosystem:cordova",
-    "cordova-ios"
-  ],
-  "author": "ludei",
-  "license": "MPL 2.0",
-  "bugs": {
-    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
-  },
-  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+    "name": "cocoon-plugin-ads-ios-admob-inmobi",
+    "version": "1.0.0",
+    "description": "iOS inmobi adapter for AdMob",
+    "cordova": {
+        "id": "cocoon-plugin-ads-ios-admob-inmobi",
+        "platforms": [
+            "ios"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ludei/atomic-plugins-ads"
+    },
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "inmobi",
+        "ecosystem:cordova",
+        "cordova-ios"
+    ],
+    "author": "ludei",
+    "license": "MPL 2.0",
+    "bugs": {
+        "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+    },
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
 }

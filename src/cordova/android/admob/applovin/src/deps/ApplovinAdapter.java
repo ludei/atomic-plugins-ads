@@ -23,12 +23,12 @@ import com.google.android.gms.ads.reward.mediation.MediationRewardedVideoAdListe
 import java.util.Map;
 
 public class ApplovinAdapter implements
-        MediationRewardedVideoAdAdapter,
-        AppLovinAdClickListener,
-        AppLovinAdDisplayListener,
-        AppLovinAdLoadListener,
-        AppLovinAdRewardListener,
-        AppLovinAdVideoPlaybackListener {
+    MediationRewardedVideoAdAdapter,
+    AppLovinAdClickListener,
+    AppLovinAdDisplayListener,
+    AppLovinAdLoadListener,
+    AppLovinAdRewardListener,
+    AppLovinAdVideoPlaybackListener {
 
     private class ApplovinReward implements RewardItem {
         private final String mType;
@@ -132,7 +132,7 @@ public class ApplovinAdapter implements
         if (mMediationRewardedVideoAdListener != null) {
             ALLog("Rewarded video failed to load: " + errorCode);
             errorCode = errorCode == AppLovinErrorCodes.NO_FILL ?
-                    AdRequest.ERROR_CODE_NO_FILL : AdRequest.ERROR_CODE_NETWORK_ERROR;
+                AdRequest.ERROR_CODE_NO_FILL : AdRequest.ERROR_CODE_NETWORK_ERROR;
             mMediationRewardedVideoAdListener.onAdFailedToLoad(this, errorCode);
         }
     }

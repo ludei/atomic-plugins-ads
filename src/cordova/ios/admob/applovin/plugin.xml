@@ -7,15 +7,15 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,applovin</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-            <preference name="APP_ID" />
-            
-            <header-file src="src/AppLovinCustomEventBanner.h" />
-            <source-file src="src/AppLovinCustomEventBanner.m" />
-            <header-file src="src/AppLovinCustomEventInter.h" />
-            <source-file src="src/AppLovinCustomEventInter.m" />
-            <header-file src="src/GADMAdapterAppLovinRewardBasedVideoAd.h" />
-            <source-file src="src/GADMAdapterAppLovinRewardBasedVideoAd.m" />
+        <preference name="APP_ID"/>
+
+        <header-file src="src/AppLovinCustomEventBanner.h"/>
+        <source-file src="src/AppLovinCustomEventBanner.m"/>
+        <header-file src="src/AppLovinCustomEventInter.h"/>
+        <source-file src="src/AppLovinCustomEventInter.m"/>
+        <header-file src="src/GADMAdapterAppLovinRewardBasedVideoAd.h"/>
+        <source-file src="src/GADMAdapterAppLovinRewardBasedVideoAd.m"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-applovin" />
-    <dependency id="cocoon-plugin-ads-ios-admob" />
+    <dependency id="cocoon-plugin-ads-ios-applovin"/>
+    <dependency id="cocoon-plugin-ads-ios-admob"/>
 </plugin>

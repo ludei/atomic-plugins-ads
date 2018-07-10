@@ -7,12 +7,12 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <keywords>cordova,ads,banner,interstitial,monetization,ad</keywords>
     <platform name="ios">
-        <header-file src="src/deps/LDAdBanner.h" />
-        <header-file src="src/deps/LDAdInterstitial.h" />
-        <header-file src="src/deps/LDAdService.h" />
-        <header-file src="src/LDAdServicePlugin.h" />
-        <source-file src="src/LDAdServicePlugin.m" />
+        <header-file src="src/deps/LDAdBanner.h"/>
+        <header-file src="src/deps/LDAdInterstitial.h"/>
+        <header-file src="src/deps/LDAdService.h"/>
+        <header-file src="src/LDAdServicePlugin.h"/>
+        <source-file src="src/LDAdServicePlugin.m"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-common" />
+    <dependency id="cocoon-plugin-ads-common"/>
 </plugin>

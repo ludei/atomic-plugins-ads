@@ -7,11 +7,11 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <header-file src="src/MPGoogleAdMobBannerCustomEvent.h" />
-        <source-file src="src/MPGoogleAdMobBannerCustomEvent.m" />
-        <header-file src="src/MPGoogleAdMobInterstitialCustomEvent.h" />
-        <source-file src="src/MPGoogleAdMobInterstitialCustomEvent.m" />
+        <header-file src="src/MPGoogleAdMobBannerCustomEvent.h"/>
+        <source-file src="src/MPGoogleAdMobBannerCustomEvent.m"/>
+        <header-file src="src/MPGoogleAdMobInterstitialCustomEvent.h"/>
+        <source-file src="src/MPGoogleAdMobInterstitialCustomEvent.m"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-mopub" />
-    <dependency id="cocoon-plugin-ads-ios-admob" />
+    <dependency id="cocoon-plugin-ads-ios-mopub"/>
+    <dependency id="cocoon-plugin-ads-ios-admob"/>
 </plugin>

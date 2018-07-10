@@ -16,15 +16,13 @@ import java.util.HashMap;
 public class AdServiceChartboost implements AdService {
 
 
-    protected HashMap<String, AdInterstitialChartboost> _interstitials = new HashMap<String, AdInterstitialChartboost>();
-    protected HashMap<String, AdInterstitialChartboost> _rewards = new HashMap<String, AdInterstitialChartboost>();
+    private HashMap<String, AdInterstitialChartboost> _interstitials = new HashMap<String, AdInterstitialChartboost>();
+    private HashMap<String, AdInterstitialChartboost> _rewards = new HashMap<String, AdInterstitialChartboost>();
 
-    public AdServiceChartboost()
-    {
+    public AdServiceChartboost() {
     }
 
-    public void init(Activity activity, String appID, String appSignature)
-    {
+    public void init(Activity activity, String appID, String appSignature) {
         Chartboost.startWithAppId(activity, appID, appSignature);
         Chartboost.onCreate(activity);
         Chartboost.setAutoCacheAds(true);
@@ -129,23 +127,19 @@ public class AdServiceChartboost implements AdService {
     }
 
 
-    public void onPause(Activity activity)
-    {
+    public void onPause(Activity activity) {
         Chartboost.onPause(activity);
     }
 
-    public void onResume(Activity activity)
-    {
+    public void onResume(Activity activity) {
         Chartboost.onResume(activity);
     }
 
-    public void onStop(Activity activity)
-    {
+    public void onStop(Activity activity) {
         Chartboost.onResume(activity);
     }
 
-    public void onStart(Activity activity)
-    {
+    public void onStart(Activity activity) {
         Chartboost.onStart(activity);
     }
 
@@ -154,8 +148,7 @@ public class AdServiceChartboost implements AdService {
     }
 
     @Override
-    public void configure(String bannerAdUnit, String interstitialAdUnit)
-    {
+    public void configure(String bannerAdUnit, String interstitialAdUnit) {
         //Nothing to do
     }
 

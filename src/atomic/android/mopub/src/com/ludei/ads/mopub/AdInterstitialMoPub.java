@@ -10,12 +10,11 @@ import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubInterstitial;
 import com.mopub.mobileads.MoPubRewardedVideoManager;
 
-class AdInterstitialMoPub extends AbstractAdInterstitial implements MoPubInterstitial.InterstitialAdListener
-{
+class AdInterstitialMoPub extends AbstractAdInterstitial implements MoPubInterstitial.InterstitialAdListener {
     private MoPubInterstitial _interstitial;
 
     AdInterstitialMoPub(Context ctx, String adunit) {
-        _interstitial = new MoPubInterstitial((Activity)ctx, adunit);
+        _interstitial = new MoPubInterstitial((Activity) ctx, adunit);
         _interstitial.setInterstitialAdListener(this);
 
     }
@@ -29,8 +28,7 @@ class AdInterstitialMoPub extends AbstractAdInterstitial implements MoPubInterst
     public void show() {
         if (_interstitial.isReady()) {
             _interstitial.show();
-        }
-        else {
+        } else {
             _interstitial.load();
         }
 

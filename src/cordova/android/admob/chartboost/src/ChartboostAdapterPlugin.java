@@ -6,8 +6,8 @@ import org.apache.cordova.CordovaPlugin;
 
 
 public class ChartboostAdapterPlugin extends CordovaPlugin {
-	
-	@Override
+
+    @Override
     public void onStart() {
         super.onStart();
         Chartboost.onStart(cordova.getActivity());

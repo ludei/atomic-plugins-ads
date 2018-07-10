@@ -7,21 +7,21 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-    	<preference name="APP_ID" />
-    	<preference name="ZONE_ID" />
+        <preference name="APP_ID"/>
+        <preference name="ZONE_ID"/>
         <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="ADCOLONY_ADAPTER_APP_ID" value="$APP_ID" />
-            <preference name="ADCOLONY_ADAPTER_ZONE_ID" value="$ZONE_ID" />
+            <preference name="ADCOLONY_ADAPTER_APP_ID" value="$APP_ID"/>
+            <preference name="ADCOLONY_ADAPTER_ZONE_ID" value="$ZONE_ID"/>
 
             <feature name="AdColonyAdapterPlugin">
                 <param name="android-package" value="com.ludei.ads.cordova.AdColonyAdapterPlugin"/>
-                <param name="onload" value="true" />
+                <param name="onload" value="true"/>
             </feature>
         </config-file>
 
-        <source-file src="src/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova" />
-        <dependency id="cocoon-plugin-ads-android-admob" />
-        <dependency id="cocoon-plugin-ads-android-adcolony" />
+        <source-file src="src/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <dependency id="cocoon-plugin-ads-android-admob"/>
+        <dependency id="cocoon-plugin-ads-android-adcolony"/>
     </platform>
 
 </plugin>

@@ -7,22 +7,22 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="src/deps/external/AdColony.framework" custom="true" />
+        <framework src="src/deps/external/AdColony.framework" custom="true"/>
 
-        <framework src="StoreKit.framework" />
-        <framework src="Foundation.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="Social.framework" weak="true" />
-        <framework src="libz.dylib" />
-        <framework src="MediaPlayer.framework" weak="true" />
-        <framework src="WebKit.framework" weak="true" />
-        <framework src="CoreTelephony.framework" weak="true" />
-        <framework src="SystemConfiguration.framework" weak="true" />
-        <framework src="AdSupport.framework" weak="true" />
-        <framework src="MessageUI.framework" weak="true" />
-        <framework src="EventKit.framework" weak="true" />
+        <framework src="StoreKit.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="Social.framework" weak="true"/>
+        <framework src="libz.dylib"/>
+        <framework src="MediaPlayer.framework" weak="true"/>
+        <framework src="WebKit.framework" weak="true"/>
+        <framework src="CoreTelephony.framework" weak="true"/>
+        <framework src="SystemConfiguration.framework" weak="true"/>
+        <framework src="AdSupport.framework" weak="true"/>
+        <framework src="MessageUI.framework" weak="true"/>
+        <framework src="EventKit.framework" weak="true"/>
 
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-common" />
+    <dependency id="cocoon-plugin-ads-ios-common"/>
 </plugin>

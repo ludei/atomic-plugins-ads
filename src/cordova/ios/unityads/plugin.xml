@@ -7,18 +7,18 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,unityads,rewarded</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="src/deps/external/UnityAds.framework" custom="true" />
-        <resource-file src="src/deps/external/UnityAds.bundle" />
+        <framework src="src/deps/external/UnityAds.framework" custom="true"/>
+        <resource-file src="src/deps/external/UnityAds.bundle"/>
 
-        <framework src="AdSupport.framework" />
-        <framework src="AVFoundation.framework" />
-        <framework src="CFNetwork.framework" />
-        <framework src="CoreFoundation.framework" />
-        <framework src="CoreMedia.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="StoreKit.framework" />
-        <framework src="SystemConfiguration.framework" />
+        <framework src="AdSupport.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="CFNetwork.framework"/>
+        <framework src="CoreFoundation.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
 
-    <dependency id="cocoon-plugin-ads-ios-common" />
+        <dependency id="cocoon-plugin-ads-ios-common"/>
     </platform>
 </plugin>

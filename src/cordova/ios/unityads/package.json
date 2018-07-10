@@ -1,33 +1,33 @@
 {
-  "name": "cocoon-plugin-ads-ios-unityads",
-  "version": "1.0.2",
-  "description": "iOS Unity Ads implementation",
-  "cordova": {
-    "id": "cocoon-plugin-ads-ios-unityads",
-    "platforms": [
-      "ios"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ludei/atomic-plugins-ads"
-  },
-  "keywords": [
-    "cordova",
-    "ads",
-    "banner",
-    "interstitial",
-    "monetization",
-    "ad",
-    "unity",
-    "rewarded",
-    "ecosystem:cordova",
-    "cordova-ios"
-  ],
-  "author": "ludei",
-  "license": "MPL 2.0",
-  "bugs": {
-    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
-  },
-  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+    "name": "cocoon-plugin-ads-ios-unityads",
+    "version": "1.0.2",
+    "description": "iOS Unity Ads implementation",
+    "cordova": {
+        "id": "cocoon-plugin-ads-ios-unityads",
+        "platforms": [
+            "ios"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ludei/atomic-plugins-ads"
+    },
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "unity",
+        "rewarded",
+        "ecosystem:cordova",
+        "cordova-ios"
+    ],
+    "author": "ludei",
+    "license": "MPL 2.0",
+    "bugs": {
+        "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+    },
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
 }

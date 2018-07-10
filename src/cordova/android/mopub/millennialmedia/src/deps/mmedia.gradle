@@ -1,8 +1,8 @@
 repositories {
-  mavenCentral()
-  flatDir {
-    dirs 'libs'
-  }
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 def getConfigPreference(name) {
@@ -27,9 +27,9 @@ def getConfigPreference(name) {
 
 if (cdvMinSdkVersion == null) {
     def minSdk = getConfigPreference("android-minSdkVersion");
-    ext.cdvMinSdkVersion =  minSdk && minSdk.toInteger() > 16 ? minSdk : 16;
+    ext.cdvMinSdkVersion = minSdk && minSdk.toInteger() > 16 ? minSdk : 16;
 }
 
 dependencies {
-    compile (name:'mm-ad-sdk', ext:'aar')
+    compile(name: 'mm-ad-sdk', ext: 'aar')
 }

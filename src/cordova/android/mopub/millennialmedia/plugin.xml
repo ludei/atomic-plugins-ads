@@ -9,13 +9,13 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="android">
-        <source-file src="src/MillennialBanner.java" target-dir="src/com/mopub/mobileads" />
-        <source-file src="src/MillennialInterstitial.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/MillennialBanner.java" target-dir="src/com/mopub/mobileads"/>
+        <source-file src="src/MillennialInterstitial.java" target-dir="src/com/mopub/mobileads"/>
 
-        <resource-file src="src/deps/mm-ad-sdk.aar" target="libs/mm-ad-sdk.aar" />
-        <framework src="src/deps/mmedia.gradle" custom="true" type="gradleReference" />
+        <resource-file src="src/deps/mm-ad-sdk.aar" target="libs/mm-ad-sdk.aar"/>
+        <framework src="src/deps/mmedia.gradle" custom="true" type="gradleReference"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-mopub" />
+    <dependency id="cocoon-plugin-ads-android-mopub"/>
 
 </plugin>

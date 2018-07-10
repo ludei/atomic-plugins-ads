@@ -7,27 +7,27 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        
-        <source-file src="src/deps/adcolony.jar" target-dir="libs" framework="true" />
+
+        <source-file src="src/deps/adcolony.jar" target-dir="libs" framework="true"/>
 
         <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
                 android:name="com.jirbo.adcolony.AdColonyOverlay"
                 android:configChanges="keyboardHidden|orientation"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
             <activity
                 android:name="com.jirbo.adcolony.AdColonyFullscreen"
                 android:configChanges="keyboardHidden|orientation"
-                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
             <activity
                 android:name="com.jirbo.adcolony.AdColonyBrowser"
                 android:configChanges="keyboardHidden|orientation"
-                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         </config-file>
     </platform>
 </plugin>

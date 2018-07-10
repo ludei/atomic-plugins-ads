@@ -7,15 +7,15 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <header-file src="src/ChartboostInterstitialCustomEvent.h" />
-        <source-file src="src/ChartboostInterstitialCustomEvent.m" />
-        <header-file src="src/ChartboostRewardedVideoCustomEvent.h" />
-        <source-file src="src/ChartboostRewardedVideoCustomEvent.m" />
-        <header-file src="src/MPChartboostRouter.h" />
-        <source-file src="src/MPChartboostRouter.m" />
-        <header-file src="src/MPInstanceProvider+Chartboost.h" />
-        <source-file src="src/MPInstanceProvider+Chartboost.m" />
+        <header-file src="src/ChartboostInterstitialCustomEvent.h"/>
+        <source-file src="src/ChartboostInterstitialCustomEvent.m"/>
+        <header-file src="src/ChartboostRewardedVideoCustomEvent.h"/>
+        <source-file src="src/ChartboostRewardedVideoCustomEvent.m"/>
+        <header-file src="src/MPChartboostRouter.h"/>
+        <source-file src="src/MPChartboostRouter.m"/>
+        <header-file src="src/MPInstanceProvider+Chartboost.h"/>
+        <source-file src="src/MPInstanceProvider+Chartboost.m"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-mopub" />
-    <dependency id="cocoon-plugin-ads-ios-chartboost" />
+    <dependency id="cocoon-plugin-ads-ios-mopub"/>
+    <dependency id="cocoon-plugin-ads-ios-chartboost"/>
 </plugin>

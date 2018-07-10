@@ -7,10 +7,10 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,chartboost</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <source-file src="src/deps/ChartboostAdapter.jar" target-dir="libs" framework="true" />
-        <source-file src="src/ChartboostAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova" />
-        <dependency id="cocoon-plugin-ads-android-admob" />
-        <dependency id="cocoon-plugin-ads-android-chartboost" />
+        <source-file src="src/deps/ChartboostAdapter.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/ChartboostAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <dependency id="cocoon-plugin-ads-android-admob"/>
+        <dependency id="cocoon-plugin-ads-android-chartboost"/>
     </platform>
 
 </plugin>

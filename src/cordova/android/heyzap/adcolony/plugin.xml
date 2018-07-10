@@ -8,10 +8,10 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="android">
-        <framework src="src/android/adcolony.gradle" custom="true" type="gradleReference" />
-        
-        <source-file src="src/android/fyber-adcolony-2.3.6-r2.aar" target-dir="libs" />
+        <framework src="src/android/adcolony.gradle" custom="true" type="gradleReference"/>
+
+        <source-file src="src/android/fyber-adcolony-2.3.6-r2.aar" target-dir="libs"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-ios-heyzap" />
+    <dependency id="cocoon-plugin-ads-ios-heyzap"/>
 </plugin>

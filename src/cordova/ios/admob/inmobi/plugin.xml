@@ -7,10 +7,10 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,inmobi</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-            <source-file src="src/deps/libAdapterInMobi.a" framework="true" />
-            <header-file src="src/GADInMobiExtras.h" />
-            <header-file src="src/GADMAdapterInMobi.h" />
+        <source-file src="src/deps/libAdapterInMobi.a" framework="true"/>
+        <header-file src="src/GADInMobiExtras.h"/>
+        <header-file src="src/GADMAdapterInMobi.h"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-inmobi" />
-    <dependency id="cocoon-plugin-ads-ios-admob" />
+    <dependency id="cocoon-plugin-ads-ios-inmobi"/>
+    <dependency id="cocoon-plugin-ads-ios-admob"/>
 </plugin>

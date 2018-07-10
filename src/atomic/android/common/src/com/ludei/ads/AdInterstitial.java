@@ -3,11 +3,10 @@ package com.ludei.ads;
 /**
  * Defines an interstitial ad.
  *
- * @author Imanol Fernández
- * @version 1.0
+ * @author Imanol Fernández (@MortimerGoro)
+ * @version 1.1
  */
 public interface AdInterstitial {
-
 
     class Reward {
         public long amount;
@@ -20,23 +19,23 @@ public interface AdInterstitial {
         public String message;
     }
 
-	/**
-	 * Sets a listener for an interstitial.
-     *
-	 * @param listener An interstital listener.
-	 */
-    void setListener(InterstitialListener listener);
-    
     /**
-     * Loads an interstital.
+     * Sets a listener for an interstitial.
+     *
+     * @param listener An interstitial listener.
+     */
+    void setListener(InterstitialListener listener);
+
+    /**
+     * Loads an interstitial.
      */
     void loadAd();
-    
+
     /**
      * Shows the interstitial.
      */
     void show();
-    
+
     /**
      * Destroys the interstitial.
      */
@@ -45,46 +44,49 @@ public interface AdInterstitial {
     /**
      * Allows to listen to interstitial ads events.
      */
-    public interface InterstitialListener {
-    	
-    	/**
-    	 * Sent when the interstitial has loaded an ad.
+    interface InterstitialListener {
+
+        /**
+         * Sent when the interstitial has loaded an ad.
          *
-    	 * @param interstitial An interstitial ad.
-    	 */
-        public void onLoaded(AdInterstitial interstitial);
-        
+         * @param interstitial An interstitial ad.
+         */
+        void onLoaded(AdInterstitial interstitial);
+
         /**
          * Sent when the interstitial has failed to retrieve an ad.
          *
-    	 * @param interstitial An interstitial ad.
-         * @param error Error code and message
+         * @param interstitial An interstitial ad.
+         * @param error        Error code and message.
          */
-        public void onFailed(AdInterstitial interstitial, Error error);
-        
+        void onFailed(AdInterstitial interstitial, Error error);
+
         /**
          * Sent when the user has tapped on the interstitial.
          *
-    	 * @param interstitial An interstitial ad.
-         */    
-        public void onClicked(AdInterstitial interstitial);
-        
+         * @param interstitial An interstitial ad.
+         */
+        void onClicked(AdInterstitial interstitial);
+
         /**
          * Sent when the interstitial has just taken over the screen.
          */
-        public void onShown(AdInterstitial interstitial);
-        
+        void onShown(AdInterstitial interstitial);
+
         /**
          * Sent when the interstitial is closed.
          *
-     	 * @param interstitial An interstitial ad
-         */    
-        public void onDismissed(AdInterstitial interstitial);
-        /**
-         * Sent when the interstitial is closed.
-         *
-         * @param interstitial An interstitial ad
+         * @param interstitial An interstitial ad.
          */
-        public void onRewardCompleted(AdInterstitial interstitial, Reward reward, Error error);
+        void onDismissed(AdInterstitial interstitial);
+
+        /**
+         * Sent when the interstitial is completed.
+         *
+         * @param interstitial An interstitial ad.
+         * @param reward       Reward from the interstitial.
+         * @param error        Error code and message.
+         */
+        void onRewardCompleted(AdInterstitial interstitial, Reward reward, Error error);
     }
 }

@@ -12,8 +12,7 @@ public class AdServiceAdMob implements AdService {
     private String _interstitialAdUnit;
 
     @Override
-    public void configure(String bannerAdUnit, String interstitialAdUnit)
-    {
+    public void configure(String bannerAdUnit, String interstitialAdUnit) {
         _bannerAdUnit = bannerAdUnit;
         _interstitialAdUnit = interstitialAdUnit;
     }

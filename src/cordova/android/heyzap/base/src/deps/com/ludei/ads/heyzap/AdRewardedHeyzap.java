@@ -7,8 +7,7 @@ import com.heyzap.sdk.ads.HeyzapAds;
 import com.heyzap.sdk.ads.IncentivizedAd;
 import com.ludei.ads.AbstractAdInterstitial;
 
-class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnStatusListener, HeyzapAds.OnIncentiveResultListener
-{
+class AdRewardedHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnStatusListener, HeyzapAds.OnIncentiveResultListener {
     private Activity _activity;
     private String _tag;
 

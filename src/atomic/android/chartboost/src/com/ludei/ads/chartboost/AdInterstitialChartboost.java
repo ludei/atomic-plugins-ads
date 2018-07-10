@@ -6,8 +6,7 @@ import com.chartboost.sdk.Chartboost;
 import com.chartboost.sdk.ChartboostDelegate;
 import com.ludei.ads.AbstractAdInterstitial;
 
-class AdInterstitialChartboost extends AbstractAdInterstitial
-{
+class AdInterstitialChartboost extends AbstractAdInterstitial {
     private String _location;
     private boolean _reward;
 
@@ -21,8 +20,7 @@ class AdInterstitialChartboost extends AbstractAdInterstitial
     public void loadAd() {
         if (_reward) {
             Chartboost.cacheRewardedVideo(_location);
-        }
-        else {
+        } else {
             Chartboost.cacheInterstitial(_location);
         }
     }
@@ -31,8 +29,7 @@ class AdInterstitialChartboost extends AbstractAdInterstitial
     public void show() {
         if (_reward) {
             Chartboost.showRewardedVideo(_location);
-        }
-        else {
+        } else {
             Chartboost.showInterstitial(_location);
         }
 

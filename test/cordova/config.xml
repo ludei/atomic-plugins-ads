@@ -1,21 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ideateca.jscocoon" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ideateca.jscocoon" version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
     <platform name="ios">
-        <preference name="mopub_banner" value="agltb3B1Yi1pbmNyDQsSBFNpdGUY5dDoEww" />
-        <preference name="mopub_banner_ipad" value="agltb3B1Yi1pbmNyDQsSBFNpdGUYk8vlEww" />
-        <preference name="mopub_interstitial" value="agltb3B1Yi1pbmNyDQsSBFNpdGUYjf30Eww" />
-        <preference name="mopub_interstitial_ipad" value="agltb3B1Yi1pbmNyDQsSBFNpdGUYjf30Eww" />
+        <preference name="mopub_banner" value="agltb3B1Yi1pbmNyDQsSBFNpdGUY5dDoEww"/>
+        <preference name="mopub_banner_ipad" value="agltb3B1Yi1pbmNyDQsSBFNpdGUYk8vlEww"/>
+        <preference name="mopub_interstitial" value="agltb3B1Yi1pbmNyDQsSBFNpdGUYjf30Eww"/>
+        <preference name="mopub_interstitial_ipad" value="agltb3B1Yi1pbmNyDQsSBFNpdGUYjf30Eww"/>
     </platform>
     <platform name="android">
-        <preference name="mopub_banner" value="68949c5d9de74b79bb79aa29c203ca02" />
-        <preference name="mopub_interstitial" value="74a813ae7a404881bf17eb8d1b0aa943" />
+        <preference name="mopub_banner" value="68949c5d9de74b79bb79aa29c203ca02"/>
+        <preference name="mopub_interstitial" value="74a813ae7a404881bf17eb8d1b0aa943"/>
     </platform>
-    
+
     <name>AdTest</name>
     <description>
         Demo aplication to test Ad atomic plugins
     </description>
-    <content src="index.html" />
-    <access origin="*" />
+    <content src="index.html"/>
+    <access origin="*"/>
 </widget>

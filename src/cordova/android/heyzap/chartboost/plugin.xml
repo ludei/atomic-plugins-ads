@@ -6,12 +6,12 @@
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,chartboost</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
-    
-    <platform name="android">
-        <framework src="src/android/chartboost.gradle" custom="true" type="gradleReference" />
 
-        <source-file src="src/android/fyber-chartboost-6.5.0-r1.aar" target-dir="libs" />
+    <platform name="android">
+        <framework src="src/android/chartboost.gradle" custom="true" type="gradleReference"/>
+
+        <source-file src="src/android/fyber-chartboost-6.5.0-r1.aar" target-dir="libs"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-ios-heyzap" />
+    <dependency id="cocoon-plugin-ads-ios-heyzap"/>
 </plugin>

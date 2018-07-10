@@ -7,8 +7,7 @@ import com.heyzap.sdk.ads.HeyzapAds;
 import com.heyzap.sdk.ads.VideoAd;
 import com.ludei.ads.AbstractAdInterstitial;
 
-class AdInterstitialHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnStatusListener
-{
+class AdInterstitialHeyzap extends AbstractAdInterstitial implements HeyzapAds.OnStatusListener {
     private Activity _activity;
     private String _tag;
 

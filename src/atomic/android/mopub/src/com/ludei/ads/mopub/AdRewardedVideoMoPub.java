@@ -15,8 +15,7 @@ import com.mopub.mobileads.MoPubRewardedVideoManager;
 
 import java.util.Set;
 
-class AdRewardedVideoMoPub extends AbstractAdInterstitial implements MoPubRewardedVideoListener
-{
+class AdRewardedVideoMoPub extends AbstractAdInterstitial implements MoPubRewardedVideoListener {
     private String adUnit;
     private static boolean mopubInitialized = false;
     private boolean rewardCompleted = false;
@@ -36,8 +35,7 @@ class AdRewardedVideoMoPub extends AbstractAdInterstitial implements MoPubReward
         rewardCompleted = false;
         if (MoPub.hasRewardedVideo(adUnit)) {
             MoPub.showRewardedVideo(adUnit);
-        }
-        else {
+        } else {
             MoPub.loadRewardedVideo(adUnit);
             AdInterstitial.Error error = new AdInterstitial.Error();
             error.message = "Rewarded Video not ready yet";
@@ -91,7 +89,7 @@ class AdRewardedVideoMoPub extends AbstractAdInterstitial implements MoPubReward
     public void onRewardedVideoCompleted(Set<String> adUnitIds, MoPubReward reward) {
         rewardCompleted = true;
         AdInterstitial.Reward result = new AdInterstitial.Reward();
-        result.amount = Math.max(reward.getAmount(),1);
+        result.amount = Math.max(reward.getAmount(), 1);
         result.currency = reward.getLabel();
 
         notifyOnRewardCompleted(result, null);

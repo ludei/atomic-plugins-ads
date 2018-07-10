@@ -6,8 +6,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.ludei.ads.AbstractAdInterstitial;
 
-class AdInterstitialAdMob extends AbstractAdInterstitial
-{
+class AdInterstitialAdMob extends AbstractAdInterstitial {
     private InterstitialAd _interstitial;
 
     AdInterstitialAdMob(Context ctx, String adunit) {
@@ -22,7 +21,8 @@ class AdInterstitialAdMob extends AbstractAdInterstitial
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 Error error = new Error();
-                error.code = errorCode; error.message = "Error with code: " + errorCode;
+                error.code = errorCode;
+                error.message = "Error with code: " + errorCode;
                 notifyOnFailed(error);
             }
 
@@ -53,8 +53,7 @@ class AdInterstitialAdMob extends AbstractAdInterstitial
     public void show() {
         if (_interstitial.isLoaded()) {
             _interstitial.show();
-        }
-        else {
+        } else {
             loadAd();
         }
 

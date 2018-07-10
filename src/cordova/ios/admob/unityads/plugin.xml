@@ -7,8 +7,8 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,unity,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <source-file src="src/deps/libAdapterUnity.a" framework="true" />
+        <source-file src="src/deps/libAdapterUnity.a" framework="true"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-admob" />
-    <dependency id="cocoon-plugin-ads-ios-unityads" />
+    <dependency id="cocoon-plugin-ads-ios-admob"/>
+    <dependency id="cocoon-plugin-ads-ios-unityads"/>
 </plugin>

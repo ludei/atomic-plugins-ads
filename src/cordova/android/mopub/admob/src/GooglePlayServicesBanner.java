@@ -36,10 +36,10 @@ class GooglePlayServicesBanner extends CustomEventBanner {
 
     @Override
     protected void loadBanner(
-            final Context context,
-            final CustomEventBannerListener customEventBannerListener,
-            final Map<String, Object> localExtras,
-            final Map<String, String> serverExtras) {
+        final Context context,
+        final CustomEventBannerListener customEventBannerListener,
+        final Map<String, Object> localExtras,
+        final Map<String, String> serverExtras) {
         mBannerListener = customEventBannerListener;
         final String adUnitId;
         final int adWidth;
@@ -67,8 +67,8 @@ class GooglePlayServicesBanner extends CustomEventBanner {
         mGoogleAdView.setAdSize(adSize);
 
         final AdRequest adRequest = new AdRequest.Builder()
-                .setRequestAgent("MoPub")
-                .build();
+            .setRequestAgent("MoPub")
+            .build();
 
         try {
             mGoogleAdView.loadAd(adRequest);
@@ -152,7 +152,8 @@ class GooglePlayServicesBanner extends CustomEventBanner {
         }
     }
 
-    @Deprecated // for testing
+    @Deprecated
+        // for testing
     AdView getGoogleAdView() {
         return mGoogleAdView;
     }

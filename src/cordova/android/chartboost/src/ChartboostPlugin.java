@@ -9,6 +9,7 @@ import org.json.JSONObject;
 public class ChartboostPlugin extends AdServicePlugin {
 
     protected AdServiceChartboost _cbService;
+
     @Override
     protected void pluginInitialize() {
         _cbService = new AdServiceChartboost();

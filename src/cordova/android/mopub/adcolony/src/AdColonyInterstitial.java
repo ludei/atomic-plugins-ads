@@ -77,7 +77,7 @@ public class AdColonyInterstitial extends CustomEventInterstitial implements AdC
         }
 
         if (!isAdColonyConfigured) {
-            AdColony.configure((Activity)context, clientOptions, appId, allZoneIds);
+            AdColony.configure((Activity) context, clientOptions, appId, allZoneIds);
             isAdColonyConfigured = true;
         }
 
@@ -108,9 +108,9 @@ public class AdColonyInterstitial extends CustomEventInterstitial implements AdC
 
     private boolean extrasAreValid(Map<String, String> extras) {
         return extras.containsKey(CLIENT_OPTIONS_KEY)
-                && extras.containsKey(APP_ID_KEY)
-                && extras.containsKey(ALL_ZONE_IDS_KEY)
-                && extras.containsKey(ZONE_ID_KEY);
+            && extras.containsKey(APP_ID_KEY)
+            && extras.containsKey(ALL_ZONE_IDS_KEY)
+            && extras.containsKey(ZONE_ID_KEY);
     }
 
     private String[] extractAllZoneIds(Map<String, String> serverExtras) {
@@ -174,12 +174,14 @@ public class AdColonyInterstitial extends CustomEventInterstitial implements AdC
         });
     }
 
-    @Deprecated // for testing
+    @Deprecated
+        // for testing
     ScheduledThreadPoolExecutor getScheduledThreadPoolExecutor() {
         return mScheduledThreadPoolExecutor;
     }
 
-    @Deprecated // for testing
+    @Deprecated
+        // for testing
     void resetAdColonyConfigured() {
         isAdColonyConfigured = false;
     }

@@ -6,38 +6,38 @@ import android.content.Context;
 /**
  * Defines the ad service.
  *
- * @author Imanol Fernández
- * @version 1.0
+ * @author Imanol Fernández (@MortimerGoro)
+ * @version 1.1
  */
-public interface AdService
-{
+public interface AdService {
+
     /**
-     * Configures default adunits for banners and interstitials.
+     * Configures the default AdUnits for banners and interstitials.
      *
-     * @param bannerAdUnit The banner AdUnit.
-     * @param interstitialAdUnit The intesttitial AdUnit.
+     * @param bannerAdUnit       The banner AdUnit.
+     * @param interstitialAdUnit The interstitial AdUnit.
      */
     void configure(String bannerAdUnit, String interstitialAdUnit);
 
     /**
-     * Creates AdBanner with default size and adunit (taken from settings).
+     * Creates AdBanner with default size and AdUnit (taken from settings).
      *
      * @param ctx The activity context.
      * @return A banner ad.
      */
-    AdBanner createBanner(Context ctx);
+    com.ludei.ads.AdBanner createBanner(Context ctx);
 
     /**
-     * Creates AdBanner with custom adunit and size.
+     * Creates AdBanner with custom AdUnit and size.
      *
-     * @param adunit Optional banner adunit, taken from settings if not specified.
-     * @param size The size of the banner.
+     * @param adUnit Optional banner AdUnit, taken from settings if not specified.
+     * @param size   The size of the banner.
      * @return A banner ad.
      */
-    AdBanner createBanner(Context ctx, String adunit, AdBanner.BannerSize size );
+    AdBanner createBanner(Context ctx, String adUnit, AdBanner.BannerSize size);
 
     /**
-     * Creates AdInterstitial with default adunit (taken from settings).
+     * Creates AdInterstitial with default AdUnit (taken from settings).
      *
      * @param ctx The activity context.
      * @return An interstitial ad.
@@ -45,21 +45,21 @@ public interface AdService
     AdInterstitial createInterstitial(Context ctx);
 
     /**
-     * Creates AdInterstitial with specific adunit.
+     * Creates AdInterstitial with specific AdUnit.
      *
-     * @param adunit Optional interstitial adunit, taken from settings if not specified.
-     * @param ctx The activity context.
+     * @param adUnit Optional interstitial AdUnit, taken from settings if not specified.
+     * @param ctx    The activity context.
      * @return An interstitial ad.
      */
-    AdInterstitial createInterstitial(Context ctx, String adunit);
+    AdInterstitial createInterstitial(Context ctx, String adUnit);
 
     /**
-     * Creates Rewarded Video with specific adunit.
-     * If the networks doesn't support rewarded video it fallbacks to a interstitial
+     * Creates Rewarded Video with specific AdUnit.
+     * If the networks doesn't support rewarded video it fallbacks to a interstitial.
      *
-     * @param adunit Optional interstitial adunit, taken from settings if not specified.
-     * @param ctx The activity context.
+     * @param adUnit Optional interstitial AdUnit, taken from settings if not specified.
+     * @param ctx    The activity context.
      * @return An interstitial ad.
      */
-    AdInterstitial createRewardedVideo(Context ctx, String adunit);
+    AdInterstitial createRewardedVideo(Context ctx, String adUnit);
 }

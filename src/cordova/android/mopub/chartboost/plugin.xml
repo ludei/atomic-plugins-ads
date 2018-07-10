@@ -9,12 +9,12 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="android">
-        <source-file src="src/ChartboostInterstitial.java" target-dir="src/com/mopub/mobileads" />
-        <source-file src="src/ChartboostRewardedVideo.java" target-dir="src/com/mopub/mobileads" />
-        <source-file src="src/ChartboostShared.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/ChartboostInterstitial.java" target-dir="src/com/mopub/mobileads"/>
+        <source-file src="src/ChartboostRewardedVideo.java" target-dir="src/com/mopub/mobileads"/>
+        <source-file src="src/ChartboostShared.java" target-dir="src/com/mopub/mobileads"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-chartboost" />
-    <dependency id="cocoon-plugin-ads-android-mopub" />
+    <dependency id="cocoon-plugin-ads-android-chartboost"/>
+    <dependency id="cocoon-plugin-ads-android-mopub"/>
 
 </plugin>

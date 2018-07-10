@@ -3,6 +3,7 @@ package com.ludei.ads;
 public abstract class AbstractAdBanner implements AdBanner {
 
     private BannerListener _listener;
+
     @Override
     public void setListener(AdBanner.BannerListener listener) {
         this._listener = listener;

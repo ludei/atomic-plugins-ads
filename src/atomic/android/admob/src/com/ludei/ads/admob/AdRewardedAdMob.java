@@ -9,8 +9,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.ludei.ads.AbstractAdInterstitial;
 import com.ludei.ads.AdInterstitial;
 
-class AdRewardedAdMob extends AbstractAdInterstitial
-{
+class AdRewardedAdMob extends AbstractAdInterstitial {
     private RewardedVideoAd _interstitial;
     private String adUnit;
     private boolean rewardCompleted = false;
@@ -51,7 +50,7 @@ class AdRewardedAdMob extends AbstractAdInterstitial
             public void onRewarded(RewardItem rewardItem) {
                 rewardCompleted = true;
                 AdInterstitial.Reward result = new AdInterstitial.Reward();
-                result.amount = Math.max(rewardItem.getAmount(),1);
+                result.amount = Math.max(rewardItem.getAmount(), 1);
                 result.currency = rewardItem.getType();
                 result.itemKey = rewardItem.getType();
                 notifyOnRewardCompleted(result, null);
@@ -66,7 +65,8 @@ class AdRewardedAdMob extends AbstractAdInterstitial
             public void onRewardedVideoAdFailedToLoad(int errorCode) {
                 loading = false;
                 Error error = new Error();
-                error.code = errorCode; error.message = "Error with code: " + errorCode;
+                error.code = errorCode;
+                error.message = "Error with code: " + errorCode;
                 notifyOnFailed(error);
             }
         });
@@ -85,8 +85,7 @@ class AdRewardedAdMob extends AbstractAdInterstitial
         this.rewardCompleted = false;
         if (_interstitial.isLoaded()) {
             _interstitial.show();
-        }
-        else {
+        } else {
             if (!loading) {
                 loadAd();
             }

@@ -27,11 +27,10 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
 
         try {
             Class<?> adServiceClass = Class.forName(adServiceClassName);
-            _service = (AdService)adServiceClass.newInstance();
+            _service = (AdService) adServiceClass.newInstance();
             _activity = SafeJNI.INSTANCE.getActivity();
             SafeJNI.INSTANCE.addLifeCycleListener(this);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             return false;
         }
 
@@ -43,6 +42,7 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
         BOTTOM_CENTER,
         CUSTOM
     }
+
     private class BannerData {
         public AdBanner banner;
         public BannerLayout layout = BannerLayout.TOP_CENTER;
@@ -87,11 +87,9 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
                 if (strSize != null) {
                     if (strSize.equals("BANNER")) {
                         size = AdBanner.BannerSize.BANNER_SIZE;
-                    }
-                    else if (strSize.equals("MEDIUM_RECT")) {
+                    } else if (strSize.equals("MEDIUM_RECT")) {
                         size = AdBanner.BannerSize.MEDIUM_RECT_SIZE;
-                    }
-                    else if (strSize.equals("LEADERBOARD")) {
+                    } else if (strSize.equals("LEADERBOARD")) {
                         size = AdBanner.BannerSize.LEADERBOARD_SIZE;
                     }
                 }
@@ -203,11 +201,9 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
                 if (data != null) {
                     if ("TOP_CENTER".equals(value)) {
                         data.layout = BannerLayout.TOP_CENTER;
-                    }
-                    else if ("BOTTOM_CENTER".equals(value)) {
+                    } else if ("BOTTOM_CENTER".equals(value)) {
                         data.layout = BannerLayout.BOTTOM_CENTER;
-                    }
-                    else{
+                    } else {
                         data.layout = BannerLayout.CUSTOM;
                     }
                     layoutBanner(data);
@@ -255,15 +251,23 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
     //Ad Listeners
 
     private static native void nativeBannerOnLoaded(long bannerId, int width, int height);
+
     private static native void nativeBannerOnFailed(long bannerId, int errorCode, String message);
+
     private static native void nativeBannerOnClicked(long bannerId);
+
     private static native void nativeBannerOnExpanded(long bannerId);
+
     private static native void nativeBannerOnCollapsed(long bannerId);
 
     private static native void nativeInterstitialOnLoaded(long interstitialId);
+
     private static native void nativeInterstitialOnFailed(long interstitialId, int errorCode, String message);
+
     private static native void nativeInterstitialOnClicked(long interstitialId);
+
     private static native void nativeInterstitialOnShown(long interstitialId);
+
     private static native void nativeInterstitialOnDismissed(long interstitialId);
 
     @Override
@@ -406,20 +410,18 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
         }
 
         ViewGroup vg = getViewGroup();
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams)data.banner.getView().getLayoutParams();
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) data.banner.getView().getLayoutParams();
         layoutParams.width = data.banner.getWidth();
         layoutParams.height = data.banner.getHeight();
 
         if (data.layout == BannerLayout.CUSTOM) {
-            layoutParams.leftMargin = (int)data.x;
-            layoutParams.topMargin = (int)data.y;
-        }
-        else if (data.layout == BannerLayout.TOP_CENTER) {
-            layoutParams.leftMargin = (int)(vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+            layoutParams.leftMargin = (int) data.x;
+            layoutParams.topMargin = (int) data.y;
+        } else if (data.layout == BannerLayout.TOP_CENTER) {
+            layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
             layoutParams.topMargin = 0;
-        }
-        else {
-            layoutParams.leftMargin = (int)(vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+        } else {
+            layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
             layoutParams.topMargin = vg.getHeight() - layoutParams.height;
         }
         vg.requestLayout();
@@ -430,7 +432,7 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
     }
 
     protected long findBannerId(AdBanner banner) {
-        for (long key: _banners.keySet()) {
+        for (long key : _banners.keySet()) {
             BannerData data = _banners.get(key);
             if (data.banner == banner) {
                 return key;
@@ -440,7 +442,7 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
     }
 
     protected long findInterstitialId(AdInterstitial interstitial) {
-        for (long key: _interstitials.keySet()) {
+        for (long key : _interstitials.keySet()) {
             if (_interstitials.get(key) == interstitial) {
                 return key;
             }
@@ -469,12 +471,12 @@ public class AdServiceBridge implements AdBanner.BannerListener, AdInterstitial.
     public void onDestroy() {
         SafeJNI.INSTANCE.removeLifeCycleListener(this);
 
-        for (long key: _interstitials.keySet()) {
+        for (long key : _interstitials.keySet()) {
             AdInterstitial interstitial = _interstitials.get(key);
             interstitial.setListener(null);
             interstitial.destroy();
         }
-        for (long key: _banners.keySet()) {
+        for (long key : _banners.keySet()) {
             BannerData data = _banners.get(key);
             if (data.banner.getView().getParent() != null) {
                 ViewGroup vg = getViewGroup();

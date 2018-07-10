@@ -4,7 +4,7 @@ import com.applovin.sdk.AppLovinSdk;
 
 public class ApplovinPlugin extends AdServicePlugin {
 
-    
+
     @Override
     protected void pluginInitialize() {
         AppLovinSdk.initializeSdk(cordova.getActivity());
@@ -27,11 +27,11 @@ public class ApplovinPlugin extends AdServicePlugin {
 
     @Override
     public void onStop() {
-        
+
     }
 
     @Override
     public void onDestroy() {
-        
+
     }
 }

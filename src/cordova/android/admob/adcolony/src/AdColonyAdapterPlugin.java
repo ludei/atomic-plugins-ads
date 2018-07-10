@@ -9,17 +9,16 @@ import org.apache.cordova.CordovaPlugin;
 
 
 public class AdColonyAdapterPlugin extends CordovaPlugin {
-	
-	@Override
-	protected void pluginInitialize() {
+
+    @Override
+    protected void pluginInitialize() {
 
         String appId = preferences.getString("ADCOLONY_ADAPTER_APP_ID", "");
         String zoneId = preferences.getString("ADCOLONY_ADAPTER_ZONE_ID", "");
         String versionName = "1.0";
         try {
             versionName = cordova.getActivity().getPackageManager().getPackageInfo(cordova.getActivity().getPackageName(), 0).versionName;
-        }
-        catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         String clientOptions = "version:" + versionName + ",store:google";

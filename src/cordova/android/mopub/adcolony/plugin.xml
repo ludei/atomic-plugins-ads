@@ -7,10 +7,10 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <source-file src="src/AdColonyInterstitial.java" target-dir="src/com/mopub/mobileads" />
-        <source-file src="src/AdColonyRewardedVideo.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/AdColonyInterstitial.java" target-dir="src/com/mopub/mobileads"/>
+        <source-file src="src/AdColonyRewardedVideo.java" target-dir="src/com/mopub/mobileads"/>
 
-        <dependency id="cocoon-plugin-ads-android-mopub" />
-        <dependency id="cocoon-plugin-ads-android-adcolony" />
+        <dependency id="cocoon-plugin-ads-android-mopub"/>
+        <dependency id="cocoon-plugin-ads-android-adcolony"/>
     </platform>
 </plugin>

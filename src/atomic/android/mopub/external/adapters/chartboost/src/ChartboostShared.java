@@ -25,7 +25,7 @@ import static com.mopub.mobileads.MoPubErrorCode.VIDEO_DOWNLOAD_ERROR;
 
 /**
  * Shared infrastructure for initializing the Chartboost SDK when mediated by MoPub
- *
+ * <p>
  * Certified with Chartboost 5.3.0
  */
 public class ChartboostShared {
@@ -39,26 +39,28 @@ public class ChartboostShared {
     public static final String LOCATION_KEY = "location";
     public static final String LOCATION_DEFAULT = "Default";
 
-    @Nullable private static String mAppId;
-    @Nullable private static String mAppSignature;
+    @Nullable
+    private static String mAppId;
+    @Nullable
+    private static String mAppSignature;
 
     /**
      * Initialize the Chartboost SDK for the provided application id and app signature.
      */
     public static synchronized boolean initializeSdk(@NonNull Activity launcherActivity,
-            @NonNull Map<String, String> serverExtras) {
+                                                     @NonNull Map<String, String> serverExtras) {
         Preconditions.checkNotNull(launcherActivity);
         Preconditions.checkNotNull(serverExtras);
 
         // Validate Chartboost args
         if (!serverExtras.containsKey(APP_ID_KEY)) {
             throw new IllegalStateException("Chartboost rewarded video initialization" +
-                    " failed due to missing application ID.");
+                " failed due to missing application ID.");
         }
 
         if (!serverExtras.containsKey(APP_SIGNATURE_KEY)) {
             throw new IllegalStateException("Chartboost rewarded video initialization" +
-                    " failed due to missing application signature.");
+                " failed due to missing application signature.");
         }
 
         final String appId = serverExtras.get(APP_ID_KEY);
@@ -95,39 +97,45 @@ public class ChartboostShared {
      * and rewarded videos to the appropriate listener based on the Chartboost location used.
      */
     public static class ChartboostSingletonDelegate extends ChartboostDelegate
-            implements CustomEventRewardedVideo.CustomEventRewardedVideoListener {
+        implements CustomEventRewardedVideo.CustomEventRewardedVideoListener {
         private static final CustomEventInterstitialListener NULL_LISTENER =
-                new CustomEventInterstitialListener() {
-                    @Override
-                    public void onInterstitialLoaded() { }
+            new CustomEventInterstitialListener() {
+                @Override
+                public void onInterstitialLoaded() {
+                }
 
-                    @Override
-                    public void onInterstitialFailed(MoPubErrorCode errorCode) { }
+                @Override
+                public void onInterstitialFailed(MoPubErrorCode errorCode) {
+                }
 
-                    @Override
-                    public void onInterstitialShown() { }
+                @Override
+                public void onInterstitialShown() {
+                }
 
-                    @Override
-                    public void onInterstitialClicked() { }
+                @Override
+                public void onInterstitialClicked() {
+                }
 
-                    @Override
-                    public void onLeaveApplication() { }
+                @Override
+                public void onLeaveApplication() {
+                }
 
-                    @Override
-                    public void onInterstitialDismissed() { }
-                };
+                @Override
+                public void onInterstitialDismissed() {
+                }
+            };
 
         //***************
         // Chartboost Location Management for interstitials and rewarded videos
         //***************
 
         private Map<String, CustomEventInterstitialListener> mInterstitialListenersForLocation
-                = Collections.synchronizedMap(new TreeMap<String, CustomEventInterstitialListener>());
+            = Collections.synchronizedMap(new TreeMap<String, CustomEventInterstitialListener>());
 
         private Set<String> mRewardedVideoLocationsToLoad = Collections.synchronizedSet(new TreeSet<String>());
 
         public void registerInterstitialListener(@NonNull String location,
-                @NonNull CustomEventInterstitialListener interstitialListener) {
+                                                 @NonNull CustomEventInterstitialListener interstitialListener) {
             Preconditions.checkNotNull(location);
             Preconditions.checkNotNull(interstitialListener);
             mInterstitialListenersForLocation.put(location, interstitialListener);
@@ -256,11 +264,11 @@ public class ChartboostShared {
         public void didCompleteRewardedVideo(String location, int reward) {
             super.didCompleteRewardedVideo(location, reward);
             MoPubLog.d("Chartboost rewarded video completed for location " + location + " with "
-                    + "reward amount " + reward);
+                + "reward amount " + reward);
             MoPubRewardedVideoManager.onRewardedVideoCompleted(
-                    ChartboostRewardedVideo.class,
-                    location,
-                    MoPubReward.success(MoPubReward.NO_REWARD_LABEL, reward));
+                ChartboostRewardedVideo.class,
+                location,
+                MoPubReward.success(MoPubReward.NO_REWARD_LABEL, reward));
         }
 
         @Override

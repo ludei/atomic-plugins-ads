@@ -59,12 +59,16 @@ tasks.withType(JavaCompile) {
 repositories {
     mavenCentral()
     flatDir {
-        dirs  'jni/safejni/libs'
+        dirs 'jni/safejni/libs'
+    }
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
     }
 }
 
 dependencies {
     compile project(':ads-common')
-    compile (name:'safejni', ext:'jar')
+    compile(name: 'safejni', ext: 'jar')
 }
 

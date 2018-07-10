@@ -38,11 +38,11 @@ repositories {
     mavenCentral()
     flatDir {
         dirs mopub_adapters + 'adcolony/dist',
-             mopub_adapters + 'admob/dist',
-             mopub_adapters + 'millennialmedia/dist',
-             mopub_adapters + 'chartboost/dist',
-             mopub_adapters + 'greystripe/dist',
-             mopub_adapters + 'inmobi/dist'
+            mopub_adapters + 'admob/dist',
+            mopub_adapters + 'millennialmedia/dist',
+            mopub_adapters + 'chartboost/dist',
+            mopub_adapters + 'greystripe/dist',
+            mopub_adapters + 'inmobi/dist'
     }
 }
 
@@ -54,12 +54,12 @@ dependencies {
 
     //Optional MoPub Adapters
     mopubCompile 'com.google.android.gms:play-services-ads:9.0.2' //admob-sdk
-    mopubCompile (name:'adcolony-adapter', ext:'aar')
-    mopubCompile (name:'admob-adapter', ext:'aar')
-    mopubCompile (name:'millennialmedia-adapter', ext:'aar')
-    mopubCompile (name:'charboost-adapter', ext:'aar')
-    mopubCompile (name:'greystripe-adapter', ext:'aar')
-    mopubCompile (name:'inmobi-adapter', ext:'aar')
+    mopubCompile(name: 'adcolony-adapter', ext: 'aar')
+    mopubCompile(name: 'admob-adapter', ext: 'aar')
+    mopubCompile(name: 'millennialmedia-adapter', ext: 'aar')
+    mopubCompile(name: 'charboost-adapter', ext: 'aar')
+    mopubCompile(name: 'greystripe-adapter', ext: 'aar')
+    mopubCompile(name: 'inmobi-adapter', ext: 'aar')
 
     admobCompile project(':ads-admob')
 

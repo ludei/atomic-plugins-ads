@@ -7,13 +7,13 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <source-file src="src/deps/libAdapterSDKAdColony.a" framework="true" />
+        <source-file src="src/deps/libAdapterSDKAdColony.a" framework="true"/>
 
-        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission" />
+        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission"/>
         <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
             <string>$CALENDAR_USAGE_DESCRIPTION</string>
         </config-file>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-admob" />
-    <dependency id="cocoon-plugin-ads-ios-adcolony" />
+    <dependency id="cocoon-plugin-ads-ios-admob"/>
+    <dependency id="cocoon-plugin-ads-ios-adcolony"/>
 </plugin>

@@ -7,17 +7,17 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,greystripe</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        
-        <source-file src="src/deps/conversant-android-sdk-2.4.0.jar" target-dir="libs" framework="true" />
-        <source-file src="src/deps/mopub-greystripe-adapter.jar" target-dir="libs" framework="true" />
+
+        <source-file src="src/deps/conversant-android-sdk-2.4.0.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/deps/mopub-greystripe-adapter.jar" target-dir="libs" framework="true"/>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
                 android:name="com.greystripe.sdk.GSFullscreenActivity"
-                android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
         </config-file>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-mopub" />
+    <dependency id="cocoon-plugin-ads-android-mopub"/>
 
 </plugin>

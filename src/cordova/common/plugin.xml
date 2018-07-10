@@ -10,5 +10,5 @@
         <runs/>
     </js-module>
 
-    <dependency id="cocoon-plugin-common" />
+    <dependency id="cocoon-plugin-common"/>
 </plugin>

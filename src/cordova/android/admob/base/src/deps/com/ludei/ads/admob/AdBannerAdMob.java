@@ -21,10 +21,18 @@ class AdBannerAdMob extends AbstractAdBanner {
 
         AdSize admobSize = AdSize.SMART_BANNER;
         switch (size) {
-            case SMART_SIZE: admobSize = AdSize.SMART_BANNER; break;
-            case BANNER_SIZE: admobSize = AdSize.BANNER; break;
-            case MEDIUM_RECT_SIZE: admobSize = AdSize.MEDIUM_RECTANGLE; break;
-            case LEADERBOARD_SIZE: admobSize = AdSize.LEADERBOARD; break;
+            case SMART_SIZE:
+                admobSize = AdSize.SMART_BANNER;
+                break;
+            case BANNER_SIZE:
+                admobSize = AdSize.BANNER;
+                break;
+            case MEDIUM_RECT_SIZE:
+                admobSize = AdSize.MEDIUM_RECTANGLE;
+                break;
+            case LEADERBOARD_SIZE:
+                admobSize = AdSize.LEADERBOARD;
+                break;
         }
 
         banner.setAdSize(admobSize);
@@ -41,7 +49,8 @@ class AdBannerAdMob extends AbstractAdBanner {
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 AdBanner.Error error = new Error();
-                error.code = errorCode; error.message = "Error with code: " + errorCode;
+                error.code = errorCode;
+                error.message = "Error with code: " + errorCode;
                 notifyOnFailed(error);
             }
 

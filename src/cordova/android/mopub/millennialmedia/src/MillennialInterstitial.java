@@ -32,17 +32,17 @@ class MillennialInterstitial extends CustomEventInterstitial {
 
     @Override
     protected void loadInterstitial(final Context context, final CustomEventInterstitialListener customEventInterstitialListener,
-            final Map<String, Object> localExtras, final Map<String, String> serverExtras) {
+                                    final Map<String, Object> localExtras, final Map<String, String> serverExtras) {
         String dcn = null;
         mInterstitialListener = customEventInterstitialListener;
         mContext = context;
 
         final String apid;
 
-        if ( !MMSDK.isInitialized() ) {
+        if (!MMSDK.isInitialized()) {
             try {
                 MMSDK.initialize((Activity) context);
-            } catch ( Exception e ) {
+            } catch (Exception e) {
                 Log.e(LOGCAT_TAG, "Unable to initialize the Millennial SDK-- " + e.getMessage());
                 e.printStackTrace();
                 UI_THREAD_HANDLER.post(new Runnable() {
@@ -72,18 +72,18 @@ class MillennialInterstitial extends CustomEventInterstitial {
         // Add DCN support
         try {
             AppInfo ai = new AppInfo().setMediator("mopubsdk");
-            if ( dcn != null && dcn.length() > 0 ) {
+            if (dcn != null && dcn.length() > 0) {
                 ai = ai.setSiteId(dcn);
             } else {
                 ai.setSiteId(null);
             }
             MMSDK.setAppInfo(ai);
-        } catch ( IllegalStateException e ) {
+        } catch (IllegalStateException e) {
             Log.i(LOGCAT_TAG, "SDK not finished initializing-- " + e.getMessage());
         }
-        
+
         /* If MoPub gets location, so do we. */
-        MMSDK.setLocationEnabled( (localExtras.get("location") != null) );
+        MMSDK.setLocationEnabled((localExtras.get("location") != null));
 
         try {
             mMillennialInterstitial = InterstitialAd.createInstance(apid);
@@ -107,7 +107,7 @@ class MillennialInterstitial extends CustomEventInterstitial {
         if (mMillennialInterstitial.isReady()) {
             try {
                 mMillennialInterstitial.show(mContext);
-            } catch ( MMException e ) {
+            } catch (MMException e) {
                 e.printStackTrace();
                 UI_THREAD_HANDLER.post(new Runnable() {
                     @Override
@@ -177,15 +177,15 @@ class MillennialInterstitial extends CustomEventInterstitial {
 
         @Override
         public void onLoadFailed(InterstitialAd arg0,
-                InterstitialErrorStatus err) {
-            Log.d(LOGCAT_TAG, "Millennial Interstitial Ad - load failed (" + err.getErrorCode() + "): " + err.getDescription() );
+                                 InterstitialErrorStatus err) {
+            Log.d(LOGCAT_TAG, "Millennial Interstitial Ad - load failed (" + err.getErrorCode() + "): " + err.getDescription());
             final MoPubErrorCode moPubErrorCode;
 
-            switch (err.getErrorCode() ) {
+            switch (err.getErrorCode()) {
                 case InterstitialErrorStatus.ALREADY_LOADED:
                     // This will generate discrepancies, as requests will NOT be sent to Millennial.
                     mInterstitialListener.onInterstitialLoaded();
-                    Log.w(LOGCAT_TAG, "Millennial Interstitial Ad - Attempted to load ads when ads are already loaded." );
+                    Log.w(LOGCAT_TAG, "Millennial Interstitial Ad - Attempted to load ads when ads are already loaded.");
                     return;
                 case InterstitialErrorStatus.EXPIRED:
                 case InterstitialErrorStatus.DISPLAY_FAILED:
@@ -226,7 +226,7 @@ class MillennialInterstitial extends CustomEventInterstitial {
 
         @Override
         public void onShowFailed(InterstitialAd arg0,
-                InterstitialErrorStatus arg1) {
+                                 InterstitialErrorStatus arg1) {
             Log.e(LOGCAT_TAG, "Millennial Interstitial Ad - Show failed (" + arg1.getErrorCode() + "): " + arg1.getDescription());
             UI_THREAD_HANDLER.post(new Runnable() {
                 @Override

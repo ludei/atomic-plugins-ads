@@ -7,13 +7,13 @@
     <keywords>cordova,ads,interstitial,monetization,ad,admob,applovin</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <preference name="APP_ID" />
-        
-        <source-file src="src/deps/AdMobMediationInterEvent.java" target-dir="src/com/ludei/ads/applovin" />
-        <source-file src="src/deps/ApplovinAdapter.java" target-dir="src/com/ludei/ads/applovin" />
+        <preference name="APP_ID"/>
 
-        <dependency id="cocoon-plugin-ads-android-admob" />
-        <dependency id="cocoon-plugin-ads-android-applovin" />
+        <source-file src="src/deps/AdMobMediationInterEvent.java" target-dir="src/com/ludei/ads/applovin"/>
+        <source-file src="src/deps/ApplovinAdapter.java" target-dir="src/com/ludei/ads/applovin"/>
+
+        <dependency id="cocoon-plugin-ads-android-admob"/>
+        <dependency id="cocoon-plugin-ads-android-applovin"/>
     </platform>
 
 </plugin>

@@ -4,8 +4,8 @@ android {
         targetSdkVersion 23
     }
 
-   packagingOptions {
-       exclude 'META-INF/NOTICE'
-       exclude 'META-INF/LICENSE'
-   }
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
 }

@@ -47,9 +47,9 @@ Thumbs.db
 
 # Android Studio
 .idea
+
 #.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
 .gradle
-build/
 
 test/cordova/AdTest
 node_modules

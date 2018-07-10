@@ -1,11 +1,11 @@
 repositories {
-  mavenCentral()
-  flatDir {
-    dirs 'libs'
-  }
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
-    compile (name:'unity-ads', ext:'aar')
+    compile(name: 'unity-ads', ext: 'aar')
 }
 
