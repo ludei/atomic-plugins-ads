@@ -54,6 +54,15 @@ public interface AdService {
     AdInterstitial createInterstitial(Context ctx, String adUnit);
 
     /**
+     * Creates Rewarded Video with default AdUnit (taken from settings).
+     * If the networks doesn't support rewarded video it fallbacks to a interstitial.
+     *
+     * @param ctx    The activity context.
+     * @return An interstitial ad.
+     */
+    AdInterstitial createRewardedVideo(Context ctx);
+
+    /**
      * Creates Rewarded Video with specific AdUnit.
      * If the networks doesn't support rewarded video it fallbacks to a interstitial.
      *

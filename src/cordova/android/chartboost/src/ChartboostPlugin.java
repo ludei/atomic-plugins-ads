@@ -24,12 +24,13 @@ public class ChartboostPlugin extends AdServicePlugin {
 
         String appId = obj.optString("appId");
         String appSignature = obj.optString("appSignature");
+        String restrictDataCollection = obj.optBoolean("restrictDataCollection");
         if (appId == null || appSignature == null) {
             ctx.error("Invalid settings");
             return;
         }
 
-        _cbService.init(cordova.getActivity(), appId, appSignature);
+        _cbService.init(cordova.getActivity(), appId, appSignature, restrictDataCollection);
         _cbService.onStart(cordova.getActivity());
 
         ctx.success();
@@ -56,11 +57,20 @@ public class ChartboostPlugin extends AdServicePlugin {
 
     @Override
     public void onStop() {
+        super.onStop();
         _cbService.onStop(cordova.getActivity());
     }
 
     @Override
     public void onDestroy() {
+        super.onDestroy();
         _cbService.onDestroy(cordova.getActivity());
+    }
+
+    @Override
+    public void onBackPressed() {
+        // If an interstitial is on screen, close it.
+        if (!_cbService.onBackPressed())
+            super.onBackPressed();
     }
 }
