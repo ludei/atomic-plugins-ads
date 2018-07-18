@@ -1,8 +1,10 @@
 package com.ludei.ads.admob;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdListener;
@@ -14,12 +16,14 @@ import com.ludei.ads.AdBanner;
 class AdBannerAdMob extends AbstractAdBanner {
 
     private AdView banner;
+    private Bundle extras;
 
-    AdBannerAdMob(Context ctx, String adunit, BannerSize size) {
+    AdBannerAdMob(Context ctx, String adUnit, BannerSize size, Bundle personalizedAdsConsent) {
+        extras = personalizedAdsConsent;
 
         banner = new AdView(ctx);
 
-        AdSize admobSize = AdSize.SMART_BANNER;
+        AdSize admobSize;
         switch (size) {
             case SMART_SIZE:
                 admobSize = AdSize.SMART_BANNER;
@@ -33,12 +37,15 @@ class AdBannerAdMob extends AbstractAdBanner {
             case LEADERBOARD_SIZE:
                 admobSize = AdSize.LEADERBOARD;
                 break;
+            default:
+                admobSize = AdSize.SMART_BANNER;
+                break;
         }
 
         banner.setAdSize(admobSize);
         banner.setMinimumWidth(admobSize.getWidth());
         banner.setMinimumHeight(admobSize.getHeight());
-        banner.setAdUnitId(adunit);
+        banner.setAdUnitId(adUnit);
 
         banner.setAdListener(new AdListener() {
             @Override
@@ -74,7 +81,7 @@ class AdBannerAdMob extends AbstractAdBanner {
 
     @Override
     public void loadAd() {
-        banner.loadAd(new AdRequest.Builder().build());
+        banner.loadAd(new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build());
     }
 
     @Override

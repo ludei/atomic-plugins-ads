@@ -24,13 +24,13 @@ public class ChartboostPlugin extends AdServicePlugin {
 
         String appId = obj.optString("appId");
         String appSignature = obj.optString("appSignature");
-        String restrictDataCollection = obj.optBoolean("restrictDataCollection");
+        String personalizedAdsConsent = obj.optBoolean("personalizedAdsConsent");
         if (appId == null || appSignature == null) {
             ctx.error("Invalid settings");
             return;
         }
 
-        _cbService.init(cordova.getActivity(), appId, appSignature, restrictDataCollection);
+        _cbService.init(cordova.getActivity(), appId, appSignature, personalizedAdsConsent);
         _cbService.onStart(cordova.getActivity());
 
         ctx.success();

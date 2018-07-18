@@ -1,8 +1,10 @@
 buildscript {
     repositories {
-        google()
         mavenCentral()
         mavenLocal()
+        maven {
+            url "https://maven.google.com"
+        }
     }
 
     dependencies {
@@ -32,8 +34,12 @@ android {
 }
 
 repositories {
-    google()
-    maven { url "http://repo.spring.io/plugins-release" }
+    maven {
+        url "https://maven.google.com"
+    }
+    maven {
+        url "http://repo.spring.io/plugins-release"
+    }
 }
 
 dependencies {
@@ -43,7 +49,7 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0-alpha3'
     implementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation 'com.mopub.volley:mopub-volley:2.0.0'
-    implementation ('com.mopub:mopub-sdk:4.20.0@aar') {
+    implementation('com.mopub:mopub-sdk:4.20.0@aar') {
         transitive = true
     }
 }

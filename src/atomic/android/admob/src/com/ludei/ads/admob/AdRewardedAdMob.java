@@ -1,6 +1,8 @@
 package com.ludei.ads.admob;
 
 import android.content.Context;
+import android.os.Bundle;
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
@@ -14,10 +16,13 @@ class AdRewardedAdMob extends AbstractAdInterstitial {
     private String adUnit;
     private boolean rewardCompleted = false;
     private boolean loading = false;
+    private Bundle extras;
 
-    AdRewardedAdMob(Context ctx, String adunit) {
+    AdRewardedAdMob(Context ctx, String adUnit, Bundle personalizedAdsConsent) {
+        extras = personalizedAdsConsent;
+
         _interstitial = MobileAds.getRewardedVideoAdInstance(ctx);
-        this.adUnit = adunit;
+        this.adUnit = adUnit;
         _interstitial.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
             public void onRewardedVideoAdLoaded() {
@@ -52,7 +57,7 @@ class AdRewardedAdMob extends AbstractAdInterstitial {
                 AdInterstitial.Reward result = new AdInterstitial.Reward();
                 result.amount = Math.max(rewardItem.getAmount(), 1);
                 result.currency = rewardItem.getType();
-                result.itemKey = rewardItem.getType();
+                result.itmKey = rewardItem.getType();
                 notifyOnRewardCompleted(result, null);
             }
 
@@ -69,6 +74,11 @@ class AdRewardedAdMob extends AbstractAdInterstitial {
                 error.message = "Error with code: " + errorCode;
                 notifyOnFailed(error);
             }
+
+            @Override
+            public void onRewardedVideoCompleted() {
+
+            }
         });
     }
 
@@ -76,7 +86,7 @@ class AdRewardedAdMob extends AbstractAdInterstitial {
     public void loadAd() {
         if (!loading) {
             loading = true;
-            _interstitial.loadAd(adUnit, new AdRequest.Builder().build());
+            _interstitial.loadAd(adUnit, new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build());
         }
     }
 
@@ -93,7 +103,6 @@ class AdRewardedAdMob extends AbstractAdInterstitial {
             error.message = "Rewarded Video not ready yet";
             notifyOnRewardCompleted(null, error);
         }
-
     }
 
     @Override

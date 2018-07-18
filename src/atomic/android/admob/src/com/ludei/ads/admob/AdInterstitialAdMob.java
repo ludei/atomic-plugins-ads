@@ -1,6 +1,8 @@
 package com.ludei.ads.admob;
 
 import android.content.Context;
+import android.os.Bundle;
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -8,10 +10,13 @@ import com.ludei.ads.AbstractAdInterstitial;
 
 class AdInterstitialAdMob extends AbstractAdInterstitial {
     private InterstitialAd _interstitial;
+    private Bundle extras;
 
-    AdInterstitialAdMob(Context ctx, String adunit) {
+    AdInterstitialAdMob(Context ctx, String adUnit, Bundle personalizedAdsConsent) {
+        extras = personalizedAdsConsent;
+
         _interstitial = new InterstitialAd(ctx);
-        _interstitial.setAdUnitId(adunit);
+        _interstitial.setAdUnitId(adUnit);
         _interstitial.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
@@ -46,7 +51,7 @@ class AdInterstitialAdMob extends AbstractAdInterstitial {
 
     @Override
     public void loadAd() {
-        _interstitial.loadAd(new AdRequest.Builder().build());
+        _interstitial.loadAd(new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build());
     }
 
     @Override

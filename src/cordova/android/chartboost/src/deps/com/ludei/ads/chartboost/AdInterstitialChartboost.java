@@ -1,18 +1,15 @@
 package com.ludei.ads.chartboost;
 
-import android.content.Context;
 
 import com.chartboost.sdk.Chartboost;
-import com.chartboost.sdk.ChartboostDelegate;
 import com.ludei.ads.AbstractAdInterstitial;
 
 class AdInterstitialChartboost extends AbstractAdInterstitial {
     private String _location;
     private boolean _reward;
 
-    AdInterstitialChartboost(String adunit, Boolean reward) {
-
-        this._location = adunit;
+    AdInterstitialChartboost(String adUnit, Boolean reward) {
+        this._location = adUnit;
         this._reward = reward;
     }
 

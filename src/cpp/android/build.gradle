@@ -2,9 +2,11 @@ import org.apache.tools.ant.taskdefs.condition.Os
 
 buildscript {
     repositories {
-        google()
         mavenCentral()
         mavenLocal()
+        maven {
+            url "https://maven.google.com"
+        }
         flatDir {
             dirs 'jni/safejni/libs'
         }

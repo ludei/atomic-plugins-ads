@@ -22,8 +22,8 @@ public class AdServiceChartboost implements AdService {
     public AdServiceChartboost() {
     }
 
-    public void init(Activity activity, String appID, String appSignature, boolean restrictDataCollection) {
-        Chartboost.restrictDataCollection(activity, restrictDataCollection);
+    public void init(Activity activity, String appID, String appSignature, boolean personalizedAdsConsent) {
+        Chartboost.restrictDataCollection(activity, personalizedAdsConsent);
         Chartboost.startWithAppId(activity, appID, appSignature);
         Chartboost.onCreate(activity);
         Chartboost.setAutoCacheAds(true);

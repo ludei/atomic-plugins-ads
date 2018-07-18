@@ -16,13 +16,14 @@ import java.util.HashMap;
 public class AdServiceChartboost implements AdService {
 
 
-    protected HashMap<String, AdInterstitialChartboost> _interstitials = new HashMap<String, AdInterstitialChartboost>();
-    protected HashMap<String, AdInterstitialChartboost> _rewards = new HashMap<String, AdInterstitialChartboost>();
+    private HashMap<String, AdInterstitialChartboost> _interstitials = new HashMap<String, AdInterstitialChartboost>();
+    private HashMap<String, AdInterstitialChartboost> _rewards = new HashMap<String, AdInterstitialChartboost>();
 
     public AdServiceChartboost() {
     }
 
-    public void init(Activity activity, String appID, String appSignature) {
+    public void init(Activity activity, String appID, String appSignature, boolean personalizedAdsConsent) {
+        Chartboost.restrictDataCollection(activity, personalizedAdsConsent);
         Chartboost.startWithAppId(activity, appID, appSignature);
         Chartboost.onCreate(activity);
         Chartboost.setAutoCacheAds(true);
@@ -147,6 +148,10 @@ public class AdServiceChartboost implements AdService {
         Chartboost.onDestroy(activity);
     }
 
+    public boolean onBackPressed() {
+        return Chartboost.onBackPressed();
+    }
+
     @Override
     public void configure(String bannerAdUnit, String interstitialAdUnit) {
         //Nothing to do
@@ -169,24 +174,27 @@ public class AdServiceChartboost implements AdService {
     }
 
     @Override
-    public AdInterstitial createInterstitial(Context ctx, String adunit) {
-        if (adunit == null || adunit.length() == 0) {
-            adunit = CBLocation.LOCATION_DEFAULT;
+    public AdInterstitial createInterstitial(Context ctx, String adUnit) {
+        if (adUnit == null || adUnit.length() == 0) {
+            adUnit = CBLocation.LOCATION_DEFAULT;
         }
-        AdInterstitialChartboost cb = new AdInterstitialChartboost(adunit, false);
-        _interstitials.put(adunit, cb);
+        AdInterstitialChartboost cb = new AdInterstitialChartboost(adUnit, false);
+        _interstitials.put(adUnit, cb);
         return cb;
     }
 
     @Override
-    public AdInterstitial createRewardedVideo(Context ctx, String adunit) {
-        if (adunit == null || adunit.length() == 0) {
-            adunit = CBLocation.LOCATION_DEFAULT;
-        }
-        AdInterstitialChartboost cb = new AdInterstitialChartboost(adunit, true);
-        _rewards.put(adunit, cb);
-        return cb;
+    public AdInterstitial createRewardedVideo(Context ctx) {
+        return createRewardedVideo(ctx, CBLocation.LOCATION_GAMEOVER);
     }
 
-
+    @Override
+    public AdInterstitial createRewardedVideo(Context ctx, String adUnit) {
+        if (adUnit == null || adUnit.length() == 0) {
+            adUnit = CBLocation.LOCATION_GAMEOVER;
+        }
+        AdInterstitialChartboost cb = new AdInterstitialChartboost(adUnit, true);
+        _rewards.put(adUnit, cb);
+        return cb;
+    }
 }

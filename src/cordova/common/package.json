@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-common",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Cocoon Ads API",
     "cordova": {
         "id": "cocoon-plugin-ads-common",

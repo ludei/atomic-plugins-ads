@@ -5,8 +5,8 @@ import android.view.View;
 /**
  * Defines a banner ad.
  *
- * @author Imanol Fernández
- * @version 1.0
+ * @author Imanol Fernández (@MortimerGoro)
+ * @version 1.1
  */
 public interface AdBanner {
 
@@ -56,7 +56,7 @@ public interface AdBanner {
     /**
      * Defines the size of a banner ad.
      */
-    public enum BannerSize {
+    enum BannerSize {
         SMART_SIZE,
         BANNER_SIZE,
         MEDIUM_RECT_SIZE,
@@ -66,9 +66,9 @@ public interface AdBanner {
     /**
      * Allows to listen to banner ads events.
      */
-    public interface BannerListener {
+    interface BannerListener {
 
-        public void onLoaded(AdBanner banner);
+        void onLoaded(AdBanner banner);
 
         /**
          * Sent when the banner has failed to retrieve an ad.
@@ -76,28 +76,27 @@ public interface AdBanner {
          * @param banner A banner ad.
          * @param error  Error code and message
          */
-        public void onFailed(AdBanner banner, Error error);
+        void onFailed(AdBanner banner, Error error);
 
         /**
          * Sent when the user has tapped on the banner.
          *
          * @param banner A banner ad.
          */
-        public void onClicked(AdBanner banner);
+        void onClicked(AdBanner banner);
 
         /**
          * Sent when the banner has just taken over the screen.
          *
          * @param banner A banner ad.
          */
-        public void onExpanded(AdBanner banner);
+        void onExpanded(AdBanner banner);
 
         /**
          * Sent when an expanded banner has collapsed back to its original size.
          *
          * @param banner A banner ad.
          */
-        public void onCollapsed(AdBanner banner);
+        void onCollapsed(AdBanner banner);
     }
-
 }

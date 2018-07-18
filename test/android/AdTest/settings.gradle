@@ -1,9 +1,9 @@
 include ':testapp'
-include ':ads-common'
-project(':ads-common').projectDir = new File('../../../src/atomic/android/common')
-include ':ads-mopub'
-project(':ads-mopub').projectDir = new File('../../../src/atomic/android/mopub')
-include ':ads-admob'
-project(':ads-admob').projectDir = new File('../../../src/atomic/android/admob')
-include ':ads-chartboost'
-project(':ads-chartboost').projectDir = new File('../../../src/atomic/android/chartboost')
+include ':atomic-android-common'
+project(':atomic-android-common').projectDir = new File('../../../src/atomic/android/common')
+include ':atomic-android-mopub'
+project(':atomic-android-mopub').projectDir = new File('../../../src/atomic/android/mopub')
+include ':atomic-android-admob'
+project(':atomic-android-admob').projectDir = new File('../../../src/atomic/android/admob')
+include ':atomic-android-chartboost'
+project(':atomic-android-chartboost').projectDir = new File('../../../src/atomic/android/chartboost')
