@@ -163,7 +163,7 @@ public class AdServiceChartboost implements AdService {
     }
 
     @Override
-    public AdBanner createBanner(Context ctx, String adunit, AdBanner.BannerSize size) {
+    public AdBanner createBanner(Context ctx, String adUnit, AdBanner.BannerSize size) {
         return null;
     }
 

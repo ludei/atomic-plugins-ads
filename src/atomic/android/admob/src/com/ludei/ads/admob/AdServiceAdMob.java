@@ -7,37 +7,47 @@ import android.os.Bundle;
 import com.google.android.gms.ads.MobileAds;
 import com.ludei.ads.AdBanner;
 import com.ludei.ads.AdInterstitial;
+import com.ludei.ads.AdRewardedVideo;
 import com.ludei.ads.AdService;
+import org.json.JSONObject;
 
 public class AdServiceAdMob implements AdService {
 
+    private boolean _initialized = false;
     private Bundle _personalizedAdsConsent;
     private String _bannerAdUnit;
     private String _interstitialAdUnit;
+    private String _rewardedVideoAdUnit;
 
-    public void init(Activity activity, String appId, String bannerAdUnit, String interstitialAdUnit, boolean personalizedAdsConsent) {
+    public void configure(Activity activity, JSONObject obj) {
+        String appId = obj.optString("appId");
+        String banner = obj.optString("banner");
+        String interstitial = obj.optString("interstitial");
+        String rewardedVideo = obj.optString("rewardedVideo");
+        boolean personalizedAdsConsent = obj.optBoolean("personalizedAdsConsent");
+        if (appId == null) {
+            throw new RuntimeException("Empty App AdUnit");
+        }
+
         if (personalizedAdsConsent) {
             _personalizedAdsConsent = null;
         } else {
             _personalizedAdsConsent = new Bundle();
             _personalizedAdsConsent.putString("npa", "1");
         }
-        MobileAds.initialize(activity, appId);
-        _bannerAdUnit = bannerAdUnit;
-        _interstitialAdUnit = interstitialAdUnit;
+        if (!_initialized) {
+            MobileAds.initialize(activity, appId);
+            _initialized = true;
+        }
+        _bannerAdUnit = banner;
+        _interstitialAdUnit = interstitial;
+        _rewardedVideoAdUnit = rewardedVideo;
     }
 
-    @Override
-    public void configure(String bannerAdUnit, String interstitialAdUnit) {
-        //Nothing to do
-    }
-
-    @Override
     public AdBanner createBanner(Context ctx) {
         return createBanner(ctx, null, AdBanner.BannerSize.SMART_SIZE);
     }
 
-    @Override
     public AdBanner createBanner(Context ctx, String adUnit, AdBanner.BannerSize size) {
         if (adUnit == null || adUnit.length() == 0) {
             adUnit = _bannerAdUnit;
@@ -49,12 +59,10 @@ public class AdServiceAdMob implements AdService {
     }
 
 
-    @Override
     public AdInterstitial createInterstitial(Context ctx) {
         return createInterstitial(ctx, null);
     }
 
-    @Override
     public AdInterstitial createInterstitial(Context ctx, String adUnit) {
 
         if (adUnit == null || adUnit.length() == 0) {
@@ -66,15 +74,13 @@ public class AdServiceAdMob implements AdService {
         return new AdInterstitialAdMob(ctx, adUnit, _personalizedAdsConsent);
     }
 
-    @Override
-    public AdInterstitial createRewardedVideo(Context ctx) {
+    public AdRewardedVideo createRewardedVideo(Context ctx) {
         return createRewardedVideo(ctx, null);
     }
 
-    @Override
-    public AdInterstitial createRewardedVideo(Context ctx, String adUnit) {
+    public AdRewardedVideo createRewardedVideo(Context ctx, String adUnit) {
         if (adUnit == null || adUnit.length() == 0) {
-            adUnit = _interstitialAdUnit;
+            adUnit = _rewardedVideoAdUnit;
         }
         if (adUnit == null || adUnit.length() == 0) {
             throw new RuntimeException("Empty AdUnit");

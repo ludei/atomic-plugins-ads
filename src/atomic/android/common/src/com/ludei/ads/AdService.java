@@ -1,7 +1,8 @@
 package com.ludei.ads;
 
-
+import android.app.Activity;
 import android.content.Context;
+import org.json.JSONObject;
 
 /**
  * Defines the ad service.
@@ -14,10 +15,10 @@ public interface AdService {
     /**
      * Configures the default AdUnits for banners and interstitials.
      *
-     * @param bannerAdUnit       The banner AdUnit.
-     * @param interstitialAdUnit The interstitial AdUnit.
+     * @param activity The activity that will be used to initialize the ads.
+     * @param settings The necessary settings for the Ads service.
      */
-    void configure(String bannerAdUnit, String interstitialAdUnit);
+    void configure(Activity activity, JSONObject settings);
 
     /**
      * Creates AdBanner with default size and AdUnit (taken from settings).
@@ -25,7 +26,7 @@ public interface AdService {
      * @param ctx The activity context.
      * @return A banner ad.
      */
-    com.ludei.ads.AdBanner createBanner(Context ctx);
+    AdBanner createBanner(Context ctx);
 
     /**
      * Creates AdBanner with custom AdUnit and size.
@@ -57,10 +58,10 @@ public interface AdService {
      * Creates Rewarded Video with default AdUnit (taken from settings).
      * If the networks doesn't support rewarded video it fallbacks to a interstitial.
      *
-     * @param ctx    The activity context.
+     * @param ctx The activity context.
      * @return An interstitial ad.
      */
-    AdInterstitial createRewardedVideo(Context ctx);
+    AdRewardedVideo createRewardedVideo(Context ctx);
 
     /**
      * Creates Rewarded Video with specific AdUnit.
@@ -70,5 +71,5 @@ public interface AdService {
      * @param ctx    The activity context.
      * @return An interstitial ad.
      */
-    AdInterstitial createRewardedVideo(Context ctx, String adUnit);
+    AdRewardedVideo createRewardedVideo(Context ctx, String adUnit);
 }

@@ -4,7 +4,6 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
 
     private InterstitialListener _listener;
 
-    @Override
     public void setListener(InterstitialListener listener) {
         _listener = listener;
     }
@@ -15,7 +14,7 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
         }
     }
 
-    public void notifyOnFailed(AdInterstitial.Error error) {
+    public void notifyOnFailed(Error error) {
         if (_listener != null) {
             _listener.onFailed(this, error);
         }
@@ -38,11 +37,4 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
             _listener.onDismissed(this);
         }
     }
-
-    public void notifyOnRewardCompleted(AdInterstitial.Reward reward, AdInterstitial.Error error) {
-        if (_listener != null) {
-            _listener.onRewardCompleted(this, reward, error);
-        }
-    }
-
 }

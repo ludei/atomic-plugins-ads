@@ -35,6 +35,11 @@ obj/
 # Local configuration file (sdk path, etc)
 local.properties
 
+.gradle
+gradle
+gradlew
+gradlew.bat
+
 # Windows thumbnail db
 Thumbs.db
 
@@ -47,9 +52,6 @@ Thumbs.db
 
 # Android Studio
 .idea
-
-#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
-.gradle
 
 test/cordova/AdTest
 node_modules

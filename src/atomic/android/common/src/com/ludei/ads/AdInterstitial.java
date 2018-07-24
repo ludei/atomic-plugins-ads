@@ -8,12 +8,6 @@ package com.ludei.ads;
  */
 public interface AdInterstitial {
 
-    class Reward {
-        public long amount;
-        public String currency;
-        public String itmKey;
-    }
-
     class Error {
         public long code;
         public String message;
@@ -79,14 +73,5 @@ public interface AdInterstitial {
          * @param interstitial An interstitial ad.
          */
         void onDismissed(AdInterstitial interstitial);
-
-        /**
-         * Sent when the interstitial is completed.
-         *
-         * @param interstitial An interstitial ad.
-         * @param reward       Reward from the interstitial.
-         * @param error        Error code and message.
-         */
-        void onRewardCompleted(AdInterstitial interstitial, Reward reward, Error error);
     }
 }

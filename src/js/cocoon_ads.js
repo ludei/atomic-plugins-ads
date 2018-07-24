@@ -391,12 +391,140 @@
         * });
              */
 
+            on: function (eventName, handler) {
+                this.signal.on(eventName, handler);
+            }
+        };
+
+        /**
+         * @private
+         */
+        extension.RewardedVideo = function (rewardedVideoId, serviceName) {
+            this.id = rewardedVideoId;
+            this.serviceName = serviceName;
+            this.signal = new Cocoon.Signal();
+            this.ready = false;
+        };
+
+        /**
+         *
+         * @namespace Cocoon.Ad.RewardedVideo
+         * @example
+         * rewardedVideo = Cocoon.Ad.createRewardedVideo();
+         *
+         * rewardedVideo.on("load", function(){
+    *     console.log("Rewarded video loaded");
+    * });
+         * rewardedVideo.on("fail", function(){
+    *     console.log("Rewarded video failed");
+    * });
+         * rewardedVideo.on("show", function(){
+    *     console.log("Rewarded video shown");
+    * });
+         * rewardedVideo.on("dismiss", function(){
+    *     console.log("Rewarded video dismissed");
+    * });
+         *
+         * rewardedVideo.on("click", function(){
+    *     console.log("Rewarded video clicked");
+    * });
+         *
+         * rewardedVideo.load();
+         */
+        extension.RewardedVideo.prototype = {
+
             /**
-             * Triggered when an video reward is completed.
-             * @memberOf Cocoon.Ad.Interstitial
+             * Shows the rewarded video ad.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @function show
+             * @example
+             * rewardedVideo = Cocoon.Ad.createRewardedVideo(settings);
+             * rewardedVideo.show();
+             */
+            show: function () {
+                this.ready = false; //true on next load event
+                Cocoon.exec(this.serviceName, "showRewardedVideo", [this.id]);
+            },
+
+            /**
+             * Loads an rewarded video ad.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @function load
+             * @example
+             * rewardedVideo = Cocoon.Ad.createRewardedVideo(settings);
+             * rewardedVideo.load();
+             */
+            load: function () {
+                Cocoon.exec(this.serviceName, "loadRewardedVideo", [this.id]);
+            },
+
+            /**
+             * Checks if the rewarded video is loaded and ready
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @function isReady
+             * @example
+             * var ready = rewardedVideo.isReady();
+             */
+            isReady: function () {
+                return this.ready;
+            },
+
+            /**
+             * Triggered when a new rewarded video is loaded.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @event On load
+             * @example
+             * banner.on("load", function(){
+        *    console.log("Rewarded video loaded");
+        * });
+             */
+
+            /**
+             * Triggered when the loading process of an rewarded video has failed.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @event On fail
+             * @example
+             * rewardedVideo.on("fail", function(error){
+        *    console.log("Rewarded video failed to load: " + JSON.stringify(error));
+        * });
+             */
+
+            /**
+             * Triggered when a new rewarded video is shown.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @event On show
+             * @example
+             * rewardedVideo.on("show", function(){
+        *    console.log("Rewarded video shown");
+        * });
+             */
+
+            /**
+             * Triggered when an rewarded video is closed.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @event On dismiss
+             * @example
+             * rewardedVideo.on("dimissed", function(){
+        *    console.log("Rewarded video dismissed");
+        * });
+             */
+
+            /**
+             * Triggered when an rewarded video is clicked.
+             * @memberOf Cocoon.Ad.RewardedVideo
+             * @event On click
+             * @example
+             * rewardedVideo.on("click", function(){
+        *    console.log("Rewarded video clicked");
+        * });
+             */
+
+            /**
+             * Triggered when a video reward is completed.
+             * @memberOf Cocoon.Ad.RewardedVideo
              * @event On reward
              * @example
-             * interstitial.on("reward", function(reward, error){
+             * rewardedVideo.on("reward", function(reward, error){
          *   if (reward && reward.amount > 0) {
          *     console.log("Reward completed. Earned " + reward.amount + " items");
          *   }
@@ -461,12 +589,13 @@
             }
             Cocoon.exec(this.serviceName, "setBannerListener", [], this.listenerHandler.bind(this));
             Cocoon.exec(this.serviceName, "setInterstitialListener", [], this.listenerHandler.bind(this));
+            Cocoon.exec(this.serviceName, "setRewardedVideoListener", [], this.listenerHandler.bind(this));
 
             this.initialized = true;
         };
 
         /**
-         * Configure default banner and interstitial adunits.
+         * Configure default banner and interstitial adUnits.
          * @memberOf Cocoon.Ad
          * @function configure
          * @param {object} [settings] The banner optional settings.
@@ -508,17 +637,17 @@
          * Creates a banner.
          * @memberOf Cocoon.Ad
          * @function createBanner
-         * @param {string} [adunit] banner adunit. Taken from cordova settings or configure method if not specified.
+         * @param {string} [adUnit] banner adUnit. Taken from cordova settings or configure method if not specified.
          * @param {Cocoon.Ad.BannerSize} [size] The banner size. Default value: Smart Size
          * @return {Cocoon.Ad.Banner} banner A new banner ad.
          * @example
          * var banner = Cocoon.Ad.createBanner();
          * banner.load();
          */
-        proto.createBanner = function (adunit, size) {
+        proto.createBanner = function (adUnit, size) {
             this.init();
             var bannerId = idCounter++;
-            Cocoon.exec(this.serviceName, "createBanner", [bannerId, adunit, size]);
+            Cocoon.exec(this.serviceName, "createBanner", [bannerId, adUnit, size]);
             var banner = new extension.Banner(bannerId, this.serviceName);
             this.activeAds[bannerId] = banner;
             return banner;
@@ -541,35 +670,16 @@
          * Creates an interstitial.
          * @memberOf Cocoon.Ad
          * @function createInterstitial
-         * @param {string} [adunit] Interstitial adunit. Taken from cordova settings or configure method if not specified.
+         * @param {string} [adUnit] Interstitial adUnit. Taken from cordova settings or configure method if not specified.
          * @return {Cocoon.Ad.Interstitial} A new interstitial.
          * @example
          * var interstitial = Cocoon.Ad.createInterstitial();
          * interstitial.load();
          */
-        proto.createInterstitial = function (adunit) {
+        proto.createInterstitial = function (adUnit) {
             this.init();
             var interstitialId = idCounter++;
-            Cocoon.exec(this.serviceName, "createInterstitial", [interstitialId, adunit]);
-            var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
-            this.activeAds[interstitialId] = interstitial;
-            return interstitial;
-        };
-
-        /**
-         * Creates an rewarded video interstitial (only supported in some networks)
-         * @memberOf Cocoon.Ad
-         * @function createRewardedVideo
-         * @param {string} [adunit] Interstitial adunit. Taken from cordova settings or configure method if not specified.
-         * @return {Cocoon.Ad.Interstitial} A new rewarded video.
-         * @example
-         * var interstitial = Cocoon.Ad.createRewardedVideo();
-         * interstitial.load();
-         */
-        proto.createRewardedVideo = function (adunit) {
-            this.init();
-            var interstitialId = idCounter++;
-            Cocoon.exec(this.serviceName, "createRewardedVideo", [interstitialId, adunit]);
+            Cocoon.exec(this.serviceName, "createInterstitial", [interstitialId, adUnit]);
             var interstitial = new extension.Interstitial(interstitialId, this.serviceName);
             this.activeAds[interstitialId] = interstitial;
             return interstitial;
@@ -588,6 +698,37 @@
             delete this.activeAds[interstitial.id];
         };
 
+        /**
+         * Creates a rewarded video (only supported in some networks)
+         * @memberOf Cocoon.Ad
+         * @function createRewardedVideo
+         * @param {string} [adUnit] RewardedVideo adUnit. Taken from cordova settings or configure method if not specified.
+         * @return {Cocoon.Ad.RewardedVideo} A new rewarded video.
+         * @example
+         * var rewardedVideo = Cocoon.Ad.createRewardedVideo();
+         * rewardedVideo.load();
+         */
+        proto.createRewardedVideo = function (adUnit) {
+            this.init();
+            var rewardedVideoId = idCounter++;
+            Cocoon.exec(this.serviceName, "createRewardedVideo", [rewardedVideoId, adUnit]);
+            var rewardedVideo = new extension.RewardedVideo(rewardedVideoId, this.serviceName);
+            this.activeAds[rewardedVideoId] = rewardedVideo;
+            return rewardedVideo;
+        };
+
+        /**
+         * Releases the rewarded video given.
+         * @memberOf Cocoon.Ad
+         * @function releaseRewardedVideo
+         * @param {Cocoon.Ad.RewardedVideo} rewardedVideo The rewarded video to release.
+         * @example
+         * Cocoon.Ad.releaseRewardedVideo(rewardedVideo);
+         */
+        proto.releaseRewardedVideo = function (rewardedVideo) {
+            Cocoon.exec(this.serviceName, "releaseRewardedVideo", [rewardedVideo.id]);
+            delete this.activeAds[rewardedVideo.id];
+        };
 
         //compatibility for Cocoon.Ad methods
         extension.serviceName = "LDAdService";

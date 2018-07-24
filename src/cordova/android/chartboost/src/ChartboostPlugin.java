@@ -8,12 +8,9 @@ import org.json.JSONObject;
 
 public class ChartboostPlugin extends AdServicePlugin {
 
-    protected AdServiceChartboost _cbService;
-
     @Override
     protected void pluginInitialize() {
-        _cbService = new AdServiceChartboost();
-        _service = _cbService;
+        _service = new AdServiceChartboost();
     }
 
     public void configure(CordovaArgs args, CallbackContext ctx) {
@@ -30,8 +27,8 @@ public class ChartboostPlugin extends AdServicePlugin {
             return;
         }
 
-        _cbService.init(cordova.getActivity(), appId, appSignature, personalizedAdsConsent);
-        _cbService.onStart(cordova.getActivity());
+        ((AdServiceChartboost) (_service)).init(cordova.getActivity(), appId, appSignature, personalizedAdsConsent);
+        ((AdServiceChartboost) (_service)).onStart(cordova.getActivity());
 
         ctx.success();
     }
@@ -40,37 +37,37 @@ public class ChartboostPlugin extends AdServicePlugin {
     @Override
     public void onPause(boolean multitasking) {
         super.onPause(multitasking);
-        _cbService.onPause(cordova.getActivity());
+        ((AdServiceChartboost) (_service)).onPause(cordova.getActivity());
     }
 
     @Override
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
-        _cbService.onResume(cordova.getActivity());
+        ((AdServiceChartboost) (_service)).onResume(cordova.getActivity());
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        _cbService.onStart(cordova.getActivity());
+        ((AdServiceChartboost) (_service)).onStart(cordova.getActivity());
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        _cbService.onStop(cordova.getActivity());
+        ((AdServiceChartboost) (_service)).onStop(cordova.getActivity());
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        _cbService.onDestroy(cordova.getActivity());
+        ((AdServiceChartboost) (_service)).onDestroy(cordova.getActivity());
     }
 
     @Override
     public void onBackPressed() {
         // If an interstitial is on screen, close it.
-        if (!_cbService.onBackPressed())
+        if (!((AdServiceChartboost) (_service)).onBackPressed())
             super.onBackPressed();
     }
 }

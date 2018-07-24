@@ -4,8 +4,7 @@ public abstract class AbstractAdBanner implements AdBanner {
 
     private BannerListener _listener;
 
-    @Override
-    public void setListener(AdBanner.BannerListener listener) {
+    public void setListener(BannerListener listener) {
         this._listener = listener;
     }
 
@@ -15,7 +14,7 @@ public abstract class AbstractAdBanner implements AdBanner {
         }
     }
 
-    public void notifyOnFailed(AdBanner.Error error) {
+    public void notifyOnFailed(Error error) {
         if (_listener != null) {
             _listener.onFailed(this, error);
         }

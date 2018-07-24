@@ -1,10 +1,10 @@
 package com.ludei.ads;
 
-public abstract class AbstractAdInterstitial implements AdInterstitial {
+public abstract class AbstractAdRewardedVideo implements AdRewardedVideo {
 
-    private InterstitialListener _listener;
+    private RewardedVideoListener _listener;
 
-    public void setListener(InterstitialListener listener) {
+    public void setListener(RewardedVideoListener listener) {
         _listener = listener;
     }
 
@@ -37,4 +37,11 @@ public abstract class AbstractAdInterstitial implements AdInterstitial {
             _listener.onDismissed(this);
         }
     }
+
+    public void notifyOnRewardCompleted(Reward reward, Error error) {
+        if (_listener != null) {
+            _listener.onRewardCompleted(this, reward, error);
+        }
+    }
+
 }
