@@ -64,7 +64,7 @@ gulp.task("deps-cordova", function () {
     }
 
     // iOS common
-    gulp.src("src/atomic/ios/common/**/")
+    gulp.src(["src/atomic/ios/common/*.h", "src/atomic/ios/common/*.m"])
         .pipe(gulp.dest("src/cordova/ios/common/src/deps"));
 
     // iOS AdMob

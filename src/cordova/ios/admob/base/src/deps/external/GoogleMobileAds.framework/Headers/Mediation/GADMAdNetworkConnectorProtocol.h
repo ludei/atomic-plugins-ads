@@ -24,6 +24,12 @@
 /// of the returned UIViewController .
 - (UIViewController *)viewControllerForPresentingModalView;
 
+/// Returns the preferred ad volume as a fraction of system volume (0.0 to 1.0).
+- (float)adVolume;
+
+/// Returns whether the ad should be muted.
+- (BOOL)adMuted;
+
 #pragma mark - Adapter Callbacks
 
 /// Tells the connector that the adapter failed to receive an ad.
@@ -36,9 +42,15 @@
 - (void)adapterDidReceiveInterstitial:(id<GADMAdNetworkAdapter>)adapter;
 
 /// Tells the connector that the adapter has received a mediated native ad. |mediatedNativeAd| is
-/// used by the Google Mobile Ads SDK for constructing a native ad object.
+/// used by the Google Mobile Ads SDK to construct a native ad object.
 - (void)adapter:(id<GADMAdNetworkAdapter>)adapter
     didReceiveMediatedNativeAd:(id<GADMediatedNativeAd>)mediatedNativeAd;
+
+/// Tells the connector that the adapter has received a unified mediated native ad.
+/// mediatedUnifiedNativeAd is used by the Google Mobile Ads SDK to construct a unified native ad
+/// object.
+- (void)adapter:(id<GADMAdNetworkAdapter>)adapter
+    didReceiveMediatedUnifiedNativeAd:(id<GADMediatedUnifiedNativeAd>)mediatedUnifiedNativeAd;
 
 #pragma mark Ad events
 
@@ -70,14 +82,18 @@
 
 #pragma mark Deprecated
 
+/// Deprecated. Use -adapterDidReceiveInterstitial:.
 - (void)adapter:(id<GADMAdNetworkAdapter>)adapter
     didReceiveInterstitial:(NSObject *)interstitial
-    GAD_DEPRECATED_MSG_ATTRIBUTE("Use adapterDidReceiveInterstitial:.");
+    GAD_DEPRECATED_MSG_ATTRIBUTE("Use -adapterDidReceiveInterstitial:.");
 
+/// Deprecated. Use -adapterDidGetAdClick:.
 - (void)adapter:(id<GADMAdNetworkAdapter>)adapter
-    clickDidOccurInBanner:(UIView *)view GAD_DEPRECATED_MSG_ATTRIBUTE("Use adapterDidGetAdClick:.");
+    clickDidOccurInBanner:(UIView *)view
+    GAD_DEPRECATED_MSG_ATTRIBUTE("Use -adapterDidGetAdClick:.");
 
+/// Deprecated. Use -adapter:didFailAd:.
 - (void)adapter:(id<GADMAdNetworkAdapter>)adapter
-    didFailInterstitial:(NSError *)error GAD_DEPRECATED_MSG_ATTRIBUTE("Use adapter:didFailAd:");
+    didFailInterstitial:(NSError *)error GAD_DEPRECATED_MSG_ATTRIBUTE("Use -adapter:didFailAd:");
 
 @end

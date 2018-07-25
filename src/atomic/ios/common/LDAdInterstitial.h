@@ -33,26 +33,18 @@ typedef NSObject<LDAdInterstitialProtocol> LDAdInterstitial;
  *  Shows the interstitial, if it is ready.
  *
  *  @param controller The parent view controller.
- *  @param animated   Animated transtition.
+ *  @param animated   Animated transition.
  */
 - (void)showFromViewController:(UIViewController *)controller animated:(BOOL) animated;
 
 /**
  *  Hides the interstitial.
  *
- *  @param animated Animated transtition.
+ *  @param animated Animated transition.
  */
 - (void)dismissAnimated:(BOOL) animated;
 @end
 
-
-@protocol LDRewardedVideoRewardProtocol <NSObject>
-@property (nonatomic, strong) NSString *currencyType;
-@property (nonatomic, strong) NSNumber *amount;
-@property (nonatomic, strong) NSString *itmKey;
-@end
-
-typedef NSObject<LDRewardedVideoRewardProtocol> LDRewardedVideoReward;
 
 @protocol LDAdInterstitialDelegate<NSObject>
 @optional
@@ -87,13 +79,5 @@ typedef NSObject<LDRewardedVideoRewardProtocol> LDRewardedVideoReward;
  *  @param interstitial The interstitial.
  */
 - (void)adInterstitialWillDisappear:(LDAdInterstitial *)interstitial;
-
-
-/**
- *  Sent when a rewarded video interstitial is completed (either succeeded or skipped)
- *
- *  @param interstitial The interstitial.
- */
-- (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(LDRewardedVideoReward*) reward andError:(NSError *) error;
 
 @end

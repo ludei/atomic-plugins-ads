@@ -1,32 +1,54 @@
 #import "LDAdBanner.h"
 #import "LDAdInterstitial.h"
+#import "LDAdRewardedVideo.h"
 
 /**
- *  Ad Service Configuration (adunits)
+ *  Ad Service Configuration (adUnits)
  */
 @protocol LDAdServiceSettings<NSObject>
 
 /**
- *  Banner adunit
+ *  App adUnit
+ */
+@property (nonatomic, strong) NSString * appId;
+
+/**
+ *  Banner adUnit
  */
 @property (nonatomic, strong) NSString * banner;
 
 /**
- *  Banner adunit for iPad (optional).
- *  If it is not specified, the banner adunit will be used.
+ *  Banner adUnit for iPad (optional).
+ *  If it is not specified, the banner adUnit will be used.
  */
 @property (nonatomic, strong) NSString * bannerIpad;
 
 /**
- *  Interstitial adunit.
+ *  Interstitial adUnit.
  */
 @property (nonatomic, strong) NSString * interstitial;
 
 /**
- *  Interstitial adunit for iPad (optional).
- *  If it is not specified, the interstitial adunit will be used.
+ *  Interstitial adUnit for iPad (optional).
+ *  If it is not specified, the interstitial adUnit will be used.
  */
 @property (nonatomic, strong) NSString * interstitialIpad;
+
+/**
+ *  Reward video adUnit.
+ */
+@property (nonatomic, strong) NSString * rewardedVideo;
+
+/**
+ *  Reward video adUnit for iPad (optional).
+ *  If it is not specified, the reward video adUnit will be used.
+ */
+@property (nonatomic, strong) NSString * rewardedVideoIpad;
+
+/**
+ *  Value to store if the user has given consent for personalized ads.
+ */
+@property (nonatomic, assign) BOOL * personalizedAdsConsent;
 @end
 
 /**
@@ -36,62 +58,63 @@
 @property (nonatomic, strong) NSObject<LDAdServiceSettings> * settings;
 
 /**
- *  Create AdBanner with default size and adunit (taken from settings).
+ *  Create AdBanner with default size and adUnit (taken from settings).
  *
  *  @return The created banner.
  */
 -(LDAdBanner *) createBanner;
 
 /**
+ *  Create AdBanner with custom adUnit and size
  *
- * @param adUnit Optional banner adunit, taken from settingsw if not specified
- */
-
-/**
- *  Create AdBanner with custom adunit and size
- *
- *  @param adunit The adunit.
- *  @param size   The size of te ad.
+ *  @param adUnit The adUnit.
+ *  @param size   The size of the ad.
  *
  *  @return The custom ad.
  */
--(LDAdBanner *) createBanner: (NSString *) adunit size:(LDAdBannerSize) size;
+-(LDAdBanner *) createBanner: (NSString *) adUnit size:(LDAdBannerSize) size;
 
 /**
- *  Create AdInterstitial with default adunit.
+ *  Create AdInterstitial with default adUnit.
  *
  *  @return The interstitial.
  */
 -(LDAdInterstitial *) createInterstitial;
 
 /**
- *  Create AdInterstitial with specific adunit.
+ *  Create AdInterstitial with specific adUnit.
  *
- *  @param adunit The adunit.
+ *  @param adUnit The adUnit.
  *
  *  @return The interstitial.
  */
--(LDAdInterstitial *) createInterstitial:(NSString *) adunit;
+-(LDAdInterstitial *) createInterstitial:(NSString *) adUnit;
 
 /**
- *  Create a video only interstitital with specific adunit.
- *  This method fallbacks to the default createInterstitial when the network doesn't support video only interstitial from client API
+ *  Create a video only interstitial with specific adUnit.
+ *  This method fallbacks to the default createInterstitial when the network doesn't support video only interstitial from client API.
  *
- *  @param adunit The adunit.
+ *  @param adUnit The adUnit.
  *
  *  @return The interstitial.
  */
--(LDAdInterstitial *) createVideoInterstitial:(NSString *) adunit;
+-(LDAdInterstitial *) createVideoInterstitial:(NSString *) adUnit;
 
 /**
- *  Create a Rewarded video interstitial with specific adunit.
- *
- *  @param adunit The adunit.
+ *  Create a Rewarded video interstitial with default adUnit.
  *
  *  @return The interstitial.
  */
--(LDAdInterstitial *) createRewardedVideo:(NSString *) adunit;
+-(LDAdRewardedVideo *) createRewardedVideo;
 
+/**
+ *  Create a Rewarded video interstitial with specific adUnit.
+ *
+ *  @param adUnit The adUnit.
+ *
+ *  @return The interstitial.
+ */
+-(LDAdRewardedVideo *) createRewardedVideo:(NSString *) adUnit;
 
 @end
 

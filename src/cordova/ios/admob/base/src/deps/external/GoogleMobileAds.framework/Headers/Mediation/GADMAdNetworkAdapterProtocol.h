@@ -15,6 +15,7 @@
 
 @protocol GADMAdNetworkConnector;
 
+/// Ad network adapter protocol.
 @protocol GADMAdNetworkAdapter<NSObject>
 
 /// Returns a version string for the adapter. It can be any string that uniquely identifies the
@@ -49,10 +50,6 @@
 /// your adapter goes away, your SDK will not call a freed object. This function should be
 /// idempotent and should not crash regardless of when or how many times the method is called.
 - (void)stopBeingDelegate;
-
-/// Some ad transition types may cause issues with particular Ad SDKs. The adapter may decide
-/// whether the given animation type is OK. Defaults to YES.
-- (BOOL)isBannerAnimationOK:(GADMBannerAnimationType)animType;
 
 /// Present an interstitial using the supplied UIViewController, by calling
 /// presentViewController:animated:completion:.

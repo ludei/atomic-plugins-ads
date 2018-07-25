@@ -1,5 +1,5 @@
 #import "LDAdServiceAdMob.h"
-#import <GoogleMobileAds/GoogleMobileAds.h>
+@import GoogleMobileAds;
 
 static inline bool isIpad()
 {
@@ -9,7 +9,7 @@ static inline bool isIpad()
 @implementation LDAdMobSettings
 @end
 
-@implementation LDAdmobRewardedVideoReward
+@implementation LDAdMobRewardedVideoReward
 @end
 
 #pragma mark AdMob Banner implementation
@@ -17,9 +17,10 @@ static inline bool isIpad()
 
 @property (nonatomic, weak) id<LDAdBannerDelegate> delegate;
 @property (nonatomic, assign) BOOL autoRefresh;
+@property (nonatomic, assign) BOOL * personalizedAdsConsent;
 @property (nonatomic, strong) GADBannerView * adView;
 
--(instancetype) initWithAdUnit:(NSString *) adUnit size:(LDAdBannerSize) size;
+-(instancetype) initWithAdUnit:(NSString *) adUnit size:(LDAdBannerSize) size personalizedAdsConsent:(BOOL *) personalizedAdsConsent;
 
 @end
 
@@ -28,12 +29,12 @@ static inline bool isIpad()
     BOOL _ready;
 }
 
--(instancetype) initWithAdUnit:(NSString *) adUnit size:(LDAdBannerSize) size;
+-(instancetype) initWithAdUnit:(NSString *) adUnit size:(LDAdBannerSize) size personalizedAdsConsent:(BOOL *) personalizedAdsConsent;
 {
     if (self = [super init]) {
-        
         self.adView = [[GADBannerView alloc] initWithAdSize:[self bannerSizeToGAAdSize:size]];
         _adView.adUnitID = adUnit;
+        _personalizedAdsConsent = personalizedAdsConsent;
         _adView.delegate = self;
     }
     return self;
@@ -48,7 +49,7 @@ static inline bool isIpad()
 }
 
 -(GADAdSize) bannerSizeToGAAdSize: (LDAdBannerSize) size {
-    
+
     if (size == LD_SMART_SIZE) {
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         if (UIInterfaceOrientationIsLandscape(orientation)) {
@@ -57,9 +58,9 @@ static inline bool isIpad()
         else {
             return kGADAdSizeSmartBannerPortrait;
         }
-        
+
     }
-    
+
     switch (size) {
         default:
         case LD_BANNER_SIZE: return kGADAdSizeBanner;
@@ -89,7 +90,14 @@ static inline bool isIpad()
             _adView.rootViewController = keyWindow.rootViewController;
         }
     }
-    [_adView loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+    if (!_personalizedAdsConsent) {
+        GADExtras *extras = [[GADExtras alloc] init];
+        extras.additionalParameters = @{@"npa": @"1"};
+        [request registerAdNetworkExtras:extras];
+    }
+
+    [_adView loadRequest:request];
 }
 
 - (CGSize)adSize
@@ -135,7 +143,7 @@ static inline bool isIpad()
 - (void)adViewWillLeaveApplication:(GADBannerView *)adView
 {
 
-    
+
 }
 
 
@@ -146,19 +154,21 @@ static inline bool isIpad()
 
 @property (nonatomic, weak) id<LDAdInterstitialDelegate> delegate;
 @property (nonatomic, strong) GADInterstitial * interstitial;
+@property (nonatomic, assign) BOOL * personalizedAdsConsent;
 @property (nonatomic, strong) NSString * cachedAdUnit;
 
--(instancetype) initWithAdUnit:(NSString *) adUnit;
+-(instancetype) initWithAdUnit:(NSString *) adUnit personalizedAdsConsent:(BOOL *) personalizedAdsConsent;
 
 @end
 
 @implementation LDAdMobInterstitial
 
--(instancetype) initWithAdUnit:(NSString *) adUnit
+-(instancetype) initWithAdUnit:(NSString *) adUnit personalizedAdsConsent:(BOOL *) personalizedAdsConsent
 {
     if (self = [super init]) {
         self.cachedAdUnit = adUnit;
         self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:adUnit];
+        _personalizedAdsConsent = personalizedAdsConsent;
         _interstitial.delegate = self;
     }
     return self;
@@ -176,7 +186,14 @@ static inline bool isIpad()
         self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:_cachedAdUnit];
         _interstitial.delegate = self;
     }
-    [_interstitial loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+    if (!_personalizedAdsConsent) {
+        GADExtras *extras = [[GADExtras alloc] init];
+        extras.additionalParameters = @{@"npa": @"1"};
+        [request registerAdNetworkExtras:extras];
+    }
+
+    [_interstitial loadRequest:request];
 }
 
 -(BOOL) isReady
@@ -230,66 +247,73 @@ static inline bool isIpad()
     }
 }
 
-
 - (void)interstitialWillLeaveApplication:(GADInterstitial *)ad
 {
-    
-}
 
+}
 
 @end
 
 
 #pragma mark AdMob Rewarded Video implementation
+@interface LDAdMobRewardedVideo : LDAdRewardedVideo<GADRewardBasedVideoAdDelegate>
 
-@interface LDAdmobRewardedVideo : LDAdInterstitial<GADRewardBasedVideoAdDelegate>
-
-@property (nonatomic, weak) id<LDAdInterstitialDelegate> delegate;
-@property (nonatomic, strong) GADRewardBasedVideoAd * interstitial;
+@property (nonatomic, weak) id<LDAdRewardedVideoDelegate> delegate;
+@property (nonatomic, strong) GADRewardBasedVideoAd * rewardedVideo;
+@property (nonatomic, assign) BOOL * personalizedAdsConsent;
 @property (nonatomic, strong) NSString * cachedAdUnit;
 
--(instancetype) initWithAdUnit:(NSString *) adUnit;
+-(instancetype) initWithAdUnit:(NSString *) adUnit personalizedAdsConsent:(BOOL *) personalizedAdsConsent;
 
 @end
 
-@implementation LDAdmobRewardedVideo
+
+@implementation LDAdMobRewardedVideo
 {
     BOOL _rewardCompleted;
 }
 
--(instancetype) initWithAdUnit:(NSString *) adUnit
+-(instancetype) initWithAdUnit:(NSString *) adUnit personalizedAdsConsent:(BOOL *) personalizedAdsConsent
 {
     if (self = [super init]) {
         self.cachedAdUnit = adUnit;
         _rewardCompleted = NO;
-        self.interstitial = [GADRewardBasedVideoAd sharedInstance];
-        _interstitial.delegate = self;
+        _personalizedAdsConsent = personalizedAdsConsent;
+        self.rewardedVideo = [GADRewardBasedVideoAd sharedInstance];
+        _rewardedVideo.delegate = self;
     }
     return self;
 }
 
 -(void) dealloc
 {
-    _interstitial.delegate = nil;
+    _rewardedVideo.delegate = nil;
 }
 
 - (void)loadAd
 {
-    if (!_interstitial.isReady) {
-        [_interstitial loadRequest:[GADRequest request] withAdUnitID:_cachedAdUnit];
+    if (!_rewardedVideo.isReady) {
+        GADRequest *request = [GADRequest request];
+        if (!_personalizedAdsConsent) {
+            GADExtras *extras = [[GADExtras alloc] init];
+            extras.additionalParameters = @{@"npa": @"1"};
+            [request registerAdNetworkExtras:extras];
+        }
+
+        [_rewardedVideo loadRequest:request withAdUnitID:_cachedAdUnit];
     }
 }
 
 -(BOOL) isReady
 {
-    return _interstitial && _interstitial.isReady;
+    return _rewardedVideo && _rewardedVideo.isReady;
 }
 
 - (void)showFromViewController:(UIViewController *)controller animated:(BOOL) animated
 {
-    if (_interstitial.isReady) {
+    if (_rewardedVideo.isReady) {
         _rewardCompleted = NO;
-        [_interstitial presentFromRootViewController:controller];
+        [_rewardedVideo presentFromRootViewController:controller];
     }
     else {
         [self loadAd];
@@ -301,42 +325,42 @@ static inline bool isIpad()
     //TODO
 }
 
-#pragma mark GADInterstitialDelegate
+#pragma mark GADRewardedVideoDelegate
 
 
 /// Tells the delegate that the reward based video ad has rewarded the user.
 - (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward
 {
     _rewardCompleted = YES;
-    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
-        LDAdmobRewardedVideoReward * value = [[LDAdmobRewardedVideoReward alloc] init];
+    if (_delegate && [_delegate respondsToSelector:@selector(adRewardedVideoDidCompleteRewardedVideo:withReward:andError:)]) {
+        LDAdMobRewardedVideoReward * value = [[LDAdMobRewardedVideoReward alloc] init];
         value.amount = reward.amount ?: [NSNumber numberWithInteger:1];
         value.itmKey = reward.type ?: @"";
-        [_delegate adInterstitialDidCompleteRewardedVideo:self withReward:value andError:nil];
+        [_delegate adRewardedVideoDidCompleteRewardedVideo:self withReward:value andError:nil];
     }
 }
 
 /// Tells the delegate that the reward based video ad failed to load.
 - (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(nonnull NSError *)error
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidFailLoad:withError:)]) {
-        [_delegate adInterstitialDidFailLoad:self withError:error];
+    if (_delegate && [_delegate respondsToSelector:@selector(adRewardedVideoDidFailLoad:withError:)]) {
+        [_delegate adRewardedVideoDidFailLoad:self withError:error];
     }
 }
 
 /// Tells the delegate that a reward based video ad was received.
 - (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialDidLoad:)]) {
-        [_delegate adInterstitialDidLoad:self];
+    if (_delegate && [_delegate respondsToSelector:@selector(adRewardedVideoDidLoad:)]) {
+        [_delegate adRewardedVideoDidLoad:self];
     }
 }
 
 /// Tells the delegate that the reward based video ad opened.
 - (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialWillAppear:)]) {
-        [_delegate adInterstitialWillAppear:self];
+    if (_delegate && [_delegate respondsToSelector:@selector(adRewardedVideoWillAppear:)]) {
+        [_delegate adRewardedVideoWillAppear:self];
     }
 }
 
@@ -349,20 +373,20 @@ static inline bool isIpad()
 /// Tells the delegate that the reward based video ad closed.
 - (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(adInterstitialWillDisappear:)]) {
-        [_delegate adInterstitialWillDisappear:self];
+    if (_delegate && [_delegate respondsToSelector:@selector(adRewardedVideoWillDisappear:)]) {
+        [_delegate adRewardedVideoWillDisappear:self];
     }
-    
-    if (!_rewardCompleted && _delegate && [_delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
+
+    if (!_rewardCompleted && _delegate && [_delegate respondsToSelector:@selector(adRewardedVideoDidCompleteRewardedVideo:withReward:andError:)]) {
         NSError * error = [NSError errorWithDomain:@"AdMob" code:400 userInfo:@{@"Error reason": @"The user did not complete the rewarded video"}];
-        [_delegate adInterstitialDidCompleteRewardedVideo:self withReward:nil andError:error];
+        [_delegate adRewardedVideoDidCompleteRewardedVideo:self withReward:nil andError:error];
     }
 }
 
 /// Tells the delegate that the reward based video ad will leave the application.
 - (void)rewardBasedVideoAdWillLeaveApplication:(GADRewardBasedVideoAd *)rewardBasedVideoAd
 {
-    
+
 }
 
 @end
@@ -391,38 +415,46 @@ static inline bool isIpad()
 
 -(LDAdBanner *) createBanner: (NSString *) banner size:(LDAdBannerSize) size
 {
-    NSString * adunit = banner;
-    if (!adunit) {
-        adunit = isIpad()  ? (_settings.bannerIpad ?: _settings.banner) : _settings.banner;
+    NSString * adUnit = banner;
+    if (!adUnit) {
+        adUnit = isIpad()  ? (_settings.bannerIpad ?: _settings.banner) : _settings.banner;
     }
-    
-    return [[LDAdMobBanner alloc] initWithAdUnit:adunit size: size];
+
+    return [[LDAdMobBanner alloc] initWithAdUnit:adUnit size: size personalizedAdsConsent: _settings.personalizedAdsConsent];
 }
 
 
 -(LDAdInterstitial *) createInterstitial {
-    
+
     return [self createInterstitial:nil];
 }
 
 -(LDAdInterstitial *) createInterstitial:(NSString *) interstitial
 {
-    NSString * adunit = interstitial;
-    if (!adunit) {
-        adunit = isIpad() ? (_settings.interstitialIpad ?: _settings.interstitial) : _settings.interstitial;
+    NSString * adUnit = interstitial;
+    if (!adUnit) {
+        adUnit = isIpad() ? (_settings.interstitialIpad ?: _settings.interstitial) : _settings.interstitial;
     }
-    
-    return [[LDAdMobInterstitial alloc] initWithAdUnit:adunit];
+
+    return [[LDAdMobInterstitial alloc] initWithAdUnit:adUnit personalizedAdsConsent: _settings.personalizedAdsConsent];
 }
 
--(LDAdInterstitial *) createVideoInterstitial:(NSString *) adunit
+-(LDAdInterstitial *) createVideoInterstitial:(NSString *) adUnit
 {
-    return [self createInterstitial:adunit];
+    return [self createInterstitial:adUnit];
 }
 
--(LDAdInterstitial *) createRewardedVideo:(NSString *)adunit {
-    return [[LDAdmobRewardedVideo alloc] initWithAdUnit:adunit];
+-(LDAdRewardedVideo *) createRewardedVideo {
+    return [self createRewardedVideo:nil];
 }
 
+-(LDAdRewardedVideo *) createRewardedVideo:(NSString *) rewardedVideo {
+    NSString * adUnit = rewardedVideo;
+    if (!adUnit) {
+        adUnit = isIpad() ? (_settings.rewardedVideoIpad ?: _settings.rewardedVideo) : _settings.rewardedVideo;
+    }
+
+    return [[LDAdMobRewardedVideo alloc] initWithAdUnit:adUnit personalizedAdsConsent: _settings.personalizedAdsConsent];
+}
 
 @end

@@ -2,7 +2,7 @@
 //  LDInAppServicePlugin.h
 //  HelloCordova
 //
-//  Created by Imanol Fernandez Gorostizag on 12/12/14.
+//  Created by Imanol Fernandez Gorostizaga on 12/12/14.
 //
 //
 
@@ -10,7 +10,7 @@
 #import <Cordova/CDVPlugin.h>
 #import "LDAdService.h"
 
-@interface LDAdServicePlugin : CDVPlugin<LDAdBannerDelegate, LDAdInterstitialDelegate>
+@interface LDAdServicePlugin : CDVPlugin<LDAdBannerDelegate, LDAdInterstitialDelegate, LDAdRewardedVideoDelegate>
 @property (nonatomic, strong) LDAdService * service;
 
 -(void) configure:(CDVInvokedUrlCommand*) command;
