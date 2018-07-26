@@ -13,13 +13,13 @@ import com.ludei.ads.AbstractAdBanner;
 import com.ludei.ads.AdBanner;
 
 
-class AdBannerAdMob extends AbstractAdBanner {
+public class AdBannerAdMob extends AbstractAdBanner {
 
     private AdView banner;
-    private Bundle extras;
+    private boolean adsConsent;
 
-    AdBannerAdMob(Context ctx, String adUnit, BannerSize size, Bundle personalizedAdsConsent) {
-        extras = personalizedAdsConsent;
+    AdBannerAdMob(Context ctx, String adUnit, BannerSize size, boolean personalizedAdsConsent) {
+        adsConsent = personalizedAdsConsent;
 
         banner = new AdView(ctx);
 
@@ -81,7 +81,16 @@ class AdBannerAdMob extends AbstractAdBanner {
 
     @Override
     public void loadAd() {
-        banner.loadAd(new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build());
+        AdRequest adRequest;
+        if (adsConsent) {
+            Bundle extras = new Bundle();
+            extras.putString("npa", "1");
+            adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
+        } else {
+            adRequest = new AdRequest.Builder().build();
+        }
+
+        banner.loadAd(adRequest);
     }
 
     @Override

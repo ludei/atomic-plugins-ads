@@ -3,7 +3,6 @@ package com.ludei.ads.admob;
 import android.app.Activity;
 import android.content.Context;
 
-import android.os.Bundle;
 import com.google.android.gms.ads.MobileAds;
 import com.ludei.ads.AdBanner;
 import com.ludei.ads.AdInterstitial;
@@ -13,8 +12,9 @@ import org.json.JSONObject;
 
 public class AdServiceAdMob implements AdService {
 
+    public static boolean _personalizedAdsConsent;
+
     private boolean _initialized = false;
-    private Bundle _personalizedAdsConsent;
     private String _bannerAdUnit;
     private String _interstitialAdUnit;
     private String _rewardedVideoAdUnit;
@@ -29,12 +29,7 @@ public class AdServiceAdMob implements AdService {
             throw new RuntimeException("Empty App AdUnit");
         }
 
-        if (personalizedAdsConsent) {
-            _personalizedAdsConsent = null;
-        } else {
-            _personalizedAdsConsent = new Bundle();
-            _personalizedAdsConsent.putString("npa", "1");
-        }
+
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
             _initialized = true;
@@ -42,6 +37,7 @@ public class AdServiceAdMob implements AdService {
         _bannerAdUnit = banner;
         _interstitialAdUnit = interstitial;
         _rewardedVideoAdUnit = rewardedVideo;
+        _personalizedAdsConsent = personalizedAdsConsent;
     }
 
     public AdBanner createBanner(Context ctx) {

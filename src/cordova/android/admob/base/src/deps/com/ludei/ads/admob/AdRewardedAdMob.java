@@ -11,14 +11,14 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.ludei.ads.AbstractAdRewardedVideo;
 import com.ludei.ads.AdRewardedVideo;
 
-class AdRewardedAdMob extends AbstractAdRewardedVideo {
+public class AdRewardedAdMob extends AbstractAdRewardedVideo {
     private RewardedVideoAd _rewardedVideo;
     private String adUnit;
     private boolean loading = false;
-    private Bundle extras;
+    private boolean adsConsent;
 
-    AdRewardedAdMob(Context ctx, String adUnit, Bundle personalizedAdsConsent) {
-        extras = personalizedAdsConsent;
+    AdRewardedAdMob(Context ctx, String adUnit, boolean personalizedAdsConsent) {
+        adsConsent = personalizedAdsConsent;
 
         _rewardedVideo = MobileAds.getRewardedVideoAdInstance(ctx);
         this.adUnit = adUnit;
@@ -68,7 +68,16 @@ class AdRewardedAdMob extends AbstractAdRewardedVideo {
     public void loadAd() {
         if (!loading) {
             loading = true;
-            _rewardedVideo.loadAd(adUnit, new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build());
+            AdRequest adRequest;
+            if (adsConsent) {
+                Bundle extras = new Bundle();
+                extras.putString("npa", "1");
+                adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
+            } else {
+                adRequest = new AdRequest.Builder().build();
+            }
+
+            _rewardedVideo.loadAd(adUnit, adRequest);
         }
     }
 

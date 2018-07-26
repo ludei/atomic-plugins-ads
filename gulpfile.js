@@ -29,10 +29,6 @@ gulp.task("deps-cordova", function () {
     gulp.src("src/atomic/android/common/src/**/")
         .pipe(gulp.dest("src/cordova/android/common/src/deps"));
 
-    // Android AdColony
-    gulp.src("src/atomic/android/mopub/external/adapters/adcolony/libs/**/")
-        .pipe(gulp.dest("src/cordova/android/adcolony/src/deps"));
-
     // Android AdMob
     gulp.src("src/atomic/android/admob/src/**/")
         .pipe(gulp.dest("src/cordova/android/admob/base/src/deps"));
@@ -44,14 +40,6 @@ gulp.task("deps-cordova", function () {
     // Android Heyzap
     gulp.src(["src/atomic/android/heyzap/src/**/", "src/atomic/android/heyzap/libs/**/"])
         .pipe(gulp.dest("src/cordova/android/heyzap/base/src/deps"));
-
-    // Android InMobi
-    gulp.src("src/atomic/android/mopub/external/adapters/inmobi/libs/**/")
-        .pipe(gulp.dest("src/cordova/android/mopub/inmobi/src/deps"));
-
-    // Android MillennialMedia
-    gulp.src("src/atomic/android/mopub/external/adapters/millennialmedia/libs/**/")
-        .pipe(gulp.dest("src/cordova/android/mopub/millennialmedia/src/deps"));
 
     // Android MoPub
     gulp.src("src/atomic/android/mopub/src/**/")

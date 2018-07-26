@@ -3,6 +3,10 @@ package com.ludei.ads.cordova;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
+import com.ludei.ads.AdBanner;
+import com.ludei.ads.AdInterstitial;
+import com.ludei.ads.AdRewardedVideo;
+import com.ludei.ads.AdService;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
@@ -16,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.ludei.ads.*;
 import com.ludei.ads.AdBanner.BannerSize;
 
 public class AdServicePlugin extends CordovaPlugin implements
@@ -117,16 +120,15 @@ public class AdServicePlugin extends CordovaPlugin implements
 
         BannerSize size = BannerSize.SMART_SIZE;
         if (strSize != null) {
-            switch (strSize) {
-                case "BANNER":
-                    size = BannerSize.BANNER_SIZE;
-                    break;
-                case "MEDIUM_RECT":
-                    size = BannerSize.MEDIUM_RECT_SIZE;
-                    break;
-                case "LEADERBOARD":
-                    size = BannerSize.LEADERBOARD_SIZE;
-                    break;
+            if ("BANNER".equals(strSize)) {
+                size = BannerSize.BANNER_SIZE;
+
+            } else if ("MEDIUM_RECT".equals(strSize)) {
+                size = BannerSize.MEDIUM_RECT_SIZE;
+
+            } else if ("LEADERBOARD".equals(strSize)) {
+                size = BannerSize.LEADERBOARD_SIZE;
+
             }
         }
 

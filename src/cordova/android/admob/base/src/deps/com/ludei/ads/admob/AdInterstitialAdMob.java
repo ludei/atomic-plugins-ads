@@ -8,12 +8,12 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.ludei.ads.AbstractAdInterstitial;
 
-class AdInterstitialAdMob extends AbstractAdInterstitial {
+public class AdInterstitialAdMob extends AbstractAdInterstitial {
     private InterstitialAd _interstitial;
-    private Bundle extras;
+    private boolean adsConsent;
 
-    AdInterstitialAdMob(Context ctx, String adUnit, Bundle personalizedAdsConsent) {
-        extras = personalizedAdsConsent;
+    AdInterstitialAdMob(Context ctx, String adUnit, boolean personalizedAdsConsent) {
+        adsConsent = personalizedAdsConsent;
 
         _interstitial = new InterstitialAd(ctx);
         _interstitial.setAdUnitId(adUnit);
@@ -51,7 +51,16 @@ class AdInterstitialAdMob extends AbstractAdInterstitial {
 
     @Override
     public void loadAd() {
-        _interstitial.loadAd(new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build());
+        AdRequest adRequest;
+        if (adsConsent) {
+            Bundle extras = new Bundle();
+            extras.putString("npa", "1");
+            adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build();
+        } else {
+            adRequest = new AdRequest.Builder().build();
+        }
+
+        _interstitial.loadAd(adRequest);
     }
 
     @Override
