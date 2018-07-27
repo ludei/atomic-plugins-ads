@@ -12,9 +12,8 @@ import org.json.JSONObject;
 
 public class AdServiceAdMob implements AdService {
 
-    public static boolean _personalizedAdsConsent;
-
     private boolean _initialized = false;
+    private boolean _personalizedAdsConsent;
     private String _bannerAdUnit;
     private String _interstitialAdUnit;
     private String _rewardedVideoAdUnit;

@@ -1,13 +1,11 @@
 package com.ludei.ads.cordova;
 
-
 import android.content.pm.PackageManager;
 
 import com.adcolony.sdk.AdColony;
 import com.adcolony.sdk.AdColonyAppOptions;
 import org.apache.cordova.CordovaPlugin;
 import com.ludei.ads.admob.AdServiceAdMob;
-
 
 public class AdColonyAdapterPlugin extends CordovaPlugin {
 
