@@ -1,6 +1,6 @@
 package com.ludei.ads.cordova;
 
-import com.ludei.ads.mopub.*;
+import com.ludei.ads.mopub.AdServiceMoPub;
 
 public class MoPubPlugin extends AdServicePlugin {
 

@@ -1,0 +1,10 @@
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api(name: 'unity-ads', ext: 'aar')
+}
+

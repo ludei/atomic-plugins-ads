@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cocoon-plugin-ads-android-mopub-inmobi" version="1.0.2">
     <name>Ads Mopub InMobi</name>
     <description>Android MoPub InMobi Adapter</description>
@@ -8,7 +9,7 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="android">
-        <source-file src="src/deps/InMobi-4.4.1.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/InMobi-4.4.1.jar" target-dir="libs" framework="true"/>
         <source-file src="src/InMobiNative.java" target-dir="src/com/mopub/mobileads"/>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">

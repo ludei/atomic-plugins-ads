@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-android-admob-unityads",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Android AdMob Unity Ads Adapter",
     "cordova": {
         "id": "cocoon-plugin-ads-android-admob-unityads",
@@ -29,6 +29,11 @@
     "bugs": {
         "url": "https://github.com/ludei/atomic-plugins-ads/issues"
     },
-    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
+    ]
 }
 

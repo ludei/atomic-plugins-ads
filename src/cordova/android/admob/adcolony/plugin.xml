@@ -19,9 +19,10 @@
             </feature>
         </config-file>
 
-        <source-file src="src/deps/adcolony-adapter-3.3.5.1.aar" target-dir="libs" framework="true"/>
+        <resource-file src="libs/adcolony-adapter-3.3.5.1.aar" target="libs/adcolony-admob-adapter.aar"/>
+        <framework src="libs/adcolony-admob-adapter.gradle" custom="true" type="gradleReference"/>
 
-        <source-file src="src/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <source-file src="src/com/ludei/ads/cordova/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
         <dependency id="cocoon-plugin-ads-android-admob"/>
         <dependency id="cocoon-plugin-ads-android-adcolony"/>
     </platform>

@@ -8,5 +8,19 @@
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="cordova-android-admob" exported="" />
+    <orderEntry type="module" module-name="cordova-android-applovin" exported="" />
+    <orderEntry type="module-library" exported="">
+      <library name="applovin-8.1.0.0">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/sources/applovin-8.1.0.0" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/sources/applovin-8.1.0.0" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/sources/applovin-8.1.0.0" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/sources/applovin-8.1.0.0" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>

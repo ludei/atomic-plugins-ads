@@ -8,6 +8,16 @@
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="cordova-common" exported="" />
-    <orderEntry type="library" exported="" name="cordova-framework-7.1.0" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library name="cordova-framework-7.1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/sources/cordova-framework-7.1.0/classes.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/sources/cordova-framework-7.1.0/sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

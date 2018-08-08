@@ -9,5 +9,18 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="cordova-android-admob" exported="" />
     <orderEntry type="module" module-name="cordova-android-adcolony" exported="" />
+    <orderEntry type="module-library" exported="">
+      <library name="adcolony-adapter-3.3.5">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/sources/adcolony-adapter-3.3.5.1" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/sources/adcolony-adapter-3.3.5.1" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/sources/adcolony-adapter-3.3.5.1" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/sources/adcolony-adapter-3.3.5.1" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>

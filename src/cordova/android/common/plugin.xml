@@ -7,14 +7,14 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <source-file src="src/AdServicePlugin.java" target-dir="src/com/ludei/ads/cordova"/>
-        <source-file src="src/deps/com/ludei/ads/AdService.java" target-dir="src/com/ludei/ads"/>
-        <source-file src="src/deps/com/ludei/ads/AdBanner.java" target-dir="src/com/ludei/ads"/>
-        <source-file src="src/deps/com/ludei/ads/AbstractAdBanner.java" target-dir="src/com/ludei/ads"/>
-        <source-file src="src/deps/com/ludei/ads/AdInterstitial.java" target-dir="src/com/ludei/ads"/>
-        <source-file src="src/deps/com/ludei/ads/AbstractAdInterstitial.java" target-dir="src/com/ludei/ads"/>
-        <source-file src="src/deps/com/ludei/ads/AdRewardedVideo.java" target-dir="src/com/ludei/ads"/>
-        <source-file src="src/deps/com/ludei/ads/AbstractAdRewardedVideo.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/cordova/AdServicePlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <source-file src="src/com/ludei/ads/AdService.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/AdBanner.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/AbstractAdBanner.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/AdInterstitial.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/AbstractAdInterstitial.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/AdRewardedVideo.java" target-dir="src/com/ludei/ads"/>
+        <source-file src="src/com/ludei/ads/AbstractAdRewardedVideo.java" target-dir="src/com/ludei/ads"/>
     </platform>
 
     <dependency id="cocoon-plugin-ads-common"/>

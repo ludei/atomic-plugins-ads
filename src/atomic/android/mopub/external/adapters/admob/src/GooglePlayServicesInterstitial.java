@@ -2,7 +2,6 @@ package com.mopub.mobileads;
 
 import android.content.Context;
 import android.util.Log;
-
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;

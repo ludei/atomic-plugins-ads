@@ -27,23 +27,29 @@ gulp.task("clean", function (finish) {
 gulp.task("deps-cordova", function () {
     // Android common
     gulp.src("src/atomic/android/common/src/**/")
-        .pipe(gulp.dest("src/cordova/android/common/src/deps"));
+        .pipe(gulp.dest("src/cordova/android/common/src"));
 
     // Android AdMob
     gulp.src("src/atomic/android/admob/src/**/")
-        .pipe(gulp.dest("src/cordova/android/admob/base/src/deps"));
+        .pipe(gulp.dest("src/cordova/android/admob/base/src"));
 
     // Android Chartboost
-    gulp.src(["src/atomic/android/chartboost/src/**/", "src/atomic/android/chartboost/libs/**/"])
-        .pipe(gulp.dest("src/cordova/android/chartboost/src/deps"));
+    gulp.src("src/atomic/android/chartboost/src/**/")
+        .pipe(gulp.dest("src/cordova/android/chartboost/src"));
+
+    gulp.src("src/atomic/android/chartboost/libs/**/")
+        .pipe(gulp.dest("src/cordova/android/chartboost/libs"));
 
     // Android Heyzap
-    gulp.src(["src/atomic/android/heyzap/src/**/", "src/atomic/android/heyzap/libs/**/"])
-        .pipe(gulp.dest("src/cordova/android/heyzap/base/src/deps"));
+    gulp.src("src/atomic/android/heyzap/src/**/")
+        .pipe(gulp.dest("src/cordova/android/heyzap/src"));
+
+    gulp.src("src/atomic/android/heyzap/libs/**/")
+        .pipe(gulp.dest("src/cordova/android/heyzap/libs"));
 
     // Android MoPub
     gulp.src("src/atomic/android/mopub/src/**/")
-        .pipe(gulp.dest("src/cordova/android/mopub/base/src/deps"));
+        .pipe(gulp.dest("src/cordova/android/mopub/base/src"));
 
     // Android MoPub adapters
     for (let i = 0; i < mopubAndroidAdapters.length; ++i) {
@@ -198,6 +204,6 @@ gulp.task("doc-cpp", shell.task([
     "cd ./doc_template/cpp && doxygen config"
 ]));
 
-gulp.task("doc", ["doc-ios", "doc-android", "doc-js", "doc-cpp"]);
+gulp.task("doc", ["doc-js", "doc-android", "doc-ios", "doc-cpp"]);
 
 gulp.task("default", ["build", "doc"]);

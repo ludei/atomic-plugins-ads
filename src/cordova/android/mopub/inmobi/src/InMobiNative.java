@@ -5,13 +5,11 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.inmobi.commons.InMobi;
 import com.inmobi.monetization.IMErrorCode;
 import com.inmobi.monetization.IMNative;
 import com.inmobi.monetization.IMNativeListener;
 import com.mopub.common.logging.MoPubLog;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;

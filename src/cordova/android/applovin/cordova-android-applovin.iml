@@ -8,5 +8,16 @@
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="cordova-android-common" exported="" />
+    <orderEntry type="module-library" exported="">
+      <library name="applovin-sdk-8.1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/applovin-sdk-8.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/libs/applovin-sdk-8.1.0.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cocoon-plugin-ads-android-adcolony" version="1.1.0">
     <name>AdsAdcolony</name>
     <description>Android AdColony</description>
@@ -8,9 +9,9 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <source-file src="src/deps/armeabi-v7a/libadcolony.so" target-dir="libs/armeabi-v7a" framework="true"/>
-        <source-file src="src/deps/armeabi-v7a/libjs.so" target-dir="libs/armeabi-v7a" framework="true"/>
-        <source-file src="src/deps/adcolony-3.3.5.jar" target-dir="libs" framework="true"/>
+        <source-file src="libs/armeabi-v7a/libadcolony.so" target-dir="libs/armeabi-v7a" framework="true"/>
+        <source-file src="libs/armeabi-v7a/libjs.so" target-dir="libs/armeabi-v7a" framework="true"/>
+        <source-file src="libs/adcolony-3.3.5.jar" target-dir="libs" framework="true"/>
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET"/>

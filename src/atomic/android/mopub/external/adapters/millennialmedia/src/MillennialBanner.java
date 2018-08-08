@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-
 import com.millennialmedia.AppInfo;
 import com.millennialmedia.InlineAd;
 import com.millennialmedia.InlineAd.AdSize;

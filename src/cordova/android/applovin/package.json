@@ -28,5 +28,10 @@
     "bugs": {
         "url": "https://github.com/ludei/atomic-plugins-ads/issues"
     },
-    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
+    ]
 }

@@ -5,15 +5,14 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-
-import java.util.Map;
-
 import com.millennialmedia.AppInfo;
 import com.millennialmedia.InterstitialAd;
 import com.millennialmedia.InterstitialAd.InterstitialErrorStatus;
 import com.millennialmedia.InterstitialAd.InterstitialListener;
 import com.millennialmedia.MMException;
 import com.millennialmedia.MMSDK;
+
+import java.util.Map;
 
 /**
  * Compatible with version 6.0 of the Millennial Media SDK.

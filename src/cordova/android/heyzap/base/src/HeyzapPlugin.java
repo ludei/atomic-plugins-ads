@@ -1,7 +1,5 @@
 package com.ludei.ads.cordova;
 
-import com.ludei.ads.heyzap.*;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 

@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-android-adcolony",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "description": "Android AdColony",
     "cordova": {
         "id": "cocoon-plugin-ads-android-adcolony",
@@ -28,5 +28,10 @@
     "bugs": {
         "url": "https://github.com/ludei/atomic-plugins-ads/issues"
     },
-    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
+    ]
 }

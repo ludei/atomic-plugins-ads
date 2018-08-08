@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
-
 import com.chartboost.sdk.Chartboost;
 import com.mopub.common.Preconditions;
 

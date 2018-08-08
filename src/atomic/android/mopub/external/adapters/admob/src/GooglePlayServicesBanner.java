@@ -2,7 +2,6 @@ package com.mopub.mobileads;
 
 import android.content.Context;
 import android.util.Log;
-
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -11,10 +10,7 @@ import com.mopub.common.util.Views;
 
 import java.util.Map;
 
-import static com.google.android.gms.ads.AdSize.BANNER;
-import static com.google.android.gms.ads.AdSize.FULL_BANNER;
-import static com.google.android.gms.ads.AdSize.LEADERBOARD;
-import static com.google.android.gms.ads.AdSize.MEDIUM_RECTANGLE;
+import static com.google.android.gms.ads.AdSize.*;
 
 /*
  * Compatible with version 7.8.0 of the Google Play Services SDK.

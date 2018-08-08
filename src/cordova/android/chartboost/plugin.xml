@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cocoon-plugin-ads-android-chartboost" version="1.1.0">
     <name>AdsChartboost</name>
     <description>Android Chartboost</description>
@@ -8,13 +9,16 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <source-file src="src/deps/chartboost_7.2.0.jar" target-dir="libs" framework="true"/>
+        <source-file src="libs/chartboost_7.2.1.jar" target-dir="libs" framework="true"/>
 
-        <source-file src="src/deps/com/ludei/ads/chartboost/AdServiceChartboost.java"
+        <source-file src="src/com/ludei/ads/chartboost/AdServiceChartboost.java"
                      target-dir="src/com/ludei/ads/chartboost"/>
-        <source-file src="src/deps/com/ludei/ads/chartboost/AdInterstitialChartboost.java"
+        <source-file src="src/com/ludei/ads/chartboost/AdInterstitialChartboost.java"
                      target-dir="src/com/ludei/ads/chartboost"/>
-        <source-file src="src/ChartboostPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <source-file src="src/com/ludei/ads/chartboost/AdRewardedVideoChartboost.java"
+                     target-dir="src/com/ludei/ads/chartboost"/>
+        <source-file src="src/com/ludei/ads/cordova/ChartboostPlugin.java"
+                     target-dir="src/com/ludei/ads/cordova"/>
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET"/>
@@ -27,7 +31,7 @@
                       android:excludeFromRecents="true"
                       android:hardwareAccelerated="true"
                       android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-                      android:configChanges="keyboardHidden|orientation|screenSize" />
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">

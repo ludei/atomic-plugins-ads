@@ -10,7 +10,7 @@
                   android:excludeFromRecents="true"
                   android:hardwareAccelerated="true"
                   android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-                  android:configChanges="keyboardHidden|orientation|screenSize" />
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>

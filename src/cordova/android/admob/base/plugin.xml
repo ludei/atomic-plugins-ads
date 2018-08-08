@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cocoon-plugin-ads-android-admob" version="2.0.0">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
@@ -8,11 +9,11 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <source-file src="src/deps/com/ludei/ads/admob/AdBannerAdMob.java" target-dir="src/com/ludei/ads/admob"/>
-        <source-file src="src/deps/com/ludei/ads/admob/AdInterstitialAdMob.java" target-dir="src/com/ludei/ads/admob"/>
-        <source-file src="src/deps/com/ludei/ads/admob/AdRewardedAdMob.java" target-dir="src/com/ludei/ads/admob"/>
-        <source-file src="src/deps/com/ludei/ads/admob/AdServiceAdMob.java" target-dir="src/com/ludei/ads/admob"/>
-        <source-file src="src/AdMobPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <source-file src="src/com/ludei/ads/admob/AdBannerAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/admob/AdInterstitialAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/admob/AdRewardedAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/admob/AdServiceAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/cordova/AdMobPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
 
 
         <config-file target="res/xml/config.xml" parent="/*">

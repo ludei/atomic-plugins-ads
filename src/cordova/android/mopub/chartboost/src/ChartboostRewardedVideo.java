@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
-
 import com.chartboost.sdk.Chartboost;
 import com.mopub.common.DataKeys;
 import com.mopub.common.LifecycleListener;
