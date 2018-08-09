@@ -8,7 +8,6 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-
         <source-file src="libs/armeabi-v7a/libadcolony.so" target-dir="libs/armeabi-v7a" framework="true"/>
         <source-file src="libs/armeabi-v7a/libjs.so" target-dir="libs/armeabi-v7a" framework="true"/>
         <source-file src="libs/adcolony-3.3.5.jar" target-dir="libs" framework="true"/>

@@ -70,7 +70,7 @@ public class AdRewardedAdMob extends AbstractAdRewardedVideo {
         if (!loading) {
             loading = true;
             AdRequest adRequest;
-            if (adsConsent) {
+            if (!adsConsent) {
                 Bundle extras = new Bundle();
                 extras.putString("npa", "1");
                 adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, extras).build();

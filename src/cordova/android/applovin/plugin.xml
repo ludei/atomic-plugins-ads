@@ -8,18 +8,18 @@
     <keywords>cordova,ads,interstitial,monetization,ad,applovin,rewarded</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <preference name="APP_ID"/>
-
-        <source-file src="libs/applovin-sdk-8.1.0.jar" target-dir="libs" framework="true"/>
-        <source-file src="src/com/ludei/ads/cordova/AppLovinPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <preference name="SDK_KEY"/>
 
         <config-file target="res/values/strings.xml" parent="/resources">
-            <string name="applovin_app_id">$APP_ID</string>
+            <string name="applovin_sdk_key">SDK_KEY</string>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="application">
-            <meta-data android:name="applovin.sdk.key" android:value="@string/applovin_app_id"/>
+            <meta-data android:name="applovin.sdk.key" android:value="@string/applovin_sdk_key"/>
         </config-file>
+
+        <source-file src="libs/applovin-sdk-8.1.0.jar" target-dir="libs" framework="true"/>
+        <source-file src="src/com/ludei/ads/cordova/AppLovinPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET"/>

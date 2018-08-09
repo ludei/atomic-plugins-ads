@@ -27,7 +27,6 @@ public class AdServiceAdMob implements AdService {
             throw new RuntimeException("Empty App AdUnit");
         }
 
-
         if (!_initialized) {
             MobileAds.initialize(activity, appId);
             _initialized = true;
@@ -51,7 +50,6 @@ public class AdServiceAdMob implements AdService {
         }
         return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent);
     }
-
 
     public AdInterstitial createInterstitial(Context ctx) {
         return createInterstitial(ctx, null);

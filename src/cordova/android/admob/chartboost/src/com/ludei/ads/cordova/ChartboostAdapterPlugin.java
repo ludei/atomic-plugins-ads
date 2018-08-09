@@ -11,7 +11,7 @@ public class ChartboostAdapterPlugin extends CordovaPlugin {
         if (id.equals("AdMob consent")) {
             Log.d("AdColony", "Setting AdColony user consent as: " + data);
 
-            Chartboost.restrictDataCollection(cordova.getActivity(), (Boolean) data);
+            Chartboost.restrictDataCollection(cordova.getActivity(), !(Boolean) data);
         }
         return null;
     }

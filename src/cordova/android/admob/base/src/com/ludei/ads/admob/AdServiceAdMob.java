@@ -51,7 +51,6 @@ public class AdServiceAdMob implements AdService {
         return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent);
     }
 
-
     public AdInterstitial createInterstitial(Context ctx) {
         return createInterstitial(ctx, null);
     }

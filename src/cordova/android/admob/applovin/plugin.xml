@@ -7,7 +7,7 @@
     <keywords>cordova,ads,interstitial,monetization,ad,admob,applovin</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <preference name="APP_ID"/>
+        <preference name="SDK_KEY"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppLovinAdapterPlugin">
