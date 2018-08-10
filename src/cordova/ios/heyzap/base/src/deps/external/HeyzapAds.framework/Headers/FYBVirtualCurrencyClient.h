@@ -21,19 +21,19 @@
 /**
  *  Latest transaction ID for your user and app ID, as reported by the server. It is used to keep track of new transactions between invocations to requestDeltaOfCoins
  */
-@property (nonatomic, copy, readonly) NSString *latestTransactionId;
+    @property(nonatomic, copy, readonly) NSString *latestTransactionId;
 
 /**
  *  The object that acts as the delegate of the virtual currency client
  *
  *  @discussion The delegate must adopt the FYBVirtualCurrencyClientDelegate protocol. The delegate is not retained
  */
-@property (weak) id<FYBVirtualCurrencyClientDelegate> delegate;
+    @property(weak) id <FYBVirtualCurrencyClientDelegate> delegate;
 
 /**
  *  Requests the amount of coins earned since the last time this method was invoked for the default currency
  */
-- (void)requestDeltaOfCoins;
+    - (void)requestDeltaOfCoins;
 
 /**
  *  Same as requestDeltaOfCoins but accepts a FYBRequestParameters object as parameter. Through this object you can specify the currencyId that you want to request
@@ -42,6 +42,6 @@
  *
  *  @see FYBRequestParameters
  */
-- (void)requestDeltaOfCoinsWithParameters:(FYBRequestParameters *)parameters;
+    - (void)requestDeltaOfCoinsWithParameters: (FYBRequestParameters *)parameters;
 
 @end

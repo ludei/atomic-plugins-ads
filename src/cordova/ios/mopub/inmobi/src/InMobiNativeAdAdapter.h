@@ -17,7 +17,9 @@
 #if __has_include(<MoPub/MoPub.h>)
 #import <MoPub/MoPub.h>
 #else
+
 #import <MoPub/MPNativeAdAdapter.h>
+
 #endif
 
 @class IMNative;
@@ -28,7 +30,7 @@
 
 @interface InMobiNativeAdAdapter : NSObject <MPNativeAdAdapter>
 
-@property (nonatomic, weak) id<MPNativeAdAdapterDelegate> delegate;
+    @property(nonatomic, weak) id <MPNativeAdAdapterDelegate> delegate;
 
 /*
  * Optional methods to tell the adapter where to find specific ad assets
@@ -63,14 +65,20 @@
  *      landing url     - "landing_url"
  */
 
-+ (void)setCustomKeyForTitle:(NSString *)key;
-+ (void)setCustomKeyForDescription:(NSString *)key;
-+ (void)setCustomKeyForCallToAction:(NSString *)key;
-+ (void)setCustomKeyForRating:(NSString *)key;
-+ (void)setCustomKeyForScreenshot:(NSString *)key;
-+ (void)setCustomKeyForIcon:(NSString *)key;
-+ (void)setCustomKeyForLandingURL:(NSString *)key;
+    + (void)setCustomKeyForTitle: (NSString *)key;
 
-- (instancetype)initWithInMobiNativeAd:(IMNative *)nativeAd;
+    + (void)setCustomKeyForDescription: (NSString *)key;
+
+    + (void)setCustomKeyForCallToAction: (NSString *)key;
+
+    + (void)setCustomKeyForRating: (NSString *)key;
+
+    + (void)setCustomKeyForScreenshot: (NSString *)key;
+
+    + (void)setCustomKeyForIcon: (NSString *)key;
+
+    + (void)setCustomKeyForLandingURL: (NSString *)key;
+
+    - (instancetype)initWithInMobiNativeAd: (IMNative *)nativeAd;
 
 @end

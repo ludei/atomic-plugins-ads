@@ -5,64 +5,64 @@
 /**
  *  Ad Service Configuration (adUnits)
  */
-@protocol LDAdServiceSettings<NSObject>
+@protocol LDAdServiceSettings <NSObject>
 
 /**
  *  App adUnit
  */
-@property (nonatomic, strong) NSString * appId;
+    @property(nonatomic, strong) NSString *appId;
 
 /**
  *  Banner adUnit
  */
-@property (nonatomic, strong) NSString * banner;
+    @property(nonatomic, strong) NSString *banner;
 
 /**
  *  Banner adUnit for iPad (optional).
  *  If it is not specified, the banner adUnit will be used.
  */
-@property (nonatomic, strong) NSString * bannerIpad;
+    @property(nonatomic, strong) NSString *bannerIpad;
 
 /**
  *  Interstitial adUnit.
  */
-@property (nonatomic, strong) NSString * interstitial;
+    @property(nonatomic, strong) NSString *interstitial;
 
 /**
  *  Interstitial adUnit for iPad (optional).
  *  If it is not specified, the interstitial adUnit will be used.
  */
-@property (nonatomic, strong) NSString * interstitialIpad;
+    @property(nonatomic, strong) NSString *interstitialIpad;
 
 /**
  *  Reward video adUnit.
  */
-@property (nonatomic, strong) NSString * rewardedVideo;
+    @property(nonatomic, strong) NSString *rewardedVideo;
 
 /**
  *  Reward video adUnit for iPad (optional).
  *  If it is not specified, the reward video adUnit will be used.
  */
-@property (nonatomic, strong) NSString * rewardedVideoIpad;
+    @property(nonatomic, strong) NSString *rewardedVideoIpad;
 
 /**
  *  Value to store if the user has given consent for personalized ads.
  */
-@property (nonatomic, assign) BOOL * personalizedAdsConsent;
+    @property(nonatomic, assign) BOOL *personalizedAdsConsent;
 @end
 
 /**
  *  Ad Service Protocol
  */
 @protocol LDAdServiceProtocol
-@property (nonatomic, strong) NSObject<LDAdServiceSettings> * settings;
+    @property(nonatomic, strong) NSObject <LDAdServiceSettings> *settings;
 
 /**
  *  Create AdBanner with default size and adUnit (taken from settings).
  *
  *  @return The created banner.
  */
--(LDAdBanner *) createBanner;
+    - (LDAdBanner *)createBanner;
 
 /**
  *  Create AdBanner with custom adUnit and size
@@ -72,14 +72,14 @@
  *
  *  @return The custom ad.
  */
--(LDAdBanner *) createBanner: (NSString *) adUnit size:(LDAdBannerSize) size;
+    - (LDAdBanner *)createBanner: (NSString *)adUnit size: (LDAdBannerSize)size;
 
 /**
  *  Create AdInterstitial with default adUnit.
  *
  *  @return The interstitial.
  */
--(LDAdInterstitial *) createInterstitial;
+    - (LDAdInterstitial *)createInterstitial;
 
 /**
  *  Create AdInterstitial with specific adUnit.
@@ -88,7 +88,7 @@
  *
  *  @return The interstitial.
  */
--(LDAdInterstitial *) createInterstitial:(NSString *) adUnit;
+    - (LDAdInterstitial *)createInterstitial: (NSString *)adUnit;
 
 /**
  *  Create a video only interstitial with specific adUnit.
@@ -98,14 +98,14 @@
  *
  *  @return The interstitial.
  */
--(LDAdInterstitial *) createVideoInterstitial:(NSString *) adUnit;
+    - (LDAdInterstitial *)createVideoInterstitial: (NSString *)adUnit;
 
 /**
  *  Create a Rewarded video interstitial with default adUnit.
  *
  *  @return The interstitial.
  */
--(LDAdRewardedVideo *) createRewardedVideo;
+    - (LDAdRewardedVideo *)createRewardedVideo;
 
 /**
  *  Create a Rewarded video interstitial with specific adUnit.
@@ -114,10 +114,10 @@
  *
  *  @return The interstitial.
  */
--(LDAdRewardedVideo *) createRewardedVideo:(NSString *) adUnit;
+    - (LDAdRewardedVideo *)createRewardedVideo: (NSString *)adUnit;
 
 @end
 
-typedef NSObject<LDAdServiceProtocol> LDAdService;
+typedef NSObject <LDAdServiceProtocol> LDAdService;
 
 

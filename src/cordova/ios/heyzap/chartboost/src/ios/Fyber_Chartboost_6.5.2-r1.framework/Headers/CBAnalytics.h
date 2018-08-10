@@ -15,17 +15,18 @@
  Used with trackLevelInfo calls to describe meta information about the level value as it 
  pertains to the game's context.
  */
-typedef NS_ENUM(NSUInteger, CBLevelType) {
-    /*! Highest level reached */
-    HIGHEST_LEVEL_REACHED = 1,
-    /*! Current area level reached */
-    CURRENT_AREA = 2,
-    /*! Current character level reached */
-    CHARACTER_LEVEL = 3,
-    /*! Other sequential level reached */
-    OTHER_SEQUENTIAL = 4,
-    /*! Current non sequential level reached */
-    OTHER_NONSEQUENTIAL = 5
+typedef NS_ENUM(NSUInteger, CBLevelType
+) {
+/*! Highest level reached */
+HIGHEST_LEVEL_REACHED = 1,
+/*! Current area level reached */
+        CURRENT_AREA = 2,
+/*! Current character level reached */
+        CHARACTER_LEVEL = 3,
+/*! Other sequential level reached */
+        OTHER_SEQUENTIAL = 4,
+/*! Current non sequential level reached */
+        OTHER_NONSEQUENTIAL = 5
 };
 
 /*!
@@ -58,12 +59,12 @@ typedef NS_ENUM(NSUInteger, CBLevelType) {
  @discussion Tracks In App Purchases for later use with user segmentation
  and targeting.
 */
-+ (void)trackInAppPurchaseEvent:(NSData *)receipt
-                   productTitle:(NSString *)productTitle
-             productDescription:(NSString *)productDescription
-                   productPrice:(NSDecimalNumber *)productPrice
-                productCurrency:(NSString *)productCurrency
-              productIdentifier:(NSString *)productIdentifier;
+    + (void)trackInAppPurchaseEvent: (NSData *)receipt
+                       productTitle: (NSString *)productTitle
+                 productDescription: (NSString *)productDescription
+                       productPrice: (NSDecimalNumber *)productPrice
+                    productCurrency: (NSString *)productCurrency
+                  productIdentifier: (NSString *)productIdentifier;
 
 /*!
  @abstract
@@ -84,12 +85,13 @@ typedef NS_ENUM(NSUInteger, CBLevelType) {
  @discussion Tracks In App Purchases for later use with user segmentation
  and targeting.
 */
-+ (void)trackInAppPurchaseEventWithString:(NSString *)receiptString
-                   productTitle:(NSString *)productTitle
-             productDescription:(NSString *)productDescription
-                   productPrice:(NSDecimalNumber *)productPrice
-                productCurrency:(NSString *)productCurrency
-              productIdentifier:(NSString *)productIdentifier;
+    + (void)trackInAppPurchaseEventWithString: (NSString *)receiptString
+                                 productTitle: (NSString *)productTitle
+                           productDescription: (NSString *)productDescription
+                                 productPrice: (NSDecimalNumber *)productPrice
+                              productCurrency: (NSString *)productCurrency
+                            productIdentifier: (NSString *)productIdentifier;
+
 /*!
  @abstract
  Track an In App Purchase Event.
@@ -101,9 +103,8 @@ typedef NS_ENUM(NSUInteger, CBLevelType) {
  @discussion Tracks In App Purchases for later use with user segmentation
  and targeting.
  */
-+ (void)trackInAppPurchaseEvent:(NSData *)receipt
-                        product:(SKProduct *)product;
-
+    + (void)trackInAppPurchaseEvent: (NSData *)receipt
+                            product: (SKProduct *)product;
 
 /*!
  @abstract
@@ -122,11 +123,11 @@ typedef NS_ENUM(NSUInteger, CBLevelType) {
  @discussion Tracks In App Purchases for later use with user segmentation
  and targeting.
  */
-+ (void)trackLevelInfo:(NSString*)eventLabel
-            eventField:(CBLevelType)eventField
-             mainLevel:(NSUInteger)mainLevel
-              subLevel:(NSUInteger)subLevel
-           description:(NSString*)description;
+    + (void)trackLevelInfo: (NSString *)eventLabel
+                eventField: (CBLevelType)eventField
+                 mainLevel: (NSUInteger)mainLevel
+                  subLevel: (NSUInteger)subLevel
+               description: (NSString *)description;
 
 /*!
  @abstract
@@ -143,9 +144,9 @@ typedef NS_ENUM(NSUInteger, CBLevelType) {
  @discussion Tracks In App Purchases for later use with user segmentation
  and targeting.
  */
-+ (void)trackLevelInfo:(NSString*)eventLabel
-            eventField:(CBLevelType)eventField
-             mainLevel:(NSUInteger)mainLevel
-           description:(NSString*)description;
+    + (void)trackLevelInfo: (NSString *)eventLabel
+                eventField: (CBLevelType)eventField
+                 mainLevel: (NSUInteger)mainLevel
+               description: (NSString *)description;
 
 @end

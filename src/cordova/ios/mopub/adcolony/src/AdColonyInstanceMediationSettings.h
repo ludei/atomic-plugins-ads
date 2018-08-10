@@ -8,9 +8,11 @@
 #import <Foundation/Foundation.h>
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPMediationSettingsProtocol.h"
+
+#import "MPMediationSettingsProtocol.h"
+
 #endif
 
 /*
@@ -25,13 +27,13 @@
  *
  * Default behavior treats this property as if it is set to false.
  */
-@property (nonatomic, assign) BOOL showPrePopup;
+    @property(nonatomic, assign) BOOL showPrePopup;
 
 /*
  * Set to true if you wish to show a post-popup dialog for AdColony V4VC ads.
  *
  * Default behavior treats this property as if it is set to false.
  */
-@property (nonatomic, assign) BOOL showPostPopup;
+    @property(nonatomic, assign) BOOL showPostPopup;
 
 @end

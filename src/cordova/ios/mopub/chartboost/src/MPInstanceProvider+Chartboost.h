@@ -11,6 +11,6 @@
 
 @interface MPInstanceProvider (Chartboost)
 
-- (MPChartboostRouter *)sharedMPChartboostRouter;
+    - (MPChartboostRouter *)sharedMPChartboostRouter;
 
 @end

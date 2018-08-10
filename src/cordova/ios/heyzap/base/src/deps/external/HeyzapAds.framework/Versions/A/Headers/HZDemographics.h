@@ -15,13 +15,13 @@
  */
 @interface HZDemographics : NSObject
 
-+ (HZDemographics *)sharedDemographics;
+    + (HZDemographics *)sharedDemographics;
 
 /**
  *  The user's current location.
  *
  *  Networks who use this information: AdColony, AdMob, AppLovin, InMobi.
  */
-@property (nonatomic, strong) CLLocation *location;
+    @property(nonatomic, strong) CLLocation *location;
 
 @end

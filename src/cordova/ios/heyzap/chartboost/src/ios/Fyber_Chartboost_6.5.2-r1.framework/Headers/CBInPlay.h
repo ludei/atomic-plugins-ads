@@ -33,8 +33,7 @@
  for the given CBLocation and, if found, will do nothing. If no locally cached data exists
  the method will attempt to fetch data from the Chartboost API server.
 */
-+ (void)cacheInPlay:(CBLocation)location;
-
+    + (void)cacheInPlay: (CBLocation)location;
 
 /*!
  @abstract
@@ -48,7 +47,7 @@
  getInPlay:(CBLocation)location method will return an InPlay object without making
  additional Chartboost API server requests to fetch data to present.
  */
-+ (BOOL)hasInPlay:(CBLocation)location;
+    + (BOOL)hasInPlay: (CBLocation)location;
 
 /*!
  @abstract
@@ -65,10 +64,9 @@
  or there is no eligible InPlay object to present in the given CBLocation this method
  is a no-op.
  */
-+ (CBInPlay *)getInPlay:(CBLocation)location;
+    + (CBInPlay *)getInPlay: (CBLocation)location;
 
 @end
-
 
 /*!
  @class CBInPlay
@@ -84,13 +82,13 @@
 @interface CBInPlay : NSObject
 
 /*! @abstract CBLocation target for the CBInPlay ad. */
-@property (nonatomic, strong, readonly) CBLocation location;
+    @property(nonatomic, strong, readonly) CBLocation location;
 
 /*! @abstract Image byte data for the CBInPlay icon. */
-@property (nonatomic, strong, readonly) NSData *appIcon;
+    @property(nonatomic, strong, readonly) NSData *appIcon;
 
 /*! @abstract Application name associated with the ad. */
-@property (nonatomic, strong, readonly) NSString *appName;
+    @property(nonatomic, strong, readonly) NSString *appName;
 
 /*!
  @abstract
@@ -100,7 +98,7 @@
  to mark the CBInPlay ad as viewed.  You must send this information to correlate
  with installs driven by the ad.
  */
-- (void)show;
+    - (void)show;
 
 /*!
  @abstract
@@ -110,7 +108,7 @@
  to mark the CBInPlay ad as clicked.  You must send this information to correlate
  with installs driven by the ad.
  */
-- (void)click;
+    - (void)click;
 
 /*!
  @abstract
@@ -120,6 +118,6 @@
  This is intended to be used to either force an update for all content or reduce the
  memory overhead of this feature.
  */
-- (void)clearCache;
+    - (void)clearCache;
 
 @end

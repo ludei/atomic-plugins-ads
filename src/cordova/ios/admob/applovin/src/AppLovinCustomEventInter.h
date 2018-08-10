@@ -14,5 +14,5 @@
 #import <AppLovin/ALInterstitialAd.h>
 
 @interface AppLovinCustomEventInter : NSObject <GADCustomEventInterstitial, ALAdLoadDelegate, ALAdDisplayDelegate>
-@property (strong, atomic) ALAd* appLovinAd;
+    @property(strong, atomic) ALAd *appLovinAd;
 @end

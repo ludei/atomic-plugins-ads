@@ -2,7 +2,8 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cocoon-plugin-ads-ios-common" version="1.1.0">
     <name>AdsCommon</name>
-    <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitials</description>
+    <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitials
+    </description>
     <license>MPL 2.0</license>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <keywords>cordova,ads,banner,interstitial,monetization,ad</keywords>

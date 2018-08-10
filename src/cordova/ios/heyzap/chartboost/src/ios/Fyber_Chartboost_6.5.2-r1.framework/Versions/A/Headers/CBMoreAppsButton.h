@@ -37,8 +37,8 @@
  
 */
 
-+ (CBMoreAppsButton *)moreAppsButtonWithImage:(UIImage *)customImage
-                           fromViewController:(UIViewController *)viewController
-                                     location:(CBLocation)location;
+    + (CBMoreAppsButton *)moreAppsButtonWithImage: (UIImage *)customImage
+                               fromViewController: (UIViewController *)viewController
+                                         location: (CBLocation)location;
 
 @end

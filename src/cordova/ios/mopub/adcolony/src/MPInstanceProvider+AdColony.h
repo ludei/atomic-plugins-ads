@@ -14,6 +14,6 @@
 
 @interface MPInstanceProvider (AdColony)
 
-- (MPAdColonyRouter *)sharedMPAdColonyRouter;
+    - (MPAdColonyRouter *)sharedMPAdColonyRouter;
 
 @end

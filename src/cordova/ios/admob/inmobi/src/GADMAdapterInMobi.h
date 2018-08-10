@@ -16,13 +16,13 @@
 #import "sdaGADMRewardBasedVideoAdNetworkAdapterProtocol.h"
 
 @interface GADMAdapterInMobi : NSObject <GADMAdNetworkAdapter,
-GADMRewardBasedVideoAdNetworkAdapter, IMBannerDelegate, IMInterstitialDelegate> {
-}
+        GADMRewardBasedVideoAdNetworkAdapter, IMBannerDelegate, IMInterstitialDelegate> {
+    }
 
-@property(nonatomic, retain) IMBanner *adView;
-@property(nonatomic, retain) IMInterstitial *interstitial;
-@property(nonatomic, retain) IMInterstitial *adRewarded;
-@property(nonatomic, readonly) long long placementId;
-@property(nonatomic, assign) id<GADMAdNetworkConnector> connector;
-@property(nonatomic, assign) id<GADMRewardBasedVideoAdNetworkConnector> rewardedConnector;
+    @property(nonatomic, retain) IMBanner *adView;
+    @property(nonatomic, retain) IMInterstitial *interstitial;
+    @property(nonatomic, retain) IMInterstitial *adRewarded;
+    @property(nonatomic, readonly) long long placementId;
+    @property(nonatomic, assign) id <GADMAdNetworkConnector> connector;
+    @property(nonatomic, assign) id <GADMRewardBasedVideoAdNetworkConnector> rewardedConnector;
 @end

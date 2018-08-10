@@ -10,12 +10,11 @@
 
 @implementation MPInstanceProvider (Unity)
 
-- (MPUnityRouter *)sharedMPUnityRouter
-{
-    return [self singletonForClass:[MPUnityRouter class]
-                          provider:^id{
-                              return [[MPUnityRouter alloc] init];
-                          }];
-}
+    - (MPUnityRouter *)sharedMPUnityRouter {
+        return [self singletonForClass: [MPUnityRouter class]
+                              provider: ^id {
+                                  return [[MPUnityRouter alloc] init];
+                              }];
+    }
 
 @end

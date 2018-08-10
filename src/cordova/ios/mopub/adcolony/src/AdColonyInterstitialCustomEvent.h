@@ -6,9 +6,11 @@
 //
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPInterstitialCustomEvent.h"
+
+#import "MPInterstitialCustomEvent.h"
+
 #endif
 
 /*
@@ -33,7 +35,7 @@
  * your app ID in your network settings for AdColony. See the Custom Native Network Setup guide for more
  * information. https://dev.twitter.com/mopub/ad-networks/network-setup-custom-native
  */
-+ (void)setAppId:(NSString *)appId;
+    + (void)setAppId: (NSString *)appId;
 
 /**
  * Registers an array of AdColony zone IDs to be used when initializing the AdColony SDK.
@@ -50,7 +52,7 @@
  * your Zone IDs in your network settings for AdColony. See the Custom Native Network Setup guide for more
  * information. https://dev.twitter.com/mopub/ad-networks/network-setup-custom-native
  */
-+ (void)setAllZoneIds:(NSArray *)zoneIds;
+    + (void)setAllZoneIds: (NSArray *)zoneIds;
 
 /**
  * Registers an AdColony zone ID that should be used as a default value for ad requests.
@@ -68,6 +70,6 @@
  * your default Zone ID in your network settings for AdColony. See the Custom Native Network Setup guide for more
  * information. https://dev.twitter.com/mopub/ad-networks/network-setup-custom-native
  */
-+ (void)setDefaultZoneId:(NSString *)defaultZoneId;
+    + (void)setDefaultZoneId: (NSString *)defaultZoneId;
 
 @end

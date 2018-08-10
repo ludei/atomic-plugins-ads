@@ -40,7 +40,7 @@
 @interface HZIncentivizedAd : NSObject
 
 /** Fetches an incentivized video ad from Heyzap. */
-+ (void) fetch;
+    + (void)fetch;
 
 /**
  *  Fetches an incentivized video ad from Heyzap.
@@ -48,30 +48,28 @@
  *  @param tag An identifier for the location/context of the ad which you can use to disable the ad from your dashboard.
  */
 
-+ (void) fetchForTag:(NSString *)tag;
+    + (void)fetchForTag: (NSString *)tag;
 
 /**
  *  Fetches an incentivized video ad from Heyzap.
  *
  *  @param completion A block called when the video is fetched or fails to fetch. `result` states whether the fetch was sucessful; the error object describes the issue, if there was one.
  */
-+ (void) fetchWithCompletion: (void (^)(BOOL result, NSError *error))completion;
+    + (void)fetchWithCompletion: (void (^)(BOOL result, NSError *error))completion;
 
 /**
  *  Fetches an incentivized video ad from Heyzap with a tag.
  *  @param tag Tag name describing the location or context for the ad to be shown.
  *  @param completion A block called when the video is fetched or fails to fetch. `result` states whether the fetch was sucessful; the error object describes the issue, if there was one.
  */
-+ (void) fetchForTag: (NSString *) tag withCompletion:(void (^)(BOOL, NSError *))completion;
-
+    + (void)fetchForTag: (NSString *)tag withCompletion: (void (^)(BOOL, NSError *))completion;
 
 /**
  *  Fetches an incentivized video ad for each of the given tags.
  *
  *  @param tags An NSArray of NSString* identifiers for the location of ads which you can use to disable ads from your dashboard.
  */
-+ (void) fetchForTags:(NSArray *)tags;
-
+    + (void)fetchForTags: (NSArray *)tags;
 
 /**
  *  Fetches an incentivized video ad for each of the given tags with an optional completion handler.
@@ -79,14 +77,14 @@
  *  @param tag        An NSArray of NSString* identifiers for the location of ads which you can use to disable ads from your dashboard.
  *  @param completion A block called when an ad for each tag is fetched or fails to fetch. `result` states whether the fetch was sucessful; the error object describes the issue, if there was one.
  */
-+ (void) fetchForTags:(NSArray *)tags withCompletion:(void (^)(BOOL result, NSError *error))completion;
+    + (void)fetchForTags: (NSArray *)tags withCompletion: (void (^)(BOOL result, NSError *error))completion;
 
 /**
  *  Whether or not an incentivized video ad is ready to show.
  *
  *  @return If an incentivized video ad is ready to show.
  */
-+ (BOOL) isAvailable;
+    + (BOOL)isAvailable;
 
 /**
  *  Whether or not an incentivized video ad is ready to show for the given tag.
@@ -95,27 +93,25 @@
  *
  *  @return If an incentivized video ad is ready to show.
  */
-+ (BOOL) isAvailableForTag: (NSString *) tag;
-
+    + (BOOL)isAvailableForTag: (NSString *)tag;
 
 /** Shows an incentivized video ad if one is available. */
-+ (void) show;
+    + (void)show;
 
 /** Shows an incentivized video ad if one with the particlar tag is available.
  *
  * @param tag Tag name describing the location or context for the ad to be shown.
  */
-+ (void) showForTag: (NSString *) tag;
+    + (void)showForTag: (NSString *)tag;
 
 /** Shows an incentivized video with the given options.
  *
  * @param options HZShowOptions object containing properties for configuring how the ad is shown.
  */
-+ (void) showWithOptions: (HZShowOptions *) options;
-
+    + (void)showWithOptions: (HZShowOptions *)options;
 
 #pragma mark - Callbacks
 
-+ (void)setDelegate:(id<HZIncentivizedAdDelegate>)delegate;
+    + (void)setDelegate: (id <HZIncentivizedAdDelegate>)delegate;
 
 @end

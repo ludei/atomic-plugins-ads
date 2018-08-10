@@ -2,10 +2,10 @@
 
 #import <GoogleMobileAds/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h>
 
-@interface GADMAdapterAppLovinRewardBasedVideoAd : NSObject<GADMRewardBasedVideoAdNetworkAdapter>
+@interface GADMAdapterAppLovinRewardBasedVideoAd : NSObject <GADMRewardBasedVideoAdNetworkAdapter>
 
 @end
 
-@interface GADMExtrasAppLovin : NSObject<GADAdNetworkExtras>
-@property(nonatomic, assign) NSUInteger requestNumber;
+@interface GADMExtrasAppLovin : NSObject <GADAdNetworkExtras>
+    @property(nonatomic, assign) NSUInteger requestNumber;
 @end

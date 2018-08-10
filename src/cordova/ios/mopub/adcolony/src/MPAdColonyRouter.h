@@ -18,7 +18,7 @@
  */
 @interface MPAdColonyRouter : NSObject <AdColonyDelegate>
 
-+ (MPAdColonyRouter *)sharedRouter;
+    + (MPAdColonyRouter *)sharedRouter;
 
 /*
  * Associates a custom event with a zone ID.
@@ -29,7 +29,7 @@
  * @param customEvent The custom event object associated with zoneID.
  * @param zoneId The zone ID associated with the Ad Colony ad we're working on.
  */
-- (void)setCustomEvent:(id<MPAdColonyRouterDelegate>)customEvent forZoneId:(NSString *)zoneID;
+    - (void)setCustomEvent: (id <MPAdColonyRouterDelegate>)customEvent forZoneId: (NSString *)zoneID;
 
 /*
  * Disassociates a custom event for a zone ID.
@@ -40,7 +40,7 @@
  * @param customEvent The custom event that is currently associated with zoneId.
  * @param zoneId The zone ID associated with the Ad Colony ad we're working on.
  */
-- (void)removeCustomEvent:(id<MPAdColonyRouterDelegate>)customEvent forZoneId:(NSString *)zoneId;
+    - (void)removeCustomEvent: (id <MPAdColonyRouterDelegate>)customEvent forZoneId: (NSString *)zoneId;
 
 @end
 
@@ -56,17 +56,17 @@
  * The object implementing `MPAdColonyRouterDelegate` must implement this method to tell the
  * router if its zone is currently available.
  */
-- (BOOL)zoneAvailable;
+    - (BOOL)zoneAvailable;
 
 /*
  * This method is called when an Ad Colony ad successfully loads for its zone ID.
  */
-- (void)zoneDidLoad;
+    - (void)zoneDidLoad;
 
 /*
  * This method is called when an Ad Colony ad expires for its zone ID.
  */
-- (void)zoneDidExpire;
+    - (void)zoneDidExpire;
 
 @optional
 
@@ -74,6 +74,6 @@
  * This method is called when the application user should be rewarded for watching a rewarded
  * video.
  */
-- (void)shouldRewardUserWithReward:(MPRewardedVideoReward *)reward;
+    - (void)shouldRewardUserWithReward: (MPRewardedVideoReward *)reward;
 
 @end

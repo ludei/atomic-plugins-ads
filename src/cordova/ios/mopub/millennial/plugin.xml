@@ -12,7 +12,8 @@
         <header-file src="src/MPMillennialInterstitialCustomEvent.h"/>
         <source-file src="src/MPMillennialInterstitialCustomEvent.m"/>
 
-        <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default="This app requires the photholibrary usage permission"/>
+        <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION"
+                    default="This app requires the photholibrary usage permission"/>
         <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
             <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
         </config-file>

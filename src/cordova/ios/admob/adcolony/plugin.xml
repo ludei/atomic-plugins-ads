@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob-adcolony" version="1.0.3">
+        id="cocoon-plugin-ads-ios-admob-adcolony" version="1.1.0">
     <name>AdMobAdapterAdColony</name>
     <description>iOS AdColony adapter for AdMob</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <source-file src="src/deps/libAdapterSDKAdColony.a" framework="true"/>
+        <preference name="CALENDAR_USAGE_DESCRIPTION" default="Some ad content may create a calendar event."/>
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="Some ad content may access the camera to take pictures."/>
+        <preference name="MOTION_USAGE_DESCRIPTION"
+                    default="Some ad content may require access to accelerometer for interactive ad experience."/>
+        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION"
+                    default="Some ad content may require access to the photo library."/>
 
-        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission"/>
-        <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
-            <string>$CALENDAR_USAGE_DESCRIPTION</string>
+        <header-file src="src/LDAdColonyAdapterPlugin.h"/>
+        <source-file src="src/LDAdColonyAdapterPlugin.m"/>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="LDAdColonyAdapter">
+                <param name="ios-package" value="LDAdColonyAdapterPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
         </config-file>
+
+        <framework src="libs/AdColonyAdapter.framework" custom="true"/>
+        <framework src="EventKit.framework" weak="true"/>
     </platform>
     <dependency id="cocoon-plugin-ads-ios-admob"/>
     <dependency id="cocoon-plugin-ads-ios-adcolony"/>

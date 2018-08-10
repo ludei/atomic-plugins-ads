@@ -13,7 +13,7 @@
 #import <AppLovin/ALAdVideoPlaybackDelegate.h>
 
 @interface AppLovinRewardedCustomEvent
-    : MPRewardedVideoCustomEvent <ALAdLoadDelegate, ALAdDisplayDelegate,
-                                  ALAdRewardDelegate, ALAdVideoPlaybackDelegate>
+        : MPRewardedVideoCustomEvent <ALAdLoadDelegate, ALAdDisplayDelegate,
+        ALAdRewardDelegate, ALAdVideoPlaybackDelegate>
 
 @end

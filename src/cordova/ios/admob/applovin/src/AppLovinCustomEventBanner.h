@@ -14,5 +14,5 @@
 #import <AppLovin/ALAdView.h>
 
 @interface AppLovinCustomEventBanner : NSObject <GADCustomEventBanner, ALAdLoadDelegate, ALAdDisplayDelegate>
-@property (strong, atomic) ALAdView* adView;
+    @property(strong, atomic) ALAdView *adView;
 @end

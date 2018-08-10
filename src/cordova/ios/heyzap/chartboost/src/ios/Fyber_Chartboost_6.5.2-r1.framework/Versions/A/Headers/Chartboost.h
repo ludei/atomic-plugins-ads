@@ -16,27 +16,28 @@
  Used with setFramework:(CBFramework)framework calls to set suffix for
  wrapper libraries like Unity or Corona.
  */
-typedef NS_ENUM(NSUInteger, CBFramework) {
-    /*! Unity. */
-    CBFrameworkUnity,
-    /*! Corona. */
-    CBFrameworkCorona,
-    /*! Adobe AIR. */
-    CBFrameworkAIR,
-    /*! GameSalad. */
-    CBFrameworkGameSalad,
-    /*! Cordova. */
-    CBFrameworkCordova,
-    /*! CocoonJS. */
-    CBFrameworkCocoonJS,
-    /*! Cocos2d-x. */
-    CBFrameworkCocos2dx,
-    /*! Prime31Unreal. */
-    CBFrameworkPrime31Unreal,
-    /*! Weeby. */
-    CBFrameworkWeeby,
-    /*! Unknown. Other */
-    CBFrameworkOther
+typedef NS_ENUM(NSUInteger, CBFramework
+) {
+/*! Unity. */
+CBFrameworkUnity,
+/*! Corona. */
+CBFrameworkCorona,
+/*! Adobe AIR. */
+CBFrameworkAIR,
+/*! GameSalad. */
+CBFrameworkGameSalad,
+/*! Cordova. */
+CBFrameworkCordova,
+/*! CocoonJS. */
+CBFrameworkCocoonJS,
+/*! Cocos2d-x. */
+CBFrameworkCocos2dx,
+/*! Prime31Unreal. */
+CBFrameworkPrime31Unreal,
+/*! Weeby. */
+CBFrameworkWeeby,
+/*! Unknown. Other */
+CBFrameworkOther
 };
 
 /*!
@@ -46,28 +47,27 @@ typedef NS_ENUM(NSUInteger, CBFramework) {
  Used with setMediation:(CBMediation)library calls to set mediation library name
  partners. If you don't see your library here, contact support.
  */
-typedef NS_ENUM(NSUInteger, CBMediation) {
-    /*! Unknown. Other */
-    CBMediationOther,
-    /*! AdMarvel */
-    CBMediationAdMarvel,
-    /*! Fuse */
-    CBMediationFuse,
-    /*! Fyber */
-    CBMediationFyber,
-    /*! HeyZap */
-    CBMediationHeyZap,
-    /*! MoPub */
-    CBMediationMoPub,
-    /*! Supersonic */
-    CBMediationSupersonic,
-    /*! AdMob */
-    CBMediationAdMob,
-    /*! HyprMX */
-    CBMediationHyprMX
+typedef NS_ENUM(NSUInteger, CBMediation
+) {
+/*! Unknown. Other */
+CBMediationOther,
+/*! AdMarvel */
+CBMediationAdMarvel,
+/*! Fuse */
+CBMediationFuse,
+/*! Fyber */
+CBMediationFyber,
+/*! HeyZap */
+CBMediationHeyZap,
+/*! MoPub */
+CBMediationMoPub,
+/*! Supersonic */
+CBMediationSupersonic,
+/*! AdMob */
+CBMediationAdMob,
+/*! HyprMX */
+CBMediationHyprMX
 };
-
-
 
 /*!
  @typedef NS_ENUM (NSUInteger, CBLoadError)
@@ -75,35 +75,36 @@ typedef NS_ENUM(NSUInteger, CBMediation) {
  @abstract
  Returned to ChartboostDelegate methods to notify of Chartboost SDK errors.
  */
-typedef NS_ENUM(NSUInteger, CBLoadError) {
-    /*! Unknown internal error. */
-    CBLoadErrorInternal = 0,
-    /*! Network is currently unavailable. */
-    CBLoadErrorInternetUnavailable = 1,
-    /*! Too many requests are pending for that location.  */
-    CBLoadErrorTooManyConnections = 2,
-    /*! Interstitial loaded with wrong orientation. */
-    CBLoadErrorWrongOrientation = 3,
-    /*! Interstitial disabled, first session. */
-    CBLoadErrorFirstSessionInterstitialsDisabled = 4,
-    /*! Network request failed. */
-    CBLoadErrorNetworkFailure = 5,
-    /*!  No ad received. */
-    CBLoadErrorNoAdFound = 6,
-    /*! Session not started. */
-    CBLoadErrorSessionNotStarted = 7,
-	/*! There is an impression already visible.*/
-	CBLoadErrorImpressionAlreadyVisible = 8,
-    /*! User manually cancelled the impression. */
-    CBLoadErrorUserCancellation = 10,
-    /*! No location detected. */
-    CBLoadErrorNoLocationFound = 11,
-    /*! Error downloading asset. */
-    CBLoadErrorAssetDownloadFailure = 16,
-    /*! Video Prefetching is not finished */
-    CBLoadErrorPrefetchingIncomplete = 21,
-    /*! Error Originating from the JS side of a Web View */
-    CBLoadErrorWebViewScriptError = 22
+typedef NS_ENUM(NSUInteger, CBLoadError
+) {
+/*! Unknown internal error. */
+CBLoadErrorInternal = 0,
+/*! Network is currently unavailable. */
+        CBLoadErrorInternetUnavailable = 1,
+/*! Too many requests are pending for that location.  */
+        CBLoadErrorTooManyConnections = 2,
+/*! Interstitial loaded with wrong orientation. */
+        CBLoadErrorWrongOrientation = 3,
+/*! Interstitial disabled, first session. */
+        CBLoadErrorFirstSessionInterstitialsDisabled = 4,
+/*! Network request failed. */
+        CBLoadErrorNetworkFailure = 5,
+/*!  No ad received. */
+        CBLoadErrorNoAdFound = 6,
+/*! Session not started. */
+        CBLoadErrorSessionNotStarted = 7,
+/*! There is an impression already visible.*/
+        CBLoadErrorImpressionAlreadyVisible = 8,
+/*! User manually cancelled the impression. */
+        CBLoadErrorUserCancellation = 10,
+/*! No location detected. */
+        CBLoadErrorNoLocationFound = 11,
+/*! Error downloading asset. */
+        CBLoadErrorAssetDownloadFailure = 16,
+/*! Video Prefetching is not finished */
+        CBLoadErrorPrefetchingIncomplete = 21,
+/*! Error Originating from the JS side of a Web View */
+        CBLoadErrorWebViewScriptError = 22
 };
 
 /*!
@@ -112,15 +113,16 @@ typedef NS_ENUM(NSUInteger, CBLoadError) {
  @abstract
  Returned to ChartboostDelegate methods to notify of Chartboost SDK errors.
  */
-typedef NS_ENUM(NSUInteger, CBClickError) {
-    /*! Invalid URI. */
-    CBClickErrorUriInvalid,
-    /*! The device does not know how to open the protocol of the URI  */
-    CBClickErrorUriUnrecognized,
-    /*! User failed to pass the age gate. */
-    CBClickErrorAgeGateFailure,
-    /*! Unknown internal error */
-    CBClickErrorInternal,
+typedef NS_ENUM(NSUInteger, CBClickError
+) {
+/*! Invalid URI. */
+CBClickErrorUriInvalid,
+/*! The device does not know how to open the protocol of the URI  */
+CBClickErrorUriUnrecognized,
+/*! User failed to pass the age gate. */
+CBClickErrorAgeGateFailure,
+/*! Unknown internal error */
+CBClickErrorInternal,
 };
 
 /*!
@@ -130,13 +132,14 @@ typedef NS_ENUM(NSUInteger, CBClickError) {
  Used with setStatusBarBehavior:(CBStatusBarBehavior)statusBarBehavior calls to set how fullscreen ads should
  behave with regards to the status bar.
  */
-typedef NS_ENUM(NSUInteger, CBStatusBarBehavior) {
-    /*! Ignore status bar altogether; fullscreen ads will use the space of the status bar. */
-    CBStatusBarBehaviorIgnore,
-    /*! Respect the status bar partially; fullscreen ads will use the space of the status bar but any user interactive buttons will not. */
-    CBStatusBarBehaviorRespectButtons,
-    /*! Respect the status bar fully; fullscreen ads will not use the status bar space. */
-    CBStatusBarBehaviorRespect
+typedef NS_ENUM(NSUInteger, CBStatusBarBehavior
+) {
+/*! Ignore status bar altogether; fullscreen ads will use the space of the status bar. */
+CBStatusBarBehaviorIgnore,
+/*! Respect the status bar partially; fullscreen ads will use the space of the status bar but any user interactive buttons will not. */
+CBStatusBarBehaviorRespectButtons,
+/*! Respect the status bar fully; fullscreen ads will not use the status bar space. */
+CBStatusBarBehaviorRespect
 };
 
 /*!
@@ -153,7 +156,7 @@ typedef NS_ENUM(NSUInteger, CBStatusBarBehavior) {
  - Control of ad targeting and frequency.
  - Better reporting.
  */
-typedef NSString * const CBLocation;
+typedef NSString *const CBLocation;
 
 /*! "Startup" - Initial startup of game. */
 extern CBLocation const CBLocationStartup;
@@ -219,9 +222,9 @@ extern CBLocation const CBLocationDefault;
  Once executed this call will also controll session tracking and background tasks
  used by Chartboost.
 */
-+ (void)startWithAppId:(NSString*)appId
-          appSignature:(NSString*)appSignature
-              delegate:(id<ChartboostDelegate>)delegate;
+    + (void)startWithAppId: (NSString *)appId
+              appSignature: (NSString *)appSignature
+                  delegate: (id <ChartboostDelegate>)delegate;
 
 /*!
  @abstract 
@@ -232,8 +235,7 @@ extern CBLocation const CBLocationDefault;
  @discussion This doesn't need to be called when calling startWithAppID, only later
  to switch the delegate object.
  */
-+ (void)setDelegate:(id<ChartboostDelegate>)del;
-
+    + (void)setDelegate: (id <ChartboostDelegate>)del;
 
 /*!
  @abstract
@@ -243,7 +245,7 @@ extern CBLocation const CBLocationDefault;
  
  @discussion This method can be used to check if any chartboost ad's are visible on the app.
  */
-+ (BOOL)isAnyViewVisible;
+    + (BOOL)isAnyViewVisible;
 
 /*!
  @abstract
@@ -257,7 +259,7 @@ extern CBLocation const CBLocationDefault;
  showInterstitial:(CBLocation)location method will present without making
  additional Chartboost API server requests to fetch data to present.
  */
-+ (BOOL)hasInterstitial:(CBLocation)location;
+    + (BOOL)hasInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -272,7 +274,7 @@ extern CBLocation const CBLocationDefault;
  or there is no eligible interstitial to present in the given CBLocation this method
  is a no-op.
  */
-+ (void)showInterstitial:(CBLocation)location;
+    + (void)showInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -286,7 +288,7 @@ extern CBLocation const CBLocationDefault;
  showMoreApps:(CBLocation)location method will present without making
  additional server requests to fetch data to present.
  */
-+ (BOOL)hasMoreApps:(CBLocation)location;
+    + (BOOL)hasMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -301,7 +303,7 @@ extern CBLocation const CBLocationDefault;
  or there is no eligible "more applications" to present in the given CBLocation this method
  is a no-op.
  */
-+ (void)showMoreApps:(CBLocation)location;
+    + (void)showMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -317,8 +319,8 @@ extern CBLocation const CBLocationDefault;
  view hierarchy. If the Chartboost API server is unavailable or there is no eligible "more applications" 
  to present in the given CBLocation this method is a no-op.
  */
-+ (void)showMoreApps:(UIViewController *)viewController
-            location:(CBLocation)location;
+    + (void)showMoreApps: (UIViewController *)viewController
+                location: (CBLocation)location;
 
 /*!
  @abstract
@@ -332,7 +334,7 @@ extern CBLocation const CBLocationDefault;
  showRewardedVideo:(CBLocation)location method will present without making
  additional Chartboost API server requests to fetch data to present.
  */
-+ (BOOL)hasRewardedVideo:(CBLocation)location;
+    + (BOOL)hasRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -347,7 +349,7 @@ extern CBLocation const CBLocationDefault;
  or there is no eligible rewarded video to present in the given CBLocation this method
  is a no-op.
  */
-+ (void)showRewardedVideo:(CBLocation)location;
+    + (void)showRewardedVideo: (CBLocation)location;
 
 #pragma mark - Advanced Configuration & Use
 
@@ -362,7 +364,7 @@ extern CBLocation const CBLocationDefault;
  then this method must be executed after the user has confirmed their age.  The Chartboost SDK
  will halt until this is done.
  */
-+ (void)didPassAgeGate:(BOOL)pass;
+    + (void)didPassAgeGate: (BOOL)pass;
 
 /*!
  @abstract
@@ -378,8 +380,8 @@ extern CBLocation const CBLocationDefault;
  Chartboost SDK is capable of handling you should use this method in your ApplicationDelegate
  class methods that handle custom URL schemes.
  */
-+ (BOOL)handleOpenURL:(NSURL *)url
-    sourceApplication:(NSString *)sourceApplication;
+    + (BOOL)handleOpenURL: (NSURL *)url
+        sourceApplication: (NSString *)sourceApplication;
 
 /*!
  @abstract
@@ -397,9 +399,9 @@ extern CBLocation const CBLocationDefault;
  Chartboost SDK is capable of handling you should use this method in your ApplicationDelegate
  class methods that handle custom URL schemes.
  */
-+ (BOOL)handleOpenURL:(NSURL *)url
-    sourceApplication:(NSString *)sourceApplication
-           annotation:(id)annotation;
+    + (BOOL)handleOpenURL: (NSURL *)url
+        sourceApplication: (NSString *)sourceApplication
+               annotation: (id)annotation;
 
 /*!
  @abstract
@@ -410,7 +412,7 @@ extern CBLocation const CBLocationDefault;
  @discussion Use this method to set a custom identifier that can be used later in the Chartboost
  dashboard to group information by.
  */
-+ (void)setCustomId:(NSString *)customId;
+    + (void)setCustomId: (NSString *)customId;
 
 /*!
  @abstract
@@ -421,7 +423,7 @@ extern CBLocation const CBLocationDefault;
  @discussion Use this method to get the custom identifier that can be used later in the Chartboost
  dashboard to group information by.
  */
-+ (NSString *)getCustomId;
+    + (NSString *)getCustomId;
 
 /*!
  @abstract
@@ -433,7 +435,7 @@ extern CBLocation const CBLocationDefault;
  @discussion This is an internal method used via Chartboost's Unity and Corona SDKs
  to track their usage.
  */
-+ (void)setFrameworkVersion:(NSString*)frameworkVersion __attribute__((deprecated("This method is deprecated, please use  + (void)setChartboostWrapperVersion:(NSString*)chartboostWrapperVersion instead")));
+    + (void)setFrameworkVersion: (NSString *)frameworkVersion __attribute__((deprecated("This method is deprecated, please use  + (void)setChartboostWrapperVersion:(NSString*)chartboostWrapperVersion instead")));
 
 /*!
  @abstract
@@ -445,8 +447,8 @@ extern CBLocation const CBLocationDefault;
  @discussion This is an internal method used via Chartboost's Unity and Corona SDKs
  to track their usage.
  */
-+ (void)setChartboostWrapperVersion:(NSString*)chartboostWrapperVersion;
-    
+    + (void)setChartboostWrapperVersion: (NSString *)chartboostWrapperVersion;
+
 /*!
  @abstract
  Set a custom framework suffix to append to the POST headers field.
@@ -456,7 +458,7 @@ extern CBLocation const CBLocationDefault;
  @discussion This is an internal method used via Chartboost's Unity and Corona SDKs
  to track their usage.
  */
-+ (void)setFramework:(CBFramework)framework __attribute__((deprecated("This method is deprecated, please use  + (void)setFramework:(CBFramework)framework withVersion:(NSString *)version; instead")));
+    + (void)setFramework: (CBFramework)framework __attribute__((deprecated("This method is deprecated, please use  + (void)setFramework:(CBFramework)framework withVersion:(NSString *)version; instead")));
 
 /*!
  @abstract
@@ -469,7 +471,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion This is an internal method used via Chartboost's Unity and Corona SDKs
  to track their usage.
  */
-+ (void)setFramework:(CBFramework)framework withVersion:(NSString *)version;
+    + (void)setFramework: (CBFramework)framework withVersion: (NSString *)version;
 
 /*!
  @abstract
@@ -481,7 +483,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  @discussion This is an internal method used by mediation partners to track their usage.
  */
-+ (void)setMediation:(CBMediation)library withVersion:(NSString*)libraryVersion;
+    + (void)setMediation: (CBMediation)library withVersion: (NSString *)libraryVersion;
 
 /*!
  @abstract
@@ -495,7 +497,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default is YES.
  */
-+ (void)setShouldRequestInterstitialsInFirstSession:(BOOL)shouldRequest;
+    + (void)setShouldRequestInterstitialsInFirstSession: (BOOL)shouldRequest;
 
 /*!
  @abstract
@@ -507,7 +509,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default is NO.
  */
-+ (void)setShouldPauseClickForConfirmation:(BOOL)shouldPause;
+    + (void)setShouldPauseClickForConfirmation: (BOOL)shouldPause;
 
 /*!
  @abstract
@@ -521,7 +523,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default is NO.
  */
-+ (void)setShouldDisplayLoadingViewForMoreApps:(BOOL)shouldDisplay;
+    + (void)setShouldDisplayLoadingViewForMoreApps: (BOOL)shouldDisplay;
 
 /*!
  @abstract
@@ -533,15 +535,13 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default is YES.
  */
-+ (void)setShouldPrefetchVideoContent:(BOOL)shouldPrefetch;
-
+    + (void)setShouldPrefetchVideoContent: (BOOL)shouldPrefetch;
 
 /*!
  @abstract
  Returns the version of the Chartboost SDK.
  */
-+ (NSString*)getSDKVersion;
-
+    + (NSString *)getSDKVersion;
 
 #pragma mark - Advanced Caching
 
@@ -555,7 +555,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  for the given CBLocation and, if found, will do nothing. If no locally cached data exists 
  the method will attempt to fetch data from the Chartboost API server.
  */
-+ (void)cacheInterstitial:(CBLocation)location;
+    + (void)cacheInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -567,7 +567,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  for the given CBLocation and, if found, will do nothing. If no locally cached data exists
  the method will attempt to fetch data from the Chartboost API server.
  */
-+ (void)cacheMoreApps:(CBLocation)location;
+    + (void)cacheMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -579,7 +579,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  for the given CBLocation and, if found, will do nothing. If no locally cached data exists
  the method will attempt to fetch data from the Chartboost API server.
  */
-+ (void)cacheRewardedVideo:(CBLocation)location;
+    + (void)cacheRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -591,7 +591,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  once one has been consumed via a "show" call.  If set to NO, it is the responsibility of the
  developer to manage the caching behavior of Chartboost impressions.
  */
-+ (void)setAutoCacheAds:(BOOL)shouldCache;
+    + (void)setAutoCacheAds: (BOOL)shouldCache;
 
 /*!
  @abstract
@@ -603,7 +603,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  once one has been consumed via a "show" call.  If set to NO, it is the responsibility of the
  developer to manage the caching behavior of Chartboost impressions.
  */
-+ (BOOL)getAutoCacheAds;
+    + (BOOL)getAutoCacheAds;
 
 /*!
  @abstract
@@ -614,8 +614,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion See the enum value comments for descriptions on the values and their behavior.  Only use this feature if your
  application has the status bar enabled.
  */
-+ (void)setStatusBarBehavior:(CBStatusBarBehavior)statusBarBehavior;
-
+    + (void)setStatusBarBehavior: (CBStatusBarBehavior)statusBarBehavior;
 
 /*!
  @abstract 
@@ -624,7 +623,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Call to check if automatic tracking of in-app purchases is enabled. 
  The setting is controlled by the server.
  */
-+ (BOOL)getAutoIAPTracking;
+    + (BOOL)getAutoIAPTracking;
 
 
 @end
@@ -654,7 +653,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when the initialization process has finished.
  */
 
-- (void)didInitialize:(BOOL)status;
+    - (void)didInitialize: (BOOL)status;
 
 #pragma mark - Interstitial Delegate
 
@@ -674,7 +673,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default return is YES.
  */
-- (BOOL)shouldRequestInterstitial:(CBLocation)location;
+    - (BOOL)shouldRequestInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -691,7 +690,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default return is YES.
  */
-- (BOOL)shouldDisplayInterstitial:(CBLocation)location;
+    - (BOOL)shouldDisplayInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -702,7 +701,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an interstitial has
  been displayed on the screen for a given CBLocation.
  */
-- (void)didDisplayInterstitial:(CBLocation)location;
+    - (void)didDisplayInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -714,7 +713,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an interstitial has been loaded from the Chartboost API
  servers and cached locally for a given CBLocation.
  */
-- (void)didCacheInterstitial:(CBLocation)location;
+    - (void)didCacheInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -728,8 +727,8 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an interstitial has attempted to load from the Chartboost API
  servers but failed for a given CBLocation.
  */
-- (void)didFailToLoadInterstitial:(CBLocation)location
-                        withError:(CBLoadError)error;
+    - (void)didFailToLoadInterstitial: (CBLocation)location
+                            withError: (CBLoadError)error;
 
 /*!
  @abstract
@@ -742,8 +741,8 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when a click is registered, but the user is not fowrwarded 
  to the IOS App Store for a given CBLocation.
  */
-- (void)didFailToRecordClick:(CBLocation)location
-                   withError:(CBClickError)error;
+    - (void)didFailToRecordClick: (CBLocation)location
+                       withError: (CBClickError)error;
 
 /*!
  @abstract
@@ -754,7 +753,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an interstitial has been dismissed for a given CBLocation.
  "Dismissal" is defined as any action that removed the interstitial UI such as a click or close.
  */
-- (void)didDismissInterstitial:(CBLocation)location;
+    - (void)didDismissInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -765,7 +764,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an interstitial has been closed for a given CBLocation.
  "Closed" is defined as clicking the close interface for the interstitial.
  */
-- (void)didCloseInterstitial:(CBLocation)location;
+    - (void)didCloseInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -776,7 +775,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an interstitial has been click for a given CBLocation.
  "Clicked" is defined as clicking the creative interface for the interstitial.
  */
-- (void)didClickInterstitial:(CBLocation)location;
+    - (void)didClickInterstitial: (CBLocation)location;
 
 /*!
  @abstract
@@ -793,7 +792,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default return is YES.
  */
-- (BOOL)shouldDisplayMoreApps:(CBLocation)location;
+    - (BOOL)shouldDisplayMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -804,7 +803,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an "more applications" has
  been displayed on the screen for a given CBLocation.
  */
-- (void)didDisplayMoreApps:(CBLocation)location;
+    - (void)didDisplayMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -816,7 +815,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an "more applications" has been loaded from the Chartboost API
  servers and cached locally for a given CBLocation.
  */
-- (void)didCacheMoreApps:(CBLocation)location;
+    - (void)didCacheMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -827,7 +826,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an "more applications" has been dismissed for a given CBLocation.
  "Dismissal" is defined as any action that removed the "more applications" UI such as a click or close.
  */
-- (void)didDismissMoreApps:(CBLocation)location;
+    - (void)didDismissMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -838,7 +837,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an "more applications" has been closed for a given CBLocation.
  "Closed" is defined as clicking the close interface for the "more applications".
  */
-- (void)didCloseMoreApps:(CBLocation)location;
+    - (void)didCloseMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -849,7 +848,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an "more applications" has been clicked for a given CBLocation.
  "Clicked" is defined as clicking the creative interface for the "more applications".
  */
-- (void)didClickMoreApps:(CBLocation)location;
+    - (void)didClickMoreApps: (CBLocation)location;
 
 /*!
  @abstract
@@ -863,8 +862,8 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an "more applications" has attempted to load from the Chartboost API
  servers but failed for a given CBLocation.
  */
-- (void)didFailToLoadMoreApps:(CBLocation)location
-                    withError:(CBLoadError)error;
+    - (void)didFailToLoadMoreApps: (CBLocation)location
+                        withError: (CBLoadError)error;
 
 #pragma mark - Rewarded Video Delegate
 
@@ -883,7 +882,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  Default return is YES.
  */
-- (BOOL)shouldDisplayRewardedVideo:(CBLocation)location;
+    - (BOOL)shouldDisplayRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -894,7 +893,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when a rewarded video has
  been displayed on the screen for a given CBLocation.
  */
-- (void)didDisplayRewardedVideo:(CBLocation)location;
+    - (void)didDisplayRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -906,7 +905,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when a rewarded video has been loaded from the Chartboost API
  servers and cached locally for a given CBLocation.
  */
-- (void)didCacheRewardedVideo:(CBLocation)location;
+    - (void)didCacheRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -920,8 +919,8 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an rewarded video has attempted to load from the Chartboost API
  servers but failed for a given CBLocation.
  */
-- (void)didFailToLoadRewardedVideo:(CBLocation)location
-                         withError:(CBLoadError)error;
+    - (void)didFailToLoadRewardedVideo: (CBLocation)location
+                             withError: (CBLoadError)error;
 
 /*!
  @abstract
@@ -932,7 +931,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when a rewarded video has been dismissed for a given CBLocation.
  "Dismissal" is defined as any action that removed the rewarded video UI such as a click or close.
  */
-- (void)didDismissRewardedVideo:(CBLocation)location;
+    - (void)didDismissRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -943,7 +942,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when a rewarded video has been closed for a given CBLocation.
  "Closed" is defined as clicking the close interface for the rewarded video.
  */
-- (void)didCloseRewardedVideo:(CBLocation)location;
+    - (void)didCloseRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -954,7 +953,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when a rewarded video has been click for a given CBLocation.
  "Clicked" is defined as clicking the creative interface for the rewarded video.
  */
-- (void)didClickRewardedVideo:(CBLocation)location;
+    - (void)didClickRewardedVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -966,8 +965,8 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  @discussion Implement to be notified of when a rewarded video has been viewed completely and user is eligible for reward.
  */
-- (void)didCompleteRewardedVideo:(CBLocation)location
-                      withReward:(int)reward;
+    - (void)didCompleteRewardedVideo: (CBLocation)location
+                          withReward: (int)reward;
 
 #pragma mark - InPlay Delegate
 
@@ -981,7 +980,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an InPlay object has been loaded from the Chartboost API
  servers and cached locally for a given CBLocation.
  */
-- (void)didCacheInPlay:(CBLocation)location;
+    - (void)didCacheInPlay: (CBLocation)location;
 
 /*!
  @abstract
@@ -995,8 +994,8 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Implement to be notified of when an InPlay has attempted to load from the Chartboost API
  servers but failed for a given CBLocation.
  */
-- (void)didFailToLoadInPlay:(CBLocation)location
-                  withError:(CBLoadError)error;
+    - (void)didFailToLoadInPlay: (CBLocation)location
+                      withError: (CBLoadError)error;
 
 #pragma mark - General Delegate
 
@@ -1010,7 +1009,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  be displayed on the screen for a given CBLocation.  You can then do things like mute
  effects and sounds.
  */
-- (void)willDisplayVideo:(CBLocation)location;
+    - (void)willDisplayVideo: (CBLocation)location;
 
 /*!
  @abstract
@@ -1018,7 +1017,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  
  @discussion Implement to be notified of when the App Store sheet is dismissed.
  */
-- (void)didCompleteAppStoreSheetFlow;
+    - (void)didCompleteAppStoreSheetFlow;
 
 /*!
  @abstract
@@ -1027,7 +1026,7 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  @discussion Use this method to display any gating you would like to prompt the user for input.
  Once confirmed call didPassAgeGate:(BOOL)pass to continue execution.
  */
-- (void)didPauseClickForConfirmation;
+    - (void)didPauseClickForConfirmation;
 
 @end
 

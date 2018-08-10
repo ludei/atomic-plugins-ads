@@ -12,20 +12,7 @@
         <header-file src="src/LDAdMobPlugin.h"/>
         <source-file src="src/LDAdMobPlugin.m"/>
 
-        <framework src="src/deps/external/GoogleMobileAds.framework" custom="true"/>
-
-        <framework src="AdSupport.framework"/>
-        <framework src="CoreTelephony.framework"/>
-        <framework src="MessageUI.framework"/>
-        <framework src="EventKit.framework"/>
-        <framework src="EventKitUI.framework"/>
-        <framework src="SystemConfiguration.framework"/>
-        <framework src="AudioToolbox.framework"/>
-        <framework src="StoreKit.framework"/>
-        <framework src="MediaPlayer.framework"/>
-        <framework src="CoreMotion.framework"/>
-        <framework src="GLKit.framework"/>
-        <framework src="MobileCoreServices.framework"/>
+        <framework src="libs/GoogleMobileAds.framework" custom="true"/>
 
         <config-file target="config.xml" parent="/*">
             <feature name="LDAdservice">

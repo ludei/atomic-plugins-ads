@@ -15,7 +15,8 @@
 
 @interface FYBHZMediationTestSuite : NSObject
 
-+ (void)show;
-+ (void)showFromViewController:(UIViewController *)viewController;
+    + (void)show;
+
+    + (void)showFromViewController: (UIViewController *)viewController;
 
 @end
