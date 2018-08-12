@@ -6,8 +6,6 @@
     - (void)pluginInitialize {
         [super pluginInitialize];
 
-        NSLog(@"Setting AdColony listener for the AdMob consent");
-
         [[NSNotificationCenter defaultCenter] addObserverForName: @"AdMob_Consent"
                                                           object: nil
                                                            queue: [NSOperationQueue mainQueue]

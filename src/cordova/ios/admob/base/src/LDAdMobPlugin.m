@@ -19,8 +19,6 @@
 
         [GADMobileAds configureWithApplicationID: adMob.settings.appId];
 
-        NSLog(@"Posting AdMob consent notification");
-
         [[NSNotificationCenter defaultCenter] postNotificationName: @"AdMob_Consent"
                                                             object: nil
                                                           userInfo: @{@"consent": adMob.settings.personalizedAdsConsent ? @"YES" : @"NO"}];
