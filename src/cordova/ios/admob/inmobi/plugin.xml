@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob-inmobi" version="1.0.0">
+        id="cocoon-plugin-ads-ios-admob-inmobi" version="1.0.1">
     <name>AdMobAdapterinMobi</name>
     <description>iOS inmobi adapter for AdMob</description>
     <license>MPL 2.0</license>
@@ -10,7 +10,7 @@
             <source-file src="src/deps/libAdapterInMobi.a" framework="true" />
             <header-file src="src/GADInMobiExtras.h" />
             <header-file src="src/GADMAdapterInMobi.h" />
+        <dependency id="cocoon-plugin-ads-ios-inmobi" version="1.0.1" />
+        <dependency id="cocoon-plugin-ads-ios-admob" version="1.0.8" />
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-inmobi" />
-    <dependency id="cocoon-plugin-ads-ios-admob" />
 </plugin>

@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-unityads",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "iOS Unity Ads implementation",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-unityads",

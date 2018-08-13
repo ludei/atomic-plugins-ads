@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob" version="1.0.7">
+        id="cocoon-plugin-ads-ios-admob" version="1.0.8">
     <name>AdsAdMob</name>
     <description>iOS Ads AdMob implementation</description>
     <license>MPL 2.0</license>
@@ -36,6 +36,6 @@
             </feature>
         </config-file>
 
+        <dependency id="cocoon-plugin-ads-ios-common" version="1.0.5" />
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-common" />
 </plugin>

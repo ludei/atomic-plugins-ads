@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob-chartboost" version="1.0.0">
+        id="cocoon-plugin-ads-android-admob-chartboost" version="1.0.1">
     <name>AdsAdMobChartboost</name>
     <description>Android AdMob Chartboost Adapter</description>
     <license>MPL 2.0</license>
@@ -9,8 +9,8 @@
     <platform name="android">
         <source-file src="src/deps/ChartboostAdapter.jar" target-dir="libs" framework="true" />
         <source-file src="src/ChartboostAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova" />
-        <dependency id="cocoon-plugin-ads-android-admob" />
-        <dependency id="cocoon-plugin-ads-android-chartboost" />
+        <dependency id="cocoon-plugin-ads-android-admob" version="1.0.12" />
+        <dependency id="cocoon-plugin-ads-android-chartboost" version="1.0.7" />
     </platform>
 
 </plugin>

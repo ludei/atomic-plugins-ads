@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-inmobi" version="1.0.0">
+        id="cocoon-plugin-ads-ios-inmobi" version="1.0.1">
     <name>AdsAppLovin</name>
     <description>iOS InMobi Ads implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,inmobi,rewarded</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="src/deps/external/InMobi.framework" custom="true" />
+        <framework src="src/deps/external/InMobi.framework" custom="true"/>
 
-        <framework src="AdSupport.framework" />
-        <framework src="AudioToolbox.framework" />
-        <framework src="AVFoundation.framework" />
-        <framework src="CoreLocation.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="EventKit.framework" />
-        <framework src="EventKitUI.framework" />
-        <framework src="Foundation.framework" />
-        <framework src="MediaPlayer.framework" />
-        <framework src="MessageUI.framework" />
-        <framework src="Security.framework" />
-        <framework src="Social.framework" />
-        <framework src="StoreKit.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="SafariServices.framework" />
-        
-        <framework src="libsqlite3.0.tbd" />
-        <framework src="libc++.tbd" />
-        <framework src="libz.tbd" />
+        <framework src="AdSupport.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="CoreLocation.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="EventKit.framework"/>
+        <framework src="EventKitUI.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="MessageUI.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="Social.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="SafariServices.framework"/>
 
-    <dependency id="cocoon-plugin-ads-ios-common" />
+        <framework src="libsqlite3.0.tbd"/>
+        <framework src="libc++.tbd"/>
+        <framework src="libz.tbd"/>
+
+        <dependency id="cocoon-plugin-ads-ios-common" version="1.0.5"/>
     </platform>
 </plugin>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-common" version="1.0.4">
+        id="cocoon-plugin-ads-ios-common" version="1.0.5">
     <name>AdsCommon</name>
     <description>Cross platform Ads API for different Ad Providers. Full support for banners and interstitials</description>
     <license>MPL 2.0</license>
@@ -14,5 +14,5 @@
         <source-file src="src/LDAdServicePlugin.m" />
     </platform>
 
-    <dependency id="cocoon-plugin-ads-common" />
+    <dependency id="cocoon-plugin-ads-common" version="1.0.3" />
 </plugin>

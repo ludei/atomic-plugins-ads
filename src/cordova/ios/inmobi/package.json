@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-ios-inmobi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iOS inMobi Ads implementation",
   "cordova": {
     "id": "cocoon-plugin-ads-ios-inmobi",

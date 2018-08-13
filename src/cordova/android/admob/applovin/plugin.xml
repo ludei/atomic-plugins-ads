@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob-applovin" version="1.0.1">
+        id="cocoon-plugin-ads-android-admob-applovin" version="1.0.2">
     <name>AdsAdMobappLovin</name>
     <description>Android AdMob AppLovin Adapter</description>
     <license>MPL 2.0</license>
@@ -12,8 +12,8 @@
         <source-file src="src/deps/AdMobMediationInterEvent.java" target-dir="src/com/ludei/ads/applovin" />
         <source-file src="src/deps/ApplovinAdapter.java" target-dir="src/com/ludei/ads/applovin" />
 
-        <dependency id="cocoon-plugin-ads-android-admob" />
-        <dependency id="cocoon-plugin-ads-android-applovin" />
+        <dependency id="cocoon-plugin-ads-android-admob" version="1.0.12" />
+        <dependency id="cocoon-plugin-ads-android-applovin" version="1.0.1" />
     </platform>
 
 </plugin>
