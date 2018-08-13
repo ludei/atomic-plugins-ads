@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-ios-adcolony",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "description": "iOS Ads AdColony implementation",
     "cordova": {
         "id": "cocoon-plugin-ads-ios-adcolony",

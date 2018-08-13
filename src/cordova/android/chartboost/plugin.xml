@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:android="http://schemas.android.com/apk/res-auto"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-chartboost" version="1.1.0">
+        id="cocoon-plugin-ads-android-chartboost" version="2.0.0">
     <name>AdsChartboost</name>
     <description>Android Chartboost</description>
     <license>MPL 2.0</license>
