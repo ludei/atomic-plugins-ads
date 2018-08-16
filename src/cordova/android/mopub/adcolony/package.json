@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-mopub-adcolony",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Android MoPub AdColony Adapter",
   "cordova": {
     "id": "cocoon-plugin-ads-android-mopub-adcolony",

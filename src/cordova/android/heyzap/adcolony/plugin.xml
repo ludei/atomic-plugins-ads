@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-heyzap-adcolony" version="1.1.0">
+        id="cocoon-plugin-ads-android-heyzap-adcolony" version="1.1.1">
     <name>HeyzapAdapterAdColony</name>
     <description>Android Ads Heyzap implementation</description>
     <license>MPL 2.0</license>
@@ -13,5 +13,5 @@
         <source-file src="src/android/fyber-adcolony-2.3.6-r2.aar" target-dir="libs" />
     </platform>
 
-    <dependency id="cocoon-plugin-ads-ios-heyzap" />
+    <dependency id="cocoon-plugin-ads-ios-heyzap" version="1.1.1" />
 </plugin>

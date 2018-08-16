@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-heyzap-chartboost" version="1.1.0">
+        id="cocoon-plugin-ads-android-heyzap-chartboost" version="1.1.1">
     <name>HeyzapAdapterAdChartboost</name>
     <description>Android Ads Heyzap chartboost adapter</description>
     <license>MPL 2.0</license>
@@ -13,5 +13,5 @@
         <source-file src="src/android/fyber-chartboost-6.5.0-r1.aar" target-dir="libs" />
     </platform>
 
-    <dependency id="cocoon-plugin-ads-ios-heyzap" />
+    <dependency id="cocoon-plugin-ads-ios-heyzap" version="1.1.1" />
 </plugin>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub" version="1.0.5">
+        id="cocoon-plugin-ads-android-mopub" version="1.0.6">
     <name>Ads Mopub</name>
     <description>Android MoPub Ads implementation</description>
     <license>MPL 2.0</license>
@@ -43,6 +43,6 @@
         <framework src="com.android.support:support-v4:23.1.1" />
         <framework src="com.google.android.gms:play-services-ads:9.0.2" />
 
-        <dependency id="cocoon-plugin-ads-android-common" />
+        <dependency id="cocoon-plugin-ads-android-common" version="1.0.5" />
     </platform>
 </plugin>

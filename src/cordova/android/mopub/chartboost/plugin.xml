@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-chartboost" version="1.0.3">
+        id="cocoon-plugin-ads-android-mopub-chartboost" version="1.0.4">
 
     <name>AdsMopubCharboost</name>
     <description>Android MoPub Chartboost Adapter</description>
@@ -14,7 +14,7 @@
         <source-file src="src/ChartboostShared.java" target-dir="src/com/mopub/mobileads" />
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-chartboost" />
-    <dependency id="cocoon-plugin-ads-android-mopub" />
+    <dependency id="cocoon-plugin-ads-android-chartboost" version="1.0.7" />
+    <dependency id="cocoon-plugin-ads-android-mopub" version="1.0.6" />
 
 </plugin>

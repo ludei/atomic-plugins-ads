@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-millennialmedia" version="1.0.5">
+        id="cocoon-plugin-ads-android-mopub-millennialmedia" version="1.0.6">
 
     <name>AdsMoPubMillenial</name>
     <description>Android MoPub MillennialMedia Adapter</description>
@@ -16,6 +16,6 @@
         <framework src="src/deps/mmedia.gradle" custom="true" type="gradleReference" />
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-mopub" />
+    <dependency id="cocoon-plugin-ads-android-mopub" version="1.0.6" />
 
 </plugin>

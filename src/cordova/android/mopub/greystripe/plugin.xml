@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-greystripe" version="1.0.0">
+        id="cocoon-plugin-ads-android-mopub-greystripe" version="1.0.1">
     <name>AdsMopubGreyStripe</name>
     <description>Android MoPub GreyStripe Adapter</description>
     <license>MPL 2.0</license>
@@ -18,6 +18,6 @@
         </config-file>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-mopub" />
+    <dependency id="cocoon-plugin-ads-android-mopub" version="1.0.6" />
 
 </plugin>

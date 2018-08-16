@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-ads-android-mopub-greystripe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Android MoPub GreyStripe Adapter",
   "cordova": {
     "id": "cocoon-plugin-ads-android-mopub-greystripe",
