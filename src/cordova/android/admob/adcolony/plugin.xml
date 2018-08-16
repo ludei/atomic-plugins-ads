@@ -9,7 +9,7 @@
     <platform name="android">
         <preference name="APP_ID"/>
         <preference name="ZONE_ID"/>
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
             <preference name="ADCOLONY_ADAPTER_APP_ID" value="$APP_ID"/>
             <preference name="ADCOLONY_ADAPTER_ZONE_ID" value="$ZONE_ID"/>
 

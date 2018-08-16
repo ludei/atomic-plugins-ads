@@ -10,23 +10,23 @@
     <platform name="android">
         <preference name="SDK_KEY"/>
 
-        <config-file target="res/values/strings.xml" parent="/resources">
+        <config-file target="app/src/main/res/values/strings.xml" parent="/resources">
             <string name="applovin_sdk_key">SDK_KEY</string>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="application">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="application">
             <meta-data android:name="applovin.sdk.key" android:value="@string/applovin_sdk_key"/>
         </config-file>
 
         <source-file src="libs/applovin-sdk-8.1.0.jar" target-dir="libs" framework="true"/>
         <source-file src="src/com/ludei/ads/cordova/AppLovinPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
 
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
             <activity android:name="com.applovin.adview.AppLovinInterstitialActivity"
                       android:configChanges="orientation|screenSize"/>
             <activity android:name="com.applovin.adview.AppLovinConfirmationActivity"

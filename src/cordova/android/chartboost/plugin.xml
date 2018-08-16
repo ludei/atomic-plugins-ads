@@ -20,13 +20,13 @@
         <source-file src="src/com/ludei/ads/cordova/ChartboostPlugin.java"
                      target-dir="src/com/ludei/ads/cordova"/>
 
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
             <activity android:name="com.chartboost.sdk.CBImpressionActivity"
                       android:excludeFromRecents="true"
                       android:hardwareAccelerated="true"
@@ -34,7 +34,7 @@
                       android:configChanges="keyboardHidden|orientation|screenSize"/>
         </config-file>
 
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
             <feature name="LDChartboostPlugin">
                 <param name="android-package" value="com.ludei.ads.cordova.ChartboostPlugin"/>
             </feature>
