@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ludei.ads.mopub.greystripe"
-    android:versionCode="1"
-    android:versionName="1.0" >
+          package="com.ludei.ads.mopub.greystripe"
+          android:versionCode="1"
+          android:versionName="1.0">
 
     <application>
-	    <activity
-	        android:name="com.greystripe.sdk.GSFullscreenActivity"
-	        android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.greystripe.sdk.GSFullscreenActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
     </application>
 </manifest>

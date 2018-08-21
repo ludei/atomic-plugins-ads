@@ -27,6 +27,6 @@
  @discussion This method returns a customizable badge that by default displays the number of applications displayed
  on the more applications page. It is meant to be placed over a button that will display the more applications page.
  */
-+ (CBMoreAppsBadge *)moreAppsBadge;
+    + (CBMoreAppsBadge *)moreAppsBadge;
 
 @end

@@ -7,27 +7,27 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <header-file src="src/deps/LDAdServiceChartboost.h" />
-        <source-file src="src/deps/LDAdServiceChartboost.m" />
-        <header-file src="src/LDChartboostPlugin.h" />
-        <source-file src="src/LDChartboostPlugin.m" />
+        <header-file src="src/deps/LDAdServiceChartboost.h"/>
+        <source-file src="src/deps/LDAdServiceChartboost.m"/>
+        <header-file src="src/LDChartboostPlugin.h"/>
+        <source-file src="src/LDChartboostPlugin.m"/>
 
-        <framework src="src/deps/external/Chartboost.framework" custom="true" />
+        <framework src="src/deps/external/Chartboost.framework" custom="true"/>
 
-        <framework src="StoreKit.framework" />
-        <framework src="Foundation.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="UIKit.framework" />
+        <framework src="StoreKit.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="UIKit.framework"/>
 
         <config-file target="config.xml" parent="/*">
             <feature name="LDAdService">
-                <param name="ios-package" value="LDChartboostPlugin" />
+                <param name="ios-package" value="LDChartboostPlugin"/>
             </feature>
             <feature name="LDChartboostPlugin">
-                <param name="ios-package" value="LDChartboostPlugin" />
+                <param name="ios-package" value="LDChartboostPlugin"/>
             </feature>
         </config-file>
 
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-common" />
+    <dependency id="cocoon-plugin-ads-ios-common"/>
 </plugin>

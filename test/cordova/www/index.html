@@ -1,20 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta charset="UTF-8">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width, height=device-height"/>
     <title>Ads demo</title>
 </head>
 
 <body style="margin:0; padding:0;">
 
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/pixi.min.js"></script>
+<script type="text/javascript" src="js/pixi.js"></script>
 <script type="text/javascript" src="js/demo.js"></script>
+<script type="text/javascript">
+    document.addEventListener("deviceready", function () {
+        setTimeout(function () {
+            if (navigator && navigator.splashscreen) {
+                navigator.splashscreen.hide();
+            }
+        }, 5000, false);
+    });
+</script>
 </body>
-
 
 </html>

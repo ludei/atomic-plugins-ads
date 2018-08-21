@@ -8,47 +8,47 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
 
-        <resource-file src="src/deps/external/Resources/MPCloseBtn.png" />
-        <resource-file src="src/deps/external/Resources/MPCloseBtn@2x.png" />
-        <resource-file src="src/deps/external/Resources/MPCloseBtn@3x.png" />
-        <resource-file src="src/deps/external/Resources/MPCloseButtonX.png" />
-        <resource-file src="src/deps/external/Resources/MPCloseButtonX@2x.png" />
-        <resource-file src="src/deps/external/Resources/MPCloseButtonX@3x.png" />
-        <resource-file src="src/deps/external/Resources/MPDAAIcon.png" />
-        <resource-file src="src/deps/external/Resources/MPDAAIcon@2x.png" />
-        <resource-file src="src/deps/external/Resources/MPDAAIcon@3x.png" />
-        <resource-file src="src/deps/external/Resources/MPMutedBtn@1x.png" />
-        <resource-file src="src/deps/external/Resources/MPMutedBtn@2x.png" />
-        <resource-file src="src/deps/external/Resources/MPMutedBtn@3x.png" />
-        <resource-file src="src/deps/external/Resources/MPPlayBtn.png" />
-        <resource-file src="src/deps/external/Resources/MPPlayBtn@2x.png" />
-        <resource-file src="src/deps/external/Resources/MPPlayBtn@3x.png" />
-        <resource-file src="src/deps/external/Resources/MPUnmutedBtn@1x.png" />
-        <resource-file src="src/deps/external/Resources/MPUnmutedBtn@2x.png" />
-        <resource-file src="src/deps/external/Resources/MPUnmutedBtn@3x.png" />
-        <resource-file src="src/deps/external/Resources/MRAID.bundle" />
+        <resource-file src="src/deps/external/Resources/MPCloseBtn.png"/>
+        <resource-file src="src/deps/external/Resources/MPCloseBtn@2x.png"/>
+        <resource-file src="src/deps/external/Resources/MPCloseBtn@3x.png"/>
+        <resource-file src="src/deps/external/Resources/MPCloseButtonX.png"/>
+        <resource-file src="src/deps/external/Resources/MPCloseButtonX@2x.png"/>
+        <resource-file src="src/deps/external/Resources/MPCloseButtonX@3x.png"/>
+        <resource-file src="src/deps/external/Resources/MPDAAIcon.png"/>
+        <resource-file src="src/deps/external/Resources/MPDAAIcon@2x.png"/>
+        <resource-file src="src/deps/external/Resources/MPDAAIcon@3x.png"/>
+        <resource-file src="src/deps/external/Resources/MPMutedBtn@1x.png"/>
+        <resource-file src="src/deps/external/Resources/MPMutedBtn@2x.png"/>
+        <resource-file src="src/deps/external/Resources/MPMutedBtn@3x.png"/>
+        <resource-file src="src/deps/external/Resources/MPPlayBtn.png"/>
+        <resource-file src="src/deps/external/Resources/MPPlayBtn@2x.png"/>
+        <resource-file src="src/deps/external/Resources/MPPlayBtn@3x.png"/>
+        <resource-file src="src/deps/external/Resources/MPUnmutedBtn@1x.png"/>
+        <resource-file src="src/deps/external/Resources/MPUnmutedBtn@2x.png"/>
+        <resource-file src="src/deps/external/Resources/MPUnmutedBtn@3x.png"/>
+        <resource-file src="src/deps/external/Resources/MRAID.bundle"/>
 
-        <framework src="src/deps/external/MoPub.framework" custom="true" />
+        <framework src="src/deps/external/MoPub.framework" custom="true"/>
 
-        <header-file src="src/deps/LDAdServiceMoPub.h" />
-        <source-file src="src/deps/LDAdServiceMoPub.m" />
-        <header-file src="src/LDMoPubPlugin.h" />
-        <source-file src="src/LDMoPubPlugin.m" />
+        <header-file src="src/deps/LDAdServiceMoPub.h"/>
+        <source-file src="src/deps/LDAdServiceMoPub.m"/>
+        <header-file src="src/LDMoPubPlugin.h"/>
+        <source-file src="src/LDMoPubPlugin.m"/>
 
-        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission" />
+        <preference name="CALENDAR_USAGE_DESCRIPTION" default="This app requires the calendar usage permission"/>
         <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
             <string>$CALENDAR_USAGE_DESCRIPTION</string>
         </config-file>
 
         <config-file target="config.xml" parent="/*">
             <feature name="LDAdService">
-                <param name="ios-package" value="LDMoPubPlugin" />
+                <param name="ios-package" value="LDMoPubPlugin"/>
             </feature>
             <feature name="LDMoPubPlugin">
-                <param name="ios-package" value="LDMoPubPlugin" />
+                <param name="ios-package" value="LDMoPubPlugin"/>
             </feature>
         </config-file>
 
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-common" />
+    <dependency id="cocoon-plugin-ads-ios-common"/>
 </plugin>

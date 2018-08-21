@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-admob" version="1.0.3">
+        id="cocoon-plugin-ads-android-mopub-admob" version="1.0.2">
     <name>AdsMopubAdMob</name>
     <description>Android MoPub AdMob Adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <source-file src="src/GooglePlayServicesBanner.java" target-dir="src/com/mopub/mobileads" />
-        <source-file src="src/GooglePlayServicesInterstitial.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/GooglePlayServicesBanner.java" target-dir="src/com/mopub/mobileads"/>
+        <source-file src="src/GooglePlayServicesInterstitial.java" target-dir="src/com/mopub/mobileads"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-admob" version="1.0.12" />
-    <dependency id="cocoon-plugin-ads-android-mopub" version="1.0.6" />
+    <dependency id="cocoon-plugin-ads-android-admob"/>
+    <dependency id="cocoon-plugin-ads-android-mopub"/>
 
 </plugin>

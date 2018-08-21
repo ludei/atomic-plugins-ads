@@ -6,9 +6,11 @@
 //
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPBannerCustomEvent.h"
+
+#import "MPBannerCustomEvent.h"
+
 #endif
 
 /*

@@ -10,13 +10,11 @@
 
 @implementation MPInstanceProvider (AdColony)
 
-- (MPAdColonyRouter *)sharedMPAdColonyRouter
-{
-    return [self singletonForClass:[MPAdColonyRouter class]
-                          provider:^id
-            {
-                return [[MPAdColonyRouter alloc] init];
-            }];
-}
+    - (MPAdColonyRouter *)sharedMPAdColonyRouter {
+        return [self singletonForClass: [MPAdColonyRouter class]
+                              provider: ^id {
+                                  return [[MPAdColonyRouter alloc] init];
+                              }];
+    }
 
 @end

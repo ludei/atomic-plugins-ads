@@ -1,3 +1,3 @@
-rootProject.name = 'ads-heyzap'
-include ':ads-common'
-project(':ads-common').projectDir = new File('../common')
+rootProject.name = 'atomic-android-heyzap'
+include ':atomic-android-common'
+project(':atomic-android-common').projectDir = new File('../common')

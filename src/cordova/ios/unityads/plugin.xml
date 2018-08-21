@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-unityads" version="1.0.3">
+        id="cocoon-plugin-ads-ios-unityads" version="2.0.0">
     <name>UnityAds</name>
     <description>iOS Unity Ads implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,unityads,rewarded</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="src/deps/external/UnityAds.framework" custom="true"/>
-        <resource-file src="src/deps/external/UnityAds.bundle"/>
+        <framework src="libs/UnityAds.framework" custom="true"/>
 
-        <framework src="AdSupport.framework"/>
-        <framework src="AVFoundation.framework"/>
-        <framework src="CFNetwork.framework"/>
-        <framework src="CoreFoundation.framework"/>
-        <framework src="CoreMedia.framework"/>
-        <framework src="CoreTelephony.framework"/>
-        <framework src="StoreKit.framework"/>
-        <framework src="SystemConfiguration.framework"/>
-
-        <dependency id="cocoon-plugin-ads-ios-common" version="1.0.5"/>
+        <dependency id="cocoon-plugin-ads-ios-common"/>
     </platform>
 </plugin>

@@ -6,9 +6,11 @@
 //
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPRewardedVideoCustomEvent.h"
+
+#import "MPRewardedVideoCustomEvent.h"
+
 #endif
 
 /*
@@ -20,6 +22,6 @@
 /**
  * A string that corresponds to a Chartboost CBLocation used for differentiating ad requests.
  */
-@property (nonatomic, copy) NSString *location;
+    @property(nonatomic, copy) NSString *location;
 
 @end

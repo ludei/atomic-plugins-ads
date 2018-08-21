@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-chartboost" version="1.0.7">
-    <name>AdsCharboost</name>
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-chartboost" version="2.0.0">
+    <name>AdsChartboost</name>
     <description>Android Chartboost</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        
-        <source-file src="src/deps/chartboost_6.5.1.jar" target-dir="libs" framework="true" />
-        
-        <source-file src="src/deps/com/ludei/ads/chartboost/AdServiceChartboost.java" target-dir="src/com/ludei/ads/chartboost" />
-        <source-file src="src/deps/com/ludei/ads/chartboost/AdInterstitialChartboost.java" target-dir="src/com/ludei/ads/chartboost" />
-        <source-file src="src/ChartboostPlugin.java" target-dir="src/com/ludei/ads/cordova" />
 
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <source-file src="libs/chartboost_7.2.1.jar" target-dir="libs" framework="true"/>
+
+        <source-file src="src/com/ludei/ads/chartboost/AdServiceChartboost.java"
+                     target-dir="src/com/ludei/ads/chartboost"/>
+        <source-file src="src/com/ludei/ads/chartboost/AdInterstitialChartboost.java"
+                     target-dir="src/com/ludei/ads/chartboost"/>
+        <source-file src="src/com/ludei/ads/chartboost/AdRewardedVideoChartboost.java"
+                     target-dir="src/com/ludei/ads/chartboost"/>
+        <source-file src="src/com/ludei/ads/cordova/ChartboostPlugin.java"
+                     target-dir="src/com/ludei/ads/cordova"/>
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity 
-                android:name="com.chartboost.sdk.CBImpressionActivity"
-                android:excludeFromRecents="true"
-                android:hardwareAccelerated="true"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-                android:configChanges="keyboardHidden|orientation|screenSize" />
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.chartboost.sdk.CBImpressionActivity"
+                      android:excludeFromRecents="true"
+                      android:hardwareAccelerated="true"
+                      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
         </config-file>
 
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
             <feature name="LDChartboostPlugin">
                 <param name="android-package" value="com.ludei.ads.cordova.ChartboostPlugin"/>
             </feature>
         </config-file>
 
-        <framework src="com.google.android.gms:play-services-ads:9.0.2" />
-        <dependency id="cocoon-plugin-ads-android-common" version="1.0.5" />
+        <framework src="com.google.android.gms:play-services-ads:15.0.1"/>
+        <dependency id="cocoon-plugin-ads-android-common"/>
     </platform>
 </plugin>

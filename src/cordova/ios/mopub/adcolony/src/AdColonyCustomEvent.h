@@ -29,6 +29,6 @@
  * @param appId The application's Ad Colony App ID.
  * @param allZoneIds All the possible zone IDs the application may use across all ad formats.
  */
-+ (void)initializeAdColonyCustomEventWithAppId:(NSString *)appId allZoneIds:(NSArray *)allZoneIds;
+    + (void)initializeAdColonyCustomEventWithAppId: (NSString *)appId allZoneIds: (NSArray *)allZoneIds;
 
 @end

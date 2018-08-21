@@ -8,21 +8,21 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="ios">
-        <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js" />
+        <hook type="before_plugin_install" src="hooks/before_plugin_install/000_create_symlinks.js"/>
 
-        <framework src="src/ios/Fyber_Chartboost_6.5.2-r1.framework" custom="true" compiler-flags="-fmodules" />
+        <framework src="src/ios/Fyber_Chartboost_6.5.2-r1.framework" custom="true" compiler-flags="-fmodules"/>
 
-        <framework src="AVFoundation.framework" />
-        <framework src="CoreData.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="CoreMedia.framework" />
-        <framework src="MediaPlayer.framework" />
-        <framework src="StoreKit.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="QuartzCore.framework" />
+        <framework src="AVFoundation.framework"/>
+        <framework src="CoreData.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="QuartzCore.framework"/>
 
-        <framework src="AdSupport.framework" weak="true" />
+        <framework src="AdSupport.framework" weak="true"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-ios-heyzap" />
+    <dependency id="cocoon-plugin-ads-ios-heyzap"/>
 </plugin>

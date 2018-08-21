@@ -12,7 +12,7 @@
 /**
  *  Defines selectors that a delegate of FYBVirtualCurrencyClient can implement for notification of answers to requests and triggered errors
  */
-@protocol FYBVirtualCurrencyClientDelegate<NSObject>
+@protocol FYBVirtualCurrencyClientDelegate <NSObject>
 
 @optional
 
@@ -24,7 +24,7 @@
  *
  *  @see FYBVirtualCurrencyResponse
  */
-- (void)virtualCurrencyClient:(FYBVirtualCurrencyClient *)client didReceiveResponse:(FYBVirtualCurrencyResponse *)response;
+    - (void)virtualCurrencyClient: (FYBVirtualCurrencyClient *)client didReceiveResponse: (FYBVirtualCurrencyResponse *)response;
 
 /**
  *  The Virtual Currency client failed to receive the delta of coins
@@ -32,6 +32,6 @@
  *  @param client The Virtual Currency client that failed to receive the delta of coins
  *  @param error  The error that occurred during the request of the delta of coins
  */
-- (void)virtualCurrencyClient:(FYBVirtualCurrencyClient *)client didFailWithError:(NSError *)error;
+    - (void)virtualCurrencyClient: (FYBVirtualCurrencyClient *)client didFailWithError: (NSError *)error;
 
 @end

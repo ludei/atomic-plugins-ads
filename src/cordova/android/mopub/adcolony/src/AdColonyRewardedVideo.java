@@ -4,18 +4,8 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-
-import com.jirbo.adcolony.AdColony;
-import com.jirbo.adcolony.AdColonyAd;
-import com.jirbo.adcolony.AdColonyAdListener;
-import com.jirbo.adcolony.AdColonyV4VCAd;
-import com.jirbo.adcolony.AdColonyV4VCListener;
-import com.jirbo.adcolony.AdColonyV4VCReward;
-import com.mopub.common.BaseLifecycleListener;
-import com.mopub.common.DataKeys;
-import com.mopub.common.LifecycleListener;
-import com.mopub.common.MediationSettings;
-import com.mopub.common.MoPubReward;
+import com.jirbo.adcolony.*;
+import com.mopub.common.*;
 import com.mopub.common.logging.MoPubLog;
 import com.mopub.common.util.Json;
 
@@ -27,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * A custom event for showing AdColony rewarded videos.
- *
+ * <p>
  * Certified with AdColony 2.0.3
  */
 public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
@@ -70,7 +60,8 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
 
     private AdColonyV4VCAd mAd;
     private String mZoneId;
-    @Nullable private String mAdUnitId;
+    @Nullable
+    private String mAdUnitId;
     private boolean mIsLoading = false;
 
     // For waiting and notifying the SDK:
@@ -108,8 +99,8 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
 
     @Override
     public boolean checkAndInitializeSdk(@NonNull final Activity launcherActivity,
-            @NonNull final Map<String, Object> localExtras,
-            @NonNull final Map<String, String> serverExtras) throws Exception {
+                                         @NonNull final Map<String, Object> localExtras,
+                                         @NonNull final Map<String, String> serverExtras) throws Exception {
         synchronized (AdColonyRewardedVideo.class) {
             if (sInitialized) {
                 return false;
@@ -136,8 +127,8 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
 
     @Override
     protected void loadWithSdkInitialized(@NonNull final Activity activity,
-            @NonNull final Map<String, Object> localExtras,
-            @NonNull final Map<String, String> serverExtras) throws Exception {
+                                          @NonNull final Map<String, Object> localExtras,
+                                          @NonNull final Map<String, String> serverExtras) throws Exception {
 
         mZoneId = DEFAULT_ZONE_ID;
         if (extrasAreValid(serverExtras)) {
@@ -171,9 +162,9 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
 
     private boolean extrasAreValid(Map<String, String> extras) {
         return extras.containsKey(CLIENT_OPTIONS_KEY)
-                && extras.containsKey(APP_ID_KEY)
-                && extras.containsKey(ALL_ZONE_IDS_KEY)
-                && extras.containsKey(ZONE_ID_KEY);
+            && extras.containsKey(APP_ID_KEY)
+            && extras.containsKey(ALL_ZONE_IDS_KEY)
+            && extras.containsKey(ZONE_ID_KEY);
     }
 
     private String[] extractAllZoneIds(Map<String, String> serverExtras) {
@@ -189,7 +180,7 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
 
     private void setUpGlobalSettings() {
         final AdColonyGlobalMediationSettings globalMediationSettings =
-                MoPubRewardedVideoManager.getGlobalMediationSettings(AdColonyGlobalMediationSettings.class);
+            MoPubRewardedVideoManager.getGlobalMediationSettings(AdColonyGlobalMediationSettings.class);
         if (globalMediationSettings != null) {
             if (globalMediationSettings.getCustomId() != null) {
                 AdColony.setCustomID(globalMediationSettings.getCustomId());
@@ -202,13 +193,13 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
 
     private boolean getConfirmationDialogFromSettings() {
         final AdColonyInstanceMediationSettings settings =
-                MoPubRewardedVideoManager.getInstanceMediationSettings(AdColonyInstanceMediationSettings.class, mAdUnitId);
+            MoPubRewardedVideoManager.getInstanceMediationSettings(AdColonyInstanceMediationSettings.class, mAdUnitId);
         return settings != null && settings.withConfirmationDialog();
     }
 
     private boolean getResultsDialogFromSettings() {
         final AdColonyInstanceMediationSettings settings =
-                MoPubRewardedVideoManager.getInstanceMediationSettings(AdColonyInstanceMediationSettings.class, mAdUnitId);
+            MoPubRewardedVideoManager.getInstanceMediationSettings(AdColonyInstanceMediationSettings.class, mAdUnitId);
         return settings != null && settings.withResultsDialog();
     }
 
@@ -224,13 +215,13 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
                         public void run() {
                             if (mAd.getAvailableViews() > 0) {
                                 MoPubRewardedVideoManager.onRewardedVideoLoadSuccess(
-                                        AdColonyRewardedVideo.class,
-                                        mZoneId);
+                                    AdColonyRewardedVideo.class,
+                                    mZoneId);
                             } else {
                                 MoPubRewardedVideoManager.onRewardedVideoLoadFailure(
-                                        AdColonyRewardedVideo.class,
-                                        mZoneId,
-                                        MoPubErrorCode.NETWORK_NO_FILL);
+                                    AdColonyRewardedVideo.class,
+                                    mZoneId,
+                                    MoPubErrorCode.NETWORK_NO_FILL);
                             }
                         }
                     });
@@ -245,7 +236,7 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
     }
 
     private static class AdColonyListener implements AdColonyAdListener,
-            AdColonyV4VCListener, CustomEventRewardedVideoListener {
+        AdColonyV4VCListener, CustomEventRewardedVideoListener {
 
         @Override
         public void onAdColonyAdAttemptFinished(final AdColonyAd adColonyAd) {
@@ -263,17 +254,17 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
                 }
 
                 MoPubRewardedVideoManager.onRewardedVideoLoadFailure(
-                        AdColonyRewardedVideo.class,
-                        zoneId,
-                        reason);
+                    AdColonyRewardedVideo.class,
+                    zoneId,
+                    reason);
             }
         }
 
         @Override
         public void onAdColonyAdStarted(final com.jirbo.adcolony.AdColonyAd adColonyAd) {
             MoPubRewardedVideoManager.onRewardedVideoStarted(
-                    AdColonyRewardedVideo.class,
-                    sAdToZoneIdMap.get(adColonyAd));
+                AdColonyRewardedVideo.class,
+                sAdToZoneIdMap.get(adColonyAd));
         }
 
         @Override
@@ -285,16 +276,18 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
                 reward = MoPubReward.failure();
             }
             MoPubRewardedVideoManager.onRewardedVideoCompleted(
-                    AdColonyRewardedVideo.class,
-                    null, // Can't deduce the zoneId from this object.
-                    reward);
+                AdColonyRewardedVideo.class,
+                null, // Can't deduce the zoneId from this object.
+                reward);
         }
     }
 
     public static final class AdColonyGlobalMediationSettings implements MediationSettings {
 
-        @Nullable private final String mCustomId;
-        @Nullable private final String mDeviceId;
+        @Nullable
+        private final String mCustomId;
+        @Nullable
+        private final String mDeviceId;
 
         public AdColonyGlobalMediationSettings(@Nullable String customId, @Nullable String deviceId) {
             mCustomId = customId;
@@ -317,7 +310,7 @@ public class AdColonyRewardedVideo extends CustomEventRewardedVideo {
         private final boolean mWithResultsDialog;
 
         public AdColonyInstanceMediationSettings(
-                boolean withConfirmationDialog, boolean withResultsDialog) {
+            boolean withConfirmationDialog, boolean withResultsDialog) {
             mWithConfirmationDialog = withConfirmationDialog;
             mWithResultsDialog = withResultsDialog;
         }

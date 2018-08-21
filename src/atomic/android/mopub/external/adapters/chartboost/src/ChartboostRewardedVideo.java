@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
-
 import com.chartboost.sdk.Chartboost;
 import com.mopub.common.DataKeys;
 import com.mopub.common.LifecycleListener;
@@ -15,15 +14,18 @@ import java.util.Map;
 
 /**
  * A custom event for showing Chartboost rewarded videos.
- *
+ * <p>
  * Certified with Chartboost 5.3.0
  */
 public class ChartboostRewardedVideo extends CustomEventRewardedVideo {
-    @NonNull private static final LifecycleListener sLifecycleListener =
-            new ChartboostLifecycleListener();
+    @NonNull
+    private static final LifecycleListener sLifecycleListener =
+        new ChartboostLifecycleListener();
 
-    @NonNull private String mLocation = ChartboostShared.LOCATION_DEFAULT;
-    @NonNull private final Handler mHandler;
+    @NonNull
+    private String mLocation = ChartboostShared.LOCATION_DEFAULT;
+    @NonNull
+    private final Handler mHandler;
 
     public ChartboostRewardedVideo() {
         mHandler = new Handler();
@@ -49,8 +51,8 @@ public class ChartboostRewardedVideo extends CustomEventRewardedVideo {
 
     @Override
     public boolean checkAndInitializeSdk(@NonNull Activity launcherActivity,
-            @NonNull Map<String, Object> localExtras,
-            @NonNull Map<String, String> serverExtras) throws Exception {
+                                         @NonNull Map<String, Object> localExtras,
+                                         @NonNull Map<String, String> serverExtras) throws Exception {
         // We need to attempt to reinitialize Chartboost on each request, in case an interstitial has been
         // loaded and used since then.
         ChartboostShared.initializeSdk(launcherActivity, serverExtras);  // throws IllegalStateException
@@ -62,8 +64,8 @@ public class ChartboostRewardedVideo extends CustomEventRewardedVideo {
 
     @Override
     protected void loadWithSdkInitialized(@NonNull Activity activity,
-            @NonNull Map<String, Object> localExtras, @NonNull Map<String, String> serverExtras)
-            throws Exception {
+                                          @NonNull Map<String, Object> localExtras, @NonNull Map<String, String> serverExtras)
+        throws Exception {
 
         if (serverExtras.containsKey(ChartboostShared.LOCATION_KEY)) {
             String location = serverExtras.get(ChartboostShared.LOCATION_KEY);
@@ -88,9 +90,9 @@ public class ChartboostRewardedVideo extends CustomEventRewardedVideo {
 
     private void setUpMediationSettingsForRequest(String moPubId) {
         final ChartboostMediationSettings globalSettings =
-                MoPubRewardedVideoManager.getGlobalMediationSettings(ChartboostMediationSettings.class);
+            MoPubRewardedVideoManager.getGlobalMediationSettings(ChartboostMediationSettings.class);
         final ChartboostMediationSettings instanceSettings =
-                MoPubRewardedVideoManager.getInstanceMediationSettings(ChartboostMediationSettings.class, moPubId);
+            MoPubRewardedVideoManager.getInstanceMediationSettings(ChartboostMediationSettings.class, moPubId);
 
         // Instance settings override global settings.
         if (instanceSettings != null) {
@@ -162,7 +164,8 @@ public class ChartboostRewardedVideo extends CustomEventRewardedVideo {
     }
 
     public static final class ChartboostMediationSettings implements MediationSettings {
-        @NonNull private final String mCustomId;
+        @NonNull
+        private final String mCustomId;
 
         public ChartboostMediationSettings(@NonNull final String customId) {
             mCustomId = customId;

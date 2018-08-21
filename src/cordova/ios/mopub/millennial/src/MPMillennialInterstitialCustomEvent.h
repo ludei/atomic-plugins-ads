@@ -1,9 +1,11 @@
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPInterstitialCustomEvent.h"
-    #import "MoPub.h"
+
+#import "MPInterstitialCustomEvent.h"
+#import "MoPub.h"
+
 #endif
 
 #import <MMAdSDK/MMAdSDK.h>

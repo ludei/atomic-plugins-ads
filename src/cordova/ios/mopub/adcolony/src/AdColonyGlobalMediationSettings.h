@@ -8,9 +8,11 @@
 #import <Foundation/Foundation.h>
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPMediationSettingsProtocol.h"
+
+#import "MPMediationSettingsProtocol.h"
+
 #endif
 
 /*
@@ -23,6 +25,6 @@
 /*
  * Sets the customId to utilize server-side mode for AdColony V4VC.
  */
-@property (nonatomic, copy) NSString *customId;
+    @property(nonatomic, copy) NSString *customId;
 
 @end

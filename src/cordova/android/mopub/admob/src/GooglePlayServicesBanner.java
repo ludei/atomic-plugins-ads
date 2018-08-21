@@ -2,7 +2,6 @@ package com.mopub.mobileads;
 
 import android.content.Context;
 import android.util.Log;
-
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -11,10 +10,7 @@ import com.mopub.common.util.Views;
 
 import java.util.Map;
 
-import static com.google.android.gms.ads.AdSize.BANNER;
-import static com.google.android.gms.ads.AdSize.FULL_BANNER;
-import static com.google.android.gms.ads.AdSize.LEADERBOARD;
-import static com.google.android.gms.ads.AdSize.MEDIUM_RECTANGLE;
+import static com.google.android.gms.ads.AdSize.*;
 
 /*
  * Compatible with version 7.8.0 of the Google Play Services SDK.
@@ -36,10 +32,10 @@ class GooglePlayServicesBanner extends CustomEventBanner {
 
     @Override
     protected void loadBanner(
-            final Context context,
-            final CustomEventBannerListener customEventBannerListener,
-            final Map<String, Object> localExtras,
-            final Map<String, String> serverExtras) {
+        final Context context,
+        final CustomEventBannerListener customEventBannerListener,
+        final Map<String, Object> localExtras,
+        final Map<String, String> serverExtras) {
         mBannerListener = customEventBannerListener;
         final String adUnitId;
         final int adWidth;
@@ -67,8 +63,8 @@ class GooglePlayServicesBanner extends CustomEventBanner {
         mGoogleAdView.setAdSize(adSize);
 
         final AdRequest adRequest = new AdRequest.Builder()
-                .setRequestAgent("MoPub")
-                .build();
+            .setRequestAgent("MoPub")
+            .build();
 
         try {
             mGoogleAdView.loadAd(adRequest);
@@ -152,7 +148,8 @@ class GooglePlayServicesBanner extends CustomEventBanner {
         }
     }
 
-    @Deprecated // for testing
+    @Deprecated
+        // for testing
     AdView getGoogleAdView() {
         return mGoogleAdView;
     }

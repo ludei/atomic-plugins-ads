@@ -1,5 +1,0 @@
-android {
-    defaultConfig {
-        targetSdkVersion 23
-    }
-}

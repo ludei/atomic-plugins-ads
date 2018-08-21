@@ -1,41 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob" version="1.0.8">
+        id="cocoon-plugin-ads-ios-admob" version="2.0.0">
     <name>AdsAdMob</name>
     <description>iOS Ads AdMob implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <header-file src="src/deps/LDAdServiceAdMob.h" />
-        <source-file src="src/deps/LDAdServiceAdMob.m" />
-        <header-file src="src/LDAdMobPlugin.h" />
-        <source-file src="src/LDAdMobPlugin.m" />
+        <header-file src="src/deps/LDAdServiceAdMob.h"/>
+        <source-file src="src/deps/LDAdServiceAdMob.m"/>
+        <header-file src="src/LDAdMobPlugin.h"/>
+        <source-file src="src/LDAdMobPlugin.m"/>
 
-        <framework src="src/deps/external/GoogleMobileAds.framework" custom="true" />
-
-        <framework src="AdSupport.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="MessageUI.framework" />
-        <framework src="EventKit.framework" />
-        <framework src="EventKitUI.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="AudioToolbox.framework" />
-        <framework src="StoreKit.framework" />
-        <framework src="MediaPlayer.framework" />
-        <framework src="CoreMotion.framework" />
-        <framework src="GLKit.framework" />
-        <framework src="MobileCoreServices.framework" />
+        <framework src="libs/GoogleMobileAds.framework" custom="true"/>
 
         <config-file target="config.xml" parent="/*">
             <feature name="LDAdservice">
-                <param name="ios-package" value="LDAdMobPlugin" />
+                <param name="ios-package" value="LDAdMobPlugin"/>
             </feature>
             <feature name="LDAdMobPlugin">
-                <param name="ios-package" value="LDAdMobPlugin" />
+                <param name="ios-package" value="LDAdMobPlugin"/>
             </feature>
         </config-file>
 
-        <dependency id="cocoon-plugin-ads-ios-common" version="1.0.5" />
     </platform>
+    <dependency id="cocoon-plugin-ads-ios-common"/>
 </plugin>

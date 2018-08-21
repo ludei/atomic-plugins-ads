@@ -19,28 +19,32 @@
  */
 @interface MPChartboostRouter : NSObject <ChartboostDelegate>
 
-@property (nonatomic, strong) NSMutableDictionary *interstitialEvents;
-@property (nonatomic, strong) NSMutableSet *activeInterstitialLocations;
-@property (nonatomic, strong) NSMutableDictionary *rewardedVideoEvents;
+    @property(nonatomic, strong) NSMutableDictionary *interstitialEvents;
+    @property(nonatomic, strong) NSMutableSet *activeInterstitialLocations;
+    @property(nonatomic, strong) NSMutableDictionary *rewardedVideoEvents;
 
-+ (MPChartboostRouter *)sharedRouter;
-
+    + (MPChartboostRouter *)sharedRouter;
 
 /*
  * Interstitial Ads
  */
-- (void)cacheInterstitialWithAppId:(NSString *)appId appSignature:(NSString *)appSignature location:(NSString *)location forChartboostInterstitialCustomEvent:(ChartboostInterstitialCustomEvent *)event;
-- (BOOL)hasCachedInterstitialForLocation:(NSString *)location;
-- (void)showInterstitialForLocation:(NSString *)location;
-- (void)unregisterInterstitialEvent:(ChartboostInterstitialCustomEvent *)event;
+    - (void)cacheInterstitialWithAppId: (NSString *)appId appSignature: (NSString *)appSignature location: (NSString *)location forChartboostInterstitialCustomEvent: (ChartboostInterstitialCustomEvent *)event;
+
+    - (BOOL)hasCachedInterstitialForLocation: (NSString *)location;
+
+    - (void)showInterstitialForLocation: (NSString *)location;
+
+    - (void)unregisterInterstitialEvent: (ChartboostInterstitialCustomEvent *)event;
 
 /*
  * Rewarded Video Ads
  */
 
-- (void)cacheRewardedAdWithAppId:(NSString *)appId appSignature:(NSString *)appSignature location:(NSString *)location forChartboostRewardedVideoCustomEvent:(ChartboostRewardedVideoCustomEvent *)event;
-- (BOOL)hasCachedRewardedVideoForLocation:(NSString *)location;
-- (void)showRewardedVideoForLocation:(NSString *)location;
+    - (void)cacheRewardedAdWithAppId: (NSString *)appId appSignature: (NSString *)appSignature location: (NSString *)location forChartboostRewardedVideoCustomEvent: (ChartboostRewardedVideoCustomEvent *)event;
+
+    - (BOOL)hasCachedRewardedVideoForLocation: (NSString *)location;
+
+    - (void)showRewardedVideoForLocation: (NSString *)location;
 
 
 @end

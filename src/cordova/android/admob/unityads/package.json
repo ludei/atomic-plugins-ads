@@ -1,34 +1,39 @@
 {
-  "name": "cocoon-plugin-ads-android-admob-unityads",
-  "version": "1.0.2",
-  "description": "Android AdMob Unity Ads Adapter",
-  "cordova": {
-    "id": "cocoon-plugin-ads-android-admob-unityads",
-    "platforms": [
-      "android"
+    "name": "cocoon-plugin-ads-android-admob-unityads",
+    "version": "2.0.0",
+    "description": "Android AdMob Unity Ads Adapter",
+    "cordova": {
+        "id": "cocoon-plugin-ads-android-admob-unityads",
+        "platforms": [
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ludei/atomic-plugins-ads"
+    },
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "unity",
+        "rewarded",
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "author": "ludei",
+    "license": "MPL 2.0",
+    "bugs": {
+        "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+    },
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ludei/atomic-plugins-ads"
-  },
-  "keywords": [
-    "cordova",
-    "ads",
-    "banner",
-    "interstitial",
-    "monetization",
-    "ad",
-    "unity",
-    "rewarded",
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "author": "ludei",
-  "license": "MPL 2.0",
-  "bugs": {
-    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
-  },
-  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
 }
 

@@ -10,12 +10,11 @@
 
 @implementation MPInstanceProvider (Chartboost)
 
-- (MPChartboostRouter *)sharedMPChartboostRouter
-{
-    return [self singletonForClass:[MPChartboostRouter class]
-                          provider:^id{
-                              return [[MPChartboostRouter alloc] init];
-                          }];
-}
+    - (MPChartboostRouter *)sharedMPChartboostRouter {
+        return [self singletonForClass: [MPChartboostRouter class]
+                              provider: ^id {
+                                  return [[MPChartboostRouter alloc] init];
+                              }];
+    }
 
 @end

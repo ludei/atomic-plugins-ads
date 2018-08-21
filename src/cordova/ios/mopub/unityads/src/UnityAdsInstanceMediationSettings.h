@@ -8,9 +8,11 @@
 #import <Foundation/Foundation.h>
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPMediationSettingsProtocol.h"
+
+#import "MPMediationSettingsProtocol.h"
+
 #endif
 
 /*
@@ -24,6 +26,6 @@
  * An NSString that's used as an identifier for a specific user, and is passed along to Unity
  * when the rewarded video ad is played.
  */
-@property (nonatomic, copy) NSString *userIdentifier;
+    @property(nonatomic, copy) NSString *userIdentifier;
 
 @end

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'LDAdServiceAdMob'
-  s.version  = '1.0.0'
+  s.version  = '1.1.0'
   s.author   = { 'Imanol Fernandez' => 'imanolf@ludei.com' }
   s.homepage = 'https://github.com/ludei/atomic-plugins-ads'
   s.summary  = 'AdMob implementation for LDAdService API'
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.dependency 'LDAdService'
   s.dependency 'Google-Mobile-Ads-SDK', '~> 7.0'
   s.platform = :ios
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '11.0'
   s.requires_arc = true
 end

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub" version="1.0.6">
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-mopub" version="1.0.5">
     <name>Ads Mopub</name>
     <description>Android MoPub Ads implementation</description>
     <license>MPL 2.0</license>
@@ -8,12 +9,12 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub</keywords>
     <platform name="android">
 
-        <source-file src="src/deps/com/ludei/ads/mopub/AdBannerMoPub.java" target-dir="src/com/ludei/ads/mopub" />
-        <source-file src="src/deps/com/ludei/ads/mopub/AdInterstitialMoPub.java" target-dir="src/com/ludei/ads/mopub" />
-        <source-file src="src/deps/com/ludei/ads/mopub/AdRewardedVideoMoPub.java" target-dir="src/com/ludei/ads/mopub" />
-        <source-file src="src/deps/com/ludei/ads/mopub/AdServiceMoPub.java" target-dir="src/com/ludei/ads/mopub" />
-        <source-file src="src/MoPubPlugin.java" target-dir="src/com/ludei/ads/cordova" />
-        
+        <source-file src="src/com/ludei/ads/mopub/AdBannerMoPub.java" target-dir="src/com/ludei/ads/mopub"/>
+        <source-file src="src/com/ludei/ads/mopub/AdInterstitialMoPub.java" target-dir="src/com/ludei/ads/mopub"/>
+        <source-file src="src/com/ludei/ads/mopub/AdRewardedVideoMoPub.java" target-dir="src/com/ludei/ads/mopub"/>
+        <source-file src="src/com/ludei/ads/mopub/AdServiceMoPub.java" target-dir="src/com/ludei/ads/mopub"/>
+        <source-file src="src/MoPubPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="LDAdService">
                 <param name="android-package" value="com.ludei.ads.cordova.MoPubPlugin"/>
@@ -24,25 +25,29 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-                <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-                <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-                <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
-                <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+            <activity android:name="com.mopub.mobileads.MoPubActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
+            <activity android:name="com.mopub.mobileads.MraidActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
+            <activity android:name="com.mopub.common.MoPubBrowser"
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
+            <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize"/>
 
-                <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <framework src="src/deps/mopub.gradle" custom="true" type="gradleReference" />
+        <framework src="src/mopub.gradle" custom="true" type="gradleReference"/>
 
-        <framework src="com.android.support:recyclerview-v7:23.1.1" />
-        <framework src="com.android.support:support-annotations:23.1.1" />
-        <framework src="com.android.support:support-v4:23.1.1" />
-        <framework src="com.google.android.gms:play-services-ads:9.0.2" />
+        <framework src="com.android.support:recyclerview-v7:23.1.1"/>
+        <framework src="com.android.support:support-annotations:23.1.1"/>
+        <framework src="com.android.support:support-v4:23.1.1"/>
+        <framework src="com.google.android.gms:play-services-ads:15.0.1"/>
 
-        <dependency id="cocoon-plugin-ads-android-common" version="1.0.5" />
+        <dependency id="cocoon-plugin-ads-android-common"/>
     </platform>
 </plugin>

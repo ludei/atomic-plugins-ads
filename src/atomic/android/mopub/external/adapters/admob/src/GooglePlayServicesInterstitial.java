@@ -2,7 +2,6 @@ package com.mopub.mobileads;
 
 import android.content.Context;
 import android.util.Log;
-
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -27,10 +26,10 @@ public class GooglePlayServicesInterstitial extends CustomEventInterstitial {
 
     @Override
     protected void loadInterstitial(
-            final Context context,
-            final CustomEventInterstitialListener customEventInterstitialListener,
-            final Map<String, Object> localExtras,
-            final Map<String, String> serverExtras) {
+        final Context context,
+        final CustomEventInterstitialListener customEventInterstitialListener,
+        final Map<String, Object> localExtras,
+        final Map<String, String> serverExtras) {
         mInterstitialListener = customEventInterstitialListener;
         final String adUnitId;
 
@@ -46,8 +45,8 @@ public class GooglePlayServicesInterstitial extends CustomEventInterstitial {
         mGoogleInterstitialAd.setAdUnitId(adUnitId);
 
         final AdRequest adRequest = new AdRequest.Builder()
-                .setRequestAgent("MoPub")
-                .build();
+            .setRequestAgent("MoPub")
+            .build();
 
         try {
             mGoogleInterstitialAd.loadAd(adRequest);
@@ -79,8 +78,8 @@ public class GooglePlayServicesInterstitial extends CustomEventInterstitial {
 
     private class InterstitialAdListener extends AdListener {
         /*
-    	 * Google Play Services AdListener implementation
-    	 */
+         * Google Play Services AdListener implementation
+         */
         @Override
         public void onAdClosed() {
             Log.d("MoPub", "Google Play Services interstitial ad dismissed.");
@@ -122,7 +121,8 @@ public class GooglePlayServicesInterstitial extends CustomEventInterstitial {
         }
     }
 
-    @Deprecated // for testing
+    @Deprecated
+        // for testing
     InterstitialAd getGoogleInterstitialAd() {
         return mGoogleInterstitialAd;
     }

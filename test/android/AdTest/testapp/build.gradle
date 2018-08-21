@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.1"
 
     defaultConfig {
         applicationId "com.ludei.adtest"
-        minSdkVersion 9
-        targetSdkVersion 21
+        minSdkVersion 14
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -16,10 +16,8 @@ android {
         mopub {
         }
         admob {
-
         }
         chartboost {
-
         }
     }
 
@@ -35,34 +33,35 @@ android {
 def mopub_adapters = '../../../../src/atomic/android/mopub/external/adapters/'
 
 repositories {
+    google()
     mavenCentral()
     flatDir {
         dirs mopub_adapters + 'adcolony/dist',
-             mopub_adapters + 'admob/dist',
-             mopub_adapters + 'millennialmedia/dist',
-             mopub_adapters + 'chartboost/dist',
-             mopub_adapters + 'greystripe/dist',
-             mopub_adapters + 'inmobi/dist'
+            mopub_adapters + 'admob/dist',
+            mopub_adapters + 'millennialmedia/dist',
+            mopub_adapters + 'chartboost/dist',
+            mopub_adapters + 'greystripe/dist',
+            mopub_adapters + 'inmobi/dist'
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
 
-    mopubCompile project(':ads-mopub')
+    mopubCompile project(':atomic-android-mopub')
 
     //Optional MoPub Adapters
-    mopubCompile 'com.google.android.gms:play-services-ads:9.0.2' //admob-sdk
-    mopubCompile (name:'adcolony-adapter', ext:'aar')
-    mopubCompile (name:'admob-adapter', ext:'aar')
-    mopubCompile (name:'millennialmedia-adapter', ext:'aar')
-    mopubCompile (name:'charboost-adapter', ext:'aar')
-    mopubCompile (name:'greystripe-adapter', ext:'aar')
-    mopubCompile (name:'inmobi-adapter', ext:'aar')
+    mopubCompile 'com.google.android.gms:play-services-ads:15.0.1' //admob-sdk
+    mopubCompile(name: 'adcolony-adapter', ext: 'aar')
+    mopubCompile(name: 'admob-adapter', ext: 'aar')
+    mopubCompile(name: 'millennialmedia-adapter', ext: 'aar')
+    mopubCompile(name: 'charboost-adapter', ext: 'aar')
+    mopubCompile(name: 'greystripe-adapter', ext: 'aar')
+    mopubCompile(name: 'inmobi-adapter', ext: 'aar')
 
-    admobCompile project(':ads-admob')
+    admobCompile project(':atomic-android-admob')
 
-    chartboostCompile project(':ads-chartboost')
+    chartboostCompile project(':atomic-android-chartboost')
 
 }

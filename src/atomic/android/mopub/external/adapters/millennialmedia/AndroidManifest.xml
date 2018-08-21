@@ -1,15 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ludei.ads.mopub.millennialmedia"
-    android:versionCode="1"
-    android:versionName="1.0" >
+          package="com.ludei.ads.mopub.millennialmedia"
+          android:versionCode="1"
+          android:versionName="1.0">
 
     <application>
-	    <activity
-	        android:name="com.millennialmedia.android.MMActivity"
-	        android:theme="@android:style/Theme.Translucent.NoTitleBar"
-	        android:configChanges="keyboardHidden|orientation|keyboard" />
+        <activity
+            android:name="com.millennialmedia.android.MMActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|keyboard"/>
 
-	    <activity android:name="com.millennialmedia.android.VideoPlayer" 
-	        android:configChanges="keyboardHidden|orientation|keyboard" />
+        <activity android:name="com.millennialmedia.android.VideoPlayer"
+                  android:configChanges="keyboardHidden|orientation|keyboard"/>
     </application>
 </manifest>

@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob-applovin" version="1.0.2">
+        id="cocoon-plugin-ads-android-admob-applovin" version="2.0.0">
     <name>AdsAdMobappLovin</name>
     <description>Android AdMob AppLovin Adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,interstitial,monetization,ad,admob,applovin</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <preference name="APP_ID" />
-        
-        <source-file src="src/deps/AdMobMediationInterEvent.java" target-dir="src/com/ludei/ads/applovin" />
-        <source-file src="src/deps/ApplovinAdapter.java" target-dir="src/com/ludei/ads/applovin" />
+        <preference name="SDK_KEY"/>
 
-        <dependency id="cocoon-plugin-ads-android-admob" version="1.0.12" />
-        <dependency id="cocoon-plugin-ads-android-applovin" version="1.0.1" />
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
+            <feature name="AppLovinAdapterPlugin">
+                <param name="android-package" value="com.ludei.ads.cordova.AppLovinAdapterPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <resource-file src="libs/applovin-8.1.0.0.aar" target="libs/applovin-admob-adapter.aar"/>
+        <framework src="libs/applovin-admob-adapter.gradle" custom="true" type="gradleReference"/>
+
+        <source-file src="src/com/ludei/ads/cordova/AppLovinAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+
+        <dependency id="cocoon-plugin-ads-android-admob"/>
+        <dependency id="cocoon-plugin-ads-android-applovin"/>
     </platform>
 
 </plugin>

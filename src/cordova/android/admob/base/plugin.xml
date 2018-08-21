@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob" version="1.0.12">
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-admob" version="2.0.0">
     <name>AdsAdMob</name>
     <description>Android AdMob Ads implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,admob</keywords>
-    <repo>https://github.com/ludei/atomic-plugins-ads</repo>    
+    <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <source-file src="src/deps/com/ludei/ads/admob/AdBannerAdMob.java" target-dir="src/com/ludei/ads/admob" />
-        <source-file src="src/deps/com/ludei/ads/admob/AdInterstitialAdMob.java" target-dir="src/com/ludei/ads/admob" />
-        <source-file src="src/deps/com/ludei/ads/admob/AdRewardedAdMob.java" target-dir="src/com/ludei/ads/admob" />
-        <source-file src="src/deps/com/ludei/ads/admob/AdServiceAdMob.java" target-dir="src/com/ludei/ads/admob" />
-        <source-file src="src/AdMobPlugin.java" target-dir="src/com/ludei/ads/cordova" />
+        <source-file src="src/com/ludei/ads/admob/AdBannerAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/admob/AdInterstitialAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/admob/AdRewardedAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/admob/AdServiceAdMob.java" target-dir="src/com/ludei/ads/admob"/>
+        <source-file src="src/com/ludei/ads/cordova/AdMobPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
 
 
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
             <feature name="LDAdService">
                 <param name="android-package" value="com.ludei.ads.cordova.AdMobPlugin"/>
             </feature>
@@ -24,18 +25,18 @@
             </feature>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/*">
-              <uses-permission android:name="android.permission.INTERNET" />
-              <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
             <activity android:name="com.google.android.gms.ads.AdActivity"
-                android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+                      android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         </config-file>
 
-        <framework src="com.google.android.gms:play-services-ads:9.0.2" />
-        <dependency id="cocoon-plugin-ads-android-common" version="1.0.5" />
+        <framework src="com.google.android.gms:play-services-ads:15.0.1"/>
+        <dependency id="cocoon-plugin-ads-android-common"/>
     </platform>
 
 </plugin>

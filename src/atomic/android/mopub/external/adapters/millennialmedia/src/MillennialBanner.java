@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-
 import com.millennialmedia.AppInfo;
 import com.millennialmedia.InlineAd;
 import com.millennialmedia.InlineAd.AdSize;
@@ -39,7 +38,7 @@ class MillennialBanner extends CustomEventBanner {
 
     @Override
     protected void loadBanner(final Context context, final CustomEventBannerListener customEventBannerListener,
-            final Map<String, Object> localExtras, final Map<String, String> serverExtras) {
+                              final Map<String, Object> localExtras, final Map<String, String> serverExtras) {
 
         LayoutParams lp;
         String apid = null;
@@ -48,10 +47,10 @@ class MillennialBanner extends CustomEventBanner {
         int height;
         mBannerListener = customEventBannerListener;
 
-        if ( !MMSDK.isInitialized() ) {
+        if (!MMSDK.isInitialized()) {
             try {
                 MMSDK.initialize((Activity) context);
-            } catch ( Exception e ) {
+            } catch (Exception e) {
                 Log.e(LOGCAT_TAG, "Unable to initialize the Millennial SDK-- " + e.getMessage());
                 e.printStackTrace();
                 UI_THREAD_HANDLER.post(new Runnable() {
@@ -83,13 +82,13 @@ class MillennialBanner extends CustomEventBanner {
         // Add DCN's for Nexage folks
         try {
             AppInfo ai = new AppInfo().setMediator("mopubsdk");
-            if ( dcn != null && dcn.length() > 0 ) {
+            if (dcn != null && dcn.length() > 0) {
                 ai = ai.setSiteId(dcn);
             } else {
                 ai = ai.setSiteId(null);
             }
             MMSDK.setAppInfo(ai);
-        } catch ( IllegalStateException e ) {
+        } catch (IllegalStateException e) {
             Log.i(LOGCAT_TAG, "Caught exception " + e.getMessage());
             UI_THREAD_HANDLER.post(new Runnable() {
                 @Override
@@ -111,7 +110,7 @@ class MillennialBanner extends CustomEventBanner {
         try {
             mInlineAd = InlineAd.createInstance(apid, mInternalView);
             mInlineAdMetadata = new InlineAdMetadata().setAdSize(new AdSize(width, height));
-        } catch ( MMException e ) {
+        } catch (MMException e) {
             e.printStackTrace();
             UI_THREAD_HANDLER.post(new Runnable() {
                 @Override
@@ -123,9 +122,9 @@ class MillennialBanner extends CustomEventBanner {
         }
 
         mInlineAd.setListener(new MillennialInlineListener());
-        
+
         /* If MoPub gets location, so do we. */
-        MMSDK.setLocationEnabled( (localExtras.get("location") != null) );
+        MMSDK.setLocationEnabled((localExtras.get("location") != null));
 
         AdViewController.setShouldHonorServerDimensions(mInternalView);
 
@@ -146,7 +145,7 @@ class MillennialBanner extends CustomEventBanner {
             // Add pos / non-null and APIDs.
             int w = Integer.parseInt(serverExtras.get(AD_WIDTH_KEY));
             int h = Integer.parseInt(serverExtras.get(AD_HEIGHT_KEY));
-            if ( h < 0 || w < 0 ) {
+            if (h < 0 || w < 0) {
                 throw new NumberFormatException();
             }
         } catch (Exception e) {
@@ -202,10 +201,10 @@ class MillennialBanner extends CustomEventBanner {
 
         @Override
         public void onRequestFailed(InlineAd arg0, InlineErrorStatus err) {
-            Log.d(LOGCAT_TAG, "Millennial Inline Ad - Banner failed (" + err.getErrorCode() + "): " + err.getDescription() );
+            Log.d(LOGCAT_TAG, "Millennial Inline Ad - Banner failed (" + err.getErrorCode() + "): " + err.getDescription());
             MoPubErrorCode mopubErrorCode;
 
-            switch ( err.getErrorCode() ) {
+            switch (err.getErrorCode()) {
                 case InlineErrorStatus.ADAPTER_NOT_FOUND:
                     mopubErrorCode = MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR;
                     break;
@@ -255,7 +254,7 @@ class MillennialBanner extends CustomEventBanner {
         @Override
         public void onResized(InlineAd arg0, int w, int h, boolean isClosed) {
             Log.d(LOGCAT_TAG, "Millennial Inline Ad - Banner resized (width: " + w + ", height: " + h + "). "
-                    + (isClosed ? "Returned to original placement." : "Got a fresh, new place.") );
+                + (isClosed ? "Returned to original placement." : "Got a fresh, new place."));
 
         }
 

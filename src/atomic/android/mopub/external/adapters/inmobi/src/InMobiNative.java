@@ -5,13 +5,11 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.inmobi.commons.InMobi;
 import com.inmobi.monetization.IMErrorCode;
 import com.inmobi.monetization.IMNative;
 import com.inmobi.monetization.IMNativeListener;
 import com.mopub.common.logging.MoPubLog;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -33,9 +31,9 @@ class InMobiNative extends CustomEventNative {
     // CustomEventNative implementation
     @Override
     protected void loadNativeAd(final Activity activity,
-            final CustomEventNativeListener customEventNativeListener,
-            final Map<String, Object> localExtras,
-            final Map<String, String> serverExtras) {
+                                final CustomEventNativeListener customEventNativeListener,
+                                final Map<String, Object> localExtras,
+                                final Map<String, String> serverExtras) {
 
         final String appId;
         if (extrasAreValid(serverExtras)) {
@@ -47,10 +45,10 @@ class InMobiNative extends CustomEventNative {
 
         InMobi.initialize(activity, appId);
         final InMobiStaticNativeAd inMobiStaticNativeAd =
-                new InMobiStaticNativeAd(activity,
-                        new ImpressionTracker(activity),
-                        new NativeClickHandler(activity),
-                        customEventNativeListener);
+            new InMobiStaticNativeAd(activity,
+                new ImpressionTracker(activity),
+                new NativeClickHandler(activity),
+                customEventNativeListener);
         inMobiStaticNativeAd.setIMNative(new IMNative(inMobiStaticNativeAd));
         inMobiStaticNativeAd.loadAd();
     }
@@ -82,9 +80,9 @@ class InMobiNative extends CustomEventNative {
         private IMNative mImNative;
 
         InMobiStaticNativeAd(final Context context,
-                final ImpressionTracker impressionTracker,
-                final NativeClickHandler nativeClickHandler,
-                final CustomEventNativeListener customEventNativeListener) {
+                             final ImpressionTracker impressionTracker,
+                             final NativeClickHandler nativeClickHandler,
+                             final CustomEventNativeListener customEventNativeListener) {
             mContext = context.getApplicationContext();
             mImpressionTracker = impressionTracker;
             mNativeClickHandler = nativeClickHandler;
@@ -190,7 +188,7 @@ class InMobiNative extends CustomEventNative {
             mImNative.handleClick(null);
         }
 
-        void parseJson(final IMNative imNative) throws JSONException  {
+        void parseJson(final IMNative imNative) throws JSONException {
             final JSONTokener jsonTokener = new JSONTokener(imNative.getContent());
             final JSONObject jsonObject = new JSONObject(jsonTokener);
 
@@ -210,7 +208,7 @@ class InMobiNative extends CustomEventNative {
             final String clickDestinationUrl = getJsonValue(jsonObject, LANDING_URL, String.class);
             if (clickDestinationUrl == null) {
                 final String errorMessage = "InMobi JSON response missing required key: "
-                        + LANDING_URL + ". Failing over.";
+                    + LANDING_URL + ". Failing over.";
                 MoPubLog.d(errorMessage);
                 throw new JSONException(errorMessage);
             }

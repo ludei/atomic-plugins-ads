@@ -1,32 +1,37 @@
 {
-  "name": "cocoon-plugin-ads-android-heyzap",
-  "version": "1.1.1",
-  "description": "Android Heyzap Ads implementation",
-  "cordova": {
-    "id": "cocoon-plugin-ads-android-heyzap",
-    "platforms": [
-      "android"
+    "name": "cocoon-plugin-ads-android-heyzap",
+    "version": "1.1.0",
+    "description": "Android Heyzap Ads implementation",
+    "cordova": {
+        "id": "cocoon-plugin-ads-android-heyzap",
+        "platforms": [
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ludei/atomic-plugins-ads"
+    },
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "heyzap",
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "author": "ludei",
+    "license": "MPL 2.0",
+    "bugs": {
+        "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+    },
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ludei/atomic-plugins-ads"
-  },
-  "keywords": [
-    "cordova",
-    "ads",
-    "banner",
-    "interstitial",
-    "monetization",
-    "ad",
-    "heyzap",
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "author": "ludei",
-  "license": "MPL 2.0",
-  "bugs": {
-    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
-  },
-  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
 }

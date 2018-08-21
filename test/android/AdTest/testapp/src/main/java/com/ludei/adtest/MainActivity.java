@@ -38,8 +38,8 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
         adInterstitial = adService.createRewardedVideo(this, null);
         adInterstitial.setListener(this);
         this.initButtons();
-        txtBannerStatus = (TextView)findViewById(R.id.txtBannerStatus);
-        txtInterstitialStatus = (TextView)findViewById(R.id.txtInterstitialStatus);
+        txtBannerStatus = (TextView) findViewById(R.id.txtBannerStatus);
+        txtInterstitialStatus = (TextView) findViewById(R.id.txtInterstitialStatus);
         txtBannerStatus.setText("");
         txtInterstitialStatus.setText("");
         topCenter = true;
@@ -100,15 +100,14 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
             return;
         }
 
-        ViewGroup vg = (ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content);
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams)adBanner.getView().getLayoutParams();
+        ViewGroup vg = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) adBanner.getView().getLayoutParams();
         layoutParams.width = adBanner.getWidth();
         layoutParams.height = adBanner.getHeight();
-        layoutParams.leftMargin = (int)(vg.getWidth() * 0.5 - layoutParams.width * 0.5);
+        layoutParams.leftMargin = (int) (vg.getWidth() * 0.5 - layoutParams.width * 0.5);
         if (topCenter) {
             layoutParams.topMargin = 0;
-        }
-        else {
+        } else {
             layoutParams.topMargin = vg.getHeight() - layoutParams.height;
         }
         vg.requestLayout();
@@ -134,7 +133,7 @@ public class MainActivity extends Activity implements AdInterstitial.Interstitia
         txtBannerStatus.setText("Loaded");
 
         if (banner.getView().getParent() == null) {
-            ViewGroup vg = (ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content);
+            ViewGroup vg = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);
             FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
             vg.addView(banner.getView());
         }

@@ -7,17 +7,17 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,inmobi</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-            <header-file src="src/InMobiBannerCustomEvent.h" />
-            <source-file src="src/InMobiBannerCustomEvent.m" />
-            <header-file src="src/InMobiInterstitialCustomEvent.h" />
-            <source-file src="src/InMobiInterstitialCustomEvent.m" />
-            <header-file src="src/InMobiNativeAdAdapter.h" />
-            <source-file src="src/InMobiNativeAdAdapter.m" />
-            <header-file src="src/InMobiNativeCustomEvent.h" />
-            <source-file src="src/InMobiNativeCustomEvent.m" />
-            <header-file src="src/InMobiRewardedCustomEvent.h" />
-            <source-file src="src/InMobiRewardedCustomEvent.m" />
+        <header-file src="src/InMobiBannerCustomEvent.h"/>
+        <source-file src="src/InMobiBannerCustomEvent.m"/>
+        <header-file src="src/InMobiInterstitialCustomEvent.h"/>
+        <source-file src="src/InMobiInterstitialCustomEvent.m"/>
+        <header-file src="src/InMobiNativeAdAdapter.h"/>
+        <source-file src="src/InMobiNativeAdAdapter.m"/>
+        <header-file src="src/InMobiNativeCustomEvent.h"/>
+        <source-file src="src/InMobiNativeCustomEvent.m"/>
+        <header-file src="src/InMobiRewardedCustomEvent.h"/>
+        <source-file src="src/InMobiRewardedCustomEvent.m"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-inmobi" />
-    <dependency id="cocoon-plugin-ads-ios-mopub" />
+    <dependency id="cocoon-plugin-ads-ios-inmobi"/>
+    <dependency id="cocoon-plugin-ads-ios-mopub"/>
 </plugin>

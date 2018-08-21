@@ -3,7 +3,7 @@
 //  MoPub Rewarded Adapter
 //
 //  Created on 10/14/15.
-//  Copyright © 2015 Applovin. All rights reserved.
+//  Copyright © 2015 AppLovin. All rights reserved.
 //
 
 #import <MoPub/MPRewardedVideoCustomEvent.h>
@@ -13,7 +13,7 @@
 #import <AppLovin/ALAdVideoPlaybackDelegate.h>
 
 @interface AppLovinRewardedCustomEvent
-    : MPRewardedVideoCustomEvent <ALAdLoadDelegate, ALAdDisplayDelegate,
-                                  ALAdRewardDelegate, ALAdVideoPlaybackDelegate>
+        : MPRewardedVideoCustomEvent <ALAdLoadDelegate, ALAdDisplayDelegate,
+        ALAdRewardDelegate, ALAdVideoPlaybackDelegate>
 
 @end

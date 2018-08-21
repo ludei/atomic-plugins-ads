@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-millennialmedia" version="1.0.6">
+        id="cocoon-plugin-ads-android-mopub-millennialmedia" version="1.0.5">
 
     <name>AdsMoPubMillenial</name>
     <description>Android MoPub MillennialMedia Adapter</description>
@@ -9,13 +9,13 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="android">
-        <source-file src="src/MillennialBanner.java" target-dir="src/com/mopub/mobileads" />
-        <source-file src="src/MillennialInterstitial.java" target-dir="src/com/mopub/mobileads" />
+        <source-file src="src/MillennialBanner.java" target-dir="src/com/mopub/mobileads"/>
+        <source-file src="src/MillennialInterstitial.java" target-dir="src/com/mopub/mobileads"/>
 
-        <resource-file src="src/deps/mm-ad-sdk.aar" target="libs/mm-ad-sdk.aar" />
-        <framework src="src/deps/mmedia.gradle" custom="true" type="gradleReference" />
+        <resource-file src="src/mm-ad-sdk.aar" target="libs/mm-ad-sdk.aar"/>
+        <framework src="src/mmedia.gradle" custom="true" type="gradleReference"/>
     </platform>
 
-    <dependency id="cocoon-plugin-ads-android-mopub" version="1.0.6" />
+    <dependency id="cocoon-plugin-ads-android-mopub"/>
 
 </plugin>

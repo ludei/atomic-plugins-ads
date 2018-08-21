@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-admob-unityads" version="1.0.2">
+        id="cocoon-plugin-ads-ios-admob-unityads" version="2.0.0">
     <name>AdMobAdapterUnityAds</name>
     <description>iOS UnityAds adapter for AdMob</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,unity,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <source-file src="src/deps/libAdapterUnity.a" framework="true" />
-        <dependency id="cocoon-plugin-ads-ios-admob" version="1.0.8" />
-        <dependency id="cocoon-plugin-ads-ios-unityads" version="1.0.3" />
+        <header-file src="src/LDUnityAdsAdapterPlugin.h"/>
+        <source-file src="src/LDUnityAdsAdapterPlugin.m"/>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="LDUnityAdsAdapter">
+                <param name="ios-package" value="LDUnityAdsAdapterPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <framework src="libs/UnityAdapter.framework" custom="true"/>
     </platform>
+    <dependency id="cocoon-plugin-ads-ios-admob"/>
+    <dependency id="cocoon-plugin-ads-ios-unityads"/>
 </plugin>

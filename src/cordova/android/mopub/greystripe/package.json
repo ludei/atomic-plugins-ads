@@ -1,33 +1,38 @@
 {
-  "name": "cocoon-plugin-ads-android-mopub-greystripe",
-  "version": "1.0.1",
-  "description": "Android MoPub GreyStripe Adapter",
-  "cordova": {
-    "id": "cocoon-plugin-ads-android-mopub-greystripe",
-    "platforms": [
-      "android"
+    "name": "cocoon-plugin-ads-android-mopub-greystripe",
+    "version": "1.0.0",
+    "description": "Android MoPub GreyStripe Adapter",
+    "cordova": {
+        "id": "cocoon-plugin-ads-android-mopub-greystripe",
+        "platforms": [
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ludei/atomic-plugins-ads"
+    },
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "mopub",
+        "greystripe",
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "author": "ludei",
+    "license": "MPL 2.0",
+    "bugs": {
+        "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+    },
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ludei/atomic-plugins-ads"
-  },
-  "keywords": [
-    "cordova",
-    "ads",
-    "banner",
-    "interstitial",
-    "monetization",
-    "ad",
-    "mopub",
-    "greystripe",
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "author": "ludei",
-  "license": "MPL 2.0",
-  "bugs": {
-    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
-  },
-  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
 }

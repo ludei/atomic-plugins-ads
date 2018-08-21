@@ -1,28 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-adcolony" version="1.0.4">
+        id="cocoon-plugin-ads-ios-adcolony" version="2.0.0">
     <name>AdsAdColony</name>
     <description>iOS Ads AdColony implementation</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="src/deps/external/AdColony.framework" custom="true" />
+        <preference name="CALENDAR_USAGE_DESCRIPTION" default="Some ad content may create a calendar event."/>
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="Some ad content may access the camera to take pictures."/>
+        <preference name="MOTION_USAGE_DESCRIPTION" default="Some ad content may require access to accelerometer for interactive ad experience."/>
+        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION" default="Some ad content may require access to the photo library."/>
 
-        <framework src="StoreKit.framework" />
-        <framework src="Foundation.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="Social.framework" weak="true" />
-        <framework src="libz.dylib" />
-        <framework src="MediaPlayer.framework" weak="true" />
-        <framework src="WebKit.framework" weak="true" />
-        <framework src="CoreTelephony.framework" weak="true" />
-        <framework src="SystemConfiguration.framework" weak="true" />
-        <framework src="AdSupport.framework" weak="true" />
-        <framework src="MessageUI.framework" weak="true" />
-        <framework src="EventKit.framework" weak="true" />
+        <framework src="libz.1.2.5.tbd"/>
+        <framework src="libs/AdColony.framework" custom="true"/>
+        <framework src="AdSupport.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="JavaScriptCore.framework"/>
+        <framework src="MessageUI.framework"/>
+        <framework src="MobileCoreServices.framework"/>
+        <framework src="Social.framework" weak="true"/>
+        <framework src="StoreKit.framework" weak="true"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="WatchConnectivity.framework" weak="true"/>
+        <framework src="WebKit.framework" weak="true"/>
 
-        <dependency id="cocoon-plugin-ads-ios-common" version="1.0.5" />
+        <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true/>
+            </dict>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <string>fb</string>
+                <string>instagram</string>
+                <string>tumblr</string>
+                <string>twitter</string>
+            </array>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSCalendarsUsageDescription">
+            <string>$CALENDAR_USAGE_DESCRIPTION</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSMotionUsageDescription">
+            <string>$MOTION_USAGE_DESCRIPTION</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>$PHOTO_LIBRARY_USAGE_DESCRIPTION</string>
+        </config-file>
+
     </platform>
+    <dependency id="cocoon-plugin-ads-ios-common"/>
 </plugin>

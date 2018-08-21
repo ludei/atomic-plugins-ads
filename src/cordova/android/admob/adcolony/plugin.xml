@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-admob-adcolony" version="1.0.2">
+        id="cocoon-plugin-ads-android-admob-adcolony" version="2.0.0">
     <name>AdsAdMobAdColony</name>
     <description>Android AdMob AdColony Adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,admob,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-    	<preference name="APP_ID" />
-    	<preference name="ZONE_ID" />
-        <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="ADCOLONY_ADAPTER_APP_ID" value="$APP_ID" />
-            <preference name="ADCOLONY_ADAPTER_ZONE_ID" value="$ZONE_ID" />
+        <preference name="APP_ID"/>
+        <preference name="ZONE_ID"/>
+        <config-file target="app/src/main/res/xml/config.xml" parent="/*">
+            <preference name="ADCOLONY_ADAPTER_APP_ID" value="$APP_ID"/>
+            <preference name="ADCOLONY_ADAPTER_ZONE_ID" value="$ZONE_ID"/>
 
             <feature name="AdColonyAdapterPlugin">
                 <param name="android-package" value="com.ludei.ads.cordova.AdColonyAdapterPlugin"/>
-                <param name="onload" value="true" />
+                <param name="onload" value="true"/>
             </feature>
         </config-file>
 
-        <source-file src="src/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova" />
-        <dependency id="cocoon-plugin-ads-android-admob" version="1.0.12" />
-        <dependency id="cocoon-plugin-ads-android-adcolony" version="1.0.4" />
+        <resource-file src="libs/adcolony-adapter-3.3.5.1.aar" target="libs/adcolony-admob-adapter.aar"/>
+        <framework src="libs/adcolony-admob-adapter.gradle" custom="true" type="gradleReference"/>
+
+        <source-file src="src/com/ludei/ads/cordova/AdColonyAdapterPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
+        <dependency id="cocoon-plugin-ads-android-admob"/>
+        <dependency id="cocoon-plugin-ads-android-adcolony"/>
     </platform>
 
 </plugin>

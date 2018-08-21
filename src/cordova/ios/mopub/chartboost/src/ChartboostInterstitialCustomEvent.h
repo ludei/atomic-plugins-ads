@@ -6,11 +6,12 @@
 //
 
 #if __has_include(<MoPub/MoPub.h>)
-    #import <MoPub/MoPub.h>
+#import <MoPub/MoPub.h>
 #else
-    #import "MPInterstitialCustomEvent.h"
-#endif
 
+#import "MPInterstitialCustomEvent.h"
+
+#endif
 
 /*
  * Certified with version 5.0.1 of the Chartboost SDK.
@@ -21,7 +22,7 @@
 /**
  * A string that corresponds to a Chartboost CBLocation used for differentiating ad requests.
  */
-@property (nonatomic, copy) NSString *location;
+    @property(nonatomic, copy) NSString *location;
 
 /**
  * Registers a Chartboost app ID to be used when initializing the Chartboost SDK.
@@ -38,7 +39,7 @@
  * to set your app ID in your network settings for Chartboost. See the Custom Native Network Setup guide for more
  * information. https://dev.twitter.com/mopub/ad-networks/network-setup-custom-native
  */
-+ (void)setAppId:(NSString *)appId;
+    + (void)setAppId: (NSString *)appId;
 
 /**
  * Registers a Chartboost app signature to be used when initializing the Chartboost SDK.
@@ -55,6 +56,6 @@
  * to set your app signature in your network settings for Chartboost. See the Custom Native Network Setup guide for more
  * information. https://dev.twitter.com/mopub/ad-networks/network-setup-custom-native
  */
-+ (void)setAppSignature:(NSString *)appSignature;
+    + (void)setAppSignature: (NSString *)appSignature;
 
 @end

@@ -1,4 +1,5 @@
 package com.ludei.adsgame;
+
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
@@ -27,7 +28,6 @@ public class MainActivity extends Cocos2dxActivity {
 
         return surfaceView;
     }
-
 
 
 }

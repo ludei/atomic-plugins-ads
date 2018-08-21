@@ -22,8 +22,8 @@ android {
 
     sourceSets {
         main {
-            jni.srcDirs=[]
-            jniLibs.srcDirs=['libs']
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
             assets.srcDirs = ['../../resources']
         }
     }
@@ -49,14 +49,14 @@ def mopub_adapters = '../../../../src/atomic/android/mopub/external/adapters/'
 repositories {
     mavenCentral()
     flatDir {
-        dirs  '../../external/cocos2dx/prebuilt_android',
-              '../../../../src/cpp/android/jni/safejni/libs',
-                mopub_adapters + 'adcolony/dist',
-                mopub_adapters + 'admob/dist',
-                mopub_adapters + 'millennialmedia/dist',
-                mopub_adapters + 'chartboost/dist',
-                mopub_adapters + 'greystripe/dist',
-                mopub_adapters + 'inmobi/dist'
+        dirs '../../external/cocos2dx/prebuilt_android',
+            '../../../../src/cpp/android/jni/safejni/libs',
+            mopub_adapters + 'adcolony/dist',
+            mopub_adapters + 'admob/dist',
+            mopub_adapters + 'millennialmedia/dist',
+            mopub_adapters + 'chartboost/dist',
+            mopub_adapters + 'greystripe/dist',
+            mopub_adapters + 'inmobi/dist'
     }
 }
 
@@ -65,8 +65,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
 
 
-    compile (name:'libcocos2dx', ext:'jar')
-    compile (name:'safejni', ext:'jar')
+    compile(name: 'libcocos2dx', ext: 'jar')
+    compile(name: 'safejni', ext: 'jar')
 
     compile project(':ads-mopub') //mopub implementation
     compile project(':ads-admob') //admob implementation
@@ -74,13 +74,12 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-ads:9.0.2' //admob-sdk
     //mopub adapters
-    compile (name:'adcolony-adapter', ext:'aar')
-    compile (name:'admob-adapter', ext:'aar')
-    compile (name:'millennialmedia-adapter', ext:'aar')
-    compile (name:'charboost-adapter', ext:'aar')
-    compile (name:'greystripe-adapter', ext:'aar')
-    compile (name:'inmobi-adapter', ext:'aar')
-
+    compile(name: 'adcolony-adapter', ext: 'aar')
+    compile(name: 'admob-adapter', ext: 'aar')
+    compile(name: 'millennialmedia-adapter', ext: 'aar')
+    compile(name: 'charboost-adapter', ext: 'aar')
+    compile(name: 'greystripe-adapter', ext: 'aar')
+    compile(name: 'inmobi-adapter', ext: 'aar')
 
 
 }

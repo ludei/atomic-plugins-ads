@@ -1,32 +1,37 @@
 {
-  "name": "cocoon-plugin-ads-android-mopub",
-  "version": "1.0.6",
-  "description": "Android MoPub Ads implementation",
-  "cordova": {
-    "id": "cocoon-plugin-ads-android-mopub",
-    "platforms": [
-      "android"
+    "name": "cocoon-plugin-ads-android-mopub",
+    "version": "1.0.5",
+    "description": "Android MoPub Ads implementation",
+    "cordova": {
+        "id": "cocoon-plugin-ads-android-mopub",
+        "platforms": [
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ludei/atomic-plugins-ads"
+    },
+    "keywords": [
+        "cordova",
+        "ads",
+        "banner",
+        "interstitial",
+        "monetization",
+        "ad",
+        "mopub",
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "author": "ludei",
+    "license": "MPL 2.0",
+    "bugs": {
+        "url": "https://github.com/ludei/atomic-plugins-ads/issues"
+    },
+    "homepage": "https://github.com/ludei/atomic-plugins-ads#readme",
+    "files": [
+        "src",
+        "libs",
+        "plugin.xml"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ludei/atomic-plugins-ads"
-  },
-  "keywords": [
-    "cordova",
-    "ads",
-    "banner",
-    "interstitial",
-    "monetization",
-    "ad",
-    "mopub",
-    "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "author": "ludei",
-  "license": "MPL 2.0",
-  "bugs": {
-    "url": "https://github.com/ludei/atomic-plugins-ads/issues"
-  },
-  "homepage": "https://github.com/ludei/atomic-plugins-ads#readme"
 }

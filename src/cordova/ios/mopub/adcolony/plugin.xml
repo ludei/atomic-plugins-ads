@@ -8,25 +8,25 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
 
-        <header-file src="src/AdColonyCustomEvent.h" />
-        <source-file src="src/AdColonyCustomEvent.m" />
-        <header-file src="src/AdColonyGlobalMediationSettings.h" />
-        <source-file src="src/AdColonyGlobalMediationSettings.m" />
-        <header-file src="src/AdColonyInstanceMediationSettings.h" />
-        <source-file src="src/AdColonyInstanceMediationSettings.m" />
-        <header-file src="src/AdColonyInterstitialCustomEvent.h" />
-        <source-file src="src/AdColonyInterstitialCustomEvent.m" />
-        <header-file src="src/AdColonyRewardedVideoCustomEvent.h" />
-        <source-file src="src/AdColonyRewardedVideoCustomEvent.m" />
-        <header-file src="src/MPAdColonyRouter.h" />
-        <source-file src="src/MPAdColonyRouter.m" />
-        <header-file src="src/MPInstanceProvider+AdColony.h" />
-        <source-file src="src/MPInstanceProvider+AdColony.m" />
+        <header-file src="src/AdColonyCustomEvent.h"/>
+        <source-file src="src/AdColonyCustomEvent.m"/>
+        <header-file src="src/AdColonyGlobalMediationSettings.h"/>
+        <source-file src="src/AdColonyGlobalMediationSettings.m"/>
+        <header-file src="src/AdColonyInstanceMediationSettings.h"/>
+        <source-file src="src/AdColonyInstanceMediationSettings.m"/>
+        <header-file src="src/AdColonyInterstitialCustomEvent.h"/>
+        <source-file src="src/AdColonyInterstitialCustomEvent.m"/>
+        <header-file src="src/AdColonyRewardedVideoCustomEvent.h"/>
+        <source-file src="src/AdColonyRewardedVideoCustomEvent.m"/>
+        <header-file src="src/MPAdColonyRouter.h"/>
+        <source-file src="src/MPAdColonyRouter.m"/>
+        <header-file src="src/MPInstanceProvider+AdColony.h"/>
+        <source-file src="src/MPInstanceProvider+AdColony.m"/>
 
-        <framework src="libz.dylib" />
-        <framework src="social.framework" weak="true" />
-        <framework src="webkit.framework" weak="true" />
+        <framework src="libz.dylib"/>
+        <framework src="social.framework" weak="true"/>
+        <framework src="webkit.framework" weak="true"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-mopub" />
-    <dependency id="cocoon-plugin-ads-ios-adcolony" />
+    <dependency id="cocoon-plugin-ads-ios-mopub"/>
+    <dependency id="cocoon-plugin-ads-ios-adcolony"/>
 </plugin>

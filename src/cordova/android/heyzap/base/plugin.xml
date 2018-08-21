@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-heyzap" version="1.1.1">
+<plugin xmlns:android="http://schemas.android.com/apk/res-auto"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cocoon-plugin-ads-android-heyzap" version="1.1.0">
     <name>AdsHeyzap</name>
     <description>Android Heyzap Ads implementation</description>
     <license>MPL 2.0</license>
@@ -8,14 +9,14 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <framework src="src/compileSDK.gradle" custom="true" type="gradleReference" />
-        <resource-file src="src/deps/heyzap-unified-platform-10.2.0.aar" target="aar/heyzap-unified-platform-10.2.0.aar" />
+        <framework src="src/compileSDK.gradle" custom="true" type="gradleReference"/>
+        <resource-file src="src/heyzap-unified-platform-10.2.0.aar" target="aar/heyzap-unified-platform-10.2.0.aar"/>
 
-        <source-file src="src/deps/com/ludei/ads/heyzap/AdBannerHeyzap.java" target-dir="src/com/ludei/ads/heyzap" />
-        <source-file src="src/deps/com/ludei/ads/heyzap/AdInterstitialHeyzap.java" target-dir="src/com/ludei/ads/heyzap" />
-        <source-file src="src/deps/com/ludei/ads/heyzap/AdRewardedHeyzap.java" target-dir="src/com/ludei/ads/heyzap" />
-        <source-file src="src/deps/com/ludei/ads/heyzap/AdServiceHeyzap.java" target-dir="src/com/ludei/ads/heyzap" />
-        <source-file src="src/HeyzapPlugin.java" target-dir="src/com/ludei/ads/cordova" />
+        <source-file src="src/com/ludei/ads/heyzap/AdBannerHeyzap.java" target-dir="src/com/ludei/ads/heyzap"/>
+        <source-file src="src/com/ludei/ads/heyzap/AdInterstitialHeyzap.java" target-dir="src/com/ludei/ads/heyzap"/>
+        <source-file src="src/com/ludei/ads/heyzap/AdRewardedHeyzap.java" target-dir="src/com/ludei/ads/heyzap"/>
+        <source-file src="src/com/ludei/ads/heyzap/AdServiceHeyzap.java" target-dir="src/com/ludei/ads/heyzap"/>
+        <source-file src="src/HeyzapPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="LDAdService">
@@ -27,17 +28,20 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
-              <uses-permission android:name="android.permission.INTERNET" />
-              <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <!-- Heyzap Ad Network -->
-            <activity android:name="com.heyzap.sdk.ads.HeyzapInterstitialActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
-            <activity android:name="com.heyzap.sdk.ads.HeyzapVideoActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
-            <activity android:name="com.heyzap.sdk.ads.HeyzapProxyActivity" />
-            <activity android:name="com.heyzap.sdk.ads.VASTActivity" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" />
-            <activity android:name="com.heyzap.sdk.ads.MediationTestActivity" />
+            <activity android:name="com.heyzap.sdk.ads.HeyzapInterstitialActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"/>
+            <activity android:name="com.heyzap.sdk.ads.HeyzapVideoActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"/>
+            <activity android:name="com.heyzap.sdk.ads.HeyzapProxyActivity"/>
+            <activity android:name="com.heyzap.sdk.ads.VASTActivity"
+                      android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize"/>
+            <activity android:name="com.heyzap.sdk.ads.MediationTestActivity"/>
             <receiver android:name="com.heyzap.sdk.ads.PackageAddedReceiver">
                 <intent-filter>
                     <data android:scheme="package"/>
@@ -46,7 +50,7 @@
             </receiver>
         </config-file>
 
-        <dependency id="cocoon-plugin-ads-android-common" version="1.0.5" />
+        <dependency id="cocoon-plugin-ads-android-common"/>
     </platform>
 
 </plugin>
