@@ -7,7 +7,7 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="libs/MoPubSDK.framework" custom="true"/>
+        <framework src="libs/MoPubSDKFramework.framework" custom="true" embed="true"/>
 
         <framework src="AdSupport.framework"/>
         <framework src="AVFoundation.framework"/>

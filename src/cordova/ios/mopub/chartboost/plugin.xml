@@ -7,7 +7,7 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,chartboost</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="MoPub-Chartboost-Adapters" type="podspec"/>
+        <framework src="MoPub-Chartboost-Adapters" type="podspec" spec="7.2.0.3"/>
 
         <dependency id="cocoon-plugin-ads-ios-mopub"/>
         <dependency id="cocoon-plugin-ads-ios-chartboost"/>

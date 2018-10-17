@@ -7,7 +7,7 @@
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,admob</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
-        <framework src="MoPub-AdMob-Adapters" type="podspec"/>
+        <framework src="MoPub-AdMob-Adapters" type="podspec" spec="7.34.0.0"/>
 
         <dependency id="cocoon-plugin-ads-ios-mopub"/>
         <dependency id="cocoon-plugin-ads-ios-admob"/>

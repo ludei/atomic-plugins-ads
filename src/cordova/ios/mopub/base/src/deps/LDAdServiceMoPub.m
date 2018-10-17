@@ -1,12 +1,6 @@
 #import "LDAdServiceMoPub.h"
 
-#if __has_include(<MoPub/MoPub.h>)
-#import <MoPub/MoPub.h>
-#else
-
-#import "MoPub.h"
-
-#endif
+@import MoPubSDKFramework;
 
 static inline bool isIpad() {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
@@ -169,9 +163,7 @@ static inline bool isIpad() {
     }
 
     - (void)dismissAnimated: (BOOL)animated {
-        [_adController dismissViewControllerAnimated: animated completion: ^{
-
-        }];
+        //TODO
     }
 
 #pragma mark MPInterstitialAdControllerDelegate
@@ -218,8 +210,6 @@ static inline bool isIpad() {
 
     - (instancetype)initWithAdUnit: (NSString *)adUnit {
         if (self = [super init]) {
-            //TODO: generic delegate for multiple rewarded ad units
-            [[MoPub sharedInstance] initializeRewardedVideoWithGlobalMediationSettings: nil delegate: self];
             _adUnit = adUnit;
         }
         return self;
@@ -235,18 +225,18 @@ static inline bool isIpad() {
 
     - (void)showFromViewController: (UIViewController *)controller animated: (BOOL)animated {
         if ([MPRewardedVideo hasAdAvailableForAdUnitID: _adUnit]) {
-            [MPRewardedVideo presentRewardedVideoAdForAdUnitID: _adUnit fromViewController: controller];
+            [MPRewardedVideo presentRewardedVideoAdForAdUnitID: _adUnit fromViewController: controller withReward: nil];
         } else {
             [self loadAd];
             if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidCompleteRewardedVideo:withReward:andError:)]) {
-                NSError *error = [NSError errorWithDomain: @"mopub.com" code: 0 userInfo: @{NSLocalizedDescriptionKey: @"Rewared Video not loaded yet"}];
+                NSError *error = [NSError errorWithDomain: @"mopub.com" code: 0 userInfo: @{NSLocalizedDescriptionKey: @"Rewarded Video not loaded yet"}];
                 [_delegate adRewardedVideoDidCompleteRewardedVideo: self withReward: nil andError: error];
             }
         }
     }
 
     - (void)dismissAnimated: (BOOL)animated {
-
+        //TODO
     }
 
 #pragma mark RewardedVideoDelegate
