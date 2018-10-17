@@ -203,18 +203,18 @@ static inline bool isIpad() {
 
 @end
 
-#pragma mark MoPub RewarderVideo implementation
+#pragma mark MoPub RewardedVideo implementation
 
-@interface LDMopubRewarderVideo : LDAdInterstitial <MPRewardedVideoDelegate>
+@interface LDMopubRewardedVideo : LDAdRewardedVideo <MPRewardedVideoDelegate>
 
-    @property(nonatomic, weak) id <LDAdInterstitialDelegate> delegate;
+    @property(nonatomic, weak) id <LDAdRewardedVideoDelegate> delegate;
     @property(nonatomic, strong) NSString *adUnit;
 
     - (instancetype)initWithAdUnit: (NSString *)adUnit;
 
 @end
 
-@implementation LDMopubRewarderVideo
+@implementation LDMopubRewardedVideo
 
     - (instancetype)initWithAdUnit: (NSString *)adUnit {
         if (self = [super init]) {
@@ -238,9 +238,9 @@ static inline bool isIpad() {
             [MPRewardedVideo presentRewardedVideoAdForAdUnitID: _adUnit fromViewController: controller];
         } else {
             [self loadAd];
-            if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
+            if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidCompleteRewardedVideo:withReward:andError:)]) {
                 NSError *error = [NSError errorWithDomain: @"mopub.com" code: 0 userInfo: @{NSLocalizedDescriptionKey: @"Rewared Video not loaded yet"}];
-                [_delegate adInterstitialDidCompleteRewardedVideo: self withReward: nil andError: error];
+                [_delegate adRewardedVideoDidCompleteRewardedVideo: self withReward: nil andError: error];
             }
         }
     }
@@ -252,48 +252,48 @@ static inline bool isIpad() {
 #pragma mark RewardedVideoDelegate
 
     - (void)rewardedVideoAdDidLoadForAdUnitID: (NSString *)adUnitID {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialDidLoad:)]) {
-            [_delegate adInterstitialDidLoad: self];
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidLoad:)]) {
+            [_delegate adRewardedVideoDidLoad: self];
         }
     }
 
     - (void)rewardedVideoAdDidFailToLoadForAdUnitID: (NSString *)adUnitID error: (NSError *)error {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialDidFailLoad:withError:)]) {
-            [_delegate adInterstitialDidFailLoad: self withError: nil];
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidFailLoad:withError:)]) {
+            [_delegate adRewardedVideoDidFailLoad: self withError: nil];
         }
     }
 
     - (void)rewardedVideoAdDidExpireForAdUnitID: (NSString *)adUnitID {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialDidFailLoad:withError:)]) {
-            [_delegate adInterstitialDidFailLoad: self withError: nil];
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidFailLoad:withError:)]) {
+            [_delegate adRewardedVideoDidFailLoad: self withError: nil];
         }
     }
 
     - (void)rewardedVideoAdDidFailToPlayForAdUnitID: (NSString *)adUnitID error: (NSError *)error {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
-            [_delegate adInterstitialDidCompleteRewardedVideo: self withReward: nil andError: error];
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidCompleteRewardedVideo:withReward:andError:)]) {
+            [_delegate adRewardedVideoDidCompleteRewardedVideo: self withReward: nil andError: error];
         }
     }
 
     - (void)rewardedVideoAdWillAppearForAdUnitID: (NSString *)adUnitID {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialWillAppear:)]) {
-            [_delegate adInterstitialWillAppear: self];
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoWillAppear:)]) {
+            [_delegate adRewardedVideoWillAppear: self];
         }
     }
 
     - (void)rewardedVideoAdDidDisappearForAdUnitID: (NSString *)adUnitID {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialWillDisappear:)]) {
-            [_delegate adInterstitialWillDisappear: self];
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoWillDisappear:)]) {
+            [_delegate adRewardedVideoWillDisappear: self];
         }
     }
 
     - (void)rewardedVideoAdShouldRewardForAdUnitID: (NSString *)adUnitID reward: (MPRewardedVideoReward *)reward {
-        if (_delegate && [_delegate respondsToSelector: @selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {
+        if (_delegate && [_delegate respondsToSelector: @selector(adRewardedVideoDidCompleteRewardedVideo:withReward:andError:)]) {
             LDMoPubRewardedVideoReward *mopubReward = [[LDMoPubRewardedVideoReward alloc] init];
             mopubReward.amount = [NSNumber numberWithInteger: fmax(reward.amount.integerValue, 1)];
             mopubReward.currencyType = reward.currencyType;
             mopubReward.itmKey = nil;
-            [_delegate adInterstitialDidCompleteRewardedVideo: self withReward: mopubReward andError: nil];
+            [_delegate adRewardedVideoDidCompleteRewardedVideo: self withReward: mopubReward andError: nil];
         }
     }
 
@@ -317,12 +317,12 @@ static inline bool isIpad() {
     }
 
     - (LDAdBanner *)createBanner: (NSString *)banner size: (LDAdBannerSize)size {
-        NSString *adunit = banner;
-        if (!adunit) {
-            adunit = isIpad() ? (_settings.bannerIpad ? : _settings.banner) : _settings.banner;
+        NSString *adUnit = banner;
+        if (!adUnit) {
+            adUnit = isIpad() ? (_settings.bannerIpad ? : _settings.banner) : _settings.banner;
         }
 
-        return [[LDMopubBanner alloc] initWithAdUnit: adunit size: size];
+        return [[LDMopubBanner alloc] initWithAdUnit: adUnit size: size];
     }
 
     - (LDAdInterstitial *)createInterstitial {
@@ -331,26 +331,25 @@ static inline bool isIpad() {
     }
 
     - (LDAdInterstitial *)createInterstitial: (NSString *)interstitial {
-        NSString *adunit = interstitial;
-        if (!adunit) {
-            adunit = isIpad() ? (_settings.interstitialIpad ? : _settings.interstitial) : _settings.interstitial;
+        NSString *adUnit = interstitial;
+        if (!adUnit) {
+            adUnit = isIpad() ? (_settings.interstitialIpad ? : _settings.interstitial) : _settings.interstitial;
         }
 
-        return [[LDMopubInterstitial alloc] initWithAdUnit: adunit];
+        return [[LDMopubInterstitial alloc] initWithAdUnit: adUnit];
     }
 
-    - (LDAdInterstitial *)createVideoInterstitial: (NSString *)adunit {
-        return [self createInterstitial: adunit];
+    - (LDAdInterstitial *)createVideoInterstitial: (NSString *)adUnit {
+        return [self createInterstitial: adUnit];
     }
 
-    - (LDAdInterstitial *)createRewardedVideo: (NSString *)rewarded {
-        NSString *adunit = rewarded;
-        if (!adunit) {
-            adunit = isIpad() ? (_settings.interstitialIpad ? : _settings.interstitial) : _settings.interstitial;
+    - (LDAdRewardedVideo *)createRewardedVideo: (NSString *)rewardedVideo {
+        NSString *adUnit = rewardedVideo;
+        if (!adUnit) {
+            adUnit = isIpad() ? (_settings.rewardedVideoIpad ? : _settings.rewardedVideo) : _settings.rewardedVideo;
         }
 
-        return [[LDMopubRewarderVideo alloc] initWithAdUnit: adunit];
+        return [[LDMopubRewardedVideo alloc] initWithAdUnit: adUnit];
     }
-
 
 @end

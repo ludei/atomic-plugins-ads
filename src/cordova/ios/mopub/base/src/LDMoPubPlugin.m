@@ -6,13 +6,21 @@
     - (void)pluginInitialize {
         [super pluginInitialize];
 
-        LDAdServiceMoPub *mopub = [[LDAdServiceMoPub alloc] init];
-        mopub.settings.banner = [self.commandDelegate.settings objectForKey: @"mopub_banner"];
-        mopub.settings.bannerIpad = [self.commandDelegate.settings objectForKey: @"mopub_bannerIpad"] ? : mopub.settings.banner;
-        mopub.settings.interstitial = [self.commandDelegate.settings objectForKey: @"mopub_interstitial"];
-        mopub.settings.interstitialIpad = [self.commandDelegate.settings objectForKey: @"mopub_interstitialIpad"] ? : mopub.settings.interstitial;
+        LDAdServiceMoPub *moPub = [[LDAdServiceMoPub alloc] init];
+        moPub.settings.appId = [self.commandDelegate.settings objectForKey: @"mopub_appId"];
+        moPub.settings.banner = [self.commandDelegate.settings objectForKey: @"mopub_banner"];
+        moPub.settings.bannerIpad = [self.commandDelegate.settings objectForKey: @"mopub_bannerIpad"] ? : mopub.settings.banner;
+        moPub.settings.interstitial = [self.commandDelegate.settings objectForKey: @"mopub_interstitial"];
+        moPub.settings.interstitialIpad = [self.commandDelegate.settings objectForKey: @"mopub_interstitialIpad"] ? : mopub.settings.interstitial;
+        moPub.settings.rewardedVideo = [self.commandDelegate.settings objectForKey: @"mopub_rewardedVideo"];
+        moPub.settings.rewardedVideoIpad = [self.commandDelegate.settings objectForKey: @"mopub_rewardedVideoIpad"] ? : mopub.settings.rewardedVideo;
+        moPub.settings.personalizedAdsConsent = [[self.commandDelegate.settings objectForKey: @"mopub_personalizedAdsConsent"] boolValue];
 
-        self.service = mopub;
+        MPMoPubConfiguration *sdkConfig = [[MPMoPubConfiguration alloc] initWithAdUnitIdForAppInitialization: moPub.settings.appId];
+
+        [[MoPub sharedInstance] initializeSdkWithConfiguration:sdkConfig completion:nil]
+
+        self.service = moPub;
     }
 
 @end

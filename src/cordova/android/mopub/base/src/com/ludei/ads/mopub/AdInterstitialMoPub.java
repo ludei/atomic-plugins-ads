@@ -11,8 +11,8 @@ import com.mopub.mobileads.MoPubInterstitial;
 class AdInterstitialMoPub extends AbstractAdInterstitial implements MoPubInterstitial.InterstitialAdListener {
     private MoPubInterstitial _interstitial;
 
-    AdInterstitialMoPub(Context ctx, String adunit) {
-        _interstitial = new MoPubInterstitial((Activity) ctx, adunit);
+    AdInterstitialMoPub(Context ctx, String adUnit) {
+        _interstitial = new MoPubInterstitial((Activity) ctx, adUnit);
         _interstitial.setInterstitialAdListener(this);
 
     }

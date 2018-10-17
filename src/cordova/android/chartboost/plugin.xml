@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:android="http://schemas.android.com/apk/res-auto"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-chartboost" version="2.0.0">
+        id="cocoon-plugin-ads-android-chartboost" version="2.0.1">
     <name>AdsChartboost</name>
     <description>Android Chartboost</description>
     <license>MPL 2.0</license>
@@ -9,7 +9,7 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
 
-        <source-file src="libs/chartboost_7.2.1.jar" target-dir="libs" framework="true"/>
+        <lib-file src="libs/chartboost_7.2.1.jar"/>
 
         <source-file src="src/com/ludei/ads/chartboost/AdServiceChartboost.java"
                      target-dir="src/com/ludei/ads/chartboost"/>

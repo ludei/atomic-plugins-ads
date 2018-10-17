@@ -9,8 +9,8 @@ const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 
 const testMopub = true; //Disable to test admob
-const mopubAndroidAdapters = ["adcolony", "admob", "chartboost", "greystripe", "inmobi", "millennialmedia"];
-const mopubIOSAdapters = ["admob", "chartboost", "millennial"];
+const mopubAndroidAdapters = ["adcolony", "admob", "applovin", "chartboost"];
+const mopubIOSAdapters = ["adcolony", "admob", "applovin", "chartboost"];
 
 
 gulp.task("clean", function (finish) {
@@ -29,9 +29,15 @@ gulp.task("deps-cordova", function () {
     gulp.src("src/atomic/android/common/src/**/")
         .pipe(gulp.dest("src/cordova/android/common/src"));
 
+    gulp.src("src/atomic/android/common/libs/**/")
+        .pipe(gulp.dest("src/cordova/android/common/libs"));
+
     // Android AdMob
     gulp.src("src/atomic/android/admob/src/**/")
         .pipe(gulp.dest("src/cordova/android/admob/base/src"));
+
+    gulp.src("src/atomic/android/admob/libs/**/")
+        .pipe(gulp.dest("src/cordova/android/admob/base/libs"));
 
     // Android Chartboost
     gulp.src("src/atomic/android/chartboost/src/**/")
@@ -51,10 +57,13 @@ gulp.task("deps-cordova", function () {
     gulp.src("src/atomic/android/mopub/src/**/")
         .pipe(gulp.dest("src/cordova/android/mopub/base/src"));
 
+    gulp.src("src/atomic/android/mopub/libs/**/")
+        .pipe(gulp.dest("src/cordova/android/mopub/base/libs"));
+
     // Android MoPub adapters
     for (let i = 0; i < mopubAndroidAdapters.length; ++i) {
-        gulp.src("src/atomic/android/mopub/external/adapters/" + mopubAndroidAdapters[i] + "/src/*.java")
-            .pipe(gulp.dest("src/cordova/android/mopub/" + mopubAndroidAdapters[i] + "/src"));
+        gulp.src("src/atomic/android/mopub/adapters/" + mopubAndroidAdapters[i] + "/build.gradle")
+            .pipe(gulp.dest("src/cordova/android/mopub/" + mopubAndroidAdapters[i]));
     }
 
     // iOS common

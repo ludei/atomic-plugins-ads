@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:android="http://schemas.android.com/apk/res-auto"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-adcolony" version="2.0.0">
+        id="cocoon-plugin-ads-android-adcolony" version="2.1.0">
     <name>AdsAdcolony</name>
     <description>Android AdColony</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="android">
-        <source-file src="libs/armeabi-v7a/libadcolony.so" target-dir="libs/armeabi-v7a" framework="true"/>
-        <source-file src="libs/armeabi-v7a/libjs.so" target-dir="libs/armeabi-v7a" framework="true"/>
-        <source-file src="libs/adcolony-3.3.5.jar" target-dir="libs" framework="true"/>
+        <resource-file src="libs/arm64-v8a/libadcolony.so" target="libs/arm64-v8a/libadcolony.so"/>
+        <resource-file src="libs/arm64-v8a/libjs.so" target="libs/arm64-v8a/libjs.so"/>
+        <resource-file src="libs/armeabi/libadcolony.so" target="libs/armeabi/libadcolony.so"/>
+        <resource-file src="libs/armeabi/libjs.so" target="libs/armeabi/libjs.so"/>
+        <resource-file src="libs/armeabi-v7a/libadcolony.so" target="libs/armeabi-v7a/libadcolony.so"/>
+        <resource-file src="libs/armeabi-v7a/libjs.so" target="libs/armeabi-v7a/libjs.so"/>
+        <resource-file src="libs/x86/libadcolony.so" target="libs/x86/libadcolony.so"/>
+        <resource-file src="libs/x86/libjs.so" target="libs/x86/libjs.so"/>
+        <resource-file src="libs/x86_64/libadcolony.so" target="libs/x86_64/libadcolony.so"/>
+        <resource-file src="libs/x86_64/libjs.so" target="libs/x86_64/libjs.so"/>
+        <lib-file src="libs/adcolony-3.3.5.jar"/>
 
         <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET"/>

@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-ios-mopub-adcolony" version="1.0.1">
+        id="cocoon-plugin-ads-ios-mopub-adcolony" version="2.0.0">
     <name>MoPubAdapterAdColony</name>
     <description>iOS AdColony adapter for MoPub</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,mopub,adcolony</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
     <platform name="ios">
+        <framework src="MoPub-AdColony-Adapters" type="podspec"/>
 
-        <header-file src="src/AdColonyCustomEvent.h"/>
-        <source-file src="src/AdColonyCustomEvent.m"/>
-        <header-file src="src/AdColonyGlobalMediationSettings.h"/>
-        <source-file src="src/AdColonyGlobalMediationSettings.m"/>
-        <header-file src="src/AdColonyInstanceMediationSettings.h"/>
-        <source-file src="src/AdColonyInstanceMediationSettings.m"/>
-        <header-file src="src/AdColonyInterstitialCustomEvent.h"/>
-        <source-file src="src/AdColonyInterstitialCustomEvent.m"/>
-        <header-file src="src/AdColonyRewardedVideoCustomEvent.h"/>
-        <source-file src="src/AdColonyRewardedVideoCustomEvent.m"/>
-        <header-file src="src/MPAdColonyRouter.h"/>
-        <source-file src="src/MPAdColonyRouter.m"/>
-        <header-file src="src/MPInstanceProvider+AdColony.h"/>
-        <source-file src="src/MPInstanceProvider+AdColony.m"/>
-
-        <framework src="libz.dylib"/>
-        <framework src="social.framework" weak="true"/>
-        <framework src="webkit.framework" weak="true"/>
+        <dependency id="cocoon-plugin-ads-ios-mopub"/>
+        <dependency id="cocoon-plugin-ads-ios-adcolony"/>
     </platform>
-    <dependency id="cocoon-plugin-ads-ios-mopub"/>
-    <dependency id="cocoon-plugin-ads-ios-adcolony"/>
 </plugin>

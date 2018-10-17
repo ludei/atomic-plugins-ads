@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-mopub-chartboost" version="1.0.3">
+        id="cocoon-plugin-ads-android-mopub-chartboost" version="2.0.0">
 
     <name>AdsMopubCharboost</name>
     <description>Android MoPub Chartboost Adapter</description>
@@ -9,12 +9,9 @@
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>
 
     <platform name="android">
-        <source-file src="src/ChartboostInterstitial.java" target-dir="src/com/mopub/mobileads"/>
-        <source-file src="src/ChartboostRewardedVideo.java" target-dir="src/com/mopub/mobileads"/>
-        <source-file src="src/ChartboostShared.java" target-dir="src/com/mopub/mobileads"/>
+        <framework src="build.gradle" custom="true" type="gradleReference" />
+
+        <dependency id="cocoon-plugin-ads-android-chartboost"/>
+        <dependency id="cocoon-plugin-ads-android-mopub"/>
     </platform>
-
-    <dependency id="cocoon-plugin-ads-android-chartboost"/>
-    <dependency id="cocoon-plugin-ads-android-mopub"/>
-
 </plugin>

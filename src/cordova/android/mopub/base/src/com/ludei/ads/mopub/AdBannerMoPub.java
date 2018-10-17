@@ -15,10 +15,10 @@ class AdBannerMoPub extends AbstractAdBanner implements MoPubView.BannerAdListen
     private Context ctx;
     private MoPubView banner;
 
-    AdBannerMoPub(Context ctx, String adunit, BannerSize size) {
+    AdBannerMoPub(Context ctx, String adUnit, BannerSize size) {
         this.ctx = ctx;
         banner = new MoPubView(ctx);
-        banner.setAdUnitId(adunit);
+        banner.setAdUnitId(adUnit);
         banner.setBannerAdListener(this);
     }
 

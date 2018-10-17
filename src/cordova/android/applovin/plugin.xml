@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:android="http://schemas.android.com/apk/res-auto"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cocoon-plugin-ads-android-applovin" version="2.0.0">
+        id="cocoon-plugin-ads-android-applovin" version="2.0.1">
     <name>AdsAppLovin</name>
     <description>Android AppLovin Ads implementation</description>
     <license>MPL 2.0</license>
@@ -18,7 +18,7 @@
             <meta-data android:name="applovin.sdk.key" android:value="@string/applovin_sdk_key"/>
         </config-file>
 
-        <source-file src="libs/applovin-sdk-8.1.0.jar" target-dir="libs" framework="true"/>
+        <lib-file src="libs/applovin-sdk-8.1.0.jar"/>
         <source-file src="src/com/ludei/ads/cordova/AppLovinPlugin.java" target-dir="src/com/ludei/ads/cordova"/>
 
         <config-file target="app/src/main/AndroidManifest.xml" parent="/*">

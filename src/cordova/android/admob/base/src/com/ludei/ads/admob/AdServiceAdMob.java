@@ -17,12 +17,13 @@ public class AdServiceAdMob implements AdService {
     private String _interstitialAdUnit;
     private String _rewardedVideoAdUnit;
 
-    public void configure(Activity activity, JSONObject obj) {
-        String appId = obj.optString("appId");
-        String banner = obj.optString("banner");
-        String interstitial = obj.optString("interstitial");
-        String rewardedVideo = obj.optString("rewardedVideo");
-        boolean personalizedAdsConsent = obj.optBoolean("personalizedAdsConsent");
+    @Override
+    public void configure(Activity activity, JSONObject settings) {
+        String appId = settings.optString("appId");
+        String banner = settings.optString("banner");
+        String interstitial = settings.optString("interstitial");
+        String rewardedVideo = settings.optString("rewardedVideo");
+        boolean personalizedAdsConsent = settings.optBoolean("personalizedAdsConsent");
         if (appId == null) {
             throw new RuntimeException("Empty App AdUnit");
         }
@@ -37,10 +38,12 @@ public class AdServiceAdMob implements AdService {
         _personalizedAdsConsent = personalizedAdsConsent;
     }
 
+    @Override
     public AdBanner createBanner(Context ctx) {
         return createBanner(ctx, null, AdBanner.BannerSize.SMART_SIZE);
     }
 
+    @Override
     public AdBanner createBanner(Context ctx, String adUnit, AdBanner.BannerSize size) {
         if (adUnit == null || adUnit.length() == 0) {
             adUnit = _bannerAdUnit;
@@ -51,10 +54,12 @@ public class AdServiceAdMob implements AdService {
         return new AdBannerAdMob(ctx, adUnit, size, _personalizedAdsConsent);
     }
 
+    @Override
     public AdInterstitial createInterstitial(Context ctx) {
         return createInterstitial(ctx, null);
     }
 
+    @Override
     public AdInterstitial createInterstitial(Context ctx, String adUnit) {
 
         if (adUnit == null || adUnit.length() == 0) {
@@ -66,10 +71,12 @@ public class AdServiceAdMob implements AdService {
         return new AdInterstitialAdMob(ctx, adUnit, _personalizedAdsConsent);
     }
 
+    @Override
     public AdRewardedVideo createRewardedVideo(Context ctx) {
         return createRewardedVideo(ctx, null);
     }
 
+    @Override
     public AdRewardedVideo createRewardedVideo(Context ctx, String adUnit) {
         if (adUnit == null || adUnit.length() == 0) {
             adUnit = _rewardedVideoAdUnit;

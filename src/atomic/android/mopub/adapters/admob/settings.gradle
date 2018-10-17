@@ -1,0 +1,3 @@
+rootProject.name = "atomic-android-mopub-admob-adapter"
+include ":atomic-android-mopub"
+project(":atomic-android-mopub").projectDir = new File("../../")

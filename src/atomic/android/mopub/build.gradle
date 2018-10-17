@@ -8,27 +8,27 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath "com.android.tools.build:gradle:3.2.0"
     }
 }
 
-apply plugin: 'com.android.library'
+apply plugin: "com.android.library"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 3
+        versionName "2.1"
     }
 
     sourceSets {
         main {
-            java.srcDirs = ['src']
-            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ["src/main/java"]
+            manifest.srcFile "src/main/AndroidManifest.xml"
         }
     }
 }
@@ -46,13 +46,8 @@ repositories {
 }
 
 dependencies {
-    api project(':atomic-android-common')
-    implementation 'com.android.support:recyclerview-v7:28.0.0-alpha3'
-    implementation 'com.android.support:support-annotations:28.0.0-alpha3'
-    implementation 'com.android.support:support-v4:28.0.0-alpha3'
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
-    implementation 'com.mopub.volley:mopub-volley:2.0.0'
-    implementation('com.mopub:mopub-sdk:5.2.0@aar') {
+    api project(":atomic-android-common")
+    implementation("com.mopub:mopub-sdk:5.4.0@aar") {
         transitive = true
     }
 }

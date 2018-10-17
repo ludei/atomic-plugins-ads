@@ -1,3 +1,0 @@
-rootProject.name = 'adcolony-adapter'
-include ':ads-common'
-project(':ads-common').projectDir = new File('../common')
