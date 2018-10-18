@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-ios-mopub-applovin",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "iOS applovin adapter for MoPub",
     "cordova": {
         "id": "cocoon-plugin-ads-ios-mopub-applovin",

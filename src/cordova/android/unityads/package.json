@@ -1,7 +1,7 @@
 {
     "name": "cocoon-plugin-ads-android-unityads",
-    "version": "2.0.0",
-    "description": "Android Unity Ads implementation",
+    "version": "2.0.1",
+    "description": "Android UnityAds implementation",
     "cordova": {
         "id": "cocoon-plugin-ads-android-unityads",
         "platforms": [

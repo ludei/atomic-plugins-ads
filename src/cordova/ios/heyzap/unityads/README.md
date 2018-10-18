@@ -1,5 +1,7 @@
-iOS Ads Unity Ads adapter for Heyzap implementation
+iOS Ads UnityAds adapter for Heyzap implementation
 ==================================
+
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-ios-heyzap-unityads.png)](https://nodei.co/npm/cocoon-plugin-ads-ios-heyzap-unityads/)
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 

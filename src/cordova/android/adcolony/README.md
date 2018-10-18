@@ -1,5 +1,7 @@
-Android AdColony
+Android AdColony 
 =================
+
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-android-adcolony.png)](https://nodei.co/npm/cocoon-plugin-ads-android-adcolony/)
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 

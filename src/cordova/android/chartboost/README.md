@@ -1,6 +1,8 @@
 Android Chartboost
 ===================
 
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-android-chartboost.png)](https://nodei.co/npm/cocoon-plugin-ads-android-chartboost/)
+
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 
 * [Set up your project](https://github.com/ludei/atomic-plugins-ads#javascript-api)

@@ -1,5 +1,7 @@
-iOS Ads AdMob implementation
+iOS Ads Heyzap implementation
 =============================
+
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-ios-heyzap-admob.png)](https://nodei.co/npm/cocoon-plugin-ads-ios-heyzap-admob/)
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 

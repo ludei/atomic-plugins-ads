@@ -1,5 +1,7 @@
-iOS unityads adapter for MoPub
+iOS Applovin adapter for MoPub
 ===============================
+
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-ios-admob-applovin.png)](https://nodei.co/npm/cocoon-plugin-ads-ios-admob-applovin/)
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 

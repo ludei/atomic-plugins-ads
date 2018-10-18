@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cocoon-plugin-ads-ios-heyzap-unityads" version="1.1.0">
     <name>HeyzapAdapterAdUnityAds</name>
-    <description>iOS Ads Heyzap Unity Ads adapter</description>
+    <description>iOS Ads Heyzap UnityAds adapter</description>
     <license>MPL 2.0</license>
     <keywords>cordova,ads,banner,interstitial,monetization,ad,heyzap,unity,unityads</keywords>
     <repo>https://github.com/ludei/atomic-plugins-ads</repo>

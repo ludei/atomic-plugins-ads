@@ -1,31 +1,33 @@
-#Atomic Plugins for Ads
+# Atomic Plugins for Ads
 
-This repo contains Ad APIs designed using the [Atomic Plugins](#about-atomic-plugins) paradigm. Monetize your app and take advantage of all the features provided: elegant API, flexible monetization solution that works across multiple platforms, full support for banners and full screen ads (interstitials), single API for different Ad Providers and more. The API is already available in many languagues and we plan to add more in the future:
+This repo contains Ad APIs designed using the [Atomic Plugins](#about-atomic-plugins) paradigm. Monetize your app and take advantage of all the features provided: elegant API, flexible monetization solution that works across multiple platforms, full support for banners and full screen ads (interstitials), single API for different Ad Providers and more. The API is already available in many languages and we plan to add more in the future:
 
-  * [Objective-C API for pure iOS/Mac apps](#ios-api)
   * [Java API for pure Android apps](#android-api)
+  * [Objective-C API for pure iOS/Mac apps](#ios-api)
   * [JavaScript API for Cordova or Cocoon based Apps](#javascript-api)
   * [C++ API for C++ based apps and games](#c-api)
 
-Currently there are 2 Ad providers implemented but new ones can be easily added:
+Currently there are 4 Ad providers implemented but new ones can be easily added:
 
+* AdMob with optional adapters
+* Chartboost
+* Heyzap with optional adapters
 * MoPub with optional adapters
-* AdMob
 
 You can contribute and help to create more awesome plugins.
 
-##About Atomic Plugins
+## About Atomic Plugins
 
 Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine. 
 
-#Provided APIs
+# Provided APIs
 
-* [iOS API](#ios-api)
+* [Android API](#android-api)
   * [API Reference](#api-reference)
   * [Introduction](#introduction)
   * [Setup your project](#setup-your-project)
   * [Example](#example)
-* [Android API](#android-api)
+* [iOS API](#ios-api)
   * [API Reference](#api-reference-1)
   * [Introduction](#introduction-1)
   * [Setup your project](#setup-your-project-1)
@@ -41,9 +43,65 @@ Atomic Plugins provide an elegant and minimalist API and are designed with porta
   * [Setup your project](#setup-your-project-3)
   * [Example](#example-3)
   
-##iOS API:
+## Android API:
 
-###API Reference
+### API Reference
+
+See [API Documentation](http://ludei.github.io/atomic-plugins-ads/dist/doc/android/html/annotated.html)
+
+See [`AdTest`](test/android) for a complete project that tests all the features provided in the API.
+
+### Introduction
+
+AdService interface provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
+
+### Setup your project
+
+Releases are deployed to Maven Central. You only have to add the desired dependencies in your build.gradle:
+
+```gradle
+dependencies {
+    compile 'com.ludei.ads.admob:1.0.0' //AdMob Ad Provider
+    compile 'com.ludei.ads.mopub:1.0.0' //MoPub Ad Provider
+    compile 'com.ludei.ads.mopub.adcolony:1.0.0' //Optional MoPub AdColony adapter
+    compile 'com.ludei.ads.mopub.admob:1.0.0' //Optional MoPub AdMob adapter
+    compile 'com.ludei.ads.mopub.chartboost:1.0.0' //Optional MoPub Chartboost adapter
+    compile 'com.ludei.ads.mopub.inmobi:1.0.0' //Optional MoPub InMobi adapter
+    compile 'com.ludei.ads.mopub.greystripe:1.0.0' //Optional MoPub Greystriper adapter
+    compile 'com.ludei.ads.mopub.millennialmedia:1.0.0' //Optional MoPub MillennialMedia adapter
+}
+```
+
+### Example
+
+```java
+//Instantiate the desired ad provider
+AdService service = new AdServiceMoPub(); //MoPub
+AdService service = new AdServiceAdMob(); //AdMob
+
+//Configure default banner and interstitial adunits
+service.configure(bannerAdUnit, interstitialAdUnit);
+
+//Create banner: optional AdUnit and AdSize arguments
+AdBanner banner = service.createBanner(this);
+banner.setListener(this); //Optional banner listener
+banner.loadAd();
+
+//Layout the banner as you want
+viewGroup.addView(banner.getView());
+
+//Create interstitial: optional AdUnit argument
+AdInterstitial interstitial = service.createInterstitial(this);
+interstitial.setListener(this); //Optional interstitial listener
+interstitial.loadAd();
+
+//Show an interstitial
+interstitial.show();
+```
+
+## iOS API:
+
+### API Reference
 
 See [API Documentation](http://ludei.github.io/atomic-plugins-ads/dist/doc/ios/html/annotated.html)
 
@@ -51,16 +109,16 @@ See [`LDAdService.h`](src/atomic/ios/common/LDAdService.h) [`LDAdBanner.h`](src/
 
 See [`AdTest`](test/ios) for a complete project that tests all the features provided in the API.
 
-###Introduction 
+### Introduction 
 
 LDAdService class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 
-###Setup your project
+### Setup your project
 
 You can use CocoaPods to include the desired Ad providers:
 
-    pod 'LDAdServiceMoPub' //for MoPub
     pod 'LDAdServiceAdMob' //for AdMob
+    pod 'LDAdServiceMoPub' //for MoPub
 
 If you are using MoPub you optionally can include the following adapters:
 
@@ -69,7 +127,7 @@ If you are using MoPub you optionally can include the following adapters:
   [`Millennial Media adapter`](/src/cordova/ios/mopub/millennial/src/deps)
 
 
-###Example
+### Example
 
 ```objc
 //Instantiathe the desired ad provider
@@ -100,65 +158,9 @@ interstitial.delegate = self; //optional delegate
 [interstitial showFromViewController:self animated:YES];
 ```
 
-##Android API:
+## JavaScript API:
 
-###API Reference
-
-See [API Documentation](http://ludei.github.io/atomic-plugins-ads/dist/doc/android/html/annotated.html)
-
-See [`AdTest`](test/android) for a complete project that tests all the features provided in the API.
-
-###Introduction 
-
-AdService interface provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
-
-### Setup your project
-
-Releases are deployed to Maven Central. You only have to add the desired dependencies in your build.gradle:
-
-    dependencies {
-        compile 'com.ludei.ads.admob:1.0.0' //AdMob Ad Provider
-
-        compile 'com.ludei.ads.mopub:1.0.0' //MoPub Ad Provider
-        compile 'com.ludei.ads.mopub.adcolony:1.0.0' //Optional MoPub AdColony adapter
-        compile 'com.ludei.ads.mopub.admob:1.0.0' //Optional MoPub AdMob adapter
-        compile 'com.ludei.ads.mopub.chartboost:1.0.0' //Optional MoPub Chartboost adapter
-        compile 'com.ludei.ads.mopub.inmobi:1.0.0' //Optional MoPub InMobi adapter
-        compile 'com.ludei.ads.mopub.greystripe:1.0.0' //Optional MoPub Greystriper adapter
-        compile 'com.ludei.ads.mopub.millennialmedia:1.0.0' //Optional MoPub MillennialMedia adapter
-    }
-
-
-###Example
-
-```java
-//Instantiathe the desired ad provider
-AdService service = new AdServiceMoPub(); //MoPub
-AdService service = new AdServiceAdMob(); //AdMob
-
-//Configure default banner and interstitial adunits
-service.configure(bannerAdUnit, interstitialAdUnit);
-
-//Create banner: optional AdUnit and AdSize arguments
-AdBanner banner = service.createBanner(this);
-banner.setListener(this); //Optional banner listener
-banner.loadAd();
-
-//Layout the banner as you want
-viewGroup.addView(banner.getView());
-
-//Create interstitial: optional AdUnit argument
-AdInterstitial interstitial = service.createInterstitial(this);
-interstitial.setListener(this); //Optional interstitial listener
-interstitial.loadAd();
-
-//Show an interstitial
-interstitial.show();
-```
-
-##JavaScript API:
-
-###API Reference
+### API Reference
 
 See [API Documentation](http://ludei.github.io/atomic-plugins-docs/dist/doc/js/Cocoon.Ad.html)
 
@@ -166,11 +168,11 @@ For a complete project that tests all the features provided in the API run the f
 
     gulp create-cordova
 
-###Introduction 
+### Introduction 
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 
-###Setup your project
+### Setup your project
 
 Releases are deployed to Cordova Plugin Registry. You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Ludei's Cocoon Cloud Server.
 
@@ -195,7 +197,7 @@ The following JavaScript file is included automatically:
 
 [`cocoon_ads.js`](src/js/cocoon_ads.js)
 
-###Example
+### Example
 
 ```javascript
 
@@ -283,9 +285,9 @@ interstitial.load();
 interstitial.show();
 ```
 
-##C++ API:
+## C++ API:
 
-###API Reference
+### API Reference
 
 See [API Documentation](http://ludei.github.io/atomic-plugins-ads/dist/doc/cpp/html/annotated.html)
 
@@ -293,17 +295,17 @@ See [`AdService.h`](src/cpp/AdService.h) [`AdBanner.h`](src/cpp/AdBanner.h) [`Ad
 
 See [`AdTest`](test/cpp) for a complete project (cocos2dx game) that integrates the C++ Ad API.
 
-###Introduction 
+### Introduction 
 
 AdService class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 
-###Setup your project
+### Setup your project
 
 You can download prebuilt headers and static libraries from [Releases page](https://github.com/ludei/atomic-plugins-ads/releases)
 
 These static libraries provide the bindings between C++ and the native platform (iOS, Android, WP, etc). You might need to add some platform dependent libraries in your project (some jar files or gradle dependecies for example). See [`AdTest`](test/cpp) for an already setup C++ multiplatform project.
 
-####Special setup required for Android
+#### Special setup required for Android
 
 There isn't a portable and realiable way to get the current Activity and life cycle events on Android and we don't want to depend on specific game engine utility APIs. C++ and Java bridge is implemmented using the [SafeJNI](https://github.com/MortimerGoro/SafeJNI) utility. Atomic Plugins take advantage of this class and use it also as a generic Activity and Life Cycle Event notification provider. See the following code to set up the activity for atomic plugins and to notify Android life cycle events.
 
@@ -332,7 +334,7 @@ public Cocos2dxGLSurfaceView onCreateView() {
 }
 ```
 
-###Example
+### Example
 
 ```objc
 //Easy to use static method to instantiate a new service
@@ -371,7 +373,7 @@ delete interstitial;
 delete service; 
 ```
 
-#License
+# License
 
 Mozilla Public License, version 2.0
 

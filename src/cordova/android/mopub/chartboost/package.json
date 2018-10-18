@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-android-mopub-chartboost",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "description": "Android MoPub Chartboost Adapter",
     "cordova": {
         "id": "cocoon-plugin-ads-android-mopub-chartboost",

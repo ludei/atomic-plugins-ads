@@ -1,6 +1,6 @@
 {
     "name": "cocoon-plugin-ads-android-admob",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Android AdMob Ads implementation",
     "cordova": {
         "id": "cocoon-plugin-ads-android-admob",

@@ -1,5 +1,7 @@
-iOS AdColony adapter for AdMob
+iOS UnityAds adapter for AdMob
 ===============================
+
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-ios-admob-unityads.png)](https://nodei.co/npm/cocoon-plugin-ads-ios-admob-unityads/)
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 

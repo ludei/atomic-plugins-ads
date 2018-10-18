@@ -1,5 +1,7 @@
-Android Ads Unity Ads implementation
+Android Ads UnityAds implementation
 ================================
+
+[![NPM](https://nodei.co/npm/cocoon-plugin-ads-android-unityads.png)](https://nodei.co/npm/cocoon-plugin-ads-android-unityads/)
 
 Cocoon.Ad class provides an easy to use Ads API that can be used with different Ad providers with built-in support for multiple banners and interstitials.
 
